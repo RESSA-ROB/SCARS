@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCentralNode = createDescriptorForCentralNode();
+  /*package*/ final ConceptDescriptor myConceptMobileRobot = createDescriptorForMobileRobot();
   /*package*/ final ConceptDescriptor myConceptSensor = createDescriptorForSensor();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -28,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCentralNode, myConceptSensor);
+    return Arrays.asList(myConceptCentralNode, myConceptMobileRobot, myConceptSensor);
   }
 
   @Override
@@ -37,6 +38,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.CentralNode:
         return myConceptCentralNode;
+      case LanguageConceptSwitch.MobileRobot:
+        return myConceptMobileRobot;
       case LanguageConceptSwitch.Sensor:
         return myConceptSensor;
       default:
@@ -54,6 +57,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262652682");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMobileRobot() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "MobileRobot", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262653020");
     b.version(2);
     return b.create();
   }

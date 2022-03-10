@@ -10,11 +10,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int CentralNode = 0;
-  public static final int Sensor = 1;
+  public static final int MobileRobot = 1;
+  public static final int Sensor = 2;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L);
     builder.put(0x4db49580d35a9d0aL, CentralNode);
+    builder.put(0x4db49580d35a9e5cL, MobileRobot);
     builder.put(0x4db49580d35a9855L, Sensor);
     myIndex = builder.seal();
   }

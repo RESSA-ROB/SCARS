@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_CentralNode;
+  private ConceptPresentation props_MobileRobot;
   private ConceptPresentation props_Sensor;
 
   @Override
@@ -24,6 +25,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CentralNode = cpb.create();
         }
         return props_CentralNode;
+      case LanguageConceptSwitch.MobileRobot:
+        if (props_MobileRobot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MobileRobot = cpb.create();
+        }
+        return props_MobileRobot;
       case LanguageConceptSwitch.Sensor:
         if (props_Sensor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
