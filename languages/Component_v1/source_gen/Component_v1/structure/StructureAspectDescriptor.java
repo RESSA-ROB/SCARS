@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptCentralNode = createDescriptorForCentralNode();
   /*package*/ final ConceptDescriptor myConceptSensor = createDescriptorForSensor();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -27,13 +28,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptSensor);
+    return Arrays.asList(myConceptCentralNode, myConceptSensor);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.CentralNode:
+        return myConceptCentralNode;
       case LanguageConceptSwitch.Sensor:
         return myConceptSensor;
       default:
@@ -46,6 +49,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForCentralNode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "CentralNode", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9d0aL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262652682");
+    b.version(2);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSensor() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "Sensor", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9855L);
     b.class_(false, false, false);
