@@ -50,6 +50,7 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)" version="0" />
+        <module reference="b37e01ff-a47f-4ea1-9902-4f840aa546c5(NFR2)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
@@ -58,6 +59,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="true">ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)</dependency>
+    <dependency reexport="true">b37e01ff-a47f-4ea1-9902-4f840aa546c5(NFR2)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
@@ -100,6 +102,7 @@
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)" version="0" />
+    <module reference="b37e01ff-a47f-4ea1-9902-4f840aa546c5(NFR2)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
   </dependencyVersions>

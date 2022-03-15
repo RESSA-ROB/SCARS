@@ -7,6 +7,12 @@
   </languages>
   <imports />
   <registry>
+    <language id="b37e01ff-a47f-4ea1-9902-4f840aa546c5" name="NFR2">
+      <concept id="7410012186803881331" name="NFR2.structure.Performance2" flags="ng" index="295Qex">
+        <property id="2722478502131394806" name="responsetime" index="3pTssN" />
+        <property id="2722478502131430730" name="latency" index="3pT_Ef" />
+      </concept>
+    </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
       <concept id="7410012186803948439" name="Component_v1.structure.NFR" flags="ng" index="295AP5">
         <property id="7410012186803948442" name="value" index="295AP8" />
@@ -15,6 +21,7 @@
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
         <child id="7410012186803984696" name="sensors" index="294vZE" />
         <child id="7410012186803948445" name="nfrs" index="295APf" />
+        <child id="2722478502131394738" name="performanceReq" index="3pTstR" />
       </concept>
       <concept id="5599264617262651477" name="Component_v1.structure.Sensor" flags="ng" index="2uVwRl">
         <property id="3088068034462353475" name="ID" index="QxgR7" />
@@ -36,17 +43,13 @@
       <property role="TrG5h" value="camera" />
       <property role="QxgR7" value="102" />
     </node>
-    <node concept="295AP5" id="6rlDHbJL5yo" role="295APf">
-      <property role="295APa" value="ResponseTime" />
-      <property role="295AP8" value="5sec " />
-    </node>
     <node concept="295AP5" id="6rlDHbJL5yq" role="295APf">
       <property role="295APa" value="speed" />
       <property role="295AP8" value="100cm/sec" />
     </node>
-    <node concept="295AP5" id="6rlDHbJL5yt" role="295APf">
-      <property role="295APa" value="efficiency" />
-      <property role="295AP8" value="good" />
+    <node concept="295Qex" id="2n8bWnWbBki" role="3pTstR">
+      <property role="3pTssN" value="10" />
+      <property role="3pT_Ef" value="14" />
     </node>
   </node>
 </model>
