@@ -28,6 +28,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0xb37e01ffa47f4ea1L, 0x99024f840aa546c5L, "NFR2");
+    deps.aggregatedLanguage(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, "TaskOperations");
+    deps.aggregatedLanguage(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, "Communication");
   }
 
   @Override
@@ -75,6 +77,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("nfrs", 0x66d5a6d2efc3cb9dL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x66d5a6d2efc3cb97L).optional(true).ordered(true).multiple(true).origin("7410012186803948445").done();
     b.aggregate("sensors", 0x66d5a6d2efc45938L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9855L).optional(true).ordered(true).multiple(true).origin("7410012186803984696").done();
     b.aggregate("performanceReq", 0x25c82fc5fc2de8b2L).target(0xb37e01ffa47f4ea1L, 0x99024f840aa546c5L, 0x66d5a6d2efc2c573L).optional(true).ordered(true).multiple(false).origin("2722478502131394738").done();
+    b.aggregate("tasks", 0x25c82fc5fc339732L).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335becL).optional(true).ordered(true).multiple(true).origin("2722478502131767090").done();
+    b.aggregate("communication", 0x25c82fc5fc35b49aL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("2722478502131905690").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNFR() {

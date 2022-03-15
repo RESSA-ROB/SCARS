@@ -68,6 +68,12 @@
         </node>
       </node>
       <node concept="3EZMnI" id="2n8bWnWc5qV" role="3EZMnx">
+        <node concept="3F0ifn" id="2n8bWnWdcXh" role="3EZMnx">
+          <property role="3F0ifm" value="Components:" />
+          <node concept="pVoyu" id="2n8bWnWdh26" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="VPM3Z" id="2n8bWnWc5qX" role="3F10Kt" />
         <node concept="3F2HdR" id="2n8bWnWc5rd" role="3EZMnx">
           <ref role="1NtTu8" to="a0pt:6rlDHbJL5$S" resolve="sensors" />
@@ -79,6 +85,12 @@
         </node>
       </node>
       <node concept="3EZMnI" id="2n8bWnWc5rC" role="3EZMnx">
+        <node concept="3F0ifn" id="2n8bWnWdh28" role="3EZMnx">
+          <property role="3F0ifm" value="Non-functional Properties Option 1:" />
+          <node concept="pVoyu" id="2n8bWnWdh2c" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="VPM3Z" id="2n8bWnWc5rE" role="3F10Kt" />
         <node concept="3F1sOY" id="2n8bWnWc5sa" role="3EZMnx">
           <ref role="1NtTu8" to="a0pt:2n8bWnWbuyM" resolve="performanceReq" />
@@ -89,6 +101,12 @@
         </node>
       </node>
       <node concept="3EZMnI" id="2n8bWnWc5s$" role="3EZMnx">
+        <node concept="3F0ifn" id="2n8bWnWdh2e" role="3EZMnx">
+          <property role="3F0ifm" value="Non-functional Properties Option 2:" />
+          <node concept="pVoyu" id="2n8bWnWdh2j" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
         <node concept="VPM3Z" id="2n8bWnWc5sA" role="3F10Kt" />
         <node concept="3F2HdR" id="2n8bWnWc5t1" role="3EZMnx">
           <ref role="1NtTu8" to="a0pt:6rlDHbJKWIt" resolve="nfrs" />
@@ -98,6 +116,46 @@
         <node concept="pj6Ft" id="2n8bWnWc5t6" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+      </node>
+      <node concept="3EZMnI" id="2n8bWnWcTtg" role="3EZMnx">
+        <node concept="3F0ifn" id="2n8bWnWd8UX" role="3EZMnx">
+          <property role="3F0ifm" value="Operations:" />
+          <node concept="pVoyu" id="2n8bWnWdh2l" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="VPM3Z" id="2n8bWnWcTti" role="3F10Kt" />
+        <node concept="3F2HdR" id="2n8bWnWcTtM" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:2n8bWnWcTsM" resolve="tasks" />
+          <node concept="l2Vlx" id="2n8bWnWcTtO" role="2czzBx" />
+          <node concept="ljvvj" id="2n8bWnWcTum" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="2n8bWnWd0Qv" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="2n8bWnWcTtl" role="2iSdaV" />
+        <node concept="pj6Ft" id="2n8bWnWcTtR" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="2n8bWnWdrj9" role="3EZMnx">
+        <node concept="VPM3Z" id="2n8bWnWdrjb" role="3F10Kt" />
+        <node concept="3F0ifn" id="2n8bWnWdrk4" role="3EZMnx">
+          <property role="3F0ifm" value="Connections:" />
+          <node concept="ljvvj" id="2n8bWnWdrk9" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="2n8bWnWdrjV" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:2n8bWnWdriq" resolve="communication" />
+          <node concept="l2Vlx" id="2n8bWnWdrjX" role="2czzBx" />
+          <node concept="pj6Ft" id="2n8bWnWdrkb" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="2n8bWnWdrje" role="2iSdaV" />
       </node>
     </node>
   </node>
