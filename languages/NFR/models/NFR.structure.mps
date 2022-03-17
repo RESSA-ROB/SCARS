@@ -63,5 +63,20 @@
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="6DyuJlkJB0V">
+    <property role="EcuMT" value="7665824709845348411" />
+    <property role="TrG5h" value="RunTimeNFRs" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="6DyuJlkJB0W">
+    <property role="EcuMT" value="7665824709845348412" />
+    <property role="TrG5h" value="ArchitecturalNFRs" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="6DyuJlkJB0X">
+    <property role="EcuMT" value="7665824709845348413" />
+    <property role="TrG5h" value="CommunicationQoS" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
 </model>
 

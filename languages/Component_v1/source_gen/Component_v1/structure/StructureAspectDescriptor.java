@@ -13,10 +13,15 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptActuators = createDescriptorForActuators();
   /*package*/ final ConceptDescriptor myConceptCentralNode = createDescriptorForCentralNode();
+  /*package*/ final ConceptDescriptor myConceptHardwareComponent = createDescriptorForHardwareComponent();
+  /*package*/ final ConceptDescriptor myConceptHardwareComponentInst = createDescriptorForHardwareComponentInst();
+  /*package*/ final ConceptDescriptor myConceptHardwareRef = createDescriptorForHardwareRef();
   /*package*/ final ConceptDescriptor myConceptMobileRobot = createDescriptorForMobileRobot();
-  /*package*/ final ConceptDescriptor myConceptNFR = createDescriptorForNFR();
-  /*package*/ final ConceptDescriptor myConceptSensor = createDescriptorForSensor();
+  /*package*/ final ConceptDescriptor myConceptSensors = createDescriptorForSensors();
+  /*package*/ final ConceptDescriptor myConceptSoftwareComponent = createDescriptorForSoftwareComponent();
+  /*package*/ final ConceptDescriptor myConceptSoftwareComponentInst = createDescriptorForSoftwareComponentInst();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -27,28 +32,38 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
-    deps.aggregatedLanguage(0xb37e01ffa47f4ea1L, 0x99024f840aa546c5L, "NFR2");
-    deps.aggregatedLanguage(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, "TaskOperations");
+    deps.extendedLanguage(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, "Capabilities");
     deps.aggregatedLanguage(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, "Communication");
+    deps.aggregatedLanguage(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, "NFR");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCentralNode, myConceptMobileRobot, myConceptNFR, myConceptSensor);
+    return Arrays.asList(myConceptActuators, myConceptCentralNode, myConceptHardwareComponent, myConceptHardwareComponentInst, myConceptHardwareRef, myConceptMobileRobot, myConceptSensors, myConceptSoftwareComponent, myConceptSoftwareComponentInst);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.Actuators:
+        return myConceptActuators;
       case LanguageConceptSwitch.CentralNode:
         return myConceptCentralNode;
+      case LanguageConceptSwitch.HardwareComponent:
+        return myConceptHardwareComponent;
+      case LanguageConceptSwitch.HardwareComponentInst:
+        return myConceptHardwareComponentInst;
+      case LanguageConceptSwitch.HardwareRef:
+        return myConceptHardwareRef;
       case LanguageConceptSwitch.MobileRobot:
         return myConceptMobileRobot;
-      case LanguageConceptSwitch.NFR:
-        return myConceptNFR;
-      case LanguageConceptSwitch.Sensor:
-        return myConceptSensor;
+      case LanguageConceptSwitch.Sensors:
+        return myConceptSensors;
+      case LanguageConceptSwitch.SoftwareComponent:
+        return myConceptSoftwareComponent;
+      case LanguageConceptSwitch.SoftwareComponentInst:
+        return myConceptSoftwareComponentInst;
       default:
         return null;
     }
@@ -59,13 +74,54 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForActuators() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "Actuators", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7048L);
+    b.class_(false, false, false);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845348424");
+    b.version(2);
+    b.property("type", 0x6a627af554be705aL).type(PrimitiveTypeId.STRING).origin("7665824709845348442").done();
+    b.property("id", 0x6a627af554be705fL).type(PrimitiveTypeId.INTEGER).origin("7665824709845348447").done();
+    b.aggregate("connect", 0x6a627af554be7058L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("7665824709845348440").done();
+    b.aggregate("nfr", 0x6a627af554bfd498L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL).optional(true).ordered(true).multiple(true).origin("7665824709845439640").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForCentralNode() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "CentralNode", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9d0aL);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262652682");
     b.version(2);
-    b.aggregate("nfrs", 0x66d5a6d2efc3cb9fL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x66d5a6d2efc3cb97L).optional(true).ordered(true).multiple(true).origin("7410012186803948447").done();
+    b.aggregate("hardware", 0x6a627af554bfd4cbL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L).optional(true).ordered(true).multiple(true).origin("7665824709845439691").done();
+    b.aggregate("software", 0x6a627af554bfd4ccL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L).optional(true).ordered(true).multiple(true).origin("7665824709845439692").done();
+    b.aggregate("connect", 0x6a627af554bfd4cdL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("7665824709845439693").done();
+    b.aggregate("nfr", 0x6a627af554bfd4ceL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL).optional(true).ordered(true).multiple(true).origin("7665824709845439694").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForHardwareComponent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "HardwareComponent", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L);
+    b.class_(false, false, true);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845348403");
+    b.version(2);
+    b.aggregate("sensors", 0x6a627af554be704cL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7047L).optional(true).ordered(true).multiple(true).origin("7665824709845348428").done();
+    b.aggregate("actuators", 0x6a627af554be704eL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7048L).optional(true).ordered(true).multiple(true).origin("7665824709845348430").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForHardwareComponentInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "HardwareComponentInst", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c03797L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845464983");
+    b.version(2);
+    b.associate("hardware", 0x6a627af554c0a267L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L).optional(false).origin("7665824709845492327").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForHardwareRef() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "HardwareRef", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c0a264L);
+    b.class_(false, false, false);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845492324");
+    b.version(2);
+    b.associate("hardware", 0x6a627af554c0a265L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L).optional(true).origin("7665824709845492325").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMobileRobot() {
@@ -74,29 +130,40 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262653020");
     b.version(2);
-    b.aggregate("nfrs", 0x66d5a6d2efc3cb9dL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x66d5a6d2efc3cb97L).optional(true).ordered(true).multiple(true).origin("7410012186803948445").done();
-    b.aggregate("sensors", 0x66d5a6d2efc45938L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9855L).optional(true).ordered(true).multiple(true).origin("7410012186803984696").done();
-    b.aggregate("performanceReq", 0x25c82fc5fc2de8b2L).target(0xb37e01ffa47f4ea1L, 0x99024f840aa546c5L, 0x66d5a6d2efc2c573L).optional(true).ordered(true).multiple(false).origin("2722478502131394738").done();
-    b.aggregate("tasks", 0x25c82fc5fc339732L).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335becL).optional(true).ordered(true).multiple(true).origin("2722478502131767090").done();
-    b.aggregate("communication", 0x25c82fc5fc35b49aL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("2722478502131905690").done();
+    b.aggregate("hardware", 0x6a627af554bfd4a1L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c03797L).optional(true).ordered(true).multiple(true).origin("7665824709845439649").done();
+    b.aggregate("software", 0x6a627af554bfd4a3L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c0a269L).optional(true).ordered(true).multiple(true).origin("7665824709845439651").done();
+    b.aggregate("connect", 0x6a627af554bfd4a6L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("7665824709845439654").done();
+    b.aggregate("nfr", 0x6a627af554bfd4aaL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL).optional(true).ordered(true).multiple(true).origin("7665824709845439658").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForNFR() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "NFR", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x66d5a6d2efc3cb97L);
-    b.class_(false, false, false);
-    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7410012186803948439");
-    b.version(2);
-    b.property("name", 0x66d5a6d2efc3cb98L).type(PrimitiveTypeId.STRING).origin("7410012186803948440").done();
-    b.property("value", 0x66d5a6d2efc3cb9aL).type(PrimitiveTypeId.STRING).origin("7410012186803948442").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSensor() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "Sensor", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9855L);
+  private static ConceptDescriptor createDescriptorForSensors() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "Sensors", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7047L);
     b.class_(false, false, true);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/5599264617262651477");
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845348423");
     b.version(2);
-    b.property("ID", 0x2adb05841c5e0843L).type(PrimitiveTypeId.INTEGER).origin("3088068034462353475").done();
+    b.property("type", 0x6a627af554be7053L).type(PrimitiveTypeId.STRING).origin("7665824709845348435").done();
+    b.property("id", 0x6a627af554be7055L).type(PrimitiveTypeId.INTEGER).origin("7665824709845348437").done();
+    b.aggregate("connect", 0x6a627af554be7051L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("7665824709845348433").done();
+    b.aggregate("nfr", 0x6a627af554bfd494L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL).optional(true).ordered(true).multiple(true).origin("7665824709845439636").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSoftwareComponent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "SoftwareComponent", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845348404");
+    b.version(2);
+    b.aggregate("nfr", 0x6a627af554bfd4afL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL).optional(true).ordered(true).multiple(true).origin("7665824709845439663").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSoftwareComponentInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Component_v1", "SoftwareComponentInst", 0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c0a269L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/7665824709845492329");
+    b.version(2);
+    b.associate("software", 0x6a627af554c0a26fL).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L).optional(false).origin("7665824709845492335").done();
     return b.create();
   }
 }

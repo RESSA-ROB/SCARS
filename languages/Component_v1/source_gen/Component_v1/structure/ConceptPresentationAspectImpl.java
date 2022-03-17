@@ -9,16 +9,28 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Actuators;
   private ConceptPresentation props_CentralNode;
+  private ConceptPresentation props_HardwareComponent;
+  private ConceptPresentation props_HardwareComponentInst;
+  private ConceptPresentation props_HardwareRef;
   private ConceptPresentation props_MobileRobot;
-  private ConceptPresentation props_NFR;
-  private ConceptPresentation props_Sensor;
+  private ConceptPresentation props_Sensors;
+  private ConceptPresentation props_SoftwareComponent;
+  private ConceptPresentation props_SoftwareComponentInst;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Actuators:
+        if (props_Actuators == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Actuators");
+          props_Actuators = cpb.create();
+        }
+        return props_Actuators;
       case LanguageConceptSwitch.CentralNode:
         if (props_CentralNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -26,6 +38,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CentralNode = cpb.create();
         }
         return props_CentralNode;
+      case LanguageConceptSwitch.HardwareComponent:
+        if (props_HardwareComponent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("HardwareComponent");
+          props_HardwareComponent = cpb.create();
+        }
+        return props_HardwareComponent;
+      case LanguageConceptSwitch.HardwareComponentInst:
+        if (props_HardwareComponentInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HardwareComponentInst = cpb.create();
+        }
+        return props_HardwareComponentInst;
+      case LanguageConceptSwitch.HardwareRef:
+        if (props_HardwareRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("References to hardware component inside hardware instance");
+          cpb.rawPresentation("HardwareRef");
+          props_HardwareRef = cpb.create();
+        }
+        return props_HardwareRef;
       case LanguageConceptSwitch.MobileRobot:
         if (props_MobileRobot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -33,20 +66,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MobileRobot = cpb.create();
         }
         return props_MobileRobot;
-      case LanguageConceptSwitch.NFR:
-        if (props_NFR == null) {
+      case LanguageConceptSwitch.Sensors:
+        if (props_Sensors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NFR");
-          props_NFR = cpb.create();
+          cpb.rawPresentation("Sensors");
+          props_Sensors = cpb.create();
         }
-        return props_NFR;
-      case LanguageConceptSwitch.Sensor:
-        if (props_Sensor == null) {
+        return props_Sensors;
+      case LanguageConceptSwitch.SoftwareComponent:
+        if (props_SoftwareComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_Sensor = cpb.create();
+          props_SoftwareComponent = cpb.create();
         }
-        return props_Sensor;
+        return props_SoftwareComponent;
+      case LanguageConceptSwitch.SoftwareComponentInst:
+        if (props_SoftwareComponentInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SoftwareComponentInst = cpb.create();
+        }
+        return props_SoftwareComponentInst;
     }
     return null;
   }

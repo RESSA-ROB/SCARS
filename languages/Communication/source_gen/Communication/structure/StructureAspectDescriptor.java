@@ -25,6 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.aggregatedLanguage(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, "NFR");
   }
 
   @Override
@@ -67,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/2722478502131880396");
     b.version(2);
+    b.aggregate("QoS", 0x6a627af554be706bL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703dL).optional(true).ordered(true).multiple(true).origin("7665824709845348459").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOutPutPort() {
@@ -75,6 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/2722478502131880397");
     b.version(2);
+    b.aggregate("QoS", 0x6a627af554be706dL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703dL).optional(true).ordered(true).multiple(true).origin("7665824709845348461").done();
     return b.create();
   }
 }
