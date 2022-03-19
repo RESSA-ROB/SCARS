@@ -44,12 +44,16 @@
       </languageVersions>
       <dependencyVersions>
         <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+        <module reference="4cc07462-84b3-4d01-8adb-629ddd3cebd4(Capabilities)" version="0" />
         <module reference="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f(Communication)" version="0" />
         <module reference="a34317fb-fd75-443c-9221-61b824066c4e(Communication.generator)" version="0" />
+        <module reference="79fb875b-5c4f-4986-892e-2475e9d0c842(Component_v1)" version="0" />
         <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)" version="0" />
+        <module reference="b37e01ff-a47f-4ea1-9902-4f840aa546c5(NFR2)" version="0" />
+        <module reference="cf635ce5-1976-4c6b-b1c5-f43814e251b9(TaskOperations)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
@@ -57,6 +61,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="true">79fb875b-5c4f-4986-892e-2475e9d0c842(Component_v1)</dependency>
     <dependency reexport="true">ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)</dependency>
   </dependencies>
   <languageVersions>
@@ -95,11 +100,15 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
+    <module reference="4cc07462-84b3-4d01-8adb-629ddd3cebd4(Capabilities)" version="0" />
     <module reference="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f(Communication)" version="0" />
+    <module reference="79fb875b-5c4f-4986-892e-2475e9d0c842(Component_v1)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="ddad85b5-8f76-40d8-9a0d-bd322c713e77(NFR)" version="0" />
+    <module reference="b37e01ff-a47f-4ea1-9902-4f840aa546c5(NFR2)" version="0" />
+    <module reference="cf635ce5-1976-4c6b-b1c5-f43814e251b9(TaskOperations)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
   </dependencyVersions>

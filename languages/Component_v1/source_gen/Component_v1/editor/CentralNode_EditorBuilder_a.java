@@ -399,7 +399,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.nfr$5Ino;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.RunTimeNFRs$uB;
+      return CONCEPTS.NFPProfile$7N;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -459,7 +459,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SConcept HardwareComponent$OS = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, "Component_v1.structure.HardwareComponent");
     /*package*/ static final SConcept SoftwareComponent$Pn = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, "Component_v1.structure.SoftwareComponent");
     /*package*/ static final SConcept CPort$Ih = MetaAdapterFactory.getConcept(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL, "Communication.structure.CPort");
-    /*package*/ static final SConcept RunTimeNFRs$uB = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554be703bL, "NFR.structure.RunTimeNFRs");
+    /*package*/ static final SConcept NFPProfile$7N = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554d0e736L, "Component_v1.structure.NFPProfile");
   }
 
   private static final class LINKS {

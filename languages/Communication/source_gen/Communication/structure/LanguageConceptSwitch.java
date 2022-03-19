@@ -10,13 +10,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int CPort = 0;
-  public static final int InputPort = 1;
-  public static final int OutPutPort = 2;
+  public static final int IPort = 1;
+  public static final int InputPort = 2;
+  public static final int OPort = 3;
+  public static final int OutPutPort = 4;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL);
     builder.put(0x25c82fc5fc3551ceL, CPort);
+    builder.put(0x6a627af554d0aec4L, IPort);
     builder.put(0x25c82fc5fc3551ccL, InputPort);
+    builder.put(0x6a627af554d0aec7L, OPort);
     builder.put(0x25c82fc5fc3551cdL, OutPutPort);
     myIndex = builder.seal();
   }

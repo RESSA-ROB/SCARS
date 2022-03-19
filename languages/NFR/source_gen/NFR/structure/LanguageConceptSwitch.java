@@ -9,15 +9,19 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int Performance = 0;
-  public static final int QuantifyNFR = 1;
-  public static final int Safety = 2;
+  public static final int ArchitecturalNFRs = 0;
+  public static final int CommunicationQoS = 1;
+  public static final int NFRFunction = 2;
+  public static final int RunTimeNFRs = 3;
+  public static final int RunTimeNFRsReference = 4;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L);
-    builder.put(0x66d5a6d2efc1fb34L, Performance);
-    builder.put(0x66d5a6d2efc2c6ebL, QuantifyNFR);
-    builder.put(0x66d5a6d2efc2c321L, Safety);
+    builder.put(0x6a627af554ccd695L, ArchitecturalNFRs);
+    builder.put(0x6a627af554ccd6b4L, CommunicationQoS);
+    builder.put(0x71a2aa893a520c22L, NFRFunction);
+    builder.put(0x6a627af554ccd696L, RunTimeNFRs);
+    builder.put(0x71a2aa893a588b29L, RunTimeNFRsReference);
     myIndex = builder.seal();
   }
 

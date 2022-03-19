@@ -16,6 +16,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -46,15 +49,15 @@
     <property role="EcuMT" value="2722478502131880396" />
     <property role="TrG5h" value="InputPort" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="PrWs8" id="2n8bWnWdl7k" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="6DyuJlkOaVa" role="PzmwI">
+      <ref role="PrY4T" node="6DyuJlkOaV4" resolve="IPort" />
     </node>
     <node concept="1TJgyj" id="6DyuJlkJB1F" role="1TKVEi">
       <property role="IQ2ns" value="7665824709845348459" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="QoS" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:6DyuJlkJB0X" resolve="CommunicationQoS" />
+      <ref role="20lvS9" to="7pce:6DyuJlkNdqO" resolve="CommunicationQoS" />
     </node>
     <node concept="1TJgyi" id="6DyuJlkJXir" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845439643" />
@@ -66,15 +69,15 @@
     <property role="EcuMT" value="2722478502131880397" />
     <property role="TrG5h" value="OutPutPort" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="PrWs8" id="2n8bWnWdl7m" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="6DyuJlkOaVd" role="PzmwI">
+      <ref role="PrY4T" node="6DyuJlkOaV7" resolve="OPort" />
     </node>
     <node concept="1TJgyj" id="6DyuJlkJB1H" role="1TKVEi">
       <property role="IQ2ns" value="7665824709845348461" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="QoS" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:6DyuJlkJB0X" resolve="CommunicationQoS" />
+      <ref role="20lvS9" to="7pce:6DyuJlkNdqO" resolve="CommunicationQoS" />
     </node>
     <node concept="1TJgyi" id="6DyuJlkJXit" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845439645" />
@@ -100,6 +103,20 @@
       <property role="20kJfa" value="oport" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="2n8bWnWdl7d" resolve="OutPutPort" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6DyuJlkOaV4">
+    <property role="EcuMT" value="7665824709846544068" />
+    <property role="TrG5h" value="IPort" />
+    <node concept="PrWs8" id="6DyuJlkOaV5" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6DyuJlkOaV7">
+    <property role="EcuMT" value="7665824709846544071" />
+    <property role="TrG5h" value="OPort" />
+    <node concept="PrWs8" id="6DyuJlkOaV8" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
 </model>

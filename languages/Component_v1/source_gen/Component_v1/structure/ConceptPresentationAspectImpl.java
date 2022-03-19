@@ -11,10 +11,16 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Actuators;
   private ConceptPresentation props_CentralNode;
+  private ConceptPresentation props_HTypeIF;
   private ConceptPresentation props_HardwareComponent;
   private ConceptPresentation props_HardwareComponentInst;
   private ConceptPresentation props_HardwareRef;
+  private ConceptPresentation props_IHardwareComponentInst;
   private ConceptPresentation props_MobileRobot;
+  private ConceptPresentation props_NFPProfile;
+  private ConceptPresentation props_NFP_Profile;
+  private ConceptPresentation props_NFR;
+  private ConceptPresentation props_RunTimeNFRsAnnotation;
   private ConceptPresentation props_Sensors;
   private ConceptPresentation props_SoftwareComponent;
   private ConceptPresentation props_SoftwareComponentInst;
@@ -38,16 +44,24 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CentralNode = cpb.create();
         }
         return props_CentralNode;
+      case LanguageConceptSwitch.HTypeIF:
+        if (props_HTypeIF == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HTypeIF = cpb.create();
+        }
+        return props_HTypeIF;
       case LanguageConceptSwitch.HardwareComponent:
         if (props_HardwareComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("HardwareComponent");
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0q);
           props_HardwareComponent = cpb.create();
         }
         return props_HardwareComponent;
       case LanguageConceptSwitch.HardwareComponentInst:
         if (props_HardwareComponentInst == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_HardwareComponentInst = cpb.create();
         }
         return props_HardwareComponentInst;
@@ -59,6 +73,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_HardwareRef = cpb.create();
         }
         return props_HardwareRef;
+      case LanguageConceptSwitch.IHardwareComponentInst:
+        if (props_IHardwareComponentInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IHardwareComponentInst = cpb.create();
+        }
+        return props_IHardwareComponentInst;
       case LanguageConceptSwitch.MobileRobot:
         if (props_MobileRobot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -66,10 +86,39 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MobileRobot = cpb.create();
         }
         return props_MobileRobot;
+      case LanguageConceptSwitch.NFPProfile:
+        if (props_NFPProfile == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_NFPProfile = cpb.create();
+        }
+        return props_NFPProfile;
+      case LanguageConceptSwitch.NFP_Profile:
+        if (props_NFP_Profile == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NFP_Profile = cpb.create();
+        }
+        return props_NFP_Profile;
+      case LanguageConceptSwitch.NFR:
+        if (props_NFR == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_NFR = cpb.create();
+        }
+        return props_NFR;
+      case LanguageConceptSwitch.RunTimeNFRsAnnotation:
+        if (props_RunTimeNFRsAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("NFR Profile annotation for different nodes");
+          cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554d0e74cL, 0x6a627af554d0e753L, "profile", "", "");
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a11b0q);
+          props_RunTimeNFRsAnnotation = cpb.create();
+        }
+        return props_RunTimeNFRsAnnotation;
       case LanguageConceptSwitch.Sensors:
         if (props_Sensors == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Sensors");
+          cpb.presentationByName();
           props_Sensors = cpb.create();
         }
         return props_Sensors;

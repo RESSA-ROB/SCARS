@@ -9,36 +9,52 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_Performance;
-  private ConceptPresentation props_QuantifyNFR;
-  private ConceptPresentation props_Safety;
+  private ConceptPresentation props_ArchitecturalNFRs;
+  private ConceptPresentation props_CommunicationQoS;
+  private ConceptPresentation props_NFRFunction;
+  private ConceptPresentation props_RunTimeNFRs;
+  private ConceptPresentation props_RunTimeNFRsReference;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.Performance:
-        if (props_Performance == null) {
+      case LanguageConceptSwitch.ArchitecturalNFRs:
+        if (props_ArchitecturalNFRs == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ArchitecturalNFRs");
+          props_ArchitecturalNFRs = cpb.create();
+        }
+        return props_ArchitecturalNFRs;
+      case LanguageConceptSwitch.CommunicationQoS:
+        if (props_CommunicationQoS == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CommunicationQoS");
+          props_CommunicationQoS = cpb.create();
+        }
+        return props_CommunicationQoS;
+      case LanguageConceptSwitch.NFRFunction:
+        if (props_NFRFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_Performance = cpb.create();
+          props_NFRFunction = cpb.create();
         }
-        return props_Performance;
-      case LanguageConceptSwitch.QuantifyNFR:
-        if (props_QuantifyNFR == null) {
+        return props_NFRFunction;
+      case LanguageConceptSwitch.RunTimeNFRs:
+        if (props_RunTimeNFRs == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("QuantifyNFR");
-          props_QuantifyNFR = cpb.create();
+          cpb.presentationByName();
+          props_RunTimeNFRs = cpb.create();
         }
-        return props_QuantifyNFR;
-      case LanguageConceptSwitch.Safety:
-        if (props_Safety == null) {
+        return props_RunTimeNFRs;
+      case LanguageConceptSwitch.RunTimeNFRsReference:
+        if (props_RunTimeNFRsReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Safety");
-          props_Safety = cpb.create();
+          cpb.presentationByReference(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a588b29L, 0x71a2aa893a588b2aL, "field", "", "");
+          props_RunTimeNFRsReference = cpb.create();
         }
-        return props_Safety;
+        return props_RunTimeNFRsReference;
     }
     return null;
   }

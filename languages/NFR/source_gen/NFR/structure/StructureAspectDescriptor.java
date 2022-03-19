@@ -4,18 +4,24 @@ package NFR.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptPerformance = createDescriptorForPerformance();
-  /*package*/ final ConceptDescriptor myConceptQuantifyNFR = createDescriptorForQuantifyNFR();
-  /*package*/ final ConceptDescriptor myConceptSafety = createDescriptorForSafety();
+  /*package*/ final ConceptDescriptor myConceptArchitecturalNFRs = createDescriptorForArchitecturalNFRs();
+  /*package*/ final ConceptDescriptor myConceptCommunicationQoS = createDescriptorForCommunicationQoS();
+  /*package*/ final ConceptDescriptor myConceptNFRFunction = createDescriptorForNFRFunction();
+  /*package*/ final ConceptDescriptor myConceptRunTimeNFRs = createDescriptorForRunTimeNFRs();
+  /*package*/ final ConceptDescriptor myConceptRunTimeNFRsReference = createDescriptorForRunTimeNFRsReference();
+  /*package*/ final EnumerationDescriptor myEnumerationOperatorEnumeration = new EnumerationDescriptor_OperatorEnumeration();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -26,56 +32,86 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.extendedLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+    deps.aggregatedLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptPerformance, myConceptQuantifyNFR, myConceptSafety);
+    return Arrays.asList(myConceptArchitecturalNFRs, myConceptCommunicationQoS, myConceptNFRFunction, myConceptRunTimeNFRs, myConceptRunTimeNFRsReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.Performance:
-        return myConceptPerformance;
-      case LanguageConceptSwitch.QuantifyNFR:
-        return myConceptQuantifyNFR;
-      case LanguageConceptSwitch.Safety:
-        return myConceptSafety;
+      case LanguageConceptSwitch.ArchitecturalNFRs:
+        return myConceptArchitecturalNFRs;
+      case LanguageConceptSwitch.CommunicationQoS:
+        return myConceptCommunicationQoS;
+      case LanguageConceptSwitch.NFRFunction:
+        return myConceptNFRFunction;
+      case LanguageConceptSwitch.RunTimeNFRs:
+        return myConceptRunTimeNFRs;
+      case LanguageConceptSwitch.RunTimeNFRsReference:
+        return myConceptRunTimeNFRsReference;
       default:
         return null;
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationOperatorEnumeration);
+  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForPerformance() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "Performance", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x66d5a6d2efc1fb34L);
+  private static ConceptDescriptor createDescriptorForArchitecturalNFRs() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "ArchitecturalNFRs", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd695L);
+    b.class_(false, false, false);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7665824709846292117");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCommunicationQoS() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "CommunicationQoS", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6b4L);
+    b.class_(false, false, false);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7665824709846292148");
+    b.version(2);
+    b.property("propName", 0x6a627af554ccd6b5L).type(PrimitiveTypeId.STRING).origin("7665824709846292149").done();
+    b.property("values", 0x6a627af554ccd6b7L).type(PrimitiveTypeId.STRING).origin("7665824709846292151").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNFRFunction() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "NFRFunction", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/8188294578878680098");
+    b.version(2);
+    b.aggregate("express", 0x71a2aa893a56458fL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("8188294578878956943").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRunTimeNFRs() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRs", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7410012186803829556");
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7665824709846292118");
     b.version(2);
-    b.property("response_time", 0x66d5a6d2efc1fb35L).type(PrimitiveTypeId.INTEGER).origin("7410012186803829557").done();
+    b.property("operator", 0x6a627af554ccd6a3L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL)).origin("7665824709846292131").done();
+    b.property("constraint", 0x6a627af554ccd6a6L).type(PrimitiveTypeId.INTEGER).origin("7665824709846292134").done();
+    b.property("unit", 0x6a627af554ccd6aaL).type(PrimitiveTypeId.STRING).origin("7665824709846292138").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForQuantifyNFR() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "QuantifyNFR", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x66d5a6d2efc2c6ebL);
-    b.class_(false, false, true);
-    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7410012186803881707");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSafety() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "Safety", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x66d5a6d2efc2c321L);
+  private static ConceptDescriptor createDescriptorForRunTimeNFRsReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRsReference", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a588b29L);
     b.class_(false, false, false);
-    b.super_("NFR.structure.QuantifyNFR", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x66d5a6d2efc2c6ebL);
-    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7410012186803880737");
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/8188294578879105833");
     b.version(2);
-    b.property("speed", 0x66d5a6d2efc2c322L).type(PrimitiveTypeId.INTEGER).origin("7410012186803880738").done();
+    b.associate("field", 0x71a2aa893a588b2aL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(false).origin("8188294578879105834").done();
     return b.create();
   }
 }

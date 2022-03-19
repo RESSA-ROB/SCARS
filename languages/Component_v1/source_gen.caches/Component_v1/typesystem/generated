@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="1fuxvlwz42eyh732iqig6q46rkg17xu">
-  <files names="TypesystemDescriptor.java" />
+<product version="3" modelHash="bhm0h3ag5ksn6igpgsf98wbdajy4biy">
+  <files names="TestingPropertyValues_NonTypesystemRule.java:TypesystemDescriptor.java" />
 </product>
 
