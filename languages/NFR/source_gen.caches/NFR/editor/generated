@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-9h20r033zeo3rig7hg6k8od0rtox9dn">
-  <files names="CommunicationQoS_Editor.java:CommunicationQoS_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:NFRFunction_Editor.java:NFRFunction_EditorBuilder_a.java:RunTimeNFRsReference_Editor.java:RunTimeNFRsReference_EditorBuilder_a.java:RunTimeNFRsReference_SubstituteMenu.java:RunTimeNFRs_Editor.java:RunTimeNFRs_EditorBuilder_a.java" />
+<product version="3" modelHash="774vf0q2azlrima6ctmzur5458etqv3">
+  <files names="CommunicationQoS_Editor.java:CommunicationQoS_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:NFRFunction_Editor.java:NFRFunction_EditorBuilder_a.java:NFRFunction_SubstituteMenu.java:RunTimeNFRReference_SubstituteMenu.java:RunTimeNFRs2_Editor.java:RunTimeNFRs2_EditorBuilder_a.java:RunTimeNFRs_Editor.java:RunTimeNFRs_EditorBuilder_a.java" />
 </product>
 

@@ -19,19 +19,11 @@
         <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
     </language>
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
-      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
-        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
-        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
-      </concept>
-    </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
         <child id="7665824709845439654" name="connect" index="YRqTj" />
         <child id="7665824709845439649" name="hardware" index="YRqTk" />
         <child id="7665824709845439658" name="nfr" index="YRqTv" />
-        <child id="8188294578878680092" name="express" index="1bWaql" />
       </concept>
       <concept id="7665824709845464983" name="Component_v1.structure.IHardwareComponentInst" flags="ng" index="YC$Py">
         <reference id="7665824709845492327" name="hardware" index="YCHyi" />
@@ -57,10 +49,13 @@
         <property id="7665824709846292138" name="unit" index="YFELv" />
       </concept>
       <concept id="8188294578878680098" name="NFR.structure.NFRFunction" flags="ng" index="1bWaqF">
-        <child id="8188294578878956943" name="express" index="1bXeW6" />
+        <reference id="4537274526089673723" name="fields" index="1AXPzv" />
       </concept>
-      <concept id="8188294578879105833" name="NFR.structure.RunTimeNFRsReference" flags="ng" index="1bYy6w">
-        <reference id="8188294578879105834" name="field" index="1bYy6z" />
+      <concept id="4537274526088832678" name="NFR.structure.RunTimeNFRs2" flags="ng" index="1D0Sm2">
+        <property id="4537274526088832679" name="operator" index="1D0Sm3" />
+        <property id="4537274526088832680" name="constraint" index="1D0Smc" />
+        <property id="4537274526088832681" name="unit" index="1D0Smd" />
+        <child id="4537274526088832687" name="attributes" index="1D0Smb" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -69,42 +64,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="2uVwJs" id="6DyuJlkMxpf">
-    <property role="TrG5h" value="ROB" />
-    <node concept="3pZnSb" id="6DyuJlkMxuh" role="YRqTj">
-      <node concept="3pZnS9" id="6DyuJlkMxuj" role="3pZnSa">
-        <property role="TrG5h" value="Traffic" />
-        <property role="YRqTI" value="Get traffic info" />
-      </node>
-      <node concept="3pZnS8" id="6DyuJlkMxun" role="3pZnSk">
-        <property role="TrG5h" value="Location" />
-        <property role="YRqTC" value="Location Info" />
-      </node>
-    </node>
-    <node concept="YFELz" id="76yEC$Ul$e$" role="YRqTv">
-      <property role="TrG5h" value="responseTime" />
-      <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-      <property role="YFELj" value="200" />
-      <property role="YFELv" value="msec" />
-    </node>
-    <node concept="YE6PC" id="6k$okrZELJc" role="YRqTk">
-      <ref role="YCHyi" node="5fFrGxqGmdB" resolve="H2" />
-    </node>
-    <node concept="YE6PC" id="6k$okrZELJt" role="YRqTk">
-      <ref role="YCHyi" node="76yEC$Ul6Ej" resolve="H1" />
-    </node>
-    <node concept="1bWaqF" id="6k$okrZELJj" role="1bWaql">
-      <property role="TrG5h" value="TotalResponseTime" />
-      <node concept="3cpWs3" id="6k$okrZELJM" role="1bXeW6">
-        <node concept="1bYy6w" id="6k$okrZELJV" role="3uHU7w">
-          <ref role="1bYy6z" node="6k$okrZEIGd" resolve="responseTime1" />
-        </node>
-        <node concept="1bYy6w" id="6k$okrZELJC" role="3uHU7B">
-          <ref role="1bYy6z" node="76yEC$UoAy0" resolve="range" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="YR0F6" id="5fFrGxqGmdB">
     <property role="TrG5h" value="H2" />
     <property role="1bYRJ0" value="76yEC$Umt1H/Actuator" />
@@ -142,8 +101,8 @@
       <node concept="YFELz" id="6k$okrZEIGd" role="YGDRf">
         <property role="TrG5h" value="responseTime1" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="100" />
-        <property role="YFELv" value="sec" />
+        <property role="YFELj" value="200" />
+        <property role="YFELv" value="msec" />
       </node>
     </node>
   </node>
@@ -159,8 +118,63 @@
       <node concept="YFELz" id="76yEC$UoAy0" role="YGDRf">
         <property role="TrG5h" value="range" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="500" />
+        <property role="YFELj" value="100" />
         <property role="YFELv" value="metre" />
+      </node>
+    </node>
+  </node>
+  <node concept="2uVwJs" id="3VRCMhnYbIx">
+    <property role="TrG5h" value="ROB1" />
+    <node concept="YE6PC" id="3VRCMhnYbIy" role="YRqTk">
+      <ref role="YCHyi" node="76yEC$Ul6Ej" resolve="H1" />
+    </node>
+    <node concept="YE6PC" id="7OroREMSQT2" role="YRqTk">
+      <ref role="YCHyi" node="5fFrGxqGmdB" resolve="H2" />
+    </node>
+    <node concept="YE6PC" id="7OroREMSQTf" role="YRqTk">
+      <ref role="YCHyi" node="7OroREMSQT6" resolve="H4" />
+    </node>
+    <node concept="YE6PC" id="7OroREMUNEw" role="YRqTk">
+      <ref role="YCHyi" node="76yEC$UoAxT" resolve="H3" />
+    </node>
+    <node concept="3pZnSb" id="3VRCMhnYbIF" role="YRqTj">
+      <node concept="3pZnS9" id="3VRCMhnYbIH" role="3pZnSa" />
+      <node concept="3pZnS8" id="3VRCMhnYbIJ" role="3pZnSk" />
+    </node>
+    <node concept="1D0Sm2" id="3VRCMho0uP6" role="YRqTv">
+      <property role="TrG5h" value="responseTime" />
+      <property role="1D0Sm3" value="6DyuJlkNdqL/less_than_equal_to" />
+      <property role="1D0Smc" value="200" />
+      <property role="1D0Smd" value="msec" />
+      <node concept="1bWaqF" id="3VRCMho0uP8" role="1D0Smb">
+        <ref role="1AXPzv" node="6k$okrZEIGd" resolve="responseTime1" />
+      </node>
+      <node concept="1bWaqF" id="7OroREMSQTL" role="1D0Smb">
+        <ref role="1AXPzv" node="7OroREMSQT9" resolve="responseTime4" />
+      </node>
+      <node concept="1bWaqF" id="7OroREMTrcv" role="1D0Smb">
+        <ref role="1AXPzv" node="76yEC$Umf0P" resolve="responseTime2" />
+      </node>
+    </node>
+    <node concept="1D0Sm2" id="7OroREMTDB$" role="YRqTv">
+      <property role="TrG5h" value="maxRange" />
+      <property role="1D0Sm3" value="6DyuJlkNdqK/greater_than_equal_to" />
+      <property role="1D0Smc" value="200" />
+      <property role="1D0Smd" value="metre" />
+      <node concept="1bWaqF" id="7OroREMTDBE" role="1D0Smb">
+        <ref role="1AXPzv" node="76yEC$UoAy0" resolve="range" />
+      </node>
+    </node>
+  </node>
+  <node concept="YR0F6" id="7OroREMSQT6">
+    <property role="TrG5h" value="H4" />
+    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
+    <node concept="YR0EM" id="7OroREMSQT7" role="YR0ET">
+      <node concept="YFELz" id="7OroREMSQT9" role="YGDRf">
+        <property role="TrG5h" value="responseTime4" />
+        <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
+        <property role="YFELj" value="200" />
+        <property role="YFELv" value="msecs" />
       </node>
     </node>
   </node>

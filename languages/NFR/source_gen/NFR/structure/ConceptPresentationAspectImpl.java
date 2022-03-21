@@ -11,9 +11,11 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_ArchitecturalNFRs;
   private ConceptPresentation props_CommunicationQoS;
+  private ConceptPresentation props_Expression2;
   private ConceptPresentation props_NFRFunction;
+  private ConceptPresentation props_RunTimeNFRReference;
   private ConceptPresentation props_RunTimeNFRs;
-  private ConceptPresentation props_RunTimeNFRsReference;
+  private ConceptPresentation props_RunTimeNFRs2;
 
   @Override
   @Nullable
@@ -34,6 +36,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CommunicationQoS = cpb.create();
         }
         return props_CommunicationQoS;
+      case LanguageConceptSwitch.Expression2:
+        if (props_Expression2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Expression2");
+          props_Expression2 = cpb.create();
+        }
+        return props_Expression2;
       case LanguageConceptSwitch.NFRFunction:
         if (props_NFRFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -41,6 +50,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NFRFunction = cpb.create();
         }
         return props_NFRFunction;
+      case LanguageConceptSwitch.RunTimeNFRReference:
+        if (props_RunTimeNFRReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL, 0x3ef7a3245800fbffL, "field", "", "");
+          props_RunTimeNFRReference = cpb.create();
+        }
+        return props_RunTimeNFRReference;
       case LanguageConceptSwitch.RunTimeNFRs:
         if (props_RunTimeNFRs == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -48,13 +64,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RunTimeNFRs = cpb.create();
         }
         return props_RunTimeNFRs;
-      case LanguageConceptSwitch.RunTimeNFRsReference:
-        if (props_RunTimeNFRsReference == null) {
+      case LanguageConceptSwitch.RunTimeNFRs2:
+        if (props_RunTimeNFRs2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a588b29L, 0x71a2aa893a588b2aL, "field", "", "");
-          props_RunTimeNFRsReference = cpb.create();
+          cpb.presentationByName();
+          props_RunTimeNFRs2 = cpb.create();
         }
-        return props_RunTimeNFRsReference;
+        return props_RunTimeNFRs2;
     }
     return null;
   }

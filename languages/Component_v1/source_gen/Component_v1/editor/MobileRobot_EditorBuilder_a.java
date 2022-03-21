@@ -79,9 +79,6 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     editorCell.addEditorCell(createEmpty_6());
     editorCell.addEditorCell(createEmpty_7());
     editorCell.addEditorCell(createCollection_5());
-    editorCell.addEditorCell(createEmpty_8());
-    editorCell.addEditorCell(createEmpty_9());
-    editorCell.addEditorCell(createCollection_6());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -480,7 +477,6 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     editorCell.setCellId("refNodeList_nfr");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
@@ -502,7 +498,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
       return LINKS.nfr$86Bz;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.RunTimeNFRs$Gm;
+      return CONCEPTS.RunTimeNFRs2$Do;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -552,108 +548,6 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
       }
     }
   }
-  private EditorCell createEmpty_8() {
-    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-    editorCell.setCellId("Empty_p0xh82_n0");
-    return editorCell;
-  }
-  private EditorCell createEmpty_9() {
-    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
-    editorCell.setCellId("Empty_p0xh82_o0");
-    return editorCell;
-  }
-  private EditorCell createCollection_6() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_p0xh82_p0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefNodeList_4());
-    return editorCell;
-  }
-  private EditorCell createRefNodeList_4() {
-    AbstractCellListHandler handler = new expressListHandler_p0xh82_a51a(myNode, getEditorContext());
-    EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_express");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSRole(handler.getElementSRole());
-    return editorCell;
-  }
-  private static class expressListHandler_p0xh82_a51a extends RefNodeListHandler {
-    @NotNull
-    private SNode myNode;
-
-    public expressListHandler_p0xh82_a51a(SNode ownerNode, EditorContext context) {
-      super(context, false);
-      myNode = ownerNode;
-    }
-
-    @NotNull
-    public SNode getNode() {
-      return myNode;
-    }
-    public SContainmentLink getSLink() {
-      return LINKS.express$hSx;
-    }
-    public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.NFRFunction$sx;
-    }
-
-    public EditorCell createNodeCell(SNode elementNode) {
-      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
-      installElementCellActions(elementNode, elementCell, false);
-      return elementCell;
-    }
-    public EditorCell createEmptyCell() {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(expressListHandler_p0xh82_a51a.this.getNode(), LINKS.express$hSx));
-      try {
-        EditorCell emptyCell = null;
-        emptyCell = super.createEmptyCell();
-        installElementCellActions(null, emptyCell, true);
-        setCellContext(emptyCell);
-        return emptyCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    }
-
-    private static final Object OBJ = new Object();
-
-    public void installElementCellActions(SNode elementNode, EditorCell elementCell, boolean isEmptyCell) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_COMPLETE_SET) == null) {
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_COMPLETE_SET, OBJ);
-          elementCell.setSubstituteInfo((isEmptyCell ? new SEmptyContainmentSubstituteInfo(elementCell) : new SChildSubstituteInfo(elementCell)));
-        }
-      }
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_DELETE_SET) == null) {
-        if (elementNode != null) {
-          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_DELETE_SET, OBJ);
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.FORWARD));
-        }
-      }
-      if (elementCell.getUserObject(ELEMENT_CELL_BACKSPACE_SET) == null) {
-        if (elementNode != null) {
-          elementCell.putUserObject(ELEMENT_CELL_BACKSPACE_SET, OBJ);
-          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
-        }
-      }
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        if (elementNode != null) {
-          elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, OBJ);
-        }
-      }
-    }
-  }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -664,8 +558,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     /*package*/ static final SInterfaceConcept IHardwareComponentInst$Ym = MetaAdapterFactory.getInterfaceConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c03797L, "Component_v1.structure.IHardwareComponentInst");
     /*package*/ static final SInterfaceConcept SoftwareComponentInst$DF = MetaAdapterFactory.getInterfaceConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c0a269L, "Component_v1.structure.SoftwareComponentInst");
     /*package*/ static final SConcept CPort$Ih = MetaAdapterFactory.getConcept(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL, "Communication.structure.CPort");
-    /*package*/ static final SConcept RunTimeNFRs$Gm = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, "NFR.structure.RunTimeNFRs");
-    /*package*/ static final SConcept NFRFunction$sx = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L, "NFR.structure.NFRFunction");
+    /*package*/ static final SConcept RunTimeNFRs2$Do = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, "NFR.structure.RunTimeNFRs2");
   }
 
   private static final class LINKS {
@@ -673,6 +566,5 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     /*package*/ static final SContainmentLink software$84Ys = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a3L, "software");
     /*package*/ static final SContainmentLink connect$85Fv = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a6L, "connect");
     /*package*/ static final SContainmentLink nfr$86Bz = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4aaL, "nfr");
-    /*package*/ static final SContainmentLink express$hSx = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x71a2aa893a520c1cL, "express");
   }
 }

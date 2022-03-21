@@ -160,14 +160,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="nfr" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:6DyuJlkNdqm" resolve="RunTimeNFRs" />
-    </node>
-    <node concept="1TJgyj" id="76yEC$UkwKs" role="1TKVEi">
-      <property role="IQ2ns" value="8188294578878680092" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="express" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:76yEC$UkwKy" resolve="NFRFunction" />
+      <ref role="20lvS9" to="7pce:3VRCMhnX2qA" resolve="RunTimeNFRs2" />
     </node>
   </node>
   <node concept="1TIwiD" id="6DyuJlkJB0N">

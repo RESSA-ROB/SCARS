@@ -11,17 +11,21 @@ public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int ArchitecturalNFRs = 0;
   public static final int CommunicationQoS = 1;
-  public static final int NFRFunction = 2;
-  public static final int RunTimeNFRs = 3;
-  public static final int RunTimeNFRsReference = 4;
+  public static final int Expression2 = 2;
+  public static final int NFRFunction = 3;
+  public static final int RunTimeNFRReference = 4;
+  public static final int RunTimeNFRs = 5;
+  public static final int RunTimeNFRs2 = 6;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L);
     builder.put(0x6a627af554ccd695L, ArchitecturalNFRs);
     builder.put(0x6a627af554ccd6b4L, CommunicationQoS);
+    builder.put(0x3ef7a32457f298fcL, Expression2);
     builder.put(0x71a2aa893a520c22L, NFRFunction);
+    builder.put(0x3ef7a3245800fbfeL, RunTimeNFRReference);
     builder.put(0x6a627af554ccd696L, RunTimeNFRs);
-    builder.put(0x71a2aa893a588b29L, RunTimeNFRsReference);
+    builder.put(0x3ef7a32457f426a6L, RunTimeNFRs2);
     myIndex = builder.seal();
   }
 

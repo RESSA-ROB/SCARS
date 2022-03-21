@@ -23,13 +23,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class RunTimeNFRsReference_SubstituteMenu extends SubstituteMenuBase {
+public class RunTimeNFRReference_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_a5y6e7_a(), CONCEPTS.RunTimeNFRsReference$wv));
-    result.add(new SMP_Subconcepts_a5y6e7_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_4fcc07_a(), CONCEPTS.RunTimeNFRReference$Ke));
+    result.add(new SMP_Subconcepts_4fcc07_b());
     return result;
   }
 
@@ -37,7 +37,7 @@ public class RunTimeNFRsReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RunTimeNFRsReference. Generated from implicit smart reference attribute.", new SNodePointer("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)", "8188294578879105833")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RunTimeNFRReference. Generated from implicit smart reference attribute.", new SNodePointer("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)", "4537274526089673726")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -46,11 +46,11 @@ public class RunTimeNFRsReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public class SMP_ReferenceScope_a5y6e7_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_4fcc07_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_a5y6e7_a() {
+    public SMP_ReferenceScope_4fcc07_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051
-      super((SAbstractConcept) CONCEPTS.RunTimeNFRsReference$wv, LINKS.field$OPvo);
+      super((SAbstractConcept) CONCEPTS.RunTimeNFRReference$Ke, LINKS.field$iXmS);
     }
     @NotNull
     @Override
@@ -65,15 +65,15 @@ public class RunTimeNFRsReference_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SMP_Subconcepts_a5y6e7_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_4fcc07_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.RunTimeNFRsReference$wv);
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.RunTimeNFRReference$Ke);
     }
     @NotNull
     @Override
     public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "RunTimeNFRsReference", null));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "RunTimeNFRReference", null));
       try {
         return super.createItems(context);
       } finally {
@@ -88,10 +88,10 @@ public class RunTimeNFRsReference_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept RunTimeNFRsReference$wv = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a588b29L, "NFR.structure.RunTimeNFRsReference");
+    /*package*/ static final SConcept RunTimeNFRReference$Ke = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL, "NFR.structure.RunTimeNFRReference");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink field$OPvo = MetaAdapterFactory.getReferenceLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a588b29L, 0x71a2aa893a588b2aL, "field");
+    /*package*/ static final SReferenceLink field$iXmS = MetaAdapterFactory.getReferenceLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL, 0x3ef7a3245800fbffL, "field");
   }
 }

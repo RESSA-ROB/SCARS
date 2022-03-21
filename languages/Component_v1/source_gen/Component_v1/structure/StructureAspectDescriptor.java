@@ -177,8 +177,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("hardware", 0x6a627af554bfd4a1L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c03797L).optional(true).ordered(true).multiple(true).origin("7665824709845439649").done();
     b.aggregate("software", 0x6a627af554bfd4a3L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c0a269L).optional(true).ordered(true).multiple(true).origin("7665824709845439651").done();
     b.aggregate("connect", 0x6a627af554bfd4a6L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL).optional(true).ordered(true).multiple(true).origin("7665824709845439654").done();
-    b.aggregate("nfr", 0x6a627af554bfd4aaL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(true).ordered(true).multiple(true).origin("7665824709845439658").done();
-    b.aggregate("express", 0x71a2aa893a520c1cL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L).optional(true).ordered(true).multiple(true).origin("8188294578878680092").done();
+    b.aggregate("nfr", 0x6a627af554bfd4aaL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L).optional(true).ordered(true).multiple(true).origin("7665824709845439658").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNFPProfile() {
