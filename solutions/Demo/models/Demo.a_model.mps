@@ -4,6 +4,8 @@
   <languages>
     <use id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1" version="0" />
     <use id="ddad85b5-8f76-40d8-9a0d-bd322c713e77" name="NFR" version="0" />
+    <use id="6d222813-53ea-440e-ba30-23ced4b723f0" name="QoS" version="0" />
+    <use id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS" version="0" />
   </languages>
   <imports />
   <registry>
@@ -13,10 +15,22 @@
       </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
         <property id="7665824709845439643" name="message" index="YRqTI" />
+        <child id="9014908457751472460" name="QoS" index="3fUSCQ" />
       </concept>
       <concept id="2722478502131880398" name="Communication.structure.CPort" flags="ng" index="3pZnSb">
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
         <child id="2722478502131880401" name="oport" index="3pZnSk" />
+      </concept>
+    </language>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
+    </language>
+    <language id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS">
+      <concept id="5459192469989855204" name="DDS.structure.DDS_Reliability" flags="ng" index="3lYnP4">
+        <property id="5459192469989855205" name="value" index="3lYnP5" />
+      </concept>
+      <concept id="5459192469989647037" name="DDS.structure.DDS_Durability" flags="ng" index="3lYD0t">
+        <property id="5459192469989647038" name="value" index="3lYD0u" />
       </concept>
     </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
@@ -42,6 +56,15 @@
         <property id="8188294578879189321" name="type" index="1bYRJ0" />
       </concept>
     </language>
+    <language id="6d222813-53ea-440e-ba30-23ced4b723f0" name="QoS">
+      <concept id="8489988947995225364" name="QoS.structure.CapabilitiesProfile" flags="ng" index="lVhbz">
+        <property id="9014908457751883142" name="type" index="3fV4VW" />
+        <child id="8489988947995225377" name="policies" index="lVhbm" />
+      </concept>
+      <concept id="396107887467192288" name="QoS.structure.QoSDefinition" flags="ng" index="1wihRA">
+        <child id="396107887467192291" name="capabilities" index="1wihR_" />
+      </concept>
+    </language>
     <language id="ddad85b5-8f76-40d8-9a0d-bd322c713e77" name="NFR">
       <concept id="7665824709846292118" name="NFR.structure.RunTimeNFRs" flags="ng" index="YFELz">
         <property id="7665824709846292134" name="constraint" index="YFELj" />
@@ -52,6 +75,7 @@
         <reference id="4537274526089673723" name="fields" index="1AXPzv" />
       </concept>
       <concept id="4537274526088832678" name="NFR.structure.RunTimeNFRs2" flags="ng" index="1D0Sm2">
+        <property id="9014908457751235748" name="type" index="3fXyZu" />
         <property id="4537274526088832679" name="operator" index="1D0Sm3" />
         <property id="4537274526088832680" name="constraint" index="1D0Smc" />
         <property id="4537274526088832681" name="unit" index="1D0Smd" />
@@ -101,7 +125,7 @@
       <node concept="YFELz" id="6k$okrZEIGd" role="YGDRf">
         <property role="TrG5h" value="responseTime1" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="200" />
+        <property role="YFELj" value="20" />
         <property role="YFELv" value="msec" />
       </node>
     </node>
@@ -114,11 +138,12 @@
       <property role="YR0Ew" value="201" />
       <node concept="3pZnSb" id="76yEC$UoAxW" role="YR0E$">
         <node concept="3pZnS9" id="76yEC$UoAxY" role="3pZnSa" />
+        <node concept="3pZnS8" id="7OroREMWhkP" role="3pZnSk" />
       </node>
       <node concept="YFELz" id="76yEC$UoAy0" role="YGDRf">
         <property role="TrG5h" value="range" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="100" />
+        <property role="YFELj" value="600" />
         <property role="YFELv" value="metre" />
       </node>
     </node>
@@ -146,6 +171,7 @@
       <property role="1D0Sm3" value="6DyuJlkNdqL/less_than_equal_to" />
       <property role="1D0Smc" value="200" />
       <property role="1D0Smd" value="msec" />
+      <property role="3fXyZu" value="7OroREMVkME/Sum" />
       <node concept="1bWaqF" id="3VRCMho0uP8" role="1D0Smb">
         <ref role="1AXPzv" node="6k$okrZEIGd" resolve="responseTime1" />
       </node>
@@ -161,6 +187,7 @@
       <property role="1D0Sm3" value="6DyuJlkNdqK/greater_than_equal_to" />
       <property role="1D0Smc" value="200" />
       <property role="1D0Smd" value="metre" />
+      <property role="3fXyZu" value="7OroREMVkMF/Max" />
       <node concept="1bWaqF" id="7OroREMTDBE" role="1D0Smb">
         <ref role="1AXPzv" node="76yEC$UoAy0" resolve="range" />
       </node>
@@ -173,9 +200,35 @@
       <node concept="YFELz" id="7OroREMSQT9" role="YGDRf">
         <property role="TrG5h" value="responseTime4" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="200" />
+        <property role="YFELj" value="20" />
         <property role="YFELv" value="msecs" />
       </node>
+      <node concept="3pZnSb" id="7OroREMXVop" role="YR0E$">
+        <node concept="3pZnS9" id="7OroREMXVor" role="3pZnSa">
+          <node concept="lVhbz" id="7OroREMXVot" role="3fUSCQ">
+            <node concept="33vP2n" id="7OroREMXVou" role="lVhbm" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1wihRA" id="7OroREMXMQ0">
+    <property role="TrG5h" value="Test" />
+    <node concept="lVhbz" id="7OroREMXVkg" role="1wihR_">
+      <property role="TrG5h" value="ObjectFound" />
+      <property role="3fV4VW" value="7OroREMXMQ5/ObjectDetection" />
+      <node concept="3lYnP4" id="7OroREMXVks" role="lVhbm">
+        <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
+      </node>
+      <node concept="3lYD0t" id="7OroREMXVof" role="lVhbm">
+        <property role="3lYD0u" value="7doERKbPKLE/TRANSIENT_LOCAL" />
+      </node>
+    </node>
+    <node concept="lVhbz" id="7OroREMXVnu" role="1wihR_">
+      <property role="TrG5h" value="Traffic_Status" />
+      <property role="3fV4VW" value="7OroREMXMQ2/Traffic" />
+      <node concept="3lYnP4" id="7OroREMXVnG" role="lVhbm" />
+      <node concept="3lYD0t" id="7OroREMXVnP" role="lVhbm" />
     </node>
   </node>
 </model>

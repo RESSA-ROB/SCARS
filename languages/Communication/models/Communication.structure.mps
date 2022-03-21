@@ -7,10 +7,19 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="7pce" ref="r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)" implicit="true" />
+    <import index="tqx2" ref="r:ca64c7cd-6639-4b1e-85dc-28366b5a0c63(QoS.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="3348158742936976480" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ng" index="25R33">
+        <property id="1421157252384165432" name="memberId" index="3tVfz5" />
+      </concept>
+      <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <child id="3348158742936976577" name="members" index="25R1y" />
+      </concept>
+      <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
+        <property id="7791109065626895363" name="datatypeId" index="3F6X1D" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -52,17 +61,21 @@
     <node concept="PrWs8" id="6DyuJlkOaVa" role="PzmwI">
       <ref role="PrY4T" node="6DyuJlkOaV4" resolve="IPort" />
     </node>
-    <node concept="1TJgyj" id="6DyuJlkJB1F" role="1TKVEi">
-      <property role="IQ2ns" value="7665824709845348459" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="QoS" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:6DyuJlkNdqO" resolve="CommunicationQoS" />
-    </node>
     <node concept="1TJgyi" id="6DyuJlkJXir" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845439643" />
       <property role="TrG5h" value="message" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7OroREMXYbg" role="1TKVEl">
+      <property role="IQ2nx" value="9014908457751929552" />
+      <property role="TrG5h" value="type" />
+      <ref role="AX2Wp" node="7OroREMXVox" resolve="Comtype" />
+    </node>
+    <node concept="1TJgyj" id="7OroREMWe_c" role="1TKVEi">
+      <property role="IQ2ns" value="9014908457751472460" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="QoS" />
+      <ref role="20lvS9" to="tqx2:7nivZtwfQOk" resolve="CapabilitiesProfile" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n8bWnWdl7d">
@@ -72,17 +85,21 @@
     <node concept="PrWs8" id="6DyuJlkOaVd" role="PzmwI">
       <ref role="PrY4T" node="6DyuJlkOaV7" resolve="OPort" />
     </node>
-    <node concept="1TJgyj" id="6DyuJlkJB1H" role="1TKVEi">
-      <property role="IQ2ns" value="7665824709845348461" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="QoS" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="7pce:6DyuJlkNdqO" resolve="CommunicationQoS" />
-    </node>
     <node concept="1TJgyi" id="6DyuJlkJXit" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845439645" />
       <property role="TrG5h" value="message" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7OroREMXYbj" role="1TKVEl">
+      <property role="IQ2nx" value="9014908457751929555" />
+      <property role="TrG5h" value="type" />
+      <ref role="AX2Wp" node="7OroREMXVox" resolve="Comtype" />
+    </node>
+    <node concept="1TJgyj" id="7OroREMWe_e" role="1TKVEi">
+      <property role="IQ2ns" value="9014908457751472462" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Qos" />
+      <ref role="20lvS9" to="tqx2:7nivZtwfQOk" resolve="CapabilitiesProfile" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n8bWnWdl7e">
@@ -117,6 +134,26 @@
     <property role="TrG5h" value="OPort" />
     <node concept="PrWs8" id="6DyuJlkOaV8" role="PrDN$">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="25R3W" id="7OroREMXVox">
+    <property role="3F6X1D" value="9014908457751918113" />
+    <property role="TrG5h" value="Comtype" />
+    <node concept="25R33" id="7OroREMXVoy" role="25R1y">
+      <property role="3tVfz5" value="9014908457751918114" />
+      <property role="TrG5h" value="Traffic" />
+    </node>
+    <node concept="25R33" id="7OroREMXVoz" role="25R1y">
+      <property role="3tVfz5" value="9014908457751918115" />
+      <property role="TrG5h" value="Location" />
+    </node>
+    <node concept="25R33" id="7OroREMXVoA" role="25R1y">
+      <property role="3tVfz5" value="9014908457751918118" />
+      <property role="TrG5h" value="ObjectDetection" />
+    </node>
+    <node concept="25R33" id="7OroREMXVoE" role="25R1y">
+      <property role="3tVfz5" value="9014908457751918122" />
+      <property role="TrG5h" value="Warnings" />
     </node>
   </node>
 </model>

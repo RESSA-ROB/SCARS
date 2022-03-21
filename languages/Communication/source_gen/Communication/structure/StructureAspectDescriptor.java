@@ -4,13 +4,16 @@ package Communication.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCPort = createDescriptorForCPort();
@@ -18,6 +21,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInputPort = createDescriptorForInputPort();
   /*package*/ final ConceptDescriptor myConceptOPort = createDescriptorForOPort();
   /*package*/ final ConceptDescriptor myConceptOutPutPort = createDescriptorForOutPutPort();
+  /*package*/ final EnumerationDescriptor myEnumerationComtype = new EnumerationDescriptor_Comtype();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -28,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
-    deps.aggregatedLanguage(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, "NFR");
+    deps.aggregatedLanguage(0x6d22281353ea440eL, 0xba3023ced4b723f0L, "QoS");
   }
 
   @Override
@@ -55,6 +59,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationComtype);
+  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -84,7 +92,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/2722478502131880396");
     b.version(2);
     b.property("message", 0x6a627af554bfd49bL).type(PrimitiveTypeId.STRING).origin("7665824709845439643").done();
-    b.aggregate("QoS", 0x6a627af554be706bL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6b4L).optional(true).ordered(true).multiple(true).origin("7665824709845348459").done();
+    b.property("type", 0x7d1b637ab2f7e2d0L).type(MetaIdFactory.dataTypeId(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x7d1b637ab2f7b621L)).origin("9014908457751929552").done();
+    b.aggregate("QoS", 0x7d1b637ab2f0e94cL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L).optional(true).ordered(true).multiple(false).origin("9014908457751472460").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOPort() {
@@ -102,7 +111,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/2722478502131880397");
     b.version(2);
     b.property("message", 0x6a627af554bfd49dL).type(PrimitiveTypeId.STRING).origin("7665824709845439645").done();
-    b.aggregate("QoS", 0x6a627af554be706dL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6b4L).optional(true).ordered(true).multiple(true).origin("7665824709845348461").done();
+    b.property("type", 0x7d1b637ab2f7e2d3L).type(MetaIdFactory.dataTypeId(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x7d1b637ab2f7b621L)).origin("9014908457751929555").done();
+    b.aggregate("Qos", 0x7d1b637ab2f0e94eL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L).optional(true).ordered(true).multiple(false).origin("9014908457751472462").done();
     return b.create();
   }
 }

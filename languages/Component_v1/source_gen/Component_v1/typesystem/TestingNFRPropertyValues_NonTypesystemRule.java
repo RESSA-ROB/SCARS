@@ -11,9 +11,9 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,6 +29,9 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
   public void applyRule(final SNode mobileRobot, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     int compval = 0;
     int cons = 0;
+    int sum = 0;
+    int max = 0;
+    int min = 0;
     {
       Iterator<SNode> nfp_it = ListSequence.fromList(SLinkOperations.getChildren(mobileRobot, LINKS.nfr$86Bz)).iterator();
       SNode nfp_var;
@@ -36,6 +39,17 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
         nfp_var = nfp_it.next();
         cons = SPropertyOperations.getInteger(nfp_var, PROPS.constraint$uv6e);
         compval = 0;
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caaL, "Sum")) {
+          sum = 1;
+        }
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4cabL, "Max")) {
+          max = 1;
+        }
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caeL, "Min")) {
+          min = 1;
+        }
+
+
         {
           Iterator<SNode> comp_it = Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(mobileRobot, LINKS.hardware$7Z_5), LINKS.hardware$nR7k)).iterator();
           SNode comp_var;
@@ -54,7 +68,20 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
                     nfr_var = nfr_it.next();
                     String s = SPropertyOperations.getString(SLinkOperations.getTarget(nfr_var, LINKS.fields$kG77), PROPS.name$MnvL);
                     if (id.equals(s)) {
-                      compval = compval + SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                      if (sum == 1) {
+                        compval = compval + SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                      }
+                      if (max == 1) {
+                        if (compval <= SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                        }
+                      }
+                      if (min == 1) {
+                        if (compval >= SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                        }
+
+                      }
                     }
                   }
                 }
@@ -135,6 +162,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
 
   private static final class PROPS {
     /*package*/ static final SProperty constraint$uv6e = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426a8L, "constraint");
+    /*package*/ static final SProperty type$7Mgx = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x7d1b637ab2ed4ca4L, "type");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty constraint$F8ML = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x6a627af554ccd6a6L, "constraint");
     /*package*/ static final SProperty operator$upVS = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426a7L, "operator");
