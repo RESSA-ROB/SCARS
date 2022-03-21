@@ -12,18 +12,18 @@
     <language id="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f" name="Communication">
       <concept id="2722478502131880397" name="Communication.structure.OutPutPort" flags="ng" index="3pZnS8">
         <property id="7665824709845439645" name="message" index="YRqTC" />
+        <property id="9014908457751929555" name="type" index="3fV86D" />
+        <child id="9014908457751472462" name="Qos" index="3fUSCO" />
       </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
         <property id="7665824709845439643" name="message" index="YRqTI" />
+        <property id="9014908457751929552" name="type" index="3fV86E" />
         <child id="9014908457751472460" name="QoS" index="3fUSCQ" />
       </concept>
       <concept id="2722478502131880398" name="Communication.structure.CPort" flags="ng" index="3pZnSb">
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
         <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
-    </language>
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
     </language>
     <language id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS">
       <concept id="5459192469989855204" name="DDS.structure.DDS_Reliability" flags="ng" index="3lYnP4">
@@ -60,6 +60,10 @@
       <concept id="8489988947995225364" name="QoS.structure.CapabilitiesProfile" flags="ng" index="lVhbz">
         <property id="9014908457751883142" name="type" index="3fV4VW" />
         <child id="8489988947995225377" name="policies" index="lVhbm" />
+      </concept>
+      <concept id="9014908457751953393" name="QoS.structure.CapabilitiesProfileInst" flags="ng" index="3fSPMb" />
+      <concept id="9014908457751953389" name="QoS.structure.ICapabilitiesProfileInst" flags="ng" index="3fSPMn">
+        <reference id="9014908457751953392" name="profile" index="3fSPMa" />
       </concept>
       <concept id="396107887467192288" name="QoS.structure.QoSDefinition" flags="ng" index="1wihRA">
         <child id="396107887467192291" name="capabilities" index="1wihR_" />
@@ -115,17 +119,31 @@
   <node concept="YR0F6" id="76yEC$Ul6Ej">
     <property role="TrG5h" value="H1" />
     <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
-    <node concept="YR0EM" id="76yEC$UlvuG" role="YR0ET">
+    <node concept="YR0EM" id="7OroREMYlKW" role="YR0ET">
       <property role="YR0EA" value="Camera" />
-      <property role="YR0Ew" value="101" />
-      <node concept="3pZnSb" id="76yEC$UlvuI" role="YR0E$">
-        <node concept="3pZnS9" id="76yEC$UlvuK" role="3pZnSa" />
-        <node concept="3pZnS8" id="76yEC$UlvuM" role="3pZnSk" />
+      <property role="YR0Ew" value="102" />
+      <node concept="3pZnSb" id="7OroREMYlKY" role="YR0E$">
+        <node concept="3pZnS9" id="7OroREMYlL0" role="3pZnSa">
+          <property role="3fV86E" value="7OroREMXVoy/Traffic" />
+          <property role="TrG5h" value="TrafficInfo" />
+          <property role="YRqTI" value="Get traffic status and take decision" />
+          <node concept="3fSPMb" id="7OroREMYlL2" role="3fUSCQ">
+            <ref role="3fSPMa" node="7OroREMXVnu" resolve="Traffic_Status" />
+          </node>
+        </node>
+        <node concept="3pZnS8" id="7OroREMYpqw" role="3pZnSk">
+          <property role="TrG5h" value="HumanLocated" />
+          <property role="3fV86D" value="7OroREMXVoA/ObjectDetection" />
+          <property role="YRqTC" value="I" />
+          <node concept="3fSPMb" id="7OroREMYt5y" role="3fUSCO">
+            <ref role="3fSPMa" node="7OroREMXVkg" resolve="ObjectFound" />
+          </node>
+        </node>
       </node>
-      <node concept="YFELz" id="6k$okrZEIGd" role="YGDRf">
+      <node concept="YFELz" id="7OroREMYG5R" role="YGDRf">
         <property role="TrG5h" value="responseTime1" />
         <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="20" />
+        <property role="YFELj" value="200" />
         <property role="YFELv" value="msec" />
       </node>
     </node>
@@ -173,7 +191,7 @@
       <property role="1D0Smd" value="msec" />
       <property role="3fXyZu" value="7OroREMVkME/Sum" />
       <node concept="1bWaqF" id="3VRCMho0uP8" role="1D0Smb">
-        <ref role="1AXPzv" node="6k$okrZEIGd" resolve="responseTime1" />
+        <ref role="1AXPzv" node="7OroREMYG5R" resolve="responseTime1" />
       </node>
       <node concept="1bWaqF" id="7OroREMSQTL" role="1D0Smb">
         <ref role="1AXPzv" node="7OroREMSQT9" resolve="responseTime4" />
@@ -204,11 +222,7 @@
         <property role="YFELv" value="msecs" />
       </node>
       <node concept="3pZnSb" id="7OroREMXVop" role="YR0E$">
-        <node concept="3pZnS9" id="7OroREMXVor" role="3pZnSa">
-          <node concept="lVhbz" id="7OroREMXVot" role="3fUSCQ">
-            <node concept="33vP2n" id="7OroREMXVou" role="lVhbm" />
-          </node>
-        </node>
+        <node concept="3pZnS9" id="7OroREMXVor" role="3pZnSa" />
       </node>
     </node>
   </node>

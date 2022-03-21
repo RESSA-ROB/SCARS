@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="ert97yxru9t5wkuy7so29eiwhvvf6ge">
+<product version="3" modelHash="4juvcsxrzswu7uoecyk7rzzjlzufg8f">
   <files names="Actuators_Editor.java:Actuators_EditorBuilder_a.java:CentralNode_Editor.java:CentralNode_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:HardwareComponentInst_Editor.java:HardwareComponentInst_EditorBuilder_a.java:HardwareComponentInst_SubstituteMenu.java:HardwareComponent_Editor.java:HardwareComponent_EditorBuilder_a.java:MobileRobot_Editor.java:MobileRobot_EditorBuilder_a.java:NFR_Editor.java:NFR_EditorBuilder_a.java:RunTimeNFRsAnnotation_Editor.java:RunTimeNFRsAnnotation_EditorBuilder_a.java:RunTimeNFRsAnnotation_SubstituteMenu.java:Sensors_Editor.java:Sensors_EditorBuilder_a.java:SoftwareComponent_Editor.java:SoftwareComponent_EditorBuilder_a.java" />
 </product>
 

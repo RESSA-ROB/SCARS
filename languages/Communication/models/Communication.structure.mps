@@ -75,7 +75,7 @@
       <property role="IQ2ns" value="9014908457751472460" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="QoS" />
-      <ref role="20lvS9" to="tqx2:7nivZtwfQOk" resolve="CapabilitiesProfile" />
+      <ref role="20lvS9" to="tqx2:7OroREMY3ZH" resolve="ICapabilitiesProfileInst" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n8bWnWdl7d">
@@ -99,7 +99,7 @@
       <property role="IQ2ns" value="9014908457751472462" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Qos" />
-      <ref role="20lvS9" to="tqx2:7nivZtwfQOk" resolve="CapabilitiesProfile" />
+      <ref role="20lvS9" to="tqx2:7OroREMY3ZH" resolve="ICapabilitiesProfileInst" />
     </node>
   </node>
   <node concept="1TIwiD" id="2n8bWnWdl7e">

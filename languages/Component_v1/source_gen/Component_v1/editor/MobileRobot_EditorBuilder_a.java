@@ -79,6 +79,8 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     editorCell.addEditorCell(createEmpty_6());
     editorCell.addEditorCell(createEmpty_7());
     editorCell.addEditorCell(createCollection_5());
+    editorCell.addEditorCell(createEmpty_8());
+    editorCell.addEditorCell(createEmpty_9());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -365,7 +367,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     return editorCell;
   }
   private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Connections");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Communication Ports:");
     editorCell.setCellId("Constant_p0xh82_a9a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -466,7 +468,6 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
     editorCell.setCellId("Collection_p0xh82_m0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createRefNodeList_3());
     return editorCell;
@@ -547,6 +548,20 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
         }
       }
     }
+  }
+  private EditorCell createEmpty_8() {
+    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+    editorCell.setCellId("Empty_p0xh82_n0");
+    return editorCell;
+  }
+  private EditorCell createEmpty_9() {
+    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+    editorCell.setCellId("Empty_p0xh82_o0");
+    return editorCell;
   }
 
   private static final class PROPS {
