@@ -180,7 +180,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Connections:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Communication Ports:");
     editorCell.setCellId("Constant_8qqp95_a4a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -124,7 +124,7 @@
       <property role="YR0Ew" value="102" />
       <node concept="3pZnSb" id="7OroREMYlKY" role="YR0E$">
         <node concept="3pZnS9" id="7OroREMYlL0" role="3pZnSa">
-          <property role="3fV86E" value="7OroREMXVoy/Traffic" />
+          <property role="3fV86E" value="7OroREMXMQ3/Location" />
           <property role="TrG5h" value="TrafficInfo" />
           <property role="YRqTI" value="Get traffic status and take decision" />
           <node concept="3fSPMb" id="7OroREMYlL2" role="3fUSCQ">
@@ -133,7 +133,7 @@
         </node>
         <node concept="3pZnS8" id="7OroREMYpqw" role="3pZnSk">
           <property role="TrG5h" value="HumanLocated" />
-          <property role="3fV86D" value="7OroREMXVoA/ObjectDetection" />
+          <property role="3fV86D" value="7OroREMXMQ5/ObjectDetection" />
           <property role="YRqTC" value="I" />
           <node concept="3fSPMb" id="7OroREMYt5y" role="3fUSCO">
             <ref role="3fSPMa" node="7OroREMXVkg" resolve="ObjectFound" />
@@ -177,11 +177,18 @@
     <node concept="YE6PC" id="7OroREMSQTf" role="YRqTk">
       <ref role="YCHyi" node="7OroREMSQT6" resolve="H4" />
     </node>
-    <node concept="YE6PC" id="7OroREMUNEw" role="YRqTk">
+    <node concept="YE6PC" id="7OroREMZ0gQ" role="YRqTk">
       <ref role="YCHyi" node="76yEC$UoAxT" resolve="H3" />
     </node>
     <node concept="3pZnSb" id="3VRCMhnYbIF" role="YRqTj">
-      <node concept="3pZnS9" id="3VRCMhnYbIH" role="3pZnSa" />
+      <node concept="3pZnS9" id="3VRCMhnYbIH" role="3pZnSa">
+        <property role="TrG5h" value="t" />
+        <property role="3fV86E" value="7OroREMXMQ3/Location" />
+        <property role="YRqTI" value="Hi" />
+        <node concept="3fSPMb" id="7OroREMZUxd" role="3fUSCQ">
+          <ref role="3fSPMa" node="7OroREMXVkg" resolve="ObjectFound" />
+        </node>
+      </node>
       <node concept="3pZnS8" id="3VRCMhnYbIJ" role="3pZnSk" />
     </node>
     <node concept="1D0Sm2" id="3VRCMho0uP6" role="YRqTv">
@@ -190,13 +197,10 @@
       <property role="1D0Smc" value="200" />
       <property role="1D0Smd" value="msec" />
       <property role="3fXyZu" value="7OroREMVkME/Sum" />
-      <node concept="1bWaqF" id="3VRCMho0uP8" role="1D0Smb">
+      <node concept="1bWaqF" id="7OroREMZ0gZ" role="1D0Smb">
         <ref role="1AXPzv" node="7OroREMYG5R" resolve="responseTime1" />
       </node>
-      <node concept="1bWaqF" id="7OroREMSQTL" role="1D0Smb">
-        <ref role="1AXPzv" node="7OroREMSQT9" resolve="responseTime4" />
-      </node>
-      <node concept="1bWaqF" id="7OroREMTrcv" role="1D0Smb">
+      <node concept="1bWaqF" id="7OroREMZ0h1" role="1D0Smb">
         <ref role="1AXPzv" node="76yEC$Umf0P" resolve="responseTime2" />
       </node>
     </node>
@@ -227,7 +231,7 @@
     </node>
   </node>
   <node concept="1wihRA" id="7OroREMXMQ0">
-    <property role="TrG5h" value="Test" />
+    <property role="TrG5h" value="QoS Profiles" />
     <node concept="lVhbz" id="7OroREMXVkg" role="1wihR_">
       <property role="TrG5h" value="ObjectFound" />
       <property role="3fV4VW" value="7OroREMXMQ5/ObjectDetection" />

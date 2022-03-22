@@ -27,6 +27,7 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="8313721352726366579" name="jetbrains.mps.lang.editor.structure.CellModel_Empty" flags="ng" index="35HoNQ" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -93,6 +94,7 @@
         </node>
         <node concept="l2Vlx" id="6DyuJlkNdry" role="2iSdaV" />
       </node>
+      <node concept="35HoNQ" id="7HcAZcEq_lU" role="3EZMnx" />
       <node concept="2iRkQZ" id="6DyuJlkNdrp" role="2iSdaV" />
     </node>
   </node>
@@ -163,6 +165,7 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="35HoNQ" id="7HcAZcEqonJ" role="3EZMnx" />
       <node concept="2iRkQZ" id="3VRCMhnX2qX" role="2iSdaV" />
     </node>
   </node>

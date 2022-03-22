@@ -137,6 +137,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
         }
       }
     }
+
   }
   public SAbstractConcept getApplicableConcept() {
     return CONCEPTS.MobileRobot$tL;

@@ -69,7 +69,7 @@
     <node concept="1TJgyi" id="7OroREMXYbg" role="1TKVEl">
       <property role="IQ2nx" value="9014908457751929552" />
       <property role="TrG5h" value="type" />
-      <ref role="AX2Wp" node="7OroREMXVox" resolve="Comtype" />
+      <ref role="AX2Wp" to="tqx2:7OroREMXMQ1" resolve="CProfileType" />
     </node>
     <node concept="1TJgyj" id="7OroREMWe_c" role="1TKVEi">
       <property role="IQ2ns" value="9014908457751472460" />
@@ -93,7 +93,7 @@
     <node concept="1TJgyi" id="7OroREMXYbj" role="1TKVEl">
       <property role="IQ2nx" value="9014908457751929555" />
       <property role="TrG5h" value="type" />
-      <ref role="AX2Wp" node="7OroREMXVox" resolve="Comtype" />
+      <ref role="AX2Wp" to="tqx2:7OroREMXMQ1" resolve="CProfileType" />
     </node>
     <node concept="1TJgyj" id="7OroREMWe_e" role="1TKVEi">
       <property role="IQ2ns" value="9014908457751472462" />

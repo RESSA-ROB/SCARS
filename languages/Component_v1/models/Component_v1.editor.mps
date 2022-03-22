@@ -127,6 +127,9 @@
           <node concept="pj6Ft" id="6DyuJlkNJ7B" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
+          <node concept="pVoyu" id="7HcAZcEqFP7" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
         <node concept="l2Vlx" id="6DyuJlkJXu$" role="2iSdaV" />
         <node concept="pj6Ft" id="6DyuJlkJXw7" role="3F10Kt">
@@ -175,7 +178,7 @@
       <node concept="35HoNQ" id="6DyuJlkO1l_" role="3EZMnx" />
       <node concept="3EZMnI" id="6DyuJlkJXlC" role="3EZMnx">
         <node concept="3F0ifn" id="6DyuJlkO1mg" role="3EZMnx">
-          <property role="3F0ifm" value="Connections:" />
+          <property role="3F0ifm" value="Communication Ports:" />
         </node>
         <node concept="VPM3Z" id="6DyuJlkJXlE" role="3F10Kt" />
         <node concept="3F2HdR" id="6DyuJlkJXlU" role="3EZMnx">
@@ -225,7 +228,12 @@
         </node>
         <node concept="l2Vlx" id="6DyuJlkJXrV" role="2iSdaV" />
       </node>
+      <node concept="35HoNQ" id="7HcAZcEpFQ9" role="3EZMnx" />
+      <node concept="35HoNQ" id="7HcAZcEpFQT" role="3EZMnx" />
       <node concept="3EZMnI" id="6DyuJlkJXrW" role="3EZMnx">
+        <node concept="3F0ifn" id="7HcAZcEpFRt" role="3EZMnx">
+          <property role="3F0ifm" value="Communication Ports:" />
+        </node>
         <node concept="VPM3Z" id="6DyuJlkJXrX" role="3F10Kt" />
         <node concept="3F2HdR" id="6DyuJlkJXrY" role="3EZMnx">
           <ref role="1NtTu8" to="a0pt:6DyuJlkJB1o" resolve="connect" />
@@ -239,6 +247,8 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="35HoNQ" id="7HcAZcEpFRX" role="3EZMnx" />
+      <node concept="35HoNQ" id="7HcAZcEpFSN" role="3EZMnx" />
       <node concept="3EZMnI" id="6DyuJlkJXs3" role="3EZMnx">
         <node concept="VPM3Z" id="6DyuJlkJXs4" role="3F10Kt" />
         <node concept="l2Vlx" id="6DyuJlkJXs8" role="2iSdaV" />
