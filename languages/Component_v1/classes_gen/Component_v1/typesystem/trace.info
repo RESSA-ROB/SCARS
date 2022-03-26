@@ -12,7 +12,122 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="8,0,24,0" name="Component_v1.typesystem.TypesystemDescriptor" />
+      <unit at="8,0,28,0" name="Component_v1.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)/1992129627000048185">
+    <file name="CheckingConnectionQoSCompatability_NonTypesystemRule.java">
+      <node id="647160841347651346" at="32,5,33,315" concept="5" />
+      <node id="647160841347651346" at="33,315,34,21" concept="5" />
+      <node id="647160841347651346" at="35,33,36,34" concept="2" />
+      <node id="647160841348462677" at="37,9,38,319" concept="5" />
+      <node id="647160841348462677" at="38,319,39,26" concept="5" />
+      <node id="647160841348462677" at="40,38,41,40" concept="2" />
+      <node id="647160841348480224" at="41,40,42,0" concept="7" />
+      <node id="647160841348409337" at="42,0,43,233" concept="5" />
+      <node id="647160841348432238" at="43,233,44,238" concept="5" />
+      <node id="647160841348475818" at="44,238,45,0" concept="7" />
+      <node id="647160841348475873" at="45,0,46,232" concept="5" />
+      <node id="647160841348475885" at="46,232,47,238" concept="5" />
+      <node id="647160841348482175" at="47,238,48,0" concept="7" />
+      <node id="647160841348505238" at="50,15,51,74" concept="5" />
+      <node id="647160841348505238" at="51,74,52,398" concept="5" />
+      <node id="647160841348884821" at="54,13,55,0" concept="7" />
+      <node id="647160841348914839" at="56,177,57,239" concept="5" />
+      <node id="647160841348915637" at="57,239,58,239" concept="5" />
+      <node id="647160841348917889" at="60,17,61,76" concept="5" />
+      <node id="647160841348917889" at="61,76,62,399" concept="5" />
+      <node id="647160841348917857" at="64,15,65,0" concept="7" />
+      <node id="647160841348475845" at="66,13,67,0" concept="7" />
+      <node id="647160841348462620" at="69,9,70,0" concept="7" />
+      <node id="1992129627000048185" at="74,50,75,35" concept="6" />
+      <node id="1992129627000048185" at="77,68,78,102" concept="6" />
+      <node id="1992129627000048185" at="80,30,81,17" concept="6" />
+      <node id="1992129627000048185" at="85,0,86,0" concept="8" trace="sources$SrDl" />
+      <node id="1992129627000048185" at="86,0,87,0" concept="8" trace="outputport$zmZO" />
+      <node id="1992129627000048185" at="87,0,88,0" concept="8" trace="Qos$MFRl" />
+      <node id="1992129627000048185" at="88,0,89,0" concept="8" trace="profile$GSCv" />
+      <node id="1992129627000048185" at="89,0,90,0" concept="8" trace="policies$a5hO" />
+      <node id="1992129627000048185" at="90,0,91,0" concept="8" trace="targets$SrSm" />
+      <node id="1992129627000048185" at="91,0,92,0" concept="8" trace="inputport$w69v" />
+      <node id="1992129627000048185" at="92,0,93,0" concept="8" trace="QoS$MFoO" />
+      <node id="1992129627000048185" at="96,0,97,0" concept="8" trace="DDS_Reliability$EL" />
+      <node id="1992129627000048185" at="97,0,98,0" concept="8" trace="DDS_Durability$PO" />
+      <node id="1992129627000048185" at="98,0,99,0" concept="8" trace="Connections$PV" />
+      <node id="1992129627000048185" at="102,0,103,0" concept="8" trace="value$HFLS" />
+      <node id="1992129627000048185" at="103,0,104,0" concept="8" trace="name$MnvL" />
+      <node id="1992129627000048185" at="104,0,105,0" concept="8" trace="value$XLjo" />
+      <node id="1992129627000048185" at="29,0,31,0" concept="1" trace="CheckingConnectionQoSCompatability_NonTypesystemRule#()V" />
+      <node id="1992129627000048185" at="74,0,77,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1992129627000048185" at="77,0,80,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1992129627000048185" at="80,0,83,0" concept="4" trace="overrides#()Z" />
+      <node id="647160841348505238" at="49,448,53,15" concept="0" />
+      <node id="647160841348917889" at="59,452,63,17" concept="0" />
+      <node id="647160841348482287" at="48,0,54,13" concept="3" />
+      <node id="647160841348917887" at="58,239,64,15" concept="3" />
+      <node id="647160841348885082" at="55,0,66,13" concept="3" />
+      <node id="647160841348462675" at="39,26,68,11" concept="9" />
+      <node id="647160841348462675" at="36,34,69,9" concept="0" />
+      <node id="647160841347651345" at="34,21,71,7" concept="9" />
+      <node id="647160841347651345" at="31,124,72,5" concept="0" />
+      <node id="1992129627000048185" at="31,0,74,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1992129627000048185" at="29,65,29,65" />
+      <scope id="1992129627000048185" at="74,50,75,35" />
+      <scope id="1992129627000048185" at="77,68,78,102" />
+      <scope id="1992129627000048185" at="80,30,81,17" />
+      <scope id="1992129627000048185" at="29,0,31,0" />
+      <scope id="647160841348505238" at="50,15,52,398">
+        <var name="_reporter_2309309498" id="647160841348505238" />
+        <var name="errorTarget" id="647160841348505238" />
+      </scope>
+      <scope id="647160841348917889" at="60,17,62,399">
+        <var name="_reporter_2309309498" id="647160841348917889" />
+        <var name="errorTarget" id="647160841348917889" />
+      </scope>
+      <scope id="1992129627000048185" at="74,0,77,0" />
+      <scope id="1992129627000048185" at="77,0,80,0">
+        <var name="argument" id="1992129627000048185" />
+      </scope>
+      <scope id="1992129627000048185" at="80,0,83,0" />
+      <scope id="647160841348482289" at="49,448,53,15" />
+      <scope id="647160841348917888" at="59,452,63,17" />
+      <scope id="647160841348885084" at="56,177,65,0">
+        <var name="value3" id="647160841348914840" />
+        <var name="value4" id="647160841348915638" />
+      </scope>
+      <scope id="647160841348462675" at="40,38,67,0">
+        <var name="sourceProfile" id="647160841348409340" />
+        <var name="targetProfile" id="647160841348475874" />
+        <var name="value1" id="647160841348432241" />
+        <var name="value2" id="647160841348475886" />
+      </scope>
+      <scope id="647160841348462675" at="37,9,68,11">
+        <var name="comp2_it" id="647160841348462677" />
+        <var name="comp2_var" id="647160841348462677" />
+      </scope>
+      <scope id="647160841347651345" at="35,33,70,0" />
+      <scope id="647160841347651345" at="32,5,71,7">
+        <var name="comp_it" id="647160841347651346" />
+        <var name="comp_var" id="647160841347651346" />
+      </scope>
+      <scope id="1992129627000048186" at="31,124,72,5" />
+      <scope id="1992129627000048185" at="31,0,74,0">
+        <var name="connections" id="1992129627000048185" />
+        <var name="status" id="1992129627000048185" />
+        <var name="typeCheckingContext" id="1992129627000048185" />
+      </scope>
+      <unit id="1992129627000048185" at="95,0,100,0" name="Component_v1.typesystem.CheckingConnectionQoSCompatability_NonTypesystemRule$CONCEPTS" />
+      <unit id="1992129627000048185" at="101,0,106,0" name="Component_v1.typesystem.CheckingConnectionQoSCompatability_NonTypesystemRule$PROPS" />
+      <unit id="1992129627000048185" at="84,0,94,0" name="Component_v1.typesystem.CheckingConnectionQoSCompatability_NonTypesystemRule$LINKS" />
+      <unit id="1992129627000048185" at="28,0,107,0" name="Component_v1.typesystem.CheckingConnectionQoSCompatability_NonTypesystemRule" />
+    </file>
+    <file name="TypesystemDescriptor.java">
+      <node id="1992129627000048185" at="10,5,11,111" concept="5" />
+      <node id="1992129627000048185" at="11,111,12,55" concept="2" />
+      <node id="1992129627000048185" at="9,33,13,5" concept="0" />
+      <scope id="1992129627000048185" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="1992129627000048185" />
+      </scope>
     </file>
   </root>
   <root nodeRef="r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)/4537274526089188582">
@@ -211,10 +326,10 @@
       <unit id="4537274526089188582" at="26,0,176,0" name="Component_v1.typesystem.TestingNFRPropertyValues_NonTypesystemRule" />
     </file>
     <file name="TypesystemDescriptor.java">
-      <node id="4537274526089188582" at="18,5,19,101" concept="5" />
-      <node id="4537274526089188582" at="19,101,20,55" concept="2" />
-      <node id="4537274526089188582" at="17,5,21,5" concept="0" />
-      <scope id="4537274526089188582" at="18,5,20,55">
+      <node id="4537274526089188582" at="22,5,23,101" concept="5" />
+      <node id="4537274526089188582" at="23,101,24,55" concept="2" />
+      <node id="4537274526089188582" at="21,5,25,5" concept="0" />
+      <scope id="4537274526089188582" at="22,5,24,55">
         <var name="nonTypesystemRule" id="4537274526089188582" />
       </scope>
     </file>
@@ -316,10 +431,10 @@
       <unit id="9014908457752183937" at="24,0,95,0" name="Component_v1.typesystem.PortQoSType_NonTypesystemRule" />
     </file>
     <file name="TypesystemDescriptor.java">
-      <node id="9014908457752183937" at="14,5,15,88" concept="5" />
-      <node id="9014908457752183937" at="15,88,16,55" concept="2" />
-      <node id="9014908457752183937" at="13,5,17,5" concept="0" />
-      <scope id="9014908457752183937" at="14,5,16,55">
+      <node id="9014908457752183937" at="18,5,19,88" concept="5" />
+      <node id="9014908457752183937" at="19,88,20,55" concept="2" />
+      <node id="9014908457752183937" at="17,5,21,5" concept="0" />
+      <scope id="9014908457752183937" at="18,5,20,55">
         <var name="nonTypesystemRule" id="9014908457752183937" />
       </scope>
     </file>
@@ -416,10 +531,10 @@
       <unit id="9014908457752438923" at="24,0,93,0" name="Component_v1.typesystem.HardwarePortQoSType_NonTypesystemRule" />
     </file>
     <file name="TypesystemDescriptor.java">
-      <node id="9014908457752438923" at="10,5,11,96" concept="5" />
-      <node id="9014908457752438923" at="11,96,12,55" concept="2" />
-      <node id="9014908457752438923" at="9,33,13,5" concept="0" />
-      <scope id="9014908457752438923" at="10,5,12,55">
+      <node id="9014908457752438923" at="14,5,15,96" concept="5" />
+      <node id="9014908457752438923" at="15,96,16,55" concept="2" />
+      <node id="9014908457752438923" at="13,5,17,5" concept="0" />
+      <scope id="9014908457752438923" at="14,5,16,55">
         <var name="nonTypesystemRule" id="9014908457752438923" />
       </scope>
     </file>

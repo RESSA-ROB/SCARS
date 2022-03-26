@@ -112,7 +112,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902358");
     b.version(2);
     b.property("topicType", 0x51f789b6b563550bL).type(MetaIdFactory.dataTypeId(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f72d81L)).origin("5906340854139933963").done();
-    b.aggregate("pair", 0x51f789b6b5635515L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b563550fL).optional(true).ordered(true).multiple(true).origin("5906340854139933973").done();
+    b.aggregate("sources", 0x1ba577574bdecb3cL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9e6L).optional(false).ordered(true).multiple(false).origin("1992129627000064828").done();
+    b.aggregate("targets", 0x1ba577574bdecb3dL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9a5L).optional(false).ordered(true).multiple(false).origin("1992129627000064829").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIInputPortInst() {
@@ -178,7 +179,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("message", 0x6a627af554bfd49dL).type(PrimitiveTypeId.STRING).origin("7665824709845439645").done();
     b.property("type", 0x7d1b637ab2f7e2d3L).type(MetaIdFactory.dataTypeId(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f72d81L)).origin("9014908457751929555").done();
-    b.aggregate("Qos", 0x7d1b637ab2f0e94eL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL).optional(true).ordered(true).multiple(false).origin("9014908457751472462").done();
+    b.aggregate("Qos", 0x7d1b637ab2f0e94eL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL).optional(false).ordered(true).multiple(false).origin("9014908457751472462").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOutputPortInst() {

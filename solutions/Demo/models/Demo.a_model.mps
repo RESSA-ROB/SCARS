@@ -13,6 +13,7 @@
       <concept id="2722478502131880397" name="Communication.structure.OutPutPort" flags="ng" index="3pZnS8">
         <property id="7665824709845439645" name="message" index="YRqTC" />
         <property id="9014908457751929555" name="type" index="3fV86D" />
+        <child id="9014908457751472462" name="Qos" index="3fUSCO" />
       </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
         <property id="7665824709845439643" name="message" index="YRqTI" />
@@ -23,17 +24,14 @@
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
         <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
-      <concept id="5906340854139933967" name="Communication.structure.ConnPair" flags="ng" index="3$_dMT">
-        <child id="5906340854139933970" name="subscriber" index="3$_dM$" />
-        <child id="5906340854139933968" name="publisher" index="3$_dMA" />
-      </concept>
       <concept id="5906340854139902388" name="Communication.structure.InputPortInst" flags="ng" index="3$_l02" />
       <concept id="5906340854139902373" name="Communication.structure.IInputPortInst" flags="ng" index="3$_l0j">
         <reference id="5906340854139902379" name="inputport" index="3$_l0t" />
       </concept>
       <concept id="5906340854139902358" name="Communication.structure.Connections" flags="ng" index="3$_l0w">
         <property id="5906340854139933963" name="topicType" index="3$_dMX" />
-        <child id="5906340854139933973" name="pair" index="3$_dMz" />
+        <child id="1992129627000064829" name="targets" index="1guVLE" />
+        <child id="1992129627000064828" name="sources" index="1guVLF" />
       </concept>
       <concept id="5906340854139902438" name="Communication.structure.IOutputPortInst" flags="ng" index="3$_l1g">
         <reference id="5906340854139902444" name="outputport" index="3$_l1q" />
@@ -44,7 +42,9 @@
       <concept id="5459192469989855204" name="DDS.structure.DDS_Reliability" flags="ng" index="3lYnP4">
         <property id="5459192469989855205" name="value" index="3lYnP5" />
       </concept>
-      <concept id="5459192469989647037" name="DDS.structure.DDS_Durability" flags="ng" index="3lYD0t" />
+      <concept id="5459192469989647037" name="DDS.structure.DDS_Durability" flags="ng" index="3lYD0t">
+        <property id="5459192469989647038" name="value" index="3lYD0u" />
+      </concept>
     </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
       <concept id="4913646491649132523" name="Component_v1.structure.TaskAssociation3" flags="ng" index="iDS2o">
@@ -57,7 +57,6 @@
       </concept>
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
         <child id="4913646491648010062" name="association" index="iHI0X" />
-        <child id="7665824709845439654" name="connect" index="YRqTj" />
         <child id="7665824709845439649" name="hardware" index="YRqTk" />
         <child id="7665824709845439658" name="nfr" index="YRqTv" />
         <child id="5906340854140773826" name="tasks" index="3$xULO" />
@@ -95,7 +94,7 @@
     <language id="6d222813-53ea-440e-ba30-23ced4b723f0" name="QoS">
       <concept id="8489988947995225364" name="QoS.structure.CapabilitiesProfile" flags="ng" index="lVhbz">
         <property id="5906340854137253614" name="type" index="3$Nuto" />
-        <child id="8489988947995225377" name="policies" index="lVhbm" />
+        <child id="647160841347474705" name="policies" index="PX0xa" />
       </concept>
       <concept id="9014908457751953393" name="QoS.structure.CapabilitiesProfileInst" flags="ng" index="3fSPMb" />
       <concept id="9014908457751953389" name="QoS.structure.ICapabilitiesProfileInst" flags="ng" index="3fSPMn">
@@ -150,10 +149,18 @@
         <node concept="3pZnS9" id="5fFrGxqGmdG" role="3pZnSa">
           <property role="TrG5h" value="Change angle" />
           <property role="YRqTI" value="rotate camera" />
+          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
+          <node concept="3fSPMb" id="zVblGX5a0f" role="3fUSCQ">
+            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
+          </node>
         </node>
         <node concept="3pZnS8" id="5fFrGxqGmdI" role="3pZnSk">
           <property role="TrG5h" value="Send image" />
           <property role="YRqTC" value="Forward image" />
+          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
+          <node concept="3fSPMb" id="zVblGX5a0h" role="3fUSCO">
+            <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
+          </node>
         </node>
       </node>
       <node concept="YFELz" id="76yEC$Umf0P" role="YGDRf">
@@ -171,12 +178,11 @@
       <property role="YR0EA" value="Camera" />
       <property role="YR0Ew" value="101" />
       <node concept="3pZnSb" id="57RyrqPfWSJ" role="YR0E$">
-        <node concept="3pZnS9" id="57RyrqPfWSL" role="3pZnSa">
-          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
-          <property role="TrG5h" value="TrafficStatus" />
-          <property role="YRqTI" value="Hello" />
-          <node concept="3fSPMb" id="57RyrqPfWSN" role="3fUSCQ">
-            <ref role="3fSPMa" node="57RyrqPfWRV" resolve="TrafficInfo" />
+        <node concept="3pZnS9" id="zVblGX8dMo" role="3pZnSa">
+          <property role="3fV86E" value="7OroREMXMQ3/Location" />
+          <property role="TrG5h" value="obtainlocation" />
+          <node concept="3fSPMb" id="zVblGX8dMY" role="3fUSCQ">
+            <ref role="3fSPMa" node="zVblGX8dMI" resolve="check3" />
           </node>
         </node>
       </node>
@@ -199,11 +205,13 @@
     <node concept="YR0EM" id="76yEC$UoAxU" role="YR0ET">
       <property role="YR0EA" value="TempertaureSensor" />
       <property role="YR0Ew" value="201" />
-      <node concept="3pZnSb" id="76yEC$UoAxW" role="YR0E$">
-        <node concept="3pZnS9" id="76yEC$UoAxY" role="3pZnSa" />
-        <node concept="3pZnS8" id="7OroREMWhkP" role="3pZnSk">
-          <property role="TrG5h" value="TrafficData" />
-          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
+      <node concept="3pZnSb" id="zVblGX8dN0" role="YR0E$">
+        <node concept="3pZnS8" id="zVblGX8dN2" role="3pZnSk">
+          <property role="TrG5h" value="SendLocation" />
+          <property role="3fV86D" value="7OroREMXMQ3/Location" />
+          <node concept="3fSPMb" id="zVblGX8dN6" role="3fUSCO">
+            <ref role="3fSPMa" node="zVblGX8dMw" resolve="check4" />
+          </node>
         </node>
       </node>
       <node concept="YFELz" id="76yEC$UoAy0" role="YGDRf">
@@ -221,16 +229,6 @@
     </node>
     <node concept="1D0Sm2" id="4gKLRdmyP9O" role="YRqTv">
       <property role="TrG5h" value="Speed" />
-    </node>
-    <node concept="3pZnSb" id="3VRCMhnYbIF" role="YRqTj">
-      <node concept="3pZnS9" id="3VRCMhnYbIH" role="3pZnSa">
-        <property role="TrG5h" value="t" />
-        <property role="3fV86E" value="7OroREMXMQ3/Location" />
-        <property role="YRqTI" value="Hi" />
-        <node concept="3fSPMb" id="7OroREMZUxd" role="3fUSCQ">
-          <ref role="3fSPMa" node="57RyrqPfWR3" resolve="ObjectLocated" />
-        </node>
-      </node>
     </node>
     <node concept="YE6PC" id="6IjCi4sh0pS" role="YRqTk">
       <ref role="YCHyi" node="5fFrGxqGmdB" resolve="H2" />
@@ -271,19 +269,33 @@
   </node>
   <node concept="1wihRA" id="7OroREMXMQ0">
     <property role="TrG5h" value="QoS Profiles" />
-    <node concept="lVhbz" id="57RyrqPfWR3" role="1wihR_">
-      <property role="TrG5h" value="ObjectLocated" />
-      <property role="3$Nuto" value="7OroREMXMQ5/ObjectDetection" />
-      <node concept="3lYnP4" id="57RyrqPfWR7" role="lVhbm" />
-      <node concept="3lYD0t" id="57RyrqPfWRg" role="lVhbm" />
-    </node>
-    <node concept="lVhbz" id="57RyrqPfWRV" role="1wihR_">
-      <property role="TrG5h" value="TrafficInfo" />
+    <node concept="lVhbz" id="zVblGX4oLf" role="1wihR_">
+      <property role="TrG5h" value="check1" />
       <property role="3$Nuto" value="7OroREMXMQ2/Traffic" />
-      <node concept="3lYnP4" id="57RyrqPfWS2" role="lVhbm">
+      <node concept="3lYnP4" id="zVblGX4oLj" role="PX0xa" />
+      <node concept="3lYD0t" id="zVblGX9a$D" role="PX0xa" />
+    </node>
+    <node concept="lVhbz" id="zVblGX4oLp" role="1wihR_">
+      <property role="TrG5h" value="check2" />
+      <property role="3$Nuto" value="7OroREMXMQ2/Traffic" />
+      <node concept="3lYnP4" id="zVblGX4xAY" role="PX0xa">
         <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
       </node>
-      <node concept="3lYD0t" id="57RyrqPfWSe" role="lVhbm" />
+      <node concept="3lYD0t" id="zVblGX9a$N" role="PX0xa">
+        <property role="3lYD0u" value="7doERKbPKLE/TRANSIENT_LOCAL" />
+      </node>
+    </node>
+    <node concept="lVhbz" id="zVblGX8dMw" role="1wihR_">
+      <property role="TrG5h" value="check4" />
+      <property role="3$Nuto" value="7OroREMXMQ3/Location" />
+      <node concept="3lYnP4" id="zVblGX8dMC" role="PX0xa" />
+    </node>
+    <node concept="lVhbz" id="zVblGX8dMI" role="1wihR_">
+      <property role="TrG5h" value="check3" />
+      <property role="3$Nuto" value="7OroREMXMQ3/Location" />
+      <node concept="3lYnP4" id="zVblGX8dMS" role="PX0xa">
+        <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
+      </node>
     </node>
   </node>
   <node concept="3$NG9R" id="57RyrqPibMx">
@@ -303,34 +315,6 @@
         <ref role="3$Jc47" node="4gKLRdmwWCw" resolve="ResponseTime" />
       </node>
     </node>
-    <node concept="3$_l0w" id="57RyrqPpH8C" role="3$_6AO">
-      <property role="3$_dMX" value="7OroREMXMQ2/Traffic" />
-      <node concept="3$_dMT" id="57RyrqPpH8J" role="3$_dMz">
-        <node concept="3$_l1o" id="57RyrqPpPLi" role="3$_dMA">
-          <ref role="3$_l1q" node="7OroREMWhkP" resolve="TrafficData" />
-        </node>
-        <node concept="3$_l02" id="57RyrqPpPLl" role="3$_dM$">
-          <ref role="3$_l0t" node="57RyrqPfWSL" resolve="TrafficStatus" />
-        </node>
-      </node>
-      <node concept="3$_dMT" id="4gKLRdmvoat" role="3$_dMz">
-        <node concept="3$_l1o" id="4gKLRdmvoaD" role="3$_dMA">
-          <ref role="3$_l1q" node="7OroREMWhkP" resolve="TrafficData" />
-        </node>
-        <node concept="3$_l02" id="4gKLRdmvoaG" role="3$_dM$">
-          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
-        </node>
-      </node>
-      <node concept="3$_dMT" id="57RyrqPqv0j" role="3$_dMz">
-        <node concept="3$_l1o" id="57RyrqPqv0s" role="3$_dMA">
-          <ref role="3$_l1q" node="5fFrGxqGmdI" resolve="Send image" />
-        </node>
-        <node concept="3$_l02" id="57RyrqPqv0v" role="3$_dM$">
-          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
-        </node>
-      </node>
-    </node>
-    <node concept="3$_l0w" id="57RyrqPqv0J" role="3$_6AO" />
     <node concept="3$ACpF" id="4gKLRdmuy_5" role="ih4uj">
       <property role="TrG5h" value="deliver product" />
     </node>
@@ -345,6 +329,24 @@
     </node>
     <node concept="iDS2o" id="4gKLRdmAj70" role="iDSXm">
       <ref role="iDS2t" node="4gKLRdmxpE3" resolve="make product" />
+    </node>
+    <node concept="3$_l0w" id="zVblGX5a03" role="3$_6AO">
+      <property role="3$_dMX" value="7OroREMXMQ2/Traffic" />
+      <node concept="3$_l1o" id="zVblGX5a09" role="1guVLF">
+        <ref role="3$_l1q" node="5fFrGxqGmdI" resolve="Send image" />
+      </node>
+      <node concept="3$_l02" id="zVblGX5a0c" role="1guVLE">
+        <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
+      </node>
+    </node>
+    <node concept="3$_l0w" id="zVblGX8dN9" role="3$_6AO">
+      <property role="3$_dMX" value="7OroREMXMQ3/Location" />
+      <node concept="3$_l1o" id="zVblGX8dNi" role="1guVLF">
+        <ref role="3$_l1q" node="zVblGX8dN2" resolve="SendLocation" />
+      </node>
+      <node concept="3$_l02" id="zVblGX8dNl" role="1guVLE">
+        <ref role="3$_l0t" node="zVblGX8dMo" resolve="obtainlocation" />
+      </node>
     </node>
   </node>
 </model>
