@@ -16,7 +16,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_HardwareComponentInst;
   private ConceptPresentation props_HardwareRef;
   private ConceptPresentation props_IHardwareComponentInst;
+  private ConceptPresentation props_IMobileRobotInst;
   private ConceptPresentation props_MobileRobot;
+  private ConceptPresentation props_MobileRobotInst;
   private ConceptPresentation props_NFPProfile;
   private ConceptPresentation props_NFP_Profile;
   private ConceptPresentation props_NFR;
@@ -24,6 +26,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Sensors;
   private ConceptPresentation props_SoftwareComponent;
   private ConceptPresentation props_SoftwareComponentInst;
+  private ConceptPresentation props_System;
+  private ConceptPresentation props_TaskAssociation3;
+  private ConceptPresentation props_TaskNFRAssociation1;
+  private ConceptPresentation props_TaskNFRAssociation2;
 
   @Override
   @Nullable
@@ -54,7 +60,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HardwareComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0q);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0w);
           props_HardwareComponent = cpb.create();
         }
         return props_HardwareComponent;
@@ -79,6 +85,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IHardwareComponentInst = cpb.create();
         }
         return props_IHardwareComponentInst;
+      case LanguageConceptSwitch.IMobileRobotInst:
+        if (props_IMobileRobotInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IMobileRobotInst = cpb.create();
+        }
+        return props_IMobileRobotInst;
       case LanguageConceptSwitch.MobileRobot:
         if (props_MobileRobot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -86,6 +98,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MobileRobot = cpb.create();
         }
         return props_MobileRobot;
+      case LanguageConceptSwitch.MobileRobotInst:
+        if (props_MobileRobotInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MobileRobotInst = cpb.create();
+        }
+        return props_MobileRobotInst;
       case LanguageConceptSwitch.NFPProfile:
         if (props_NFPProfile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -111,7 +130,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("NFR Profile annotation for different nodes");
           cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554d0e74cL, 0x6a627af554d0e753L, "profile", "", "");
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a11b0q);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a31b0w);
           props_RunTimeNFRsAnnotation = cpb.create();
         }
         return props_RunTimeNFRsAnnotation;
@@ -135,6 +154,34 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SoftwareComponentInst = cpb.create();
         }
         return props_SoftwareComponentInst;
+      case LanguageConceptSwitch.System:
+        if (props_System == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_System = cpb.create();
+        }
+        return props_System;
+      case LanguageConceptSwitch.TaskAssociation3:
+        if (props_TaskAssociation3 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c773569747ebL, 0x4430c773569747eeL, "tasks", "", "");
+          props_TaskAssociation3 = cpb.create();
+        }
+        return props_TaskAssociation3;
+      case LanguageConceptSwitch.TaskNFRAssociation1:
+        if (props_TaskNFRAssociation1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L, 0x4430c77356927e06L, "tasks", "", "");
+          props_TaskNFRAssociation1 = cpb.create();
+        }
+        return props_TaskNFRAssociation1;
+      case LanguageConceptSwitch.TaskNFRAssociation2:
+        if (props_TaskNFRAssociation2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c773568626f9L, 0x4430c773568626faL, "tasks", "", "");
+          props_TaskNFRAssociation2 = cpb.create();
+        }
+        return props_TaskNFRAssociation2;
     }
     return null;
   }

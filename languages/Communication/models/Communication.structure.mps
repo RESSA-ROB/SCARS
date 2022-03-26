@@ -3,11 +3,15 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="4cc07462-84b3-4d01-8adb-629ddd3cebd4" name="Capabilities" version="0" />
+    <use id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1" version="0" />
+    <use id="ddad85b5-8f76-40d8-9a0d-bd322c713e77" name="NFR" version="0" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tqx2" ref="r:ca64c7cd-6639-4b1e-85dc-28366b5a0c63(QoS.structure)" implicit="true" />
+    <import index="e6u4" ref="r:44322346-a7b1-436b-882b-4bbfa753778e(Capabilities.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -49,6 +53,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -154,6 +161,98 @@
     <node concept="25R33" id="7OroREMXVoE" role="25R1y">
       <property role="3tVfz5" value="9014908457751918122" />
       <property role="TrG5h" value="Warnings" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPoHAm">
+    <property role="EcuMT" value="5906340854139902358" />
+    <property role="TrG5h" value="Connections" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="57RyrqPoHAn" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="57RyrqPoPkb" role="1TKVEl">
+      <property role="IQ2nx" value="5906340854139933963" />
+      <property role="TrG5h" value="topicType" />
+      <ref role="AX2Wp" to="tqx2:7OroREMXMQ1" resolve="CProfileType" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPoPkl" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139933973" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="pair" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="57RyrqPoPkf" resolve="ConnPair" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="57RyrqPoHA_">
+    <property role="EcuMT" value="5906340854139902373" />
+    <property role="TrG5h" value="IInputPortInst" />
+    <property role="3GE5qa" value="Instances" />
+    <node concept="PrWs8" id="57RyrqPoHAA" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="57RyrqPoHAC" role="PrDN$">
+      <ref role="PrY4T" to="e6u4:2LnlX4fH7xw" resolve="ICanBePlatformAnnotated" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPoHAF" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139902379" />
+      <property role="20kJfa" value="inputport" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2n8bWnWdl7c" resolve="InputPort" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPoHAO">
+    <property role="EcuMT" value="5906340854139902388" />
+    <property role="TrG5h" value="InputPortInst" />
+    <property role="3GE5qa" value="Instances" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="57RyrqPoHAP" role="PzmwI">
+      <ref role="PrY4T" node="57RyrqPoHA_" resolve="IInputPortInst" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="57RyrqPoHBA">
+    <property role="EcuMT" value="5906340854139902438" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="IOutputPortInst" />
+    <node concept="PrWs8" id="57RyrqPoHBB" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="57RyrqPoHBD" role="PrDN$">
+      <ref role="PrY4T" to="e6u4:2LnlX4fH7xw" resolve="ICanBePlatformAnnotated" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPoHBG" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139902444" />
+      <property role="20kJfa" value="outputport" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2n8bWnWdl7d" resolve="OutPutPort" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPoHBI">
+    <property role="EcuMT" value="5906340854139902446" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="OutputPortInst" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="57RyrqPoHBJ" role="PzmwI">
+      <ref role="PrY4T" node="57RyrqPoHBA" resolve="IOutputPortInst" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPoPkf">
+    <property role="EcuMT" value="5906340854139933967" />
+    <property role="TrG5h" value="ConnPair" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="57RyrqPoPkg" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139933968" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="publisher" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57RyrqPoHBA" resolve="IOutputPortInst" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPoPki" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139933970" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="subscriber" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57RyrqPoHA_" resolve="IInputPortInst" />
     </node>
   </node>
 </model>

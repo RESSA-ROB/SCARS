@@ -16,14 +16,20 @@ public final class LanguageConceptSwitch {
   public static final int HardwareComponentInst = 4;
   public static final int HardwareRef = 5;
   public static final int IHardwareComponentInst = 6;
-  public static final int MobileRobot = 7;
-  public static final int NFPProfile = 8;
-  public static final int NFP_Profile = 9;
-  public static final int NFR = 10;
-  public static final int RunTimeNFRsAnnotation = 11;
-  public static final int Sensors = 12;
-  public static final int SoftwareComponent = 13;
-  public static final int SoftwareComponentInst = 14;
+  public static final int IMobileRobotInst = 7;
+  public static final int MobileRobot = 8;
+  public static final int MobileRobotInst = 9;
+  public static final int NFPProfile = 10;
+  public static final int NFP_Profile = 11;
+  public static final int NFR = 12;
+  public static final int RunTimeNFRsAnnotation = 13;
+  public static final int Sensors = 14;
+  public static final int SoftwareComponent = 15;
+  public static final int SoftwareComponentInst = 16;
+  public static final int System = 17;
+  public static final int TaskAssociation3 = 18;
+  public static final int TaskNFRAssociation1 = 19;
+  public static final int TaskNFRAssociation2 = 20;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L);
@@ -34,7 +40,9 @@ public final class LanguageConceptSwitch {
     builder.put(0x6a627af554ca179dL, HardwareComponentInst);
     builder.put(0x6a627af554c0a264L, HardwareRef);
     builder.put(0x6a627af554c03797L, IHardwareComponentInst);
+    builder.put(0x51f789b6b5394bcbL, IMobileRobotInst);
     builder.put(0x4db49580d35a9e5cL, MobileRobot);
+    builder.put(0x51f789b6b5394bd3L, MobileRobotInst);
     builder.put(0x6a627af554d0e736L, NFPProfile);
     builder.put(0x6a627af554d0e733L, NFP_Profile);
     builder.put(0x53eb6ec85ab3d640L, NFR);
@@ -42,6 +50,10 @@ public final class LanguageConceptSwitch {
     builder.put(0x6a627af554be7047L, Sensors);
     builder.put(0x6a627af554be7034L, SoftwareComponent);
     builder.put(0x6a627af554c0a269L, SoftwareComponentInst);
+    builder.put(0x51f789b6b5394bc1L, System);
+    builder.put(0x4430c773569747ebL, TaskAssociation3);
+    builder.put(0x4430c77356927e03L, TaskNFRAssociation1);
+    builder.put(0x4430c773568626f9L, TaskNFRAssociation2);
     myIndex = builder.seal();
   }
 

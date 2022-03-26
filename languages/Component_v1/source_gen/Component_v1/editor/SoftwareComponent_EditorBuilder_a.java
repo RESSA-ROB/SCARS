@@ -150,7 +150,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.nfr$Zx5z;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.RunTimeNFRs$Gm;
+      return CONCEPTS.LocalRunTimeNFRs$Gm;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -207,7 +207,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-    /*package*/ static final SConcept RunTimeNFRs$Gm = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, "NFR.structure.RunTimeNFRs");
+    /*package*/ static final SConcept LocalRunTimeNFRs$Gm = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, "NFR.structure.LocalRunTimeNFRs");
   }
 
   private static final class LINKS {

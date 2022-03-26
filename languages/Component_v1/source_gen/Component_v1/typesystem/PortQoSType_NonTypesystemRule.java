@@ -37,7 +37,7 @@ public class PortQoSType_NonTypesystemRule extends AbstractNonTypesystemRule_Run
           SNode ip_var;
           while (ip_it.hasNext()) {
             ip_var = ip_it.next();
-            if (SPropertyOperations.getEnum(ip_var, PROPS.type$Ggl7) != SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(ip_var, LINKS.QoS$MFoO), LINKS.profile$GSCv), PROPS.type$keNm)) {
+            if (SPropertyOperations.getEnum(ip_var, PROPS.type$Ggl7) != SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(ip_var, LINKS.QoS$MFoO), LINKS.profile$GSCv), PROPS.type$Shay)) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Port type and QoS type mismatch for " + SPropertyOperations.getString(ip_var, PROPS.name$MnvL), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457752281407", null, errorTarget);
@@ -50,7 +50,7 @@ public class PortQoSType_NonTypesystemRule extends AbstractNonTypesystemRule_Run
           SNode op_var;
           while (op_it.hasNext()) {
             op_var = op_it.next();
-            if (SPropertyOperations.getEnum(op_var, PROPS.type$Gh2D) != SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(op_var, LINKS.Qos$MFRl), LINKS.profile$GSCv), PROPS.type$keNm)) {
+            if (SPropertyOperations.getEnum(op_var, PROPS.type$Gh2D) != SPropertyOperations.getEnum(SLinkOperations.getTarget(SLinkOperations.getTarget(op_var, LINKS.Qos$MFRl), LINKS.profile$GSCv), PROPS.type$Shay)) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Port type and QoS type mismatch for " + SPropertyOperations.getString(op_var, PROPS.name$MnvL), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457752285716", null, errorTarget);
@@ -82,8 +82,8 @@ public class PortQoSType_NonTypesystemRule extends AbstractNonTypesystemRule_Run
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty type$Shay = MetaAdapterFactory.getProperty(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L, 0x51f789b6b53a6eeeL, "type");
     /*package*/ static final SProperty type$Ggl7 = MetaAdapterFactory.getProperty(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ccL, 0x7d1b637ab2f7e2d0L, "type");
-    /*package*/ static final SProperty type$keNm = MetaAdapterFactory.getProperty(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L, 0x7d1b637ab2f72d86L, "type");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty type$Gh2D = MetaAdapterFactory.getProperty(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551cdL, 0x7d1b637ab2f7e2d3L, "type");
   }

@@ -19,10 +19,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptArchitecturalNFRs = createDescriptorForArchitecturalNFRs();
   /*package*/ final ConceptDescriptor myConceptCommunicationQoS = createDescriptorForCommunicationQoS();
   /*package*/ final ConceptDescriptor myConceptExpression2 = createDescriptorForExpression2();
-  /*package*/ final ConceptDescriptor myConceptNFRFunction = createDescriptorForNFRFunction();
+  /*package*/ final ConceptDescriptor myConceptGlobalNFRFunction = createDescriptorForGlobalNFRFunction();
+  /*package*/ final ConceptDescriptor myConceptGlobalRunTimeNFRs = createDescriptorForGlobalRunTimeNFRs();
+  /*package*/ final ConceptDescriptor myConceptGlobalRunTimeNFRsInst = createDescriptorForGlobalRunTimeNFRsInst();
+  /*package*/ final ConceptDescriptor myConceptIGlobalRunTimeNFRsInst = createDescriptorForIGlobalRunTimeNFRsInst();
+  /*package*/ final ConceptDescriptor myConceptILocalRunTimeNFRs2Inst = createDescriptorForILocalRunTimeNFRs2Inst();
+  /*package*/ final ConceptDescriptor myConceptILocalRunTimeNFRsInst = createDescriptorForILocalRunTimeNFRsInst();
+  /*package*/ final ConceptDescriptor myConceptLocalNFRFunction = createDescriptorForLocalNFRFunction();
+  /*package*/ final ConceptDescriptor myConceptLocalRunTimeNFRs = createDescriptorForLocalRunTimeNFRs();
+  /*package*/ final ConceptDescriptor myConceptLocalRunTimeNFRs2 = createDescriptorForLocalRunTimeNFRs2();
+  /*package*/ final ConceptDescriptor myConceptLocalRunTimeNFRs2Inst = createDescriptorForLocalRunTimeNFRs2Inst();
+  /*package*/ final ConceptDescriptor myConceptLocalRunTimeNFRsInst = createDescriptorForLocalRunTimeNFRsInst();
   /*package*/ final ConceptDescriptor myConceptRunTimeNFRReference = createDescriptorForRunTimeNFRReference();
-  /*package*/ final ConceptDescriptor myConceptRunTimeNFRs = createDescriptorForRunTimeNFRs();
-  /*package*/ final ConceptDescriptor myConceptRunTimeNFRs2 = createDescriptorForRunTimeNFRs2();
   /*package*/ final EnumerationDescriptor myEnumerationOperationEnumeration = new EnumerationDescriptor_OperationEnumeration();
   /*package*/ final EnumerationDescriptor myEnumerationOperatorEnumeration = new EnumerationDescriptor_OperatorEnumeration();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -35,11 +43,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.extendedLanguage(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, "Capabilities");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptArchitecturalNFRs, myConceptCommunicationQoS, myConceptExpression2, myConceptNFRFunction, myConceptRunTimeNFRReference, myConceptRunTimeNFRs, myConceptRunTimeNFRs2);
+    return Arrays.asList(myConceptArchitecturalNFRs, myConceptCommunicationQoS, myConceptExpression2, myConceptGlobalNFRFunction, myConceptGlobalRunTimeNFRs, myConceptGlobalRunTimeNFRsInst, myConceptIGlobalRunTimeNFRsInst, myConceptILocalRunTimeNFRs2Inst, myConceptILocalRunTimeNFRsInst, myConceptLocalNFRFunction, myConceptLocalRunTimeNFRs, myConceptLocalRunTimeNFRs2, myConceptLocalRunTimeNFRs2Inst, myConceptLocalRunTimeNFRsInst, myConceptRunTimeNFRReference);
   }
 
   @Override
@@ -52,14 +61,30 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCommunicationQoS;
       case LanguageConceptSwitch.Expression2:
         return myConceptExpression2;
-      case LanguageConceptSwitch.NFRFunction:
-        return myConceptNFRFunction;
+      case LanguageConceptSwitch.GlobalNFRFunction:
+        return myConceptGlobalNFRFunction;
+      case LanguageConceptSwitch.GlobalRunTimeNFRs:
+        return myConceptGlobalRunTimeNFRs;
+      case LanguageConceptSwitch.GlobalRunTimeNFRsInst:
+        return myConceptGlobalRunTimeNFRsInst;
+      case LanguageConceptSwitch.IGlobalRunTimeNFRsInst:
+        return myConceptIGlobalRunTimeNFRsInst;
+      case LanguageConceptSwitch.ILocalRunTimeNFRs2Inst:
+        return myConceptILocalRunTimeNFRs2Inst;
+      case LanguageConceptSwitch.ILocalRunTimeNFRsInst:
+        return myConceptILocalRunTimeNFRsInst;
+      case LanguageConceptSwitch.LocalNFRFunction:
+        return myConceptLocalNFRFunction;
+      case LanguageConceptSwitch.LocalRunTimeNFRs:
+        return myConceptLocalRunTimeNFRs;
+      case LanguageConceptSwitch.LocalRunTimeNFRs2:
+        return myConceptLocalRunTimeNFRs2;
+      case LanguageConceptSwitch.LocalRunTimeNFRs2Inst:
+        return myConceptLocalRunTimeNFRs2Inst;
+      case LanguageConceptSwitch.LocalRunTimeNFRsInst:
+        return myConceptLocalRunTimeNFRsInst;
       case LanguageConceptSwitch.RunTimeNFRReference:
         return myConceptRunTimeNFRReference;
-      case LanguageConceptSwitch.RunTimeNFRs:
-        return myConceptRunTimeNFRs;
-      case LanguageConceptSwitch.RunTimeNFRs2:
-        return myConceptRunTimeNFRs2;
       default:
         return null;
     }
@@ -97,8 +122,69 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForNFRFunction() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "NFRFunction", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L);
+  private static ConceptDescriptor createDescriptorForGlobalNFRFunction() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "GlobalNFRFunction", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b48acL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/5906340854138357932");
+    b.version(2);
+    b.associate("fields1", 0x51f789b6b54b48afL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(true).origin("5906340854138357935").done();
+    b.associate("fields2", 0x51f789b6b54b48b1L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L).optional(true).origin("5906340854138357937").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForGlobalRunTimeNFRs() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "GlobalRunTimeNFRs", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b491dL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/5906340854138358045");
+    b.version(2);
+    b.property("operator", 0x51f789b6b54b4920L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL)).origin("5906340854138358048").done();
+    b.property("constraint", 0x51f789b6b54b4921L).type(PrimitiveTypeId.INTEGER).origin("5906340854138358049").done();
+    b.property("unit", 0x51f789b6b54b4922L).type(PrimitiveTypeId.STRING).origin("5906340854138358050").done();
+    b.property("type", 0x51f789b6b54b4923L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L)).origin("5906340854138358051").done();
+    b.aggregate("attributes", 0x51f789b6b54b4928L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b48acL).optional(true).ordered(true).multiple(true).origin("5906340854138358056").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForGlobalRunTimeNFRsInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "GlobalRunTimeNFRsInst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569616f0L);
+    b.class_(false, false, false);
+    b.parent(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569616e8L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491649054448");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIGlobalRunTimeNFRsInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "IGlobalRunTimeNFRsInst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569616e8L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491649054440");
+    b.version(2);
+    b.associate("instances", 0x4430c773569616eeL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b491dL).optional(false).origin("4913646491649054446").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForILocalRunTimeNFRs2Inst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "ILocalRunTimeNFRs2Inst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b5292L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491648348818");
+    b.version(2);
+    b.associate("instances", 0x4430c773568b5298L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L).optional(false).origin("4913646491648348824").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForILocalRunTimeNFRsInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "ILocalRunTimeNFRsInst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c0L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491648746688");
+    b.version(2);
+    b.associate("instance", 0x4430c773569164c6L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(false).origin("4913646491648746694").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLocalNFRFunction() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "LocalNFRFunction", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/8188294578878680098");
@@ -106,16 +192,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("fields", 0x3ef7a3245800fbfbL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(false).origin("4537274526089673723").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForRunTimeNFRReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRReference", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL);
-    b.class_(false, false, false);
-    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4537274526089673726");
-    b.version(2);
-    b.associate("field", 0x3ef7a3245800fbffL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(false).origin("4537274526089673727").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRunTimeNFRs() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRs", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L);
+  private static ConceptDescriptor createDescriptorForLocalRunTimeNFRs() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "LocalRunTimeNFRs", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/7665824709846292118");
@@ -125,8 +203,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("unit", 0x6a627af554ccd6aaL).type(PrimitiveTypeId.STRING).origin("7665824709846292138").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForRunTimeNFRs2() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRs2", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L);
+  private static ConceptDescriptor createDescriptorForLocalRunTimeNFRs2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "LocalRunTimeNFRs2", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4537274526088832678");
@@ -136,6 +214,30 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("unit", 0x3ef7a32457f426a9L).type(PrimitiveTypeId.STRING).origin("4537274526088832681").done();
     b.property("type", 0x7d1b637ab2ed4ca4L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L)).origin("9014908457751235748").done();
     b.aggregate("attributes", 0x3ef7a32457f426afL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L).optional(true).ordered(true).multiple(true).origin("4537274526088832687").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLocalRunTimeNFRs2Inst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "LocalRunTimeNFRs2Inst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b52b6L);
+    b.class_(false, false, false);
+    b.parent(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b5292L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491648348854");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLocalRunTimeNFRsInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "LocalRunTimeNFRsInst", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c8L);
+    b.class_(false, false, false);
+    b.parent(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c0L);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4913646491648746696");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRunTimeNFRReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR", "RunTimeNFRReference", 0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL);
+    b.class_(false, false, false);
+    b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/4537274526089673726");
+    b.version(2);
+    b.associate("field", 0x3ef7a3245800fbffL).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(false).origin("4537274526089673727").done();
     return b.create();
   }
 }

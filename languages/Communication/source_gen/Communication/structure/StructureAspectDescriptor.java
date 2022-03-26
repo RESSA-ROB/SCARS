@@ -12,15 +12,21 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCPort = createDescriptorForCPort();
+  /*package*/ final ConceptDescriptor myConceptConnPair = createDescriptorForConnPair();
+  /*package*/ final ConceptDescriptor myConceptConnections = createDescriptorForConnections();
+  /*package*/ final ConceptDescriptor myConceptIInputPortInst = createDescriptorForIInputPortInst();
+  /*package*/ final ConceptDescriptor myConceptIOutputPortInst = createDescriptorForIOutputPortInst();
   /*package*/ final ConceptDescriptor myConceptIPort = createDescriptorForIPort();
   /*package*/ final ConceptDescriptor myConceptInputPort = createDescriptorForInputPort();
+  /*package*/ final ConceptDescriptor myConceptInputPortInst = createDescriptorForInputPortInst();
   /*package*/ final ConceptDescriptor myConceptOPort = createDescriptorForOPort();
   /*package*/ final ConceptDescriptor myConceptOutPutPort = createDescriptorForOutPutPort();
+  /*package*/ final ConceptDescriptor myConceptOutputPortInst = createDescriptorForOutputPortInst();
   /*package*/ final EnumerationDescriptor myEnumerationComtype = new EnumerationDescriptor_Comtype();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -32,12 +38,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.extendedLanguage(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, "Capabilities");
     deps.aggregatedLanguage(0x6d22281353ea440eL, 0xba3023ced4b723f0L, "QoS");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCPort, myConceptIPort, myConceptInputPort, myConceptOPort, myConceptOutPutPort);
+    return Arrays.asList(myConceptCPort, myConceptConnPair, myConceptConnections, myConceptIInputPortInst, myConceptIOutputPortInst, myConceptIPort, myConceptInputPort, myConceptInputPortInst, myConceptOPort, myConceptOutPutPort, myConceptOutputPortInst);
   }
 
   @Override
@@ -46,14 +53,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.CPort:
         return myConceptCPort;
+      case LanguageConceptSwitch.ConnPair:
+        return myConceptConnPair;
+      case LanguageConceptSwitch.Connections:
+        return myConceptConnections;
+      case LanguageConceptSwitch.IInputPortInst:
+        return myConceptIInputPortInst;
+      case LanguageConceptSwitch.IOutputPortInst:
+        return myConceptIOutputPortInst;
       case LanguageConceptSwitch.IPort:
         return myConceptIPort;
       case LanguageConceptSwitch.InputPort:
         return myConceptInputPort;
+      case LanguageConceptSwitch.InputPortInst:
+        return myConceptInputPortInst;
       case LanguageConceptSwitch.OPort:
         return myConceptOPort;
       case LanguageConceptSwitch.OutPutPort:
         return myConceptOutPutPort;
+      case LanguageConceptSwitch.OutputPortInst:
+        return myConceptOutputPortInst;
       default:
         return null;
     }
@@ -77,6 +96,45 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("oport", 0x25c82fc5fc3551d1L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551cdL).optional(true).ordered(true).multiple(true).origin("2722478502131880401").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForConnPair() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "ConnPair", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b563550fL);
+    b.class_(false, false, false);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139933967");
+    b.version(2);
+    b.aggregate("publisher", 0x51f789b6b5635510L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9e6L).optional(false).ordered(true).multiple(false).origin("5906340854139933968").done();
+    b.aggregate("subscriber", 0x51f789b6b5635512L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9a5L).optional(false).ordered(true).multiple(false).origin("5906340854139933970").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConnections() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "Connections", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d996L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902358");
+    b.version(2);
+    b.property("topicType", 0x51f789b6b563550bL).type(MetaIdFactory.dataTypeId(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f72d81L)).origin("5906340854139933963").done();
+    b.aggregate("pair", 0x51f789b6b5635515L).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b563550fL).optional(true).ordered(true).multiple(true).origin("5906340854139933973").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIInputPortInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "IInputPortInst", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9a5L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902373");
+    b.version(2);
+    b.associate("inputport", 0x51f789b6b562d9abL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ccL).optional(false).origin("5906340854139902379").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIOutputPortInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "IOutputPortInst", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9e6L);
+    b.interface_();
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0x4cc0746284b34d01L, 0x8adb629ddd3cebd4L, 0x2c5757d10fb47860L);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902438");
+    b.version(2);
+    b.associate("outputport", 0x51f789b6b562d9ecL).target(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551cdL).optional(false).origin("5906340854139902444").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIPort() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "IPort", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x6a627af554d0aec4L);
     b.interface_();
@@ -96,6 +154,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("QoS", 0x7d1b637ab2f0e94cL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL).optional(true).ordered(true).multiple(false).origin("9014908457751472460").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForInputPortInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "InputPortInst", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9b4L);
+    b.class_(false, false, false);
+    b.parent(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9a5L);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902388");
+    b.version(2);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForOPort() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "OPort", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x6a627af554d0aec7L);
     b.interface_();
@@ -113,6 +179,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("message", 0x6a627af554bfd49dL).type(PrimitiveTypeId.STRING).origin("7665824709845439645").done();
     b.property("type", 0x7d1b637ab2f7e2d3L).type(MetaIdFactory.dataTypeId(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f72d81L)).origin("9014908457751929555").done();
     b.aggregate("Qos", 0x7d1b637ab2f0e94eL).target(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL).optional(true).ordered(true).multiple(false).origin("9014908457751472462").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForOutputPortInst() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Communication", "OutputPortInst", 0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9eeL);
+    b.class_(false, false, false);
+    b.parent(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9e6L);
+    b.origin("r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)/5906340854139902446");
+    b.version(2);
     return b.create();
   }
 }

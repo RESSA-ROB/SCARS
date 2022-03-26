@@ -12,10 +12,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ArchitecturalNFRs;
   private ConceptPresentation props_CommunicationQoS;
   private ConceptPresentation props_Expression2;
-  private ConceptPresentation props_NFRFunction;
+  private ConceptPresentation props_GlobalNFRFunction;
+  private ConceptPresentation props_GlobalRunTimeNFRs;
+  private ConceptPresentation props_GlobalRunTimeNFRsInst;
+  private ConceptPresentation props_IGlobalRunTimeNFRsInst;
+  private ConceptPresentation props_ILocalRunTimeNFRs2Inst;
+  private ConceptPresentation props_ILocalRunTimeNFRsInst;
+  private ConceptPresentation props_LocalNFRFunction;
+  private ConceptPresentation props_LocalRunTimeNFRs;
+  private ConceptPresentation props_LocalRunTimeNFRs2;
+  private ConceptPresentation props_LocalRunTimeNFRs2Inst;
+  private ConceptPresentation props_LocalRunTimeNFRsInst;
   private ConceptPresentation props_RunTimeNFRReference;
-  private ConceptPresentation props_RunTimeNFRs;
-  private ConceptPresentation props_RunTimeNFRs2;
 
   @Override
   @Nullable
@@ -43,13 +51,80 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Expression2 = cpb.create();
         }
         return props_Expression2;
-      case LanguageConceptSwitch.NFRFunction:
-        if (props_NFRFunction == null) {
+      case LanguageConceptSwitch.GlobalNFRFunction:
+        if (props_GlobalNFRFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_NFRFunction = cpb.create();
+          props_GlobalNFRFunction = cpb.create();
         }
-        return props_NFRFunction;
+        return props_GlobalNFRFunction;
+      case LanguageConceptSwitch.GlobalRunTimeNFRs:
+        if (props_GlobalRunTimeNFRs == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_GlobalRunTimeNFRs = cpb.create();
+        }
+        return props_GlobalRunTimeNFRs;
+      case LanguageConceptSwitch.GlobalRunTimeNFRsInst:
+        if (props_GlobalRunTimeNFRsInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_GlobalRunTimeNFRsInst = cpb.create();
+        }
+        return props_GlobalRunTimeNFRsInst;
+      case LanguageConceptSwitch.IGlobalRunTimeNFRsInst:
+        if (props_IGlobalRunTimeNFRsInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IGlobalRunTimeNFRsInst = cpb.create();
+        }
+        return props_IGlobalRunTimeNFRsInst;
+      case LanguageConceptSwitch.ILocalRunTimeNFRs2Inst:
+        if (props_ILocalRunTimeNFRs2Inst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ILocalRunTimeNFRs2Inst = cpb.create();
+        }
+        return props_ILocalRunTimeNFRs2Inst;
+      case LanguageConceptSwitch.ILocalRunTimeNFRsInst:
+        if (props_ILocalRunTimeNFRsInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ILocalRunTimeNFRsInst = cpb.create();
+        }
+        return props_ILocalRunTimeNFRsInst;
+      case LanguageConceptSwitch.LocalNFRFunction:
+        if (props_LocalNFRFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalNFRFunction = cpb.create();
+        }
+        return props_LocalNFRFunction;
+      case LanguageConceptSwitch.LocalRunTimeNFRs:
+        if (props_LocalRunTimeNFRs == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalRunTimeNFRs = cpb.create();
+        }
+        return props_LocalRunTimeNFRs;
+      case LanguageConceptSwitch.LocalRunTimeNFRs2:
+        if (props_LocalRunTimeNFRs2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalRunTimeNFRs2 = cpb.create();
+        }
+        return props_LocalRunTimeNFRs2;
+      case LanguageConceptSwitch.LocalRunTimeNFRs2Inst:
+        if (props_LocalRunTimeNFRs2Inst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalRunTimeNFRs2Inst = cpb.create();
+        }
+        return props_LocalRunTimeNFRs2Inst;
+      case LanguageConceptSwitch.LocalRunTimeNFRsInst:
+        if (props_LocalRunTimeNFRsInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalRunTimeNFRsInst = cpb.create();
+        }
+        return props_LocalRunTimeNFRsInst;
       case LanguageConceptSwitch.RunTimeNFRReference:
         if (props_RunTimeNFRReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -57,20 +132,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_RunTimeNFRReference = cpb.create();
         }
         return props_RunTimeNFRReference;
-      case LanguageConceptSwitch.RunTimeNFRs:
-        if (props_RunTimeNFRs == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_RunTimeNFRs = cpb.create();
-        }
-        return props_RunTimeNFRs;
-      case LanguageConceptSwitch.RunTimeNFRs2:
-        if (props_RunTimeNFRs2 == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_RunTimeNFRs2 = cpb.create();
-        }
-        return props_RunTimeNFRs2;
     }
     return null;
   }

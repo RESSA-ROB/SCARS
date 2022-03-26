@@ -21,11 +21,21 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CommunicationQoS_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new NFRFunction_Editor());
+        return Collections.<ConceptEditor>singletonList(new GlobalNFRFunction_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new RunTimeNFRs_Editor());
+        return Collections.<ConceptEditor>singletonList(new GlobalRunTimeNFRs_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new RunTimeNFRs2_Editor());
+        return Collections.<ConceptEditor>singletonList(new GlobalRunTimeNFRsInst_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new LocalNFRFunction_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new LocalRunTimeNFRs_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new LocalRunTimeNFRs2_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new LocalRunTimeNFRs2Inst_Editor());
+      case 8:
+        return Collections.<ConceptEditor>singletonList(new LocalRunTimeNFRsInst_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -38,14 +48,20 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt = concept;
     switch (conceptIndex1.index(cncpt)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new NFRFunction_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new GlobalRunTimeNFRsInst_SubstituteMenu());
       case 1:
+        return Collections.<SubstituteMenu>singletonList(new LocalNFRFunction_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new LocalRunTimeNFRs2Inst_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new LocalRunTimeNFRsInst_SubstituteMenu());
+      case 4:
         return Collections.<SubstituteMenu>singletonList(new RunTimeNFRReference_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6b4L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L)).seal();
-  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6b4L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b48acL), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b491dL), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569616f0L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b52b6L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c8L)).seal();
+  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569616f0L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b52b6L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c8L), MetaIdFactory.conceptId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a3245800fbfeL)).seal();
 }

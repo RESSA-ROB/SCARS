@@ -12,20 +12,36 @@ public final class LanguageConceptSwitch {
   public static final int ArchitecturalNFRs = 0;
   public static final int CommunicationQoS = 1;
   public static final int Expression2 = 2;
-  public static final int NFRFunction = 3;
-  public static final int RunTimeNFRReference = 4;
-  public static final int RunTimeNFRs = 5;
-  public static final int RunTimeNFRs2 = 6;
+  public static final int GlobalNFRFunction = 3;
+  public static final int GlobalRunTimeNFRs = 4;
+  public static final int GlobalRunTimeNFRsInst = 5;
+  public static final int IGlobalRunTimeNFRsInst = 6;
+  public static final int ILocalRunTimeNFRs2Inst = 7;
+  public static final int ILocalRunTimeNFRsInst = 8;
+  public static final int LocalNFRFunction = 9;
+  public static final int LocalRunTimeNFRs = 10;
+  public static final int LocalRunTimeNFRs2 = 11;
+  public static final int LocalRunTimeNFRs2Inst = 12;
+  public static final int LocalRunTimeNFRsInst = 13;
+  public static final int RunTimeNFRReference = 14;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L);
     builder.put(0x6a627af554ccd695L, ArchitecturalNFRs);
     builder.put(0x6a627af554ccd6b4L, CommunicationQoS);
     builder.put(0x3ef7a32457f298fcL, Expression2);
-    builder.put(0x71a2aa893a520c22L, NFRFunction);
+    builder.put(0x51f789b6b54b48acL, GlobalNFRFunction);
+    builder.put(0x51f789b6b54b491dL, GlobalRunTimeNFRs);
+    builder.put(0x4430c773569616f0L, GlobalRunTimeNFRsInst);
+    builder.put(0x4430c773569616e8L, IGlobalRunTimeNFRsInst);
+    builder.put(0x4430c773568b5292L, ILocalRunTimeNFRs2Inst);
+    builder.put(0x4430c773569164c0L, ILocalRunTimeNFRsInst);
+    builder.put(0x71a2aa893a520c22L, LocalNFRFunction);
+    builder.put(0x6a627af554ccd696L, LocalRunTimeNFRs);
+    builder.put(0x3ef7a32457f426a6L, LocalRunTimeNFRs2);
+    builder.put(0x4430c773568b52b6L, LocalRunTimeNFRs2Inst);
+    builder.put(0x4430c773569164c8L, LocalRunTimeNFRsInst);
     builder.put(0x3ef7a3245800fbfeL, RunTimeNFRReference);
-    builder.put(0x6a627af554ccd696L, RunTimeNFRs);
-    builder.put(0x3ef7a32457f426a6L, RunTimeNFRs2);
     myIndex = builder.seal();
   }
 

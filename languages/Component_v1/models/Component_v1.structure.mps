@@ -3,12 +3,14 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="cf635ce5-1976-4c6b-b1c5-f43814e251b9" name="TaskOperations" version="0" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="7pce" ref="r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="dmdj" ref="r:17311a66-2b78-40c2-be69-e0b5586b2396(Communication.structure)" implicit="true" />
+    <import index="1vx7" ref="r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)" implicit="true" />
     <import index="e6u4" ref="r:44322346-a7b1-436b-882b-4bbfa753778e(Capabilities.structure)" implicit="true" />
   </imports>
   <registry>
@@ -162,6 +164,20 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="7pce:3VRCMhnX2qA" resolve="RunTimeNFRs2" />
     </node>
+    <node concept="1TJgyj" id="57RyrqPs2n2" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854140773826" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="Goal" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdmxyte" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648010062" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdmxyrT" resolve="TaskNFRAssociation2" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6DyuJlkJB0N">
     <property role="EcuMT" value="7665824709845348403" />
@@ -239,6 +255,20 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="7pce:6DyuJlkNdqm" resolve="RunTimeNFRs" />
     </node>
+    <node concept="1TJgyj" id="57RyrqPrh1_" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854140571749" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="Goal" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdm$BS9" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648818697" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdm$BS3" resolve="TaskNFRAssociation1" />
+    </node>
     <node concept="1TJgyi" id="6DyuJlkJB1j" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845348435" />
       <property role="TrG5h" value="type" />
@@ -270,6 +300,20 @@
       <property role="20kJfa" value="nfr" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="7pce:6DyuJlkNdqm" resolve="RunTimeNFRs" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPs2jV" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854140773627" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="Goal" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdm$BSe" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648818702" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdm$BS3" resolve="TaskNFRAssociation1" />
     </node>
     <node concept="1TJgyi" id="6DyuJlkJB1q" role="1TKVEl">
       <property role="IQ2nx" value="7665824709845348442" />
@@ -425,6 +469,138 @@
       <property role="IQ2nx" value="8188294578879189321" />
       <property role="TrG5h" value="type" />
       <ref role="AX2Wp" node="76yEC$Umt1F" resolve="HTypeEnumeration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPekJ1">
+    <property role="EcuMT" value="5906340854137179073" />
+    <property role="TrG5h" value="System" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="57RyrqPekJ2" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPekJ6" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854137179078" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="externalHardware" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6DyuJlkK3un" resolve="IHardwareComponentInst" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPekJ8" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854137179080" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="robots" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="57RyrqPekJb" resolve="IMobileRobotInst" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdmt83w" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491646853344" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="requirements" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZt" resolve="GlobalGoal" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPjhyA" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854138476710" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="NFR" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="7pce:57RyrqPiO$t" resolve="GlobalRunTimeNFRs" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPoY02" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854139969538" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="connections" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="dmdj:57RyrqPoHAm" resolve="Connections" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdm_Ow_" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491649132581" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdm_OvF" resolve="TaskAssociation3" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="57RyrqPekJb">
+    <property role="EcuMT" value="5906340854137179083" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="IMobileRobotInst" />
+    <node concept="PrWs8" id="57RyrqPekJc" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="57RyrqPekJe" role="PrDN$">
+      <ref role="PrY4T" to="e6u4:2LnlX4fH7xw" resolve="ICanBePlatformAnnotated" />
+    </node>
+    <node concept="1TJgyj" id="57RyrqPekJh" role="1TKVEi">
+      <property role="IQ2ns" value="5906340854137179089" />
+      <property role="20kJfa" value="mobilerobot" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="4QO_o3jmDTs" resolve="MobileRobot" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57RyrqPekJj">
+    <property role="EcuMT" value="5906340854137179091" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="MobileRobotInst" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="57RyrqPekJk" role="PzmwI">
+      <ref role="PrY4T" node="57RyrqPekJb" resolve="IMobileRobotInst" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4gKLRdmxyrT">
+    <property role="EcuMT" value="4913646491648009977" />
+    <property role="TrG5h" value="TaskNFRAssociation2" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4gKLRdmxyrU" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648009978" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="LocalGoal" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdmz5hh" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648414801" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="NFRs" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="7pce:4gKLRdmyPai" resolve="ILocalRunTimeNFRs2Inst" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4gKLRdm$BS3">
+    <property role="EcuMT" value="4913646491648818691" />
+    <property role="TrG5h" value="TaskNFRAssociation1" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4gKLRdm$BS4" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648818692" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="NFRs" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="7pce:4gKLRdm$mj0" resolve="ILocalRunTimeNFRsInst" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdm$BS6" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491648818694" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="LocalGoal" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4gKLRdm_OvF">
+    <property role="EcuMT" value="4913646491649132523" />
+    <property role="TrG5h" value="TaskAssociation3" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="4gKLRdm_OvG" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491649132524" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="NFRs" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="7pce:4gKLRdm_xrC" resolve="IGlobalRunTimeNFRsInst" />
+    </node>
+    <node concept="1TJgyj" id="4gKLRdm_OvI" role="1TKVEi">
+      <property role="IQ2ns" value="4913646491649132526" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZt" resolve="GlobalGoal" />
     </node>
   </node>
 </model>

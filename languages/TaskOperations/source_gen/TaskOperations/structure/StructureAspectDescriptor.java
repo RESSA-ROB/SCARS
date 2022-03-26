@@ -13,10 +13,8 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptDeliver = createDescriptorForDeliver();
-  /*package*/ final ConceptDescriptor myConceptGrasp = createDescriptorForGrasp();
-  /*package*/ final ConceptDescriptor myConceptMove = createDescriptorForMove();
-  /*package*/ final ConceptDescriptor myConceptTaskDelivery = createDescriptorForTaskDelivery();
+  /*package*/ final ConceptDescriptor myConceptGlobalGoal = createDescriptorForGlobalGoal();
+  /*package*/ final ConceptDescriptor myConceptLocalGoal = createDescriptorForLocalGoal();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -31,21 +29,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDeliver, myConceptGrasp, myConceptMove, myConceptTaskDelivery);
+    return Arrays.asList(myConceptGlobalGoal, myConceptLocalGoal);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.Deliver:
-        return myConceptDeliver;
-      case LanguageConceptSwitch.Grasp:
-        return myConceptGrasp;
-      case LanguageConceptSwitch.Move:
-        return myConceptMove;
-      case LanguageConceptSwitch.TaskDelivery:
-        return myConceptTaskDelivery;
+      case LanguageConceptSwitch.GlobalGoal:
+        return myConceptGlobalGoal;
+      case LanguageConceptSwitch.LocalGoal:
+        return myConceptLocalGoal;
       default:
         return null;
     }
@@ -56,39 +50,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForDeliver() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "Deliver", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335bf1L);
-    b.class_(false, false, false);
-    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/2722478502131751921");
-    b.version(2);
-    b.property("dest", 0x25c82fc5fc335bf2L).type(PrimitiveTypeId.STRING).origin("2722478502131751922").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForGrasp() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "Grasp", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335befL);
-    b.class_(false, false, false);
-    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/2722478502131751919");
-    b.version(2);
-    b.property("object", 0x25c82fc5fc335bf4L).type(PrimitiveTypeId.STRING).origin("2722478502131751924").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForMove() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "Move", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335bf0L);
-    b.class_(false, false, false);
-    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/2722478502131751920");
-    b.version(2);
-    b.property("path", 0x25c82fc5fc335bf6L).type(PrimitiveTypeId.STRING).origin("2722478502131751926").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTaskDelivery() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "TaskDelivery", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335becL);
+  private static ConceptDescriptor createDescriptorForGlobalGoal() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "GlobalGoal", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fddL);
     b.class_(false, false, true);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/2722478502131751916");
+    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/5906340854140571613");
     b.version(2);
-    b.aggregate("grasp", 0x25c82fc5fc335bf8L).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335befL).optional(false).ordered(true).multiple(false).origin("2722478502131751928").done();
-    b.aggregate("move", 0x25c82fc5fc335bfaL).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335bf0L).optional(true).ordered(true).multiple(true).origin("2722478502131751930").done();
-    b.aggregate("deliver", 0x25c82fc5fc335bfdL).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x25c82fc5fc335bf1L).optional(false).ordered(true).multiple(false).origin("2722478502131751933").done();
+    b.property("description", 0x51f789b6b56d0fe0L).type(PrimitiveTypeId.STRING).origin("5906340854140571616").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForLocalGoal() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TaskOperations", "LocalGoal", 0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fd8L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:29f7a628-28dd-48e5-91bd-80e6f08a79f0(TaskOperations.structure)/5906340854140571608");
+    b.version(2);
+    b.property("description", 0x51f789b6b56d0fdbL).type(PrimitiveTypeId.STRING).origin("5906340854140571611").done();
     return b.create();
   }
 }

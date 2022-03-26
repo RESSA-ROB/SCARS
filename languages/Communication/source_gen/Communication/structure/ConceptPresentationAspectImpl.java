@@ -10,10 +10,16 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_CPort;
+  private ConceptPresentation props_ConnPair;
+  private ConceptPresentation props_Connections;
+  private ConceptPresentation props_IInputPortInst;
+  private ConceptPresentation props_IOutputPortInst;
   private ConceptPresentation props_IPort;
   private ConceptPresentation props_InputPort;
+  private ConceptPresentation props_InputPortInst;
   private ConceptPresentation props_OPort;
   private ConceptPresentation props_OutPutPort;
+  private ConceptPresentation props_OutputPortInst;
 
   @Override
   @Nullable
@@ -27,6 +33,32 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CPort = cpb.create();
         }
         return props_CPort;
+      case LanguageConceptSwitch.ConnPair:
+        if (props_ConnPair == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConnPair");
+          props_ConnPair = cpb.create();
+        }
+        return props_ConnPair;
+      case LanguageConceptSwitch.Connections:
+        if (props_Connections == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Connections = cpb.create();
+        }
+        return props_Connections;
+      case LanguageConceptSwitch.IInputPortInst:
+        if (props_IInputPortInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IInputPortInst = cpb.create();
+        }
+        return props_IInputPortInst;
+      case LanguageConceptSwitch.IOutputPortInst:
+        if (props_IOutputPortInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IOutputPortInst = cpb.create();
+        }
+        return props_IOutputPortInst;
       case LanguageConceptSwitch.IPort:
         if (props_IPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -40,6 +72,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_InputPort = cpb.create();
         }
         return props_InputPort;
+      case LanguageConceptSwitch.InputPortInst:
+        if (props_InputPortInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_InputPortInst = cpb.create();
+        }
+        return props_InputPortInst;
       case LanguageConceptSwitch.OPort:
         if (props_OPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -53,6 +92,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_OutPutPort = cpb.create();
         }
         return props_OutPutPort;
+      case LanguageConceptSwitch.OutputPortInst:
+        if (props_OutputPortInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_OutputPortInst = cpb.create();
+        }
+        return props_OutputPortInst;
     }
     return null;
   }

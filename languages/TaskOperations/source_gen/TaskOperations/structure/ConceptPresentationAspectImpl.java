@@ -9,44 +9,28 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_Deliver;
-  private ConceptPresentation props_Grasp;
-  private ConceptPresentation props_Move;
-  private ConceptPresentation props_TaskDelivery;
+  private ConceptPresentation props_GlobalGoal;
+  private ConceptPresentation props_LocalGoal;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.Deliver:
-        if (props_Deliver == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Deliver");
-          props_Deliver = cpb.create();
-        }
-        return props_Deliver;
-      case LanguageConceptSwitch.Grasp:
-        if (props_Grasp == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Grasp");
-          props_Grasp = cpb.create();
-        }
-        return props_Grasp;
-      case LanguageConceptSwitch.Move:
-        if (props_Move == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Move");
-          props_Move = cpb.create();
-        }
-        return props_Move;
-      case LanguageConceptSwitch.TaskDelivery:
-        if (props_TaskDelivery == null) {
+      case LanguageConceptSwitch.GlobalGoal:
+        if (props_GlobalGoal == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_TaskDelivery = cpb.create();
+          props_GlobalGoal = cpb.create();
         }
-        return props_TaskDelivery;
+        return props_GlobalGoal;
+      case LanguageConceptSwitch.LocalGoal:
+        if (props_LocalGoal == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_LocalGoal = cpb.create();
+        }
+        return props_LocalGoal;
     }
     return null;
   }
