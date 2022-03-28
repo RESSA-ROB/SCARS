@@ -24,14 +24,17 @@
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
         <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
+      <concept id="5906340854139933967" name="Communication.structure.ConnPair" flags="ng" index="3$_dMT">
+        <child id="5906340854139933970" name="subscriber" index="3$_dM$" />
+        <child id="5906340854139933968" name="publisher" index="3$_dMA" />
+      </concept>
       <concept id="5906340854139902388" name="Communication.structure.InputPortInst" flags="ng" index="3$_l02" />
       <concept id="5906340854139902373" name="Communication.structure.IInputPortInst" flags="ng" index="3$_l0j">
         <reference id="5906340854139902379" name="inputport" index="3$_l0t" />
       </concept>
       <concept id="5906340854139902358" name="Communication.structure.Connections" flags="ng" index="3$_l0w">
         <property id="5906340854139933963" name="topicType" index="3$_dMX" />
-        <child id="1992129627000064829" name="targets" index="1guVLE" />
-        <child id="1992129627000064828" name="sources" index="1guVLF" />
+        <child id="8390220799184122170" name="pair" index="1A1FLB" />
       </concept>
       <concept id="5906340854139902438" name="Communication.structure.IOutputPortInst" flags="ng" index="3$_l1g">
         <reference id="5906340854139902444" name="outputport" index="3$_l1q" />
@@ -39,8 +42,17 @@
       <concept id="5906340854139902446" name="Communication.structure.OutputPortInst" flags="ng" index="3$_l1o" />
     </language>
     <language id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS">
+      <concept id="7566676200133324205" name="DDS.structure.DDS_LeaseDuration" flags="ng" index="2mmPp4">
+        <property id="7566676200133324206" name="value" index="2mmPp7" />
+      </concept>
+      <concept id="7566676200133324145" name="DDS.structure.DDS_Deadline" flags="ng" index="2mmPqo">
+        <property id="7566676200133324148" name="value" index="2mmPqt" />
+      </concept>
       <concept id="5459192469989855204" name="DDS.structure.DDS_Reliability" flags="ng" index="3lYnP4">
         <property id="5459192469989855205" name="value" index="3lYnP5" />
+      </concept>
+      <concept id="5459192469989855169" name="DDS.structure.DDS_Liveliness" flags="ng" index="3lYnPx">
+        <property id="5459192469989855170" name="value" index="3lYnPy" />
       </concept>
       <concept id="5459192469989647037" name="DDS.structure.DDS_Durability" flags="ng" index="3lYD0t">
         <property id="5459192469989647038" name="value" index="3lYD0u" />
@@ -151,7 +163,14 @@
           <property role="YRqTI" value="rotate camera" />
           <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
           <node concept="3fSPMb" id="zVblGX5a0f" role="3fUSCQ">
-            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
+            <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
+          </node>
+        </node>
+        <node concept="3pZnS9" id="7hK3lOitF3_" role="3pZnSa">
+          <property role="TrG5h" value="ReceiveStatus" />
+          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
+          <node concept="3fSPMb" id="7hK3lOitF3D" role="3fUSCQ">
+            <ref role="3fSPMa" node="7hK3lOitF30" resolve="check6" />
           </node>
         </node>
         <node concept="3pZnS8" id="5fFrGxqGmdI" role="3pZnSk">
@@ -159,7 +178,7 @@
           <property role="YRqTC" value="Forward image" />
           <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
           <node concept="3fSPMb" id="zVblGX5a0h" role="3fUSCO">
-            <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
+            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
           </node>
         </node>
       </node>
@@ -181,8 +200,15 @@
         <node concept="3pZnS9" id="zVblGX8dMo" role="3pZnSa">
           <property role="3fV86E" value="7OroREMXMQ3/Location" />
           <property role="TrG5h" value="obtainlocation" />
-          <node concept="3fSPMb" id="zVblGX8dMY" role="3fUSCQ">
+          <node concept="3fSPMb" id="7hK3lOiy9lo" role="3fUSCQ">
             <ref role="3fSPMa" node="zVblGX8dMI" resolve="check3" />
+          </node>
+        </node>
+        <node concept="3pZnS8" id="7hK3lOitF3u" role="3pZnSk">
+          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
+          <property role="TrG5h" value="SendStatus" />
+          <node concept="3fSPMb" id="7hK3lOitF3y" role="3fUSCO">
+            <ref role="3fSPMa" node="7hK3lOitF2x" resolve="check5" />
           </node>
         </node>
       </node>
@@ -273,7 +299,18 @@
       <property role="TrG5h" value="check1" />
       <property role="3$Nuto" value="7OroREMXMQ2/Traffic" />
       <node concept="3lYnP4" id="zVblGX4oLj" role="PX0xa" />
-      <node concept="3lYD0t" id="zVblGX9a$D" role="PX0xa" />
+      <node concept="3lYD0t" id="zVblGX9a$D" role="PX0xa">
+        <property role="3lYD0u" value="7doERKbPKLE/TRANSIENT_LOCAL" />
+      </node>
+      <node concept="3lYnPx" id="7hK3lOisLi6" role="PX0xa">
+        <property role="3lYnPy" value="7doERKbPKLK/MANUAL_BY_TOPIC" />
+      </node>
+      <node concept="2mmPqo" id="7hK3lOithPV" role="PX0xa">
+        <property role="2mmPqt" value="12" />
+      </node>
+      <node concept="2mmPp4" id="7hK3lOithQ$" role="PX0xa">
+        <property role="2mmPp7" value="10" />
+      </node>
     </node>
     <node concept="lVhbz" id="zVblGX4oLp" role="1wihR_">
       <property role="TrG5h" value="check2" />
@@ -281,21 +318,44 @@
       <node concept="3lYnP4" id="zVblGX4xAY" role="PX0xa">
         <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
       </node>
-      <node concept="3lYD0t" id="zVblGX9a$N" role="PX0xa">
-        <property role="3lYD0u" value="7doERKbPKLE/TRANSIENT_LOCAL" />
+      <node concept="3lYD0t" id="zVblGX9a$N" role="PX0xa" />
+      <node concept="3lYnPx" id="7hK3lOisLgM" role="PX0xa" />
+      <node concept="2mmPqo" id="7hK3lOithQf" role="PX0xa">
+        <property role="2mmPqt" value="15" />
+      </node>
+      <node concept="2mmPp4" id="7hK3lOithQR" role="PX0xa">
+        <property role="2mmPp7" value="12" />
       </node>
     </node>
     <node concept="lVhbz" id="zVblGX8dMw" role="1wihR_">
       <property role="TrG5h" value="check4" />
       <property role="3$Nuto" value="7OroREMXMQ3/Location" />
-      <node concept="3lYnP4" id="zVblGX8dMC" role="PX0xa" />
+      <node concept="3lYnP4" id="zVblGX8dMC" role="PX0xa">
+        <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
+      </node>
+      <node concept="2mmPqo" id="7hK3lOitEYx" role="PX0xa">
+        <property role="2mmPqt" value="8" />
+      </node>
     </node>
     <node concept="lVhbz" id="zVblGX8dMI" role="1wihR_">
       <property role="TrG5h" value="check3" />
       <property role="3$Nuto" value="7OroREMXMQ3/Location" />
-      <node concept="3lYnP4" id="zVblGX8dMS" role="PX0xa">
+      <node concept="3lYnP4" id="zVblGX8dMS" role="PX0xa" />
+      <node concept="2mmPqo" id="7hK3lOitEZV" role="PX0xa">
+        <property role="2mmPqt" value="7" />
+      </node>
+    </node>
+    <node concept="lVhbz" id="7hK3lOitF2x" role="1wihR_">
+      <property role="TrG5h" value="check5" />
+      <property role="3$Nuto" value="7OroREMXMQ2/Traffic" />
+      <node concept="3lYnP4" id="7hK3lOitF2R" role="PX0xa">
         <property role="3lYnP5" value="7doERKbPKLw/BEST_EFFORT" />
       </node>
+    </node>
+    <node concept="lVhbz" id="7hK3lOitF30" role="1wihR_">
+      <property role="TrG5h" value="check6" />
+      <property role="3$Nuto" value="7OroREMXMQ2/Traffic" />
+      <node concept="3lYnP4" id="7hK3lOitF3o" role="PX0xa" />
     </node>
   </node>
   <node concept="3$NG9R" id="57RyrqPibMx">
@@ -330,22 +390,34 @@
     <node concept="iDS2o" id="4gKLRdmAj70" role="iDSXm">
       <ref role="iDS2t" node="4gKLRdmxpE3" resolve="make product" />
     </node>
-    <node concept="3$_l0w" id="zVblGX5a03" role="3$_6AO">
+    <node concept="3$_l0w" id="7hK3lOitSxB" role="3$_6AO">
       <property role="3$_dMX" value="7OroREMXMQ2/Traffic" />
-      <node concept="3$_l1o" id="zVblGX5a09" role="1guVLF">
-        <ref role="3$_l1q" node="5fFrGxqGmdI" resolve="Send image" />
+      <node concept="3$_dMT" id="7hK3lOitSxD" role="1A1FLB">
+        <node concept="3$_l1o" id="7hK3lOitSxJ" role="3$_dMA">
+          <ref role="3$_l1q" node="5fFrGxqGmdI" resolve="Send image" />
+        </node>
+        <node concept="3$_l02" id="7hK3lOitSxM" role="3$_dM$">
+          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
+        </node>
       </node>
-      <node concept="3$_l02" id="zVblGX5a0c" role="1guVLE">
-        <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
+      <node concept="3$_dMT" id="7hK3lOitSxP" role="1A1FLB">
+        <node concept="3$_l1o" id="7hK3lOitSxY" role="3$_dMA">
+          <ref role="3$_l1q" node="7hK3lOitF3u" resolve="SendStatus" />
+        </node>
+        <node concept="3$_l02" id="7hK3lOitSy1" role="3$_dM$">
+          <ref role="3$_l0t" node="7hK3lOitF3_" resolve="ReceiveStatus" />
+        </node>
       </node>
     </node>
-    <node concept="3$_l0w" id="zVblGX8dN9" role="3$_6AO">
+    <node concept="3$_l0w" id="7hK3lOitSy4" role="3$_6AO">
       <property role="3$_dMX" value="7OroREMXMQ3/Location" />
-      <node concept="3$_l1o" id="zVblGX8dNi" role="1guVLF">
-        <ref role="3$_l1q" node="zVblGX8dN2" resolve="SendLocation" />
-      </node>
-      <node concept="3$_l02" id="zVblGX8dNl" role="1guVLE">
-        <ref role="3$_l0t" node="zVblGX8dMo" resolve="obtainlocation" />
+      <node concept="3$_dMT" id="7hK3lOitSyd" role="1A1FLB">
+        <node concept="3$_l1o" id="7hK3lOitSyj" role="3$_dMA">
+          <ref role="3$_l1q" node="zVblGX8dN2" resolve="SendLocation" />
+        </node>
+        <node concept="3$_l02" id="7hK3lOiybi3" role="3$_dM$">
+          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
+        </node>
       </node>
     </node>
   </node>

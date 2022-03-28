@@ -10,10 +10,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -30,42 +30,66 @@ public class CheckingConnectionQoSCompatability_NonTypesystemRule extends Abstra
   }
   public void applyRule(final SNode connections, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      Iterator<SNode> comp_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.sources$SrDl), LINKS.outputport$zmZO), LINKS.Qos$MFRl), LINKS.profile$GSCv), LINKS.policies$a5hO)).iterator();
+      Iterator<SNode> comp_it = ListSequence.fromList(SLinkOperations.getChildren(connections, LINKS.pair$ELeA)).iterator();
       SNode comp_var;
       while (comp_it.hasNext()) {
         comp_var = comp_it.next();
-        {
-          Iterator<SNode> comp2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.targets$SrSm), LINKS.inputport$w69v), LINKS.QoS$MFoO), LINKS.profile$GSCv), LINKS.policies$a5hO)).iterator();
-          SNode comp2_var;
-          while (comp2_it.hasNext()) {
-            comp2_var = comp2_it.next();
-
-            SNode sourceProfile = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.sources$SrDl), LINKS.outputport$zmZO), LINKS.Qos$MFRl), LINKS.profile$GSCv);
-            SEnumerationLiteral value1 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Reliability$EL)).last(), PROPS.value$HFLS);
-
-            SNode targetProfile = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.targets$SrSm), LINKS.inputport$w69v), LINKS.QoS$MFoO), LINKS.profile$GSCv);
-            SEnumerationLiteral value2 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Reliability$EL)).last(), PROPS.value$HFLS);
-
-            if (value1.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c5eL, "DDS.structure.ReliabilityEnumeration"), 0x7358ab7c0bd70c5fL, "RELIABLE")) && value2.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c5eL, "DDS.structure.ReliabilityEnumeration"), 0x7358ab7c0bd70c60L, "BEST_EFFORT"))) {
-              {
-                final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "No Match for reliability" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.sources$SrDl), LINKS.outputport$zmZO), PROPS.name$MnvL), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "647160841348505238", null, errorTarget);
-              }
+        SNode sourceProfile = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), LINKS.Qos$MFRl), LINKS.profile$GSCv);
+        SNode targetProfile = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), LINKS.QoS$MFoO), LINKS.profile$GSCv);
+        if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Reliability$EL)).last() != null)) {
+          SEnumerationLiteral value1 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Reliability$EL)).last(), PROPS.value$HFLS);
+          SEnumerationLiteral value2 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Reliability$EL)).last(), PROPS.value$HFLS);
+          if (value1.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c5eL, "DDS.structure.ReliabilityEnumeration"), 0x7358ab7c0bd70c60L, "BEST_EFFORT")) && value2.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c5eL, "DDS.structure.ReliabilityEnumeration"), 0x7358ab7c0bd70c5fL, "RELIABLE"))) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Reliability policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184520136", null, errorTarget);
             }
-
-            if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last() != null)) {
-              SEnumerationLiteral value3 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last(), PROPS.value$XLjo);
-              SEnumerationLiteral value4 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last(), PROPS.value$XLjo);
-              if (value3.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c69L, "DDS.structure.DurabilityEnumeration"), 0x7358ab7c0bd70c6bL, "VOLATILE")) && value4.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c69L, "DDS.structure.DurabilityEnumeration"), 0x7358ab7c0bd70c6aL, "TRANSIENT_LOCAL"))) {
-                {
-                  final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "No Match for durability" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(connections, LINKS.sources$SrDl), LINKS.outputport$zmZO), PROPS.name$MnvL), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "647160841348917889", null, errorTarget);
-                }
-              }
-
-            }
-
           }
+
+        }
+        if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last() != null)) {
+          SEnumerationLiteral value1 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last(), PROPS.value$XLjo);
+          SEnumerationLiteral value2 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Durability$PO)).last(), PROPS.value$XLjo);
+          if (value1.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c69L, "DDS.structure.DurabilityEnumeration"), 0x7358ab7c0bd70c6bL, "VOLATILE")) && value2.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c69L, "DDS.structure.DurabilityEnumeration"), 0x7358ab7c0bd70c6aL, "TRANSIENT_LOCAL"))) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Durability policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184632550", null, errorTarget);
+            }
+          }
+
+        }
+        if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Liveliness$PN)).last() != null)) {
+          SEnumerationLiteral value1 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Liveliness$PN)).last(), PROPS.value$EQed);
+          SEnumerationLiteral value2 = SPropertyOperations.getEnum(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Liveliness$PN)).last(), PROPS.value$EQed);
+          if (value1.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c6eL, "DDS.structure.LivelinessEnumeration"), 0x7358ab7c0bd70c6fL, "AUTOMATIC")) && value2.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x7358ab7c0bd70c6eL, "DDS.structure.LivelinessEnumeration"), 0x7358ab7c0bd70c70L, "MANUAL_BY_TOPIC"))) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Liveliness policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184649731", null, errorTarget);
+            }
+          }
+
+        }
+        if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Deadline$a6)).last() != null)) {
+          int value1 = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Deadline$a6)).last(), PROPS.value$krUq);
+          int value2 = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_Deadline$a6)).last(), PROPS.value$krUq);
+          if (value2 < value1) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Deadline policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184670304", null, errorTarget);
+            }
+          }
+
+        }
+        if ((Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_LeaseDuration$vx)).last() != null)) {
+          int value1 = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(sourceProfile, LINKS.policies$a5hO), CONCEPTS.DDS_LeaseDuration$vx)).last(), PROPS.value$nA9S);
+          int value2 = SPropertyOperations.getInteger(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(targetProfile, LINKS.policies$a5hO), CONCEPTS.DDS_LeaseDuration$vx)).last(), PROPS.value$nA9S);
+          if (value2 < value1) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Lease Duration policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184737638", null, errorTarget);
+            }
+          }
+
         }
 
       }
@@ -82,19 +106,23 @@ public class CheckingConnectionQoSCompatability_NonTypesystemRule extends Abstra
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink sources$SrDl = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d996L, 0x1ba577574bdecb3cL, "sources");
+    /*package*/ static final SContainmentLink pair$ELeA = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d996L, 0x74700d5d1276b13aL, "pair");
+    /*package*/ static final SContainmentLink publisher$qPBU = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b563550fL, 0x51f789b6b5635510L, "publisher");
     /*package*/ static final SReferenceLink outputport$zmZO = MetaAdapterFactory.getReferenceLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9e6L, 0x51f789b6b562d9ecL, "outputport");
     /*package*/ static final SContainmentLink Qos$MFRl = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551cdL, 0x7d1b637ab2f0e94eL, "Qos");
     /*package*/ static final SReferenceLink profile$GSCv = MetaAdapterFactory.getReferenceLink(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL, 0x7d1b637ab2f83ff0L, "profile");
-    /*package*/ static final SContainmentLink policies$a5hO = MetaAdapterFactory.getContainmentLink(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L, 0x8fb2d5b3d0f2511L, "policies");
-    /*package*/ static final SContainmentLink targets$SrSm = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d996L, 0x1ba577574bdecb3dL, "targets");
+    /*package*/ static final SContainmentLink subscriber$qV1h = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b563550fL, 0x51f789b6b5635512L, "subscriber");
     /*package*/ static final SReferenceLink inputport$w69v = MetaAdapterFactory.getReferenceLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d9a5L, 0x51f789b6b562d9abL, "inputport");
     /*package*/ static final SContainmentLink QoS$MFoO = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ccL, 0x7d1b637ab2f0e94cL, "QoS");
+    /*package*/ static final SContainmentLink policies$a5hO = MetaAdapterFactory.getContainmentLink(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x75d27ff7603f6d14L, 0x8fb2d5b3d0f2511L, "policies");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept DDS_Reliability$EL = MetaAdapterFactory.getConcept(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3b8fe4L, "DDS.structure.DDS_Reliability");
     /*package*/ static final SConcept DDS_Durability$PO = MetaAdapterFactory.getConcept(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3862bdL, "DDS.structure.DDS_Durability");
+    /*package*/ static final SConcept DDS_Liveliness$PN = MetaAdapterFactory.getConcept(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3b8fc1L, "DDS.structure.DDS_Liveliness");
+    /*package*/ static final SConcept DDS_Deadline$a6 = MetaAdapterFactory.getConcept(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x69023be9ff596d71L, "DDS.structure.DDS_Deadline");
+    /*package*/ static final SConcept DDS_LeaseDuration$vx = MetaAdapterFactory.getConcept(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x69023be9ff596dadL, "DDS.structure.DDS_LeaseDuration");
     /*package*/ static final SConcept Connections$PV = MetaAdapterFactory.getConcept(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x51f789b6b562d996L, "Communication.structure.Connections");
   }
 
@@ -102,5 +130,8 @@ public class CheckingConnectionQoSCompatability_NonTypesystemRule extends Abstra
     /*package*/ static final SProperty value$HFLS = MetaAdapterFactory.getProperty(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3b8fe4L, 0x4bc2f2a09e3b8fe5L, "value");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty value$XLjo = MetaAdapterFactory.getProperty(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3862bdL, 0x4bc2f2a09e3862beL, "value");
+    /*package*/ static final SProperty value$EQed = MetaAdapterFactory.getProperty(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x4bc2f2a09e3b8fc1L, 0x4bc2f2a09e3b8fc2L, "value");
+    /*package*/ static final SProperty value$krUq = MetaAdapterFactory.getProperty(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x69023be9ff596d71L, 0x69023be9ff596d74L, "value");
+    /*package*/ static final SProperty value$nA9S = MetaAdapterFactory.getProperty(0x331f7a18c6574dd7L, 0x870742124f20f67bL, 0x69023be9ff596dadL, 0x69023be9ff596daeL, "value");
   }
 }

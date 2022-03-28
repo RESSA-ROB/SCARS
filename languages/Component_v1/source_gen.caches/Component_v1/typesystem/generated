@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="2vuwcpik96f4acjhxrvzsxehm8696xc">
-  <files names="CheckingConnectionQoSCompatability_NonTypesystemRule.java:HardwarePortQoSType_NonTypesystemRule.java:PortQoSType_NonTypesystemRule.java:TestingNFRPropertyValues_NonTypesystemRule.java:TypesystemDescriptor.java" />
+<product version="3" modelHash="1cle0k245gdb7zu4flkjao2po8680sw">
+  <files names="CheckingConnectionQoSCompatability_NonTypesystemRule.java:CheckingConnectionTypeDefinitionCompatability_NonTypesystemRule.java:HardwarePortQoSType_NonTypesystemRule.java:PortQoSType_NonTypesystemRule.java:TestingNFRPropertyValues_NonTypesystemRule.java:TypesystemDescriptor.java" />
 </product>
 

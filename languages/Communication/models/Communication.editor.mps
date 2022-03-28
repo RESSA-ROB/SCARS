@@ -278,21 +278,19 @@
         </node>
       </node>
       <node concept="35HoNQ" id="57RyrqPoPnj" role="3EZMnx" />
-      <node concept="3EZMnI" id="57RyrqPoPmO" role="3EZMnx">
-        <node concept="VPM3Z" id="57RyrqPoPmQ" role="3F10Kt" />
-        <node concept="l2Vlx" id="57RyrqPoPmT" role="2iSdaV" />
-        <node concept="3F0ifn" id="1I_tPtbRGH0" role="3EZMnx">
-          <property role="3F0ifm" value="▶" />
+      <node concept="3EZMnI" id="7hK3lOitF6$" role="3EZMnx">
+        <node concept="VPM3Z" id="7hK3lOitF6A" role="3F10Kt" />
+        <node concept="3F2HdR" id="7hK3lOitF6T" role="3EZMnx">
+          <ref role="1NtTu8" to="dmdj:7hK3lOitF4U" resolve="pair" />
+          <node concept="l2Vlx" id="7hK3lOitF6V" role="2czzBx" />
+          <node concept="pj6Ft" id="7hK3lOitLNj" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pVoyu" id="7hK3lOitLNl" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
-        <node concept="3F1sOY" id="1I_tPtbRGH5" role="3EZMnx">
-          <ref role="1NtTu8" to="dmdj:1I_tPtbRGGW" resolve="sources" />
-        </node>
-        <node concept="3F0ifn" id="1I_tPtbRGHd" role="3EZMnx">
-          <property role="3F0ifm" value="--▶" />
-        </node>
-        <node concept="3F1sOY" id="1I_tPtbRGHn" role="3EZMnx">
-          <ref role="1NtTu8" to="dmdj:1I_tPtbRGGX" resolve="targets" />
-        </node>
+        <node concept="l2Vlx" id="7hK3lOitF6D" role="2iSdaV" />
       </node>
       <node concept="35HoNQ" id="57RyrqPqv1r" role="3EZMnx" />
       <node concept="2iRkQZ" id="57RyrqPoPme" role="2iSdaV" />

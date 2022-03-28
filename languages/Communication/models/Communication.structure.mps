@@ -169,20 +169,6 @@
     <property role="TrG5h" value="Connections" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyj" id="1I_tPtbRGGW" role="1TKVEi">
-      <property role="IQ2ns" value="1992129627000064828" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="sources" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="57RyrqPoHBA" resolve="IOutputPortInst" />
-    </node>
-    <node concept="1TJgyj" id="1I_tPtbRGGX" role="1TKVEi">
-      <property role="IQ2ns" value="1992129627000064829" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="targets" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="57RyrqPoHA_" resolve="IInputPortInst" />
-    </node>
     <node concept="PrWs8" id="57RyrqPoHAn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -190,6 +176,13 @@
       <property role="IQ2nx" value="5906340854139933963" />
       <property role="TrG5h" value="topicType" />
       <ref role="AX2Wp" to="tqx2:7OroREMXMQ1" resolve="CProfileType" />
+    </node>
+    <node concept="1TJgyj" id="7hK3lOitF4U" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799184122170" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="pair" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="57RyrqPoPkf" resolve="ConnPair" />
     </node>
   </node>
   <node concept="PlHQZ" id="57RyrqPoHA_">
