@@ -26,7 +26,7 @@ public class HardwarePortQoSType_NonTypesystemRule extends AbstractNonTypesystem
   }
   public void applyRule(final SNode hardwareComponent, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      Iterator<SNode> comp_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(hardwareComponent, LINKS.sensors$c5_e), LINKS.connect$cc9E)).iterator();
+      Iterator<SNode> comp_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(hardwareComponent, LINKS.component$ISi3), LINKS.connect$8mU_)).iterator();
       SNode comp_var;
       while (comp_it.hasNext()) {
         comp_var = comp_it.next();
@@ -70,8 +70,8 @@ public class HardwarePortQoSType_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink sensors$c5_e = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x6a627af554be704cL, "sensors");
-    /*package*/ static final SContainmentLink connect$cc9E = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7047L, 0x6a627af554be7051L, "connect");
+    /*package*/ static final SContainmentLink component$ISi3 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x74700d5d12d1f847L, "component");
+    /*package*/ static final SContainmentLink connect$8mU_ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d180c0L, 0x74700d5d12d180c5L, "connect");
     /*package*/ static final SContainmentLink iport$5NlU = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ceL, 0x25c82fc5fc3551cfL, "iport");
     /*package*/ static final SContainmentLink QoS$MFoO = MetaAdapterFactory.getContainmentLink(0xafce36b8c6cd4f1bL, 0xb70d0ef3d6aa2b6fL, 0x25c82fc5fc3551ccL, 0x7d1b637ab2f0e94cL, "QoS");
     /*package*/ static final SReferenceLink profile$GSCv = MetaAdapterFactory.getReferenceLink(0x6d22281353ea440eL, 0xba3023ced4b723f0L, 0x7d1b637ab2f83fedL, 0x7d1b637ab2f83ff0L, "profile");

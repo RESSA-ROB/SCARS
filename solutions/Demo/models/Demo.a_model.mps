@@ -11,12 +11,10 @@
   <registry>
     <language id="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f" name="Communication">
       <concept id="2722478502131880397" name="Communication.structure.OutPutPort" flags="ng" index="3pZnS8">
-        <property id="7665824709845439645" name="message" index="YRqTC" />
         <property id="9014908457751929555" name="type" index="3fV86D" />
         <child id="9014908457751472462" name="Qos" index="3fUSCO" />
       </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
-        <property id="7665824709845439643" name="message" index="YRqTI" />
         <property id="9014908457751929552" name="type" index="3fV86E" />
         <child id="9014908457751472460" name="QoS" index="3fUSCQ" />
       </concept>
@@ -69,7 +67,9 @@
       </concept>
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
         <child id="4913646491648010062" name="association" index="iHI0X" />
+        <child id="7665824709845439654" name="connect" index="YRqTj" />
         <child id="7665824709845439649" name="hardware" index="YRqTk" />
+        <child id="7665824709845439651" name="software" index="YRqTm" />
         <child id="7665824709845439658" name="nfr" index="YRqTv" />
         <child id="5906340854140773826" name="tasks" index="3$xULO" />
       </concept>
@@ -77,15 +77,12 @@
         <reference id="7665824709845492327" name="hardware" index="YCHyi" />
       </concept>
       <concept id="7665824709846112157" name="Component_v1.structure.HardwareComponentInst" flags="ng" index="YE6PC" />
-      <concept id="7665824709845348423" name="Component_v1.structure.Sensors" flags="ng" index="YR0EM">
-        <property id="7665824709845348437" name="id" index="YR0Ew" />
-        <property id="7665824709845348435" name="type" index="YR0EA" />
-        <child id="7665824709846558522" name="nfr" index="YGDRf" />
-        <child id="7665824709845348433" name="connect" index="YR0E$" />
-        <child id="5906340854140571749" name="tasks" index="3$ADBj" />
+      <concept id="7665824709845348404" name="Component_v1.structure.SoftwareComponent" flags="ng" index="YR0F1">
+        <property id="8390220799190594740" name="modulename" index="1AEnBD" />
+        <child id="7665824709845439663" name="nfr" index="YRqTq" />
       </concept>
       <concept id="7665824709845348403" name="Component_v1.structure.HardwareComponent" flags="ng" index="YR0F6">
-        <child id="7665824709845348428" name="sensors" index="YR0ET" />
+        <child id="8390220799190104135" name="component" index="1ACvkq" />
       </concept>
       <concept id="8188294578879189320" name="Component_v1.structure.HTypeIF" flags="ng" index="1bYRJ1">
         <property id="8188294578879189321" name="type" index="1bYRJ0" />
@@ -102,6 +99,16 @@
       <concept id="5906340854137179083" name="Component_v1.structure.IMobileRobotInst" flags="ng" index="3$NG9X">
         <reference id="5906340854137179089" name="mobilerobot" index="3$NG9B" />
       </concept>
+      <concept id="8390220799190073536" name="Component_v1.structure.subcomponent" flags="ng" index="1ACoQt">
+        <property id="8390220799190073537" name="type" index="1ACoQs" />
+        <child id="8390220799190073541" name="connect" index="1ACoQo" />
+        <child id="8390220799190073543" name="tasks" index="1ACoQq" />
+        <child id="8390220799190073542" name="nfr" index="1ACoQr" />
+      </concept>
+      <concept id="8390220799190594756" name="Component_v1.structure.ISoftwareComponentInst" flags="ng" index="1AEnAp">
+        <reference id="8390220799190594757" name="software" index="1AEnAo" />
+      </concept>
+      <concept id="8390220799190594755" name="Component_v1.structure.SoftwareComponentInst" flags="ng" index="1AEnAu" />
     </language>
     <language id="6d222813-53ea-440e-ba30-23ced4b723f0" name="QoS">
       <concept id="8489988947995225364" name="QoS.structure.CapabilitiesProfile" flags="ng" index="lVhbz">
@@ -130,6 +137,9 @@
         <property id="7665824709846292131" name="operator" index="YFELm" />
         <property id="7665824709846292138" name="unit" index="YFELv" />
       </concept>
+      <concept id="8188294578878680098" name="NFR.structure.LocalNFRFunction" flags="ng" index="1bWaqF">
+        <reference id="4537274526089673723" name="fields" index="1AXPzv" />
+      </concept>
       <concept id="5906340854138358045" name="NFR.structure.GlobalRunTimeNFRs" flags="ng" index="3$Jc2F">
         <property id="5906340854138358051" name="type" index="3$Jc2l" />
         <property id="5906340854138358048" name="operator" index="3$Jc2m" />
@@ -139,7 +149,13 @@
       <concept id="5906340854138357932" name="NFR.structure.GlobalNFRFunction" flags="ng" index="3$Jc4q">
         <reference id="5906340854138357937" name="fields2" index="3$Jc47" />
       </concept>
-      <concept id="4537274526088832678" name="NFR.structure.LocalRunTimeNFRs2" flags="ng" index="1D0Sm2" />
+      <concept id="4537274526088832678" name="NFR.structure.LocalRunTimeNFRs2" flags="ng" index="1D0Sm2">
+        <property id="9014908457751235748" name="type" index="3fXyZu" />
+        <property id="4537274526088832679" name="operator" index="1D0Sm3" />
+        <property id="4537274526088832680" name="constraint" index="1D0Smc" />
+        <property id="4537274526088832681" name="unit" index="1D0Smd" />
+        <child id="4537274526088832687" name="attributes" index="1D0Smb" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -151,119 +167,20 @@
       <concept id="5906340854140571608" name="TaskOperations.structure.LocalGoal" flags="ng" index="3$ACpI" />
     </language>
   </registry>
-  <node concept="YR0F6" id="5fFrGxqGmdB">
-    <property role="TrG5h" value="H2" />
-    <property role="1bYRJ0" value="76yEC$Umt1H/Actuator" />
-    <node concept="YR0EM" id="5fFrGxqGmdC" role="YR0ET">
-      <property role="YR0EA" value="Arm" />
-      <property role="YR0Ew" value="102" />
-      <node concept="3pZnSb" id="5fFrGxqGmdE" role="YR0E$">
-        <node concept="3pZnS9" id="5fFrGxqGmdG" role="3pZnSa">
-          <property role="TrG5h" value="Change angle" />
-          <property role="YRqTI" value="rotate camera" />
-          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
-          <node concept="3fSPMb" id="zVblGX5a0f" role="3fUSCQ">
-            <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
-          </node>
-        </node>
-        <node concept="3pZnS9" id="7hK3lOitF3_" role="3pZnSa">
-          <property role="TrG5h" value="ReceiveStatus" />
-          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
-          <node concept="3fSPMb" id="7hK3lOitF3D" role="3fUSCQ">
-            <ref role="3fSPMa" node="7hK3lOitF30" resolve="check6" />
-          </node>
-        </node>
-        <node concept="3pZnS8" id="5fFrGxqGmdI" role="3pZnSk">
-          <property role="TrG5h" value="Send image" />
-          <property role="YRqTC" value="Forward image" />
-          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
-          <node concept="3fSPMb" id="zVblGX5a0h" role="3fUSCO">
-            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
-          </node>
-        </node>
-      </node>
-      <node concept="YFELz" id="76yEC$Umf0P" role="YGDRf">
-        <property role="TrG5h" value="responseTime2" />
-        <property role="YFELm" value="6DyuJlkNdqK/greater_than_equal_to" />
-        <property role="YFELj" value="200" />
-        <property role="YFELv" value="msec" />
-      </node>
-    </node>
-  </node>
-  <node concept="YR0F6" id="76yEC$Ul6Ej">
-    <property role="TrG5h" value="H1" />
-    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
-    <node concept="YR0EM" id="57RyrqPfWSH" role="YR0ET">
-      <property role="YR0EA" value="Camera" />
-      <property role="YR0Ew" value="101" />
-      <node concept="3pZnSb" id="57RyrqPfWSJ" role="YR0E$">
-        <node concept="3pZnS9" id="zVblGX8dMo" role="3pZnSa">
-          <property role="3fV86E" value="7OroREMXMQ3/Location" />
-          <property role="TrG5h" value="obtainlocation" />
-          <node concept="3fSPMb" id="7hK3lOiy9lo" role="3fUSCQ">
-            <ref role="3fSPMa" node="zVblGX8dMI" resolve="check3" />
-          </node>
-        </node>
-        <node concept="3pZnS8" id="7hK3lOitF3u" role="3pZnSk">
-          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
-          <property role="TrG5h" value="SendStatus" />
-          <node concept="3fSPMb" id="7hK3lOitF3y" role="3fUSCO">
-            <ref role="3fSPMa" node="7hK3lOitF2x" resolve="check5" />
-          </node>
-        </node>
-      </node>
-      <node concept="YFELz" id="57RyrqPlaID" role="YGDRf">
-        <property role="TrG5h" value="res" />
-        <property role="YFELm" value="6DyuJlkNdqK/greater_than_equal_to" />
-        <property role="YFELj" value="10" />
-      </node>
-      <node concept="3$ACpI" id="57RyrqPsqvi" role="3$ADBj">
-        <property role="TrG5h" value="capture" />
-      </node>
-      <node concept="3$ACpI" id="4gKLRdmyOsg" role="3$ADBj">
-        <property role="TrG5h" value="Record" />
-      </node>
-    </node>
-  </node>
-  <node concept="YR0F6" id="76yEC$UoAxT">
-    <property role="TrG5h" value="H3" />
-    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
-    <node concept="YR0EM" id="76yEC$UoAxU" role="YR0ET">
-      <property role="YR0EA" value="TempertaureSensor" />
-      <property role="YR0Ew" value="201" />
-      <node concept="3pZnSb" id="zVblGX8dN0" role="YR0E$">
-        <node concept="3pZnS8" id="zVblGX8dN2" role="3pZnSk">
-          <property role="TrG5h" value="SendLocation" />
-          <property role="3fV86D" value="7OroREMXMQ3/Location" />
-          <node concept="3fSPMb" id="zVblGX8dN6" role="3fUSCO">
-            <ref role="3fSPMa" node="zVblGX8dMw" resolve="check4" />
-          </node>
-        </node>
-      </node>
-      <node concept="YFELz" id="76yEC$UoAy0" role="YGDRf">
-        <property role="TrG5h" value="range" />
-        <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="600" />
-        <property role="YFELv" value="metre" />
-      </node>
-    </node>
-  </node>
   <node concept="2uVwJs" id="3VRCMhnYbIx">
     <property role="TrG5h" value="ROB1" />
     <node concept="1D0Sm2" id="4gKLRdmwWCw" role="YRqTv">
       <property role="TrG5h" value="ResponseTime" />
-    </node>
-    <node concept="1D0Sm2" id="4gKLRdmyP9O" role="YRqTv">
-      <property role="TrG5h" value="Speed" />
-    </node>
-    <node concept="YE6PC" id="6IjCi4sh0pS" role="YRqTk">
-      <ref role="YCHyi" node="5fFrGxqGmdB" resolve="H2" />
-    </node>
-    <node concept="YE6PC" id="6IjCi4sh0q5" role="YRqTk">
-      <ref role="YCHyi" node="76yEC$UoAxT" resolve="H3" />
-    </node>
-    <node concept="YE6PC" id="6IjCi4sh0qf" role="YRqTk">
-      <ref role="YCHyi" node="7OroREMSQT6" resolve="H4" />
+      <property role="1D0Sm3" value="6DyuJlkNdqL/less_than_equal_to" />
+      <property role="1D0Smc" value="100" />
+      <property role="1D0Smd" value="msec" />
+      <property role="3fXyZu" value="7OroREMVkME/Sum" />
+      <node concept="1bWaqF" id="7hK3lOiU1nx" role="1D0Smb">
+        <ref role="1AXPzv" node="7hK3lOiSAOs" resolve="Running time" />
+      </node>
+      <node concept="1bWaqF" id="7hK3lOiU1nz" role="1D0Smb">
+        <ref role="1AXPzv" node="7hK3lOiPMpI" resolve="latency" />
+      </node>
     </node>
     <node concept="3$ACpI" id="57RyrqPsqvk" role="3$xULO">
       <property role="TrG5h" value="Fetch" />
@@ -277,19 +194,19 @@
         <ref role="iITnF" node="4gKLRdmwWCw" resolve="ResponseTime" />
       </node>
     </node>
-  </node>
-  <node concept="YR0F6" id="7OroREMSQT6">
-    <property role="TrG5h" value="H4" />
-    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
-    <node concept="YR0EM" id="7OroREMSQT7" role="YR0ET">
-      <node concept="YFELz" id="7OroREMSQT9" role="YGDRf">
-        <property role="TrG5h" value="responseTime4" />
-        <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="20" />
-        <property role="YFELv" value="msecs" />
-      </node>
-      <node concept="3pZnSb" id="7OroREMXVop" role="YR0E$">
-        <node concept="3pZnS9" id="7OroREMXVor" role="3pZnSa" />
+    <node concept="YE6PC" id="7hK3lOiTrzy" role="YRqTk">
+      <ref role="YCHyi" node="7hK3lOiPfye" resolve="H1" />
+    </node>
+    <node concept="1AEnAu" id="7hK3lOiU1nu" role="YRqTm">
+      <ref role="1AEnAo" node="7hK3lOiS2zS" resolve="Process Data" />
+    </node>
+    <node concept="3pZnSb" id="7hK3lOiU1qf" role="YRqTj">
+      <node concept="3pZnS9" id="7hK3lOiU1qh" role="3pZnSa">
+        <property role="TrG5h" value="ReceiveStatus" />
+        <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
+        <node concept="3fSPMb" id="7hK3lOiU1qj" role="3fUSCQ">
+          <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
+        </node>
       </node>
     </node>
   </node>
@@ -363,9 +280,6 @@
     <node concept="3$NG9_" id="57RyrqPibMy" role="3$NG9Y">
       <ref role="3$NG9B" node="3VRCMhnYbIx" resolve="ROB1" />
     </node>
-    <node concept="YE6PC" id="57RyrqPibMF" role="3$NG9K">
-      <ref role="YCHyi" node="76yEC$Ul6Ej" resolve="H1" />
-    </node>
     <node concept="3$Jc2F" id="57RyrqPjCPp" role="3$ID4g">
       <property role="TrG5h" value="ExpectedCompletionTime" />
       <property role="3$Jc2m" value="6DyuJlkNdqL/less_than_equal_to" />
@@ -390,35 +304,55 @@
     <node concept="iDS2o" id="4gKLRdmAj70" role="iDSXm">
       <ref role="iDS2t" node="4gKLRdmxpE3" resolve="make product" />
     </node>
-    <node concept="3$_l0w" id="7hK3lOitSxB" role="3$_6AO">
+    <node concept="YE6PC" id="7hK3lOiAn2h" role="3$NG9K">
+      <ref role="YCHyi" node="7hK3lOiPfye" resolve="H1" />
+    </node>
+    <node concept="3$_l0w" id="7hK3lOiU1ql" role="3$_6AO">
       <property role="3$_dMX" value="7OroREMXMQ2/Traffic" />
-      <node concept="3$_dMT" id="7hK3lOitSxD" role="1A1FLB">
-        <node concept="3$_l1o" id="7hK3lOitSxJ" role="3$_dMA">
-          <ref role="3$_l1q" node="5fFrGxqGmdI" resolve="Send image" />
+      <node concept="3$_dMT" id="7hK3lOiU1qn" role="1A1FLB">
+        <node concept="3$_l1o" id="7hK3lOiU1qt" role="3$_dMA">
+          <ref role="3$_l1q" node="7hK3lOiU1po" resolve="SendImage" />
         </node>
-        <node concept="3$_l02" id="7hK3lOitSxM" role="3$_dM$">
-          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
-        </node>
-      </node>
-      <node concept="3$_dMT" id="7hK3lOitSxP" role="1A1FLB">
-        <node concept="3$_l1o" id="7hK3lOitSxY" role="3$_dMA">
-          <ref role="3$_l1q" node="7hK3lOitF3u" resolve="SendStatus" />
-        </node>
-        <node concept="3$_l02" id="7hK3lOitSy1" role="3$_dM$">
-          <ref role="3$_l0t" node="7hK3lOitF3_" resolve="ReceiveStatus" />
+        <node concept="3$_l02" id="7hK3lOiU1qw" role="3$_dM$">
+          <ref role="3$_l0t" node="7hK3lOiU1qh" resolve="ReceiveStatus" />
         </node>
       </node>
     </node>
-    <node concept="3$_l0w" id="7hK3lOitSy4" role="3$_6AO">
-      <property role="3$_dMX" value="7OroREMXMQ3/Location" />
-      <node concept="3$_dMT" id="7hK3lOitSyd" role="1A1FLB">
-        <node concept="3$_l1o" id="7hK3lOitSyj" role="3$_dMA">
-          <ref role="3$_l1q" node="zVblGX8dN2" resolve="SendLocation" />
-        </node>
-        <node concept="3$_l02" id="7hK3lOiybi3" role="3$_dM$">
-          <ref role="3$_l0t" node="5fFrGxqGmdG" resolve="Change angle" />
+  </node>
+  <node concept="2uVwJs" id="7hK3lOizXO3">
+    <property role="TrG5h" value="ROB2" />
+  </node>
+  <node concept="YR0F6" id="7hK3lOiPfye">
+    <property role="TrG5h" value="H1" />
+    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
+    <node concept="1ACoQt" id="7hK3lOiPfyf" role="1ACvkq">
+      <property role="1ACoQs" value="Camera" />
+      <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq" />
+      <node concept="YFELz" id="7hK3lOiPMpI" role="1ACoQr">
+        <property role="TrG5h" value="latency" />
+        <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
+        <property role="YFELj" value="110" />
+        <property role="YFELv" value="msec" />
+      </node>
+      <node concept="3pZnSb" id="7hK3lOiU1pm" role="1ACoQo">
+        <node concept="3pZnS8" id="7hK3lOiU1po" role="3pZnSk">
+          <property role="TrG5h" value="SendImage" />
+          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
+          <node concept="3fSPMb" id="7hK3lOiU1qc" role="3fUSCO">
+            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
+          </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="YR0F1" id="7hK3lOiS2zS">
+    <property role="1AEnBD" value="Process1" />
+    <property role="TrG5h" value="Process Data" />
+    <node concept="YFELz" id="7hK3lOiSAOs" role="YRqTq">
+      <property role="TrG5h" value="Running time" />
+      <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
+      <property role="YFELj" value="10" />
+      <property role="YFELv" value="msec" />
     </node>
   </node>
 </model>

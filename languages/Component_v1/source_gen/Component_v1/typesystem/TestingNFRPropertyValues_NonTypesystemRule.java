@@ -56,7 +56,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
           while (comp_it.hasNext()) {
             comp_var = comp_it.next();
             {
-              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(comp_var, LINKS.sensors$c5_e), LINKS.nfr$aQnb)).iterator();
+              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(comp_var, LINKS.component$ISi3), LINKS.nfr$8n9A)).iterator();
               SNode schild_var;
               while (schild_it.hasNext()) {
                 schild_var = schild_it.next();
@@ -87,29 +87,48 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
                 }
               }
             }
+          }
+        }
+        {
+          Iterator<SNode> comp_it = Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(mobileRobot, LINKS.software$84Ys), LINKS.software$7j_c)).iterator();
+          SNode comp_var;
+          while (comp_it.hasNext()) {
+            comp_var = comp_it.next();
             {
-              Iterator<SNode> achild_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(comp_var, LINKS.actuators$caY_), LINKS.nfr$Zij$)).iterator();
-              SNode achild_var;
-              while (achild_it.hasNext()) {
-                achild_var = achild_it.next();
-                String id2 = SPropertyOperations.getString(achild_var, PROPS.name$MnvL);
-
+              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(comp_var, LINKS.nfr$Zx5z)).iterator();
+              SNode schild_var;
+              while (schild_it.hasNext()) {
+                schild_var = schild_it.next();
+                String id = SPropertyOperations.getString(schild_var, PROPS.name$MnvL);
                 {
                   Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(nfp_var, LINKS.attributes$uwJl)).iterator();
                   SNode nfr_var;
                   while (nfr_it.hasNext()) {
                     nfr_var = nfr_it.next();
                     String s = SPropertyOperations.getString(SLinkOperations.getTarget(nfr_var, LINKS.fields$kG77), PROPS.name$MnvL);
-                    if (id2.equals(s)) {
-                      compval = compval + SPropertyOperations.getInteger(achild_var, PROPS.constraint$F8ML);
+                    if (id.equals(s)) {
+                      if (sum == 1) {
+                        compval = compval + SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                      }
+                      if (max == 1) {
+                        if (compval <= SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                        }
+                      }
+                      if (min == 1) {
+                        if (compval >= SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.constraint$F8ML);
+                        }
+
+                      }
                     }
                   }
                 }
-
               }
             }
           }
         }
+
         if (SPropertyOperations.getEnum(nfp_var, PROPS.operator$upVS) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL, "NFR.structure.OperatorEnumeration"), 0x6a627af554ccd6b1L, "less_than_equal_to")) {
           if (cons < compval) {
             {
@@ -153,12 +172,13 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
     /*package*/ static final SContainmentLink nfr$86Bz = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4aaL, "nfr");
     /*package*/ static final SContainmentLink hardware$7Z_5 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a1L, "hardware");
     /*package*/ static final SReferenceLink hardware$nR7k = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554c03797L, 0x6a627af554c0a267L, "hardware");
-    /*package*/ static final SContainmentLink sensors$c5_e = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x6a627af554be704cL, "sensors");
-    /*package*/ static final SContainmentLink nfr$aQnb = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7047L, 0x6a627af554d0e73aL, "nfr");
+    /*package*/ static final SContainmentLink component$ISi3 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x74700d5d12d1f847L, "component");
+    /*package*/ static final SContainmentLink nfr$8n9A = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d180c0L, 0x74700d5d12d180c6L, "nfr");
     /*package*/ static final SContainmentLink attributes$uwJl = MetaAdapterFactory.getContainmentLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426afL, "attributes");
     /*package*/ static final SReferenceLink fields$kG77 = MetaAdapterFactory.getReferenceLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L, 0x3ef7a3245800fbfbL, "fields");
-    /*package*/ static final SContainmentLink actuators$caY_ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x6a627af554be704eL, "actuators");
-    /*package*/ static final SContainmentLink nfr$Zij$ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7048L, 0x6a627af554bfd498L, "nfr");
+    /*package*/ static final SContainmentLink software$84Ys = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a3L, "software");
+    /*package*/ static final SReferenceLink software$7j_c = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d974c4L, 0x74700d5d12d974c5L, "software");
+    /*package*/ static final SContainmentLink nfr$Zx5z = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x6a627af554bfd4afL, "nfr");
   }
 
   private static final class PROPS {

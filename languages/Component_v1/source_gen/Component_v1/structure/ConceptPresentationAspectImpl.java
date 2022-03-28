@@ -17,6 +17,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_HardwareRef;
   private ConceptPresentation props_IHardwareComponentInst;
   private ConceptPresentation props_IMobileRobotInst;
+  private ConceptPresentation props_ISoftwareComponentInst;
+  private ConceptPresentation props_MTypeIF;
   private ConceptPresentation props_MobileRobot;
   private ConceptPresentation props_MobileRobotInst;
   private ConceptPresentation props_NFPProfile;
@@ -30,6 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TaskAssociation3;
   private ConceptPresentation props_TaskNFRAssociation1;
   private ConceptPresentation props_TaskNFRAssociation2;
+  private ConceptPresentation props_subcomponent;
 
   @Override
   @Nullable
@@ -60,7 +63,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HardwareComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0w);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0z);
           props_HardwareComponent = cpb.create();
         }
         return props_HardwareComponent;
@@ -91,6 +94,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IMobileRobotInst = cpb.create();
         }
         return props_IMobileRobotInst;
+      case LanguageConceptSwitch.ISoftwareComponentInst:
+        if (props_ISoftwareComponentInst == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ISoftwareComponentInst = cpb.create();
+        }
+        return props_ISoftwareComponentInst;
+      case LanguageConceptSwitch.MTypeIF:
+        if (props_MTypeIF == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MTypeIF = cpb.create();
+        }
+        return props_MTypeIF;
       case LanguageConceptSwitch.MobileRobot:
         if (props_MobileRobot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -130,7 +145,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("NFR Profile annotation for different nodes");
           cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554d0e74cL, 0x6a627af554d0e753L, "profile", "", "");
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a31b0w);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a51b0z);
           props_RunTimeNFRsAnnotation = cpb.create();
         }
         return props_RunTimeNFRsAnnotation;
@@ -151,6 +166,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SoftwareComponentInst:
         if (props_SoftwareComponentInst == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SoftwareComponentInst = cpb.create();
         }
         return props_SoftwareComponentInst;
@@ -182,6 +198,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TaskNFRAssociation2 = cpb.create();
         }
         return props_TaskNFRAssociation2;
+      case LanguageConceptSwitch.subcomponent:
+        if (props_subcomponent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("subcomponent");
+          props_subcomponent = cpb.create();
+        }
+        return props_subcomponent;
     }
     return null;
   }

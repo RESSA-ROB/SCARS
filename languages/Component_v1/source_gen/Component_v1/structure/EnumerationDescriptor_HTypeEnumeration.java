@@ -17,9 +17,10 @@ public class EnumerationDescriptor_HTypeEnumeration extends EnumerationDescripto
 
   private final EnumerationDescriptor.MemberDescriptor myMember_Sensor_0 = new EnumerationDescriptor.MemberDescriptor("Sensor", "Sensor", 0x71a2aa893a59d06cL, "r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/8188294578879189100");
   private final EnumerationDescriptor.MemberDescriptor myMember_Actuator_0 = new EnumerationDescriptor.MemberDescriptor("Actuator", "Actuator", 0x71a2aa893a59d06dL, "r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/8188294578879189101");
+  private final EnumerationDescriptor.MemberDescriptor myMember_Controller_0 = new EnumerationDescriptor.MemberDescriptor("Controller", "Controller", 0x74700d5d129013daL, "r:c52bfaaf-3aa5-4582-82a8-936559e2dd69(Component_v1.structure)/8390220799185785818");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x71a2aa893a59d06bL, 0x71a2aa893a59d06cL, 0x71a2aa893a59d06dL);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_Sensor_0, myMember_Actuator_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x71a2aa893a59d06bL, 0x71a2aa893a59d06cL, 0x71a2aa893a59d06dL, 0x74700d5d129013daL);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_Sensor_0, myMember_Actuator_0, myMember_Controller_0);
 
   @Nullable
   @Override
@@ -44,6 +45,8 @@ public class EnumerationDescriptor_HTypeEnumeration extends EnumerationDescripto
         return myMember_Sensor_0;
       case "Actuator":
         return myMember_Actuator_0;
+      case "Controller":
+        return myMember_Controller_0;
     }
     return null;
   }

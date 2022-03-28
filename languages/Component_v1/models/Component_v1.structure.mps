@@ -141,6 +141,9 @@
     <node concept="PrWs8" id="4QO_o3jmDTt" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="7hK3lOiztr7" role="PzmwI">
+      <ref role="PrY4T" node="7hK3lOiztr6" resolve="MTypeIF" />
+    </node>
     <node concept="1TJgyj" id="6DyuJlkJXix" role="1TKVEi">
       <property role="IQ2ns" value="7665824709845439649" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -153,7 +156,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="software" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="6DyuJlkKa9D" resolve="SoftwareComponentInst" />
+      <ref role="20lvS9" node="7hK3lOiQnj4" resolve="ISoftwareComponentInst" />
     </node>
     <node concept="1TJgyj" id="6DyuJlkJXiA" role="1TKVEi">
       <property role="IQ2ns" value="7665824709845439654" />
@@ -189,18 +192,6 @@
     <property role="TrG5h" value="HardwareComponent" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyj" id="6DyuJlkJB1c" role="1TKVEi">
-      <property role="IQ2ns" value="7665824709845348428" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="sensors" />
-      <ref role="20lvS9" node="6DyuJlkJB17" resolve="Sensors" />
-    </node>
-    <node concept="1TJgyj" id="6DyuJlkJB1e" role="1TKVEi">
-      <property role="IQ2ns" value="7665824709845348430" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="actuators" />
-      <ref role="20lvS9" node="6DyuJlkJB18" resolve="Actuators" />
-    </node>
     <node concept="PrWs8" id="6DyuJlkKt6N" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -224,6 +215,13 @@
         </node>
       </node>
     </node>
+    <node concept="1TJgyj" id="7hK3lOiOvx7" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190104135" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="component" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="7hK3lOiOo30" resolve="subcomponent" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6DyuJlkJB0O">
     <property role="EcuMT" value="7665824709845348404" />
@@ -239,6 +237,16 @@
     </node>
     <node concept="PrWs8" id="6DyuJlkK3uc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="7hK3lOiQniO" role="1TKVEl">
+      <property role="IQ2nx" value="8390220799190594740" />
+      <property role="TrG5h" value="modulename" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7hK3lOiQniQ" role="1TKVEl">
+      <property role="IQ2nx" value="8390220799190594742" />
+      <property role="TrG5h" value="description" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="6DyuJlkJB17">
@@ -359,23 +367,6 @@
       <ref role="20lvS9" node="6DyuJlkJB0N" resolve="HardwareComponent" />
     </node>
   </node>
-  <node concept="PlHQZ" id="6DyuJlkKa9D">
-    <property role="EcuMT" value="7665824709845492329" />
-    <property role="3GE5qa" value="Instances" />
-    <property role="TrG5h" value="SoftwareComponentInst" />
-    <node concept="PrWs8" id="6DyuJlkKa9E" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="PrWs8" id="6DyuJlkKa9G" role="PrDN$">
-      <ref role="PrY4T" to="e6u4:2LnlX4fH7xw" resolve="ICanBePlatformAnnotated" />
-    </node>
-    <node concept="1TJgyj" id="6DyuJlkKa9J" role="1TKVEi">
-      <property role="IQ2ns" value="7665824709845492335" />
-      <property role="20kJfa" value="software" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6DyuJlkJB0O" resolve="SoftwareComponent" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6DyuJlkMxut">
     <property role="EcuMT" value="7665824709846112157" />
     <property role="3GE5qa" value="Instances" />
@@ -465,6 +456,10 @@
     <node concept="25R33" id="76yEC$Umt1H" role="25R1y">
       <property role="3tVfz5" value="8188294578879189101" />
       <property role="TrG5h" value="Actuator" />
+    </node>
+    <node concept="25R33" id="7hK3lOi$1fq" role="25R1y">
+      <property role="3tVfz5" value="8390220799185785818" />
+      <property role="TrG5h" value="Controller" />
     </node>
   </node>
   <node concept="PlHQZ" id="76yEC$Umt58">
@@ -606,6 +601,79 @@
       <property role="20kJfa" value="tasks" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="1vx7:57RyrqPrgZt" resolve="GlobalGoal" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7hK3lOiztr6">
+    <property role="EcuMT" value="8390220799185639110" />
+    <property role="TrG5h" value="MTypeIF" />
+  </node>
+  <node concept="1TIwiD" id="7hK3lOiOo30">
+    <property role="EcuMT" value="8390220799190073536" />
+    <property role="TrG5h" value="subcomponent" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7hK3lOiOo35" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190073541" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="connect" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="dmdj:2n8bWnWdl7e" resolve="CPort" />
+    </node>
+    <node concept="1TJgyj" id="7hK3lOiOo36" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190073542" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="nfr" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="7pce:6DyuJlkNdqm" resolve="LocalRunTimeNFRs" />
+    </node>
+    <node concept="1TJgyj" id="7hK3lOiOo37" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190073543" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="LocalGoal" />
+    </node>
+    <node concept="1TJgyj" id="7hK3lOiOo38" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190073544" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdm$BS3" resolve="TaskNFRAssociation1" />
+    </node>
+    <node concept="1TJgyi" id="7hK3lOiOo31" role="1TKVEl">
+      <property role="IQ2nx" value="8390220799190073537" />
+      <property role="TrG5h" value="type" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7hK3lOiOo32" role="1TKVEl">
+      <property role="IQ2nx" value="8390220799190073538" />
+      <property role="TrG5h" value="id" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7hK3lOiQnj3">
+    <property role="EcuMT" value="8390220799190594755" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="SoftwareComponentInst" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="7hK3lOiQnjc" role="PzmwI">
+      <ref role="PrY4T" node="7hK3lOiQnj4" resolve="ISoftwareComponentInst" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="7hK3lOiQnj4">
+    <property role="EcuMT" value="8390220799190594756" />
+    <property role="3GE5qa" value="Instances" />
+    <property role="TrG5h" value="ISoftwareComponentInst" />
+    <node concept="1TJgyj" id="7hK3lOiQnj5" role="1TKVEi">
+      <property role="IQ2ns" value="8390220799190594757" />
+      <property role="20kJfa" value="software" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="6DyuJlkJB0O" resolve="SoftwareComponent" />
+    </node>
+    <node concept="PrWs8" id="7hK3lOiQnj7" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="7hK3lOiQnj9" role="PrDN$">
+      <ref role="PrY4T" to="e6u4:2LnlX4fH7xw" resolve="ICanBePlatformAnnotated" />
     </node>
   </node>
 </model>
