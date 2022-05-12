@@ -233,7 +233,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.attributes$uwJl;
+      return LINKS.attributes$Lozl;
     }
     public SAbstractConcept getChildSConcept() {
       return CONCEPTS.LocalNFRFunction$sx;
@@ -246,7 +246,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(attributesListHandler_bn598g_b1a.this.getNode(), LINKS.attributes$uwJl));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(attributesListHandler_bn598g_b1a.this.getNode(), LINKS.attributes$Lozl));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -350,6 +350,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink attributes$uwJl = MetaAdapterFactory.getContainmentLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426afL, "attributes");
+    /*package*/ static final SContainmentLink attributes$Lozl = MetaAdapterFactory.getContainmentLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x9b30d388c2f18e2L, "attributes");
   }
 }

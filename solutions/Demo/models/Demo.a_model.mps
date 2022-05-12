@@ -10,17 +10,12 @@
   <imports />
   <registry>
     <language id="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f" name="Communication">
-      <concept id="2722478502131880397" name="Communication.structure.OutPutPort" flags="ng" index="3pZnS8">
-        <property id="9014908457751929555" name="type" index="3fV86D" />
-        <child id="9014908457751472462" name="Qos" index="3fUSCO" />
-      </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
         <property id="9014908457751929552" name="type" index="3fV86E" />
         <child id="9014908457751472460" name="QoS" index="3fUSCQ" />
       </concept>
       <concept id="2722478502131880398" name="Communication.structure.CPort" flags="ng" index="3pZnSb">
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
-        <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
       <concept id="5906340854139933967" name="Communication.structure.ConnPair" flags="ng" index="3$_dMT">
         <child id="5906340854139933970" name="subscriber" index="3$_dM$" />
@@ -57,16 +52,15 @@
       </concept>
     </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
+      <concept id="4913646491648818691" name="Component_v1.structure.TaskNFRAssociation1" flags="ng" index="iCF_K">
+        <reference id="4913646491648818694" name="tasks" index="iCF_P" />
+        <child id="4913646491648818692" name="NFRs" index="iCF_R" />
+      </concept>
       <concept id="4913646491649132523" name="Component_v1.structure.TaskAssociation3" flags="ng" index="iDS2o">
         <reference id="4913646491649132526" name="tasks" index="iDS2t" />
         <child id="4913646491649132524" name="NFRs" index="iDS2v" />
       </concept>
-      <concept id="4913646491648009977" name="Component_v1.structure.TaskNFRAssociation2" flags="ng" index="iHI6a">
-        <reference id="4913646491648009978" name="tasks" index="iHI69" />
-        <child id="4913646491648414801" name="NFRs" index="iJ9cy" />
-      </concept>
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
-        <child id="4913646491648010062" name="association" index="iHI0X" />
         <child id="7665824709845439654" name="connect" index="YRqTj" />
         <child id="7665824709845439649" name="hardware" index="YRqTk" />
         <child id="7665824709845439651" name="software" index="YRqTm" />
@@ -79,7 +73,6 @@
       <concept id="7665824709846112157" name="Component_v1.structure.HardwareComponentInst" flags="ng" index="YE6PC" />
       <concept id="7665824709845348404" name="Component_v1.structure.SoftwareComponent" flags="ng" index="YR0F1">
         <property id="8390220799190594740" name="modulename" index="1AEnBD" />
-        <child id="7665824709845439663" name="nfr" index="YRqTq" />
       </concept>
       <concept id="7665824709845348403" name="Component_v1.structure.HardwareComponent" flags="ng" index="YR0F6">
         <child id="8390220799190104135" name="component" index="1ACvkq" />
@@ -101,6 +94,7 @@
       </concept>
       <concept id="8390220799190073536" name="Component_v1.structure.subcomponent" flags="ng" index="1ACoQt">
         <property id="8390220799190073537" name="type" index="1ACoQs" />
+        <child id="8390220799190073544" name="association" index="1ACoQl" />
         <child id="8390220799190073541" name="connect" index="1ACoQo" />
         <child id="8390220799190073543" name="tasks" index="1ACoQq" />
         <child id="8390220799190073542" name="nfr" index="1ACoQr" />
@@ -124,18 +118,19 @@
       </concept>
     </language>
     <language id="ddad85b5-8f76-40d8-9a0d-bd322c713e77" name="NFR">
+      <concept id="4913646491648746688" name="NFR.structure.ILocalRunTimeNFRsInst" flags="ng" index="iCqeN">
+        <reference id="4913646491648746694" name="instance" index="iCqeP" />
+      </concept>
+      <concept id="4913646491648746696" name="NFR.structure.LocalRunTimeNFRsInst" flags="ng" index="iCqeV" />
       <concept id="4913646491649054448" name="NFR.structure.GlobalRunTimeNFRsInst" flags="ng" index="iDH63" />
       <concept id="4913646491649054440" name="NFR.structure.IGlobalRunTimeNFRsInst" flags="ng" index="iDH6r">
         <reference id="4913646491649054446" name="instances" index="iDH6t" />
       </concept>
-      <concept id="4913646491648348854" name="NFR.structure.LocalRunTimeNFRs2Inst" flags="ng" index="iITn5" />
-      <concept id="4913646491648348818" name="NFR.structure.ILocalRunTimeNFRs2Inst" flags="ng" index="iITnx">
-        <reference id="4913646491648348824" name="instances" index="iITnF" />
-      </concept>
       <concept id="7665824709846292118" name="NFR.structure.LocalRunTimeNFRs" flags="ng" index="YFELz">
-        <property id="7665824709846292134" name="constraint" index="YFELj" />
-        <property id="7665824709846292131" name="operator" index="YFELm" />
-        <property id="7665824709846292138" name="unit" index="YFELv" />
+        <property id="2595730008626759412" name="nfrmetric" index="2d0eh4" />
+        <property id="2595730008626759414" name="maxvalue" index="2d0eh6" />
+        <property id="2595730008626759417" name="minvalue" index="2d0eh9" />
+        <property id="2595730008626759421" name="mostlikely" index="2d0ehd" />
       </concept>
       <concept id="8188294578878680098" name="NFR.structure.LocalNFRFunction" flags="ng" index="1bWaqF">
         <reference id="4537274526089673723" name="fields" index="1AXPzv" />
@@ -144,17 +139,9 @@
         <property id="5906340854138358051" name="type" index="3$Jc2l" />
         <property id="5906340854138358048" name="operator" index="3$Jc2m" />
         <property id="5906340854138358049" name="constraint" index="3$Jc2n" />
-        <child id="5906340854138358056" name="attributes" index="3$Jc2u" />
-      </concept>
-      <concept id="5906340854138357932" name="NFR.structure.GlobalNFRFunction" flags="ng" index="3$Jc4q">
-        <reference id="5906340854138357937" name="fields2" index="3$Jc47" />
       </concept>
       <concept id="4537274526088832678" name="NFR.structure.LocalRunTimeNFRs2" flags="ng" index="1D0Sm2">
-        <property id="9014908457751235748" name="type" index="3fXyZu" />
-        <property id="4537274526088832679" name="operator" index="1D0Sm3" />
-        <property id="4537274526088832680" name="constraint" index="1D0Smc" />
-        <property id="4537274526088832681" name="unit" index="1D0Smd" />
-        <child id="4537274526088832687" name="attributes" index="1D0Smb" />
+        <child id="698916903693785314" name="attributes" index="25B1nq" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -169,30 +156,11 @@
   </registry>
   <node concept="2uVwJs" id="3VRCMhnYbIx">
     <property role="TrG5h" value="ROB1" />
-    <node concept="1D0Sm2" id="4gKLRdmwWCw" role="YRqTv">
-      <property role="TrG5h" value="ResponseTime" />
-      <property role="1D0Sm3" value="6DyuJlkNdqL/less_than_equal_to" />
-      <property role="1D0Smc" value="100" />
-      <property role="1D0Smd" value="msec" />
-      <property role="3fXyZu" value="7OroREMVkME/Sum" />
-      <node concept="1bWaqF" id="7hK3lOiU1nx" role="1D0Smb">
-        <ref role="1AXPzv" node="7hK3lOiSAOs" resolve="Running time" />
-      </node>
-      <node concept="1bWaqF" id="7hK3lOiU1nz" role="1D0Smb">
-        <ref role="1AXPzv" node="7hK3lOiPMpI" resolve="latency" />
-      </node>
-    </node>
     <node concept="3$ACpI" id="57RyrqPsqvk" role="3$xULO">
       <property role="TrG5h" value="Fetch" />
     </node>
     <node concept="3$ACpI" id="4gKLRdmuy_z" role="3$xULO">
       <property role="TrG5h" value="Deliver" />
-    </node>
-    <node concept="iHI6a" id="4gKLRdmyOsj" role="iHI0X">
-      <ref role="iHI69" node="4gKLRdmuy_z" resolve="Deliver" />
-      <node concept="iITn5" id="4gKLRdmzw_X" role="iJ9cy">
-        <ref role="iITnF" node="4gKLRdmwWCw" resolve="ResponseTime" />
-      </node>
     </node>
     <node concept="YE6PC" id="7hK3lOiTrzy" role="YRqTk">
       <ref role="YCHyi" node="7hK3lOiPfye" resolve="H1" />
@@ -207,6 +175,11 @@
         <node concept="3fSPMb" id="7hK3lOiU1qj" role="3fUSCQ">
           <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
         </node>
+      </node>
+    </node>
+    <node concept="1D0Sm2" id="AN3jyccqlC" role="YRqTv">
+      <node concept="1bWaqF" id="2g5SF2CDraZ" role="25B1nq">
+        <ref role="1AXPzv" node="2g5SF2CCHHB" resolve="N101" />
       </node>
     </node>
   </node>
@@ -285,9 +258,6 @@
       <property role="3$Jc2m" value="6DyuJlkNdqL/less_than_equal_to" />
       <property role="3$Jc2n" value="500" />
       <property role="3$Jc2l" value="7OroREMVkMF/Max" />
-      <node concept="3$Jc4q" id="57RyrqPjCPr" role="3$Jc2u">
-        <ref role="3$Jc47" node="4gKLRdmwWCw" resolve="ResponseTime" />
-      </node>
     </node>
     <node concept="3$ACpF" id="4gKLRdmuy_5" role="ih4uj">
       <property role="TrG5h" value="deliver product" />
@@ -328,33 +298,35 @@
     <node concept="1ACoQt" id="7hK3lOiPfyf" role="1ACvkq">
       <property role="1ACoQs" value="Camera" />
       <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq" />
-      <node concept="YFELz" id="7hK3lOiPMpI" role="1ACoQr">
-        <property role="TrG5h" value="latency" />
-        <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-        <property role="YFELj" value="110" />
-        <property role="YFELv" value="msec" />
+      <node concept="3pZnSb" id="2g5SF2CK_eY" role="1ACoQo">
+        <node concept="3pZnS9" id="2g5SF2CK_f4" role="3pZnSa" />
       </node>
-      <node concept="3pZnSb" id="7hK3lOiU1pm" role="1ACoQo">
-        <node concept="3pZnS8" id="7hK3lOiU1po" role="3pZnSk">
-          <property role="TrG5h" value="SendImage" />
-          <property role="3fV86D" value="7OroREMXMQ2/Traffic" />
-          <node concept="3fSPMb" id="7hK3lOiU1qc" role="3fUSCO">
-            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
-          </node>
+      <node concept="YFELz" id="7$WnCimbDOr" role="1ACoQr">
+        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
+        <property role="TrG5h" value="N101" />
+        <property role="2d0eh9" value="4" />
+        <property role="2d0eh6" value="10" />
+        <property role="2d0ehd" value="6" />
+      </node>
+      <node concept="YFELz" id="7$WnCimbDOt" role="1ACoQr">
+        <property role="TrG5h" value="N102" />
+        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
+        <property role="2d0eh9" value="2" />
+        <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="3" />
+      </node>
+      <node concept="iCF_K" id="2nyR43eOVWO" role="1ACoQl" />
+      <node concept="iCF_K" id="2nyR43eOVWv" role="1ACoQl">
+        <ref role="iCF_P" node="4gKLRdmuy_z" resolve="Deliver" />
+        <node concept="iCqeV" id="2nyR43eOVWx" role="iCF_R">
+          <ref role="iCqeP" node="7$WnCimbDOr" resolve="N101" />
         </node>
-        <node concept="3pZnS9" id="4JkoNzv6meY" role="3pZnSa" />
       </node>
     </node>
   </node>
   <node concept="YR0F1" id="7hK3lOiS2zS">
     <property role="1AEnBD" value="Process1" />
     <property role="TrG5h" value="Process Data" />
-    <node concept="YFELz" id="7hK3lOiSAOs" role="YRqTq">
-      <property role="TrG5h" value="Running time" />
-      <property role="YFELm" value="6DyuJlkNdqL/less_than_equal_to" />
-      <property role="YFELj" value="10" />
-      <property role="YFELv" value="msec" />
-    </node>
   </node>
 </model>
 

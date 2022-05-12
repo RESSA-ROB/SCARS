@@ -53,10 +53,12 @@
     <classNode dependClassName="NFR.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="NFR.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="NFR.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="NFR.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
