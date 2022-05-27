@@ -24,28 +24,27 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public NFRNormalization_NonTypesystemRule() {
+public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public NFRNormalization3_NonTypesystemRule() {
   }
-  public void applyRule(final SNode hardwareComponent, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    String compname = SPropertyOperations.getString(SLinkOperations.getTarget(hardwareComponent, LINKS.component$ISi3), PROPS.id$8hid);
+  public void applyRule(final SNode softwareComponent, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    String compname = SPropertyOperations.getString(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), PROPS.id$T3zd);
     {
       final MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "639602153183284513", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893087", null, errorTarget);
     }
-
     List<String> NFR_names = ListSequence.fromList(new ArrayList<String>());
-    List<Double> NFR_maxValues = ListSequence.fromList(new ArrayList<Double>());
-    List<Double> NFR_minValues = ListSequence.fromList(new ArrayList<Double>());
+    List<Integer> NFR_maxValues = ListSequence.fromList(new ArrayList<Integer>());
+    List<Integer> NFR_minValues = ListSequence.fromList(new ArrayList<Integer>());
     List<Integer> NFR_mostlikelyValues = ListSequence.fromList(new ArrayList<Integer>());
     {
-      Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(hardwareComponent, LINKS.component$ISi3), LINKS.nfr$8n9A)).iterator();
+      Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.nfr$Ta7D)).iterator();
       SNode nfr_var;
       while (nfr_it.hasNext()) {
         nfr_var = nfr_it.next();
         // Obtain the min, max and mostlikely value for each
-        double max = ((double) SPropertyOperations.getInteger(nfr_var, PROPS.maxvalue$kjfB));
-        double min = ((double) SPropertyOperations.getInteger(nfr_var, PROPS.minvalue$kjWE));
+        int max = SPropertyOperations.getInteger(nfr_var, PROPS.maxvalue$kjfB);
+        int min = SPropertyOperations.getInteger(nfr_var, PROPS.minvalue$kjWE);
         int mostlikelyval = SPropertyOperations.getInteger(nfr_var, PROPS.mostlikely$kpO3);
         // Retrieve NFR name
         SEnumerationLiteral NFRname = SPropertyOperations.getEnum(nfr_var, PROPS.nfrmetric$kiL_);
@@ -114,13 +113,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Cost: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316087235", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Cost: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893690", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Cost is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249611178", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Cost is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893739", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -130,7 +129,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Cost is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2595730008627175023", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Cost is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893814", null, errorTarget);
       }
       flag = 0;
     }
@@ -155,13 +154,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Availability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316102017", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Availability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893937", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Availability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455248909705", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Availability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893986", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -171,7 +170,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Availability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316553174", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Availability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894064", null, errorTarget);
       }
       flag = 0;
     }
@@ -196,13 +195,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Device Capability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316614610", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Device Capability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894187", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Device Capability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249509524", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Device Capability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894236", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -212,7 +211,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Device Capability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316614722", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Device Capability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894311", null, errorTarget);
       }
       flag = 0;
     }
@@ -238,13 +237,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Data Input: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316641748", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Data Input: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894435", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Data Input is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249523616", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Data Input is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894484", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -254,7 +253,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Data Input is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316641860", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Data Input is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894559", null, errorTarget);
       }
       flag = 0;
     }
@@ -279,13 +278,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Usability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316670692", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Usability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894682", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Usability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249527898", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Usability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894731", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -295,7 +294,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Usability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316670804", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Usability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894806", null, errorTarget);
       }
       flag = 0;
     }
@@ -320,13 +319,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Performance: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316700309", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Performance: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894924", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Performance is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249534882", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Performance is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894973", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -336,7 +335,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Performance is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316700421", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Performance is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895048", null, errorTarget);
       }
       flag = 0;
     }
@@ -361,13 +360,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316766695", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895171", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249545099", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895220", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -377,7 +376,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316766807", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895295", null, errorTarget);
       }
       flag = 0;
     }
@@ -402,13 +401,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Security: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316797076", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Security: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895418", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Security is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249558524", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Security is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895467", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -418,7 +417,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Security is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316797188", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Security is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895542", null, errorTarget);
       }
       flag = 0;
     }
@@ -443,13 +442,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Robustness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316823265", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Robustness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895665", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Robustness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249568491", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Robustness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895714", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -459,7 +458,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Robustness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316823377", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Robustness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895789", null, errorTarget);
       }
       flag = 0;
     }
@@ -484,13 +483,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Energy Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316862555", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Energy Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895912", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Energy Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249572767", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Energy Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895961", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -500,7 +499,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Energy Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316862667", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Energy Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896036", null, errorTarget);
       }
       flag = 0;
     }
@@ -525,13 +524,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Mobility: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316902851", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Mobility: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896159", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Mobility is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249580564", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Mobility is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896208", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -541,7 +540,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Mobility is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316902963", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Mobility is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896283", null, errorTarget);
       }
       flag = 0;
     }
@@ -566,13 +565,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Safety: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316932026", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Safety: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896406", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Safety is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249584539", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Safety is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896455", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -582,7 +581,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Safety is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316932138", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Safety is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896530", null, errorTarget);
       }
       flag = 0;
     }
@@ -607,13 +606,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Reliability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316960703", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Reliability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896653", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Reliability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249591995", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Reliability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896702", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -623,7 +622,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Reliability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760316960815", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Reliability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896777", null, errorTarget);
       }
       flag = 0;
     }
@@ -648,13 +647,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Privacy: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760317000243", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Privacy: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896900", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Privacy is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249599697", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Privacy is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896949", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -664,7 +663,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Privacy is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760317000355", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Privacy is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897024", null, errorTarget);
       }
       flag = 0;
     }
@@ -689,13 +688,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     if (flag == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Calmness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760317044668", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Calmness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897147", null, errorTarget);
       }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Computed Expected value for Calmness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "3279608455249603602", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Calmness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897196", null, errorTarget);
       }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -705,13 +704,13 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       normalizedval = ((double) (((double) k) / ((double) 100)));
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Normalized value for Expected Calmness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4953081760317044780", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Calmness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897271", null, errorTarget);
       }
       flag = 0;
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return CONCEPTS.HardwareComponent$OS;
+    return CONCEPTS.SoftwareComponent$Pn;
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -721,12 +720,12 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink component$ISi3 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, 0x74700d5d12d1f847L, "component");
-    /*package*/ static final SContainmentLink nfr$8n9A = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d180c0L, 0x74700d5d12d180c6L, "nfr");
+    /*package*/ static final SContainmentLink component$pKqJ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x2d838283918d4b44L, "component");
+    /*package*/ static final SContainmentLink nfr$Ta7D = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b41L, "nfr");
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty id$8hid = MetaAdapterFactory.getProperty(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d180c0L, 0x74700d5d12d180c2L, "id");
+    /*package*/ static final SProperty id$T3zd = MetaAdapterFactory.getProperty(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b3aL, "id");
     /*package*/ static final SProperty maxvalue$kjfB = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f6L, "maxvalue");
     /*package*/ static final SProperty minvalue$kjWE = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f9L, "minvalue");
     /*package*/ static final SProperty mostlikely$kpO3 = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506fdL, "mostlikely");
@@ -734,6 +733,6 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept HardwareComponent$OS = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7033L, "Component_v1.structure.HardwareComponent");
+    /*package*/ static final SConcept SoftwareComponent$Pn = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, "Component_v1.structure.SoftwareComponent");
   }
 }

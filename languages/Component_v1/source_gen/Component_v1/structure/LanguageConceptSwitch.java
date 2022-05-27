@@ -32,7 +32,8 @@ public final class LanguageConceptSwitch {
   public static final int TaskAssociation3 = 20;
   public static final int TaskNFRAssociation1 = 21;
   public static final int TaskNFRAssociation2 = 22;
-  public static final int subcomponent = 23;
+  public static final int sofsubcomponent = 23;
+  public static final int subcomponent = 24;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L);
@@ -59,6 +60,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x4430c773569747ebL, TaskAssociation3);
     builder.put(0x4430c77356927e03L, TaskNFRAssociation1);
     builder.put(0x4430c773568626f9L, TaskNFRAssociation2);
+    builder.put(0x2d838283918d4b38L, sofsubcomponent);
     builder.put(0x74700d5d12d180c0L, subcomponent);
     myIndex = builder.seal();
   }

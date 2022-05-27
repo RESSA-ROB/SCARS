@@ -98,23 +98,47 @@
         <node concept="3F0ifn" id="3VRCMhnX2qQ" role="3EZMnx">
           <property role="3F0ifm" value="Non-functional Property:" />
         </node>
-        <node concept="3F0A7n" id="3VRCMhnX2qR" role="3EZMnx">
+        <node concept="l2Vlx" id="3VRCMhnX2qW" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="3Xowrb4gpWf" role="3EZMnx">
+        <node concept="VPM3Z" id="3Xowrb4gpWh" role="3F10Kt" />
+        <node concept="3F0ifn" id="3Xowrb4gpWG" role="3EZMnx">
+          <property role="3F0ifm" value="ID:" />
+        </node>
+        <node concept="3F0A7n" id="3Xowrb4gpWM" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="pVoyu" id="3VRCMhnX2qS" role="3F10Kt">
+        </node>
+        <node concept="l2Vlx" id="3Xowrb4gpWk" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="3Xowrb4gGbQ" role="3EZMnx">
+        <node concept="VPM3Z" id="3Xowrb4gGbR" role="3F10Kt" />
+        <node concept="l2Vlx" id="3Xowrb4gGbS" role="2iSdaV" />
+        <node concept="3F0A7n" id="3Xowrb4gGbT" role="3EZMnx">
+          <ref role="1NtTu8" to="7pce:3Xowrb4gpVx" resolve="nfrmetric" />
+        </node>
+        <node concept="3F0ifn" id="3Xowrb4gGbU" role="3EZMnx">
+          <property role="3F0ifm" value="Minimum value:" />
+          <node concept="pVoyu" id="3Xowrb4gGbV" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
-        <node concept="3F0A7n" id="3VRCMhnX2qT" role="3EZMnx">
-          <ref role="1NtTu8" to="7pce:3VRCMhnX2qB" resolve="operator" />
+        <node concept="3F0A7n" id="3Xowrb4gGbW" role="3EZMnx">
+          <ref role="1NtTu8" to="7pce:3Xowrb4gpVz" resolve="minvalue" />
         </node>
-        <node concept="3F0A7n" id="3VRCMhnX2qU" role="3EZMnx">
-          <ref role="1NtTu8" to="7pce:3VRCMhnX2qC" resolve="constraint" />
+        <node concept="3F0ifn" id="3Xowrb4gGbX" role="3EZMnx">
+          <property role="3F0ifm" value="Maximum value" />
         </node>
-        <node concept="3F0A7n" id="3VRCMhnX2qV" role="3EZMnx">
-          <ref role="1NtTu8" to="7pce:3VRCMhnX2qD" resolve="unit" />
+        <node concept="3F0A7n" id="3Xowrb4gGbY" role="3EZMnx">
+          <ref role="1NtTu8" to="7pce:3Xowrb4gpVy" resolve="maxvalue" />
         </node>
-        <node concept="l2Vlx" id="3VRCMhnX2qW" role="2iSdaV" />
+        <node concept="3F0ifn" id="3Xowrb4gGbZ" role="3EZMnx">
+          <property role="3F0ifm" value="Most Likely value:" />
+        </node>
+        <node concept="3F0A7n" id="3Xowrb4gGc0" role="3EZMnx">
+          <ref role="1NtTu8" to="7pce:3Xowrb4gpV$" resolve="mostlikely" />
+        </node>
       </node>
+      <node concept="3F0ifn" id="3Xowrb4gGbt" role="3EZMnx" />
       <node concept="3EZMnI" id="3VRCMhnX2rG" role="3EZMnx">
         <node concept="VPM3Z" id="3VRCMhnX2rI" role="3F10Kt" />
         <node concept="3F0ifn" id="3VRCMhnX2s0" role="3EZMnx">
@@ -135,7 +159,7 @@
         </node>
         <node concept="VPM3Z" id="7OroREMVkN6" role="3F10Kt" />
         <node concept="3F0A7n" id="7OroREMVkNv" role="3EZMnx">
-          <ref role="1NtTu8" to="7pce:7OroREMVkM$" resolve="type" />
+          <ref role="1NtTu8" to="7pce:3Xowrb4gpVD" resolve="operation" />
         </node>
         <node concept="l2Vlx" id="7OroREMVkN9" role="2iSdaV" />
         <node concept="pj6Ft" id="7OroREMVt9S" role="3F10Kt">

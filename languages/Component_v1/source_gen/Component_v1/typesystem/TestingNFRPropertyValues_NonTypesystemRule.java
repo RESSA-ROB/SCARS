@@ -11,12 +11,13 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -37,15 +38,25 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
       SNode nfp_var;
       while (nfp_it.hasNext()) {
         nfp_var = nfp_it.next();
-        cons = SPropertyOperations.getInteger(nfp_var, PROPS.constraint$uv6e);
         compval = 0;
-        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caaL, "Sum")) {
+        sum = 0;
+        max = 0;
+        min = 0;
+        cons = SPropertyOperations.getInteger(nfp_var, PROPS.mostlikely$_N$s);
+        {
+          final MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Checking for " + SPropertyOperations.getEnum(nfp_var, PROPS.nfrmetric$_HW4), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457751020413", null, errorTarget);
+        }
+        SEnumerationLiteral NFRname = SPropertyOperations.getEnum(nfp_var, PROPS.nfrmetric$_HW4);
+
+        compval = 0;
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.operation$_OJx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caaL, "Sum")) {
           sum = 1;
         }
-        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4cabL, "Max")) {
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.operation$_OJx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4cabL, "Max")) {
           max = 1;
         }
-        if (SPropertyOperations.getEnum(nfp_var, PROPS.type$7Mgx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caeL, "Min")) {
+        if (SPropertyOperations.getEnum(nfp_var, PROPS.operation$_OJx) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L, "NFR.structure.OperationEnumeration"), 0x7d1b637ab2ed4caeL, "Min")) {
           min = 1;
         }
 
@@ -69,10 +80,17 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
                     String s = SPropertyOperations.getString(SLinkOperations.getTarget(nfr_var, LINKS.fields$kG77), PROPS.name$MnvL);
                     if (id.equals(s)) {
                       if (sum == 1) {
+                        compval = compval + SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
                       }
                       if (max == 1) {
+                        if (compval <= SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
+                        }
                       }
                       if (min == 1) {
+                        if (compval >= SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
+                        }
 
                       }
                     }
@@ -80,6 +98,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
                 }
               }
             }
+
           }
         }
         {
@@ -88,7 +107,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
           while (comp_it.hasNext()) {
             comp_var = comp_it.next();
             {
-              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(comp_var, LINKS.nfr$Zx5z)).iterator();
+              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(comp_var, LINKS.component$pKqJ), LINKS.nfr$Ta7D)).iterator();
               SNode schild_var;
               while (schild_it.hasNext()) {
                 schild_var = schild_it.next();
@@ -101,10 +120,17 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
                     String s = SPropertyOperations.getString(SLinkOperations.getTarget(nfr_var, LINKS.fields$kG77), PROPS.name$MnvL);
                     if (id.equals(s)) {
                       if (sum == 1) {
+                        compval = compval + SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
                       }
                       if (max == 1) {
+                        if (compval <= SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
+                        }
                       }
                       if (min == 1) {
+                        if (compval >= SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3)) {
+                          compval = SPropertyOperations.getInteger(schild_var, PROPS.mostlikely$kpO3);
+                        }
 
                       }
                     }
@@ -114,32 +140,186 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             }
           }
         }
+        // Different checking for different category to be added
+        // cons is the mostlikely value of the mobile robot
+        // compval is the computed mostlikely value of the dependent components
+        if (compval != 0) {
+          {
+            final MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Compval is: " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4564540827140484330", null, errorTarget);
+          }
+          {
+            final MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Cons is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "7673559222953991518", null, errorTarget);
+          }
+          if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4564540827138313963", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
 
-        if (SPropertyOperations.getEnum(nfp_var, PROPS.operator$upVS) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL, "NFR.structure.OperatorEnumeration"), 0x6a627af554ccd6b1L, "less_than_equal_to")) {
-          if (cons < compval) {
-            {
-              final MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "1. Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457750446114", null, errorTarget);
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050704L, "Availability_Metric_Probability"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572351121", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050703L, "Cost_Total_cost_of_installation_or_use"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572357907", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a2L, "DataInput_Accuracy_Accuracy"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572362592", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f79eL, "DeviceCapability_ClockSpeed"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572367688", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7b4L, "Efficiency_maxtasks"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572374864", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7cfL, "EneryEfficiency_energyConsumption"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572381863", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7daL, "Mobility_binding"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572388946", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7adL, "Performance_response_time"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572396143", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f801L, "Privacy_information_leak"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572403502", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7f3L, "Reliability_precision_of_computation"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572411276", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7c5L, "Robustness_expectedTime"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572420730", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7e6L, "Safety_speed"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572428723", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7bcL, "Security_encryptionLevel"))) {
+            if (cons > compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572434422", null, errorTarget);
+              }
+            }
+            if (cons <= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
+            }
+          } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a7L, "Usability_training_learning_time"))) {
+            if (cons < compval) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572442752", null, errorTarget);
+              }
+            }
+            if (cons >= compval) {
+              typeCheckingContext.printToTrace("Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
+
             }
           }
-          if (cons == compval) {
-            typeCheckingContext.printToTrace("1. Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
-
-          }
-
         }
-        if (SPropertyOperations.getEnum(nfp_var, PROPS.operator$upVS) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL, "NFR.structure.OperatorEnumeration"), 0x6a627af554ccd6b0L, "greater_than_equal_to")) {
-          if (compval < cons) {
-            {
-              final MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "2. Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457750872336", null, errorTarget);
-            }
-          }
-          if (cons == compval) {
-            typeCheckingContext.printToTrace("2. Parameter values consistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL));
 
-          }
-        }
       }
     }
 
@@ -164,14 +344,16 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
     /*package*/ static final SReferenceLink fields$kG77 = MetaAdapterFactory.getReferenceLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x71a2aa893a520c22L, 0x3ef7a3245800fbfbL, "fields");
     /*package*/ static final SContainmentLink software$84Ys = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a3L, "software");
     /*package*/ static final SReferenceLink software$7j_c = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d974c4L, 0x74700d5d12d974c5L, "software");
-    /*package*/ static final SContainmentLink nfr$Zx5z = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x6a627af554bfd4afL, "nfr");
+    /*package*/ static final SContainmentLink component$pKqJ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x2d838283918d4b44L, "component");
+    /*package*/ static final SContainmentLink nfr$Ta7D = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b41L, "nfr");
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty constraint$uv6e = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426a8L, "constraint");
-    /*package*/ static final SProperty type$7Mgx = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x7d1b637ab2ed4ca4L, "type");
+    /*package*/ static final SProperty mostlikely$_N$s = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3f5881b2c4419ee4L, "mostlikely");
+    /*package*/ static final SProperty nfrmetric$_HW4 = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3f5881b2c4419ee1L, "nfrmetric");
+    /*package*/ static final SProperty operation$_OJx = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3f5881b2c4419ee9L, "operation");
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty operator$upVS = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, 0x3ef7a32457f426a7L, "operator");
+    /*package*/ static final SProperty mostlikely$kpO3 = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506fdL, "mostlikely");
   }
 
   private static final class CONCEPTS {

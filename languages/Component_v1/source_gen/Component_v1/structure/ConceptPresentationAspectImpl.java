@@ -32,6 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TaskAssociation3;
   private ConceptPresentation props_TaskNFRAssociation1;
   private ConceptPresentation props_TaskNFRAssociation2;
+  private ConceptPresentation props_sofsubcomponent;
   private ConceptPresentation props_subcomponent;
 
   @Override
@@ -63,7 +64,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HardwareComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0z);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0ab);
           props_HardwareComponent = cpb.create();
         }
         return props_HardwareComponent;
@@ -145,7 +146,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("NFR Profile annotation for different nodes");
           cpb.presentationByReference(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554d0e74cL, 0x6a627af554d0e753L, "profile", "", "");
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a51b0z);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a51b0ab);
           props_RunTimeNFRsAnnotation = cpb.create();
         }
         return props_RunTimeNFRsAnnotation;
@@ -198,6 +199,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TaskNFRAssociation2 = cpb.create();
         }
         return props_TaskNFRAssociation2;
+      case LanguageConceptSwitch.sofsubcomponent:
+        if (props_sofsubcomponent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("sofsubcomponent");
+          props_sofsubcomponent = cpb.create();
+        }
+        return props_sofsubcomponent;
       case LanguageConceptSwitch.subcomponent:
         if (props_subcomponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

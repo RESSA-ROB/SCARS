@@ -67,12 +67,18 @@
         <child id="7665824709845439658" name="nfr" index="YRqTv" />
         <child id="5906340854140773826" name="tasks" index="3$xULO" />
       </concept>
+      <concept id="3279608455250135864" name="Component_v1.structure.sofsubcomponent" flags="ng" index="2W3GAV">
+        <property id="3279608455250135866" name="id" index="2W3GAT" />
+        <property id="3279608455250135865" name="type" index="2W3GAU" />
+        <property id="3279608455250135869" name="description" index="2W3GAY" />
+        <child id="3279608455250135873" name="nfr" index="2W3GB2" />
+      </concept>
       <concept id="7665824709845464983" name="Component_v1.structure.IHardwareComponentInst" flags="ng" index="YC$Py">
         <reference id="7665824709845492327" name="hardware" index="YCHyi" />
       </concept>
       <concept id="7665824709846112157" name="Component_v1.structure.HardwareComponentInst" flags="ng" index="YE6PC" />
       <concept id="7665824709845348404" name="Component_v1.structure.SoftwareComponent" flags="ng" index="YR0F1">
-        <property id="8390220799190594740" name="modulename" index="1AEnBD" />
+        <child id="3279608455250135876" name="component" index="2W3GB7" />
       </concept>
       <concept id="7665824709845348403" name="Component_v1.structure.HardwareComponent" flags="ng" index="YR0F6">
         <child id="8390220799190104135" name="component" index="1ACvkq" />
@@ -94,6 +100,7 @@
       </concept>
       <concept id="8390220799190073536" name="Component_v1.structure.subcomponent" flags="ng" index="1ACoQt">
         <property id="8390220799190073537" name="type" index="1ACoQs" />
+        <property id="8390220799190073538" name="id" index="1ACoQv" />
         <child id="8390220799190073544" name="association" index="1ACoQl" />
         <child id="8390220799190073541" name="connect" index="1ACoQo" />
         <child id="8390220799190073543" name="tasks" index="1ACoQq" />
@@ -141,6 +148,11 @@
         <property id="5906340854138358049" name="constraint" index="3$Jc2n" />
       </concept>
       <concept id="4537274526088832678" name="NFR.structure.LocalRunTimeNFRs2" flags="ng" index="1D0Sm2">
+        <property id="4564540827136794338" name="maxvalue" index="3V6hXg" />
+        <property id="4564540827136794339" name="minvalue" index="3V6hXh" />
+        <property id="4564540827136794337" name="nfrmetric" index="3V6hXj" />
+        <property id="4564540827136794340" name="mostlikely" index="3V6hXm" />
+        <property id="4564540827136794345" name="operation" index="3V6hXr" />
         <child id="698916903693785314" name="attributes" index="25B1nq" />
       </concept>
     </language>
@@ -165,9 +177,6 @@
     <node concept="YE6PC" id="7hK3lOiTrzy" role="YRqTk">
       <ref role="YCHyi" node="7hK3lOiPfye" resolve="H1" />
     </node>
-    <node concept="1AEnAu" id="7hK3lOiU1nu" role="YRqTm">
-      <ref role="1AEnAo" node="7hK3lOiS2zS" resolve="Process Data" />
-    </node>
     <node concept="3pZnSb" id="7hK3lOiU1qf" role="YRqTj">
       <node concept="3pZnS9" id="7hK3lOiU1qh" role="3pZnSa">
         <property role="TrG5h" value="ReceiveStatus" />
@@ -177,10 +186,43 @@
         </node>
       </node>
     </node>
-    <node concept="1D0Sm2" id="AN3jyccqlC" role="YRqTv">
-      <node concept="1bWaqF" id="2g5SF2CDraZ" role="25B1nq">
-        <ref role="1AXPzv" node="2g5SF2CCHHB" resolve="N101" />
+    <node concept="1D0Sm2" id="3Xowrb4j35q" role="YRqTv">
+      <property role="TrG5h" value="N110" />
+      <property role="3V6hXj" value="2g5SF2D1gs4/Availability_Metric_Probability" />
+      <property role="3V6hXh" value="90" />
+      <property role="3V6hXg" value="100" />
+      <property role="3V6hXm" value="99" />
+      <property role="3V6hXr" value="7OroREMVkMF/Max" />
+      <node concept="1bWaqF" id="3Xowrb4mgzR" role="25B1nq">
+        <ref role="1AXPzv" node="7$WnCimbDOt" resolve="N102" />
       </node>
+      <node concept="1bWaqF" id="3Xowrb4mgzT" role="25B1nq">
+        <ref role="1AXPzv" node="zwkGk2aTOH" resolve="N104" />
+      </node>
+    </node>
+    <node concept="1D0Sm2" id="7NYXIWpv1hn" role="YRqTv">
+      <property role="TrG5h" value="N112" />
+      <property role="3V6hXj" value="2g5SF2D1ZuW/Security_encryptionLevel" />
+      <property role="3V6hXh" value="1" />
+      <property role="3V6hXg" value="5" />
+      <property role="3V6hXm" value="5" />
+      <property role="3V6hXr" value="7OroREMVkME/Sum" />
+      <node concept="1bWaqF" id="7NYXIWpv1ht" role="25B1nq">
+        <ref role="1AXPzv" node="7NYXIWpv1hf" resolve="N105" />
+      </node>
+      <node concept="1bWaqF" id="7NYXIWpv1hv" role="25B1nq">
+        <ref role="1AXPzv" node="3Xowrb4magp" resolve="N201" />
+      </node>
+    </node>
+    <node concept="1D0Sm2" id="7NYXIWpv1kC" role="YRqTv">
+      <property role="TrG5h" value="N113" />
+      <property role="3V6hXj" value="2g5SF2D1Zwg/Calmness_calmTiming" />
+      <property role="3V6hXh" value="2" />
+      <property role="3V6hXg" value="6" />
+      <property role="3V6hXm" value="4" />
+    </node>
+    <node concept="1AEnAu" id="7NYXIWpv1hl" role="YRqTm">
+      <ref role="1AEnAo" node="2Q3wCeh$JvM" resolve="ProcessingUnit" />
     </node>
   </node>
   <node concept="1wihRA" id="7OroREMXMQ0">
@@ -289,14 +331,12 @@
       </node>
     </node>
   </node>
-  <node concept="2uVwJs" id="7hK3lOizXO3">
-    <property role="TrG5h" value="ROB2" />
-  </node>
   <node concept="YR0F6" id="7hK3lOiPfye">
     <property role="TrG5h" value="H1" />
     <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
     <node concept="1ACoQt" id="7hK3lOiPfyf" role="1ACvkq">
       <property role="1ACoQs" value="Camera" />
+      <property role="1ACoQv" value="H101" />
       <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq" />
       <node concept="3pZnSb" id="2g5SF2CK_eY" role="1ACoQo">
         <node concept="3pZnS9" id="2g5SF2CK_f4" role="3pZnSa" />
@@ -310,12 +350,32 @@
       </node>
       <node concept="YFELz" id="7$WnCimbDOt" role="1ACoQr">
         <property role="TrG5h" value="N102" />
-        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
-        <property role="2d0eh9" value="2" />
-        <property role="2d0eh6" value="5" />
-        <property role="2d0ehd" value="3" />
+        <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
+        <property role="2d0eh9" value="90" />
+        <property role="2d0eh6" value="99" />
+        <property role="2d0ehd" value="98" />
       </node>
-      <node concept="iCF_K" id="2nyR43eOVWO" role="1ACoQl" />
+      <node concept="YFELz" id="7tF0jMmOOFg" role="1ACoQr">
+        <property role="TrG5h" value="N103" />
+        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
+        <property role="2d0eh9" value="1" />
+        <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="2" />
+      </node>
+      <node concept="YFELz" id="zwkGk2aTOH" role="1ACoQr">
+        <property role="TrG5h" value="N104" />
+        <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
+        <property role="2d0eh9" value="80" />
+        <property role="2d0eh6" value="90" />
+        <property role="2d0ehd" value="85" />
+      </node>
+      <node concept="YFELz" id="7NYXIWpv1hf" role="1ACoQr">
+        <property role="TrG5h" value="N105" />
+        <property role="2d0eh4" value="2g5SF2D1ZuW/Security_encryptionLevel" />
+        <property role="2d0eh9" value="1" />
+        <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="2" />
+      </node>
       <node concept="iCF_K" id="2nyR43eOVWv" role="1ACoQl">
         <ref role="iCF_P" node="4gKLRdmuy_z" resolve="Deliver" />
         <node concept="iCqeV" id="2nyR43eOVWx" role="iCF_R">
@@ -324,9 +384,42 @@
       </node>
     </node>
   </node>
-  <node concept="YR0F1" id="7hK3lOiS2zS">
-    <property role="1AEnBD" value="Process1" />
-    <property role="TrG5h" value="Process Data" />
+  <node concept="YR0F6" id="zwkGk23rBi">
+    <property role="TrG5h" value="H2" />
+    <property role="1bYRJ0" value="76yEC$Umt1G/Sensor" />
+    <node concept="1ACoQt" id="zwkGk23rBj" role="1ACvkq">
+      <property role="1ACoQs" value="Odometer" />
+      <property role="1ACoQv" value="H102" />
+      <node concept="YFELz" id="zwkGk23rBk" role="1ACoQr">
+        <property role="TrG5h" value="N101" />
+        <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
+        <property role="2d0eh9" value="89" />
+        <property role="2d0eh6" value="98" />
+        <property role="2d0ehd" value="95" />
+      </node>
+      <node concept="YFELz" id="zwkGk23rBm" role="1ACoQr">
+        <property role="TrG5h" value="N102" />
+        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
+        <property role="2d0eh9" value="2" />
+        <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="4" />
+      </node>
+    </node>
+  </node>
+  <node concept="YR0F1" id="2Q3wCeh$JvM">
+    <property role="TrG5h" value="ProcessingUnit" />
+    <node concept="2W3GAV" id="2Q3wCeh$JvN" role="2W3GB7">
+      <property role="2W3GAU" value="Data Analysis" />
+      <property role="2W3GAT" value="S101" />
+      <property role="2W3GAY" value="It does some job." />
+      <node concept="YFELz" id="3Xowrb4magp" role="2W3GB2">
+        <property role="TrG5h" value="N201" />
+        <property role="2d0eh4" value="2g5SF2D1ZuW/Security_encryptionLevel" />
+        <property role="2d0eh9" value="1" />
+        <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="2" />
+      </node>
+    </node>
   </node>
 </model>
 
