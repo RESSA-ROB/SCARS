@@ -230,24 +230,29 @@
     <property role="EcuMT" value="5906340854138358045" />
     <property role="TrG5h" value="GlobalRunTimeNFRs" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyi" id="57RyrqPiO$w" role="1TKVEl">
-      <property role="IQ2nx" value="5906340854138358048" />
-      <property role="TrG5h" value="operator" />
-      <ref role="AX2Wp" node="6DyuJlkNdqJ" resolve="OperatorEnumeration" />
+    <node concept="1TJgyi" id="6BqKu9sr9o3" role="1TKVEl">
+      <property role="IQ2nx" value="7627622096862746115" />
+      <property role="TrG5h" value="nfrmetric" />
+      <ref role="AX2Wp" node="2g5SF2D1gs2" resolve="NFR_metric_names" />
     </node>
-    <node concept="1TJgyi" id="57RyrqPiO$x" role="1TKVEl">
-      <property role="IQ2nx" value="5906340854138358049" />
-      <property role="TrG5h" value="constraint" />
+    <node concept="1TJgyi" id="6BqKu9sr9o4" role="1TKVEl">
+      <property role="IQ2nx" value="7627622096862746116" />
+      <property role="TrG5h" value="maxvalue" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="57RyrqPiO$y" role="1TKVEl">
-      <property role="IQ2nx" value="5906340854138358050" />
-      <property role="TrG5h" value="unit" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyi" id="6BqKu9sr9o5" role="1TKVEl">
+      <property role="IQ2nx" value="7627622096862746117" />
+      <property role="TrG5h" value="minvalue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="57RyrqPiO$z" role="1TKVEl">
-      <property role="IQ2nx" value="5906340854138358051" />
-      <property role="TrG5h" value="type" />
+    <node concept="1TJgyi" id="6BqKu9sr9o6" role="1TKVEl">
+      <property role="IQ2nx" value="7627622096862746118" />
+      <property role="TrG5h" value="mostlikely" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6BqKu9svbNt" role="1TKVEl">
+      <property role="IQ2nx" value="7627622096863804637" />
+      <property role="TrG5h" value="operation" />
       <ref role="AX2Wp" node="7OroREMVkMD" resolve="OperationEnumeration" />
     </node>
     <node concept="PrWs8" id="57RyrqPiO$u" role="PzmwI">

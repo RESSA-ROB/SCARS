@@ -260,10 +260,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:1719899a-db6b-455c-abab-be63243c90ab(NFR.structure)/5906340854138358045");
     b.version(2);
-    b.property("operator", 0x51f789b6b54b4920L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd6afL)).origin("5906340854138358048").done();
-    b.property("constraint", 0x51f789b6b54b4921L).type(PrimitiveTypeId.INTEGER).origin("5906340854138358049").done();
-    b.property("unit", 0x51f789b6b54b4922L).type(PrimitiveTypeId.STRING).origin("5906340854138358050").done();
-    b.property("type", 0x51f789b6b54b4923L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L)).origin("5906340854138358051").done();
+    b.property("nfrmetric", 0x69dac1e25c6c9603L).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L)).origin("7627622096862746115").done();
+    b.property("maxvalue", 0x69dac1e25c6c9604L).type(PrimitiveTypeId.INTEGER).origin("7627622096862746116").done();
+    b.property("minvalue", 0x69dac1e25c6c9605L).type(PrimitiveTypeId.INTEGER).origin("7627622096862746117").done();
+    b.property("mostlikely", 0x69dac1e25c6c9606L).type(PrimitiveTypeId.INTEGER).origin("7627622096862746118").done();
+    b.property("operation", 0x69dac1e25c7cbcddL).type(MetaIdFactory.dataTypeId(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x7d1b637ab2ed4ca9L)).origin("7627622096863804637").done();
     b.aggregate("attributes", 0x51f789b6b54b4928L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x51f789b6b54b48acL).optional(true).ordered(true).multiple(true).origin("5906340854138358056").done();
     return b.create();
   }

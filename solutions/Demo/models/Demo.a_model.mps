@@ -17,22 +17,6 @@
       <concept id="2722478502131880398" name="Communication.structure.CPort" flags="ng" index="3pZnSb">
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
       </concept>
-      <concept id="5906340854139933967" name="Communication.structure.ConnPair" flags="ng" index="3$_dMT">
-        <child id="5906340854139933970" name="subscriber" index="3$_dM$" />
-        <child id="5906340854139933968" name="publisher" index="3$_dMA" />
-      </concept>
-      <concept id="5906340854139902388" name="Communication.structure.InputPortInst" flags="ng" index="3$_l02" />
-      <concept id="5906340854139902373" name="Communication.structure.IInputPortInst" flags="ng" index="3$_l0j">
-        <reference id="5906340854139902379" name="inputport" index="3$_l0t" />
-      </concept>
-      <concept id="5906340854139902358" name="Communication.structure.Connections" flags="ng" index="3$_l0w">
-        <property id="5906340854139933963" name="topicType" index="3$_dMX" />
-        <child id="8390220799184122170" name="pair" index="1A1FLB" />
-      </concept>
-      <concept id="5906340854139902438" name="Communication.structure.IOutputPortInst" flags="ng" index="3$_l1g">
-        <reference id="5906340854139902444" name="outputport" index="3$_l1q" />
-      </concept>
-      <concept id="5906340854139902446" name="Communication.structure.OutputPortInst" flags="ng" index="3$_l1o" />
     </language>
     <language id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS">
       <concept id="7566676200133324205" name="DDS.structure.DDS_LeaseDuration" flags="ng" index="2mmPp4">
@@ -90,7 +74,6 @@
       <concept id="5906340854137179073" name="Component_v1.structure.System" flags="ng" index="3$NG9R">
         <child id="4913646491646853344" name="requirements" index="ih4uj" />
         <child id="4913646491649132581" name="association" index="iDSXm" />
-        <child id="5906340854139969538" name="connections" index="3$_6AO" />
         <child id="5906340854138476710" name="NFR" index="3$ID4g" />
         <child id="5906340854137179078" name="externalHardware" index="3$NG9K" />
         <child id="5906340854137179080" name="robots" index="3$NG9Y" />
@@ -143,9 +126,12 @@
         <reference id="4537274526089673723" name="fields" index="1AXPzv" />
       </concept>
       <concept id="5906340854138358045" name="NFR.structure.GlobalRunTimeNFRs" flags="ng" index="3$Jc2F">
-        <property id="5906340854138358051" name="type" index="3$Jc2l" />
-        <property id="5906340854138358048" name="operator" index="3$Jc2m" />
-        <property id="5906340854138358049" name="constraint" index="3$Jc2n" />
+        <property id="7627622096863804637" name="operation" index="PDBOZ" />
+        <child id="5906340854138358056" name="attributes" index="3$Jc2u" />
+      </concept>
+      <concept id="5906340854138357932" name="NFR.structure.GlobalNFRFunction" flags="ng" index="3$Jc4q">
+        <reference id="5906340854138357937" name="fields2" index="3$Jc47" />
+        <reference id="5906340854138357935" name="fields1" index="3$Jc4p" />
       </concept>
       <concept id="4537274526088832678" name="NFR.structure.LocalRunTimeNFRs2" flags="ng" index="1D0Sm2">
         <property id="4564540827136794338" name="maxvalue" index="3V6hXg" />
@@ -295,12 +281,6 @@
     <node concept="3$NG9_" id="57RyrqPibMy" role="3$NG9Y">
       <ref role="3$NG9B" node="3VRCMhnYbIx" resolve="ROB1" />
     </node>
-    <node concept="3$Jc2F" id="57RyrqPjCPp" role="3$ID4g">
-      <property role="TrG5h" value="ExpectedCompletionTime" />
-      <property role="3$Jc2m" value="6DyuJlkNdqL/less_than_equal_to" />
-      <property role="3$Jc2n" value="500" />
-      <property role="3$Jc2l" value="7OroREMVkMF/Max" />
-    </node>
     <node concept="3$ACpF" id="4gKLRdmuy_5" role="ih4uj">
       <property role="TrG5h" value="deliver product" />
     </node>
@@ -310,26 +290,21 @@
     <node concept="iDS2o" id="4gKLRdmAj6Y" role="iDSXm">
       <ref role="iDS2t" node="4gKLRdmuy_5" resolve="deliver product" />
       <node concept="iDH63" id="4gKLRdmAj73" role="iDS2v">
-        <ref role="iDH6t" node="57RyrqPjCPp" resolve="ExpectedCompletionTime" />
+        <ref role="iDH6t" node="6BqKu9suDE_" resolve="G101" />
       </node>
-    </node>
-    <node concept="iDS2o" id="4gKLRdmAj70" role="iDSXm">
-      <ref role="iDS2t" node="4gKLRdmxpE3" resolve="make product" />
     </node>
     <node concept="YE6PC" id="7hK3lOiAn2h" role="3$NG9K">
       <ref role="YCHyi" node="7hK3lOiPfye" resolve="H1" />
     </node>
-    <node concept="3$_l0w" id="7hK3lOiU1ql" role="3$_6AO">
-      <property role="3$_dMX" value="7OroREMXMQ2/Traffic" />
-      <node concept="3$_dMT" id="7hK3lOiU1qn" role="1A1FLB">
-        <node concept="3$_l1o" id="7hK3lOiU1qt" role="3$_dMA">
-          <ref role="3$_l1q" node="7hK3lOiU1po" resolve="SendImage" />
-        </node>
-        <node concept="3$_l02" id="7hK3lOiU1qw" role="3$_dM$">
-          <ref role="3$_l0t" node="7hK3lOiU1qh" resolve="ReceiveStatus" />
-        </node>
+    <node concept="3$Jc2F" id="6BqKu9suDE_" role="3$ID4g">
+      <property role="PDBOZ" value="7OroREMVkMF/Max" />
+      <property role="TrG5h" value="G101" />
+      <node concept="3$Jc4q" id="6BqKu9svbNr" role="3$Jc2u">
+        <ref role="3$Jc4p" node="7$WnCimbDOr" resolve="N101" />
+        <ref role="3$Jc47" node="7NYXIWpv1hn" resolve="N112" />
       </node>
     </node>
+    <node concept="3$Jc2F" id="6BqKu9svImr" role="3$ID4g" />
   </node>
   <node concept="YR0F6" id="7hK3lOiPfye">
     <property role="TrG5h" value="H1" />
@@ -357,24 +332,45 @@
       </node>
       <node concept="YFELz" id="7tF0jMmOOFg" role="1ACoQr">
         <property role="TrG5h" value="N103" />
-        <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
-        <property role="2d0eh9" value="1" />
-        <property role="2d0eh6" value="5" />
-        <property role="2d0ehd" value="2" />
+        <property role="2d0eh4" value="2g5SF2D1Zuu/DeviceCapability_ClockSpeed" />
+        <property role="2d0eh9" value="18" />
+        <property role="2d0eh6" value="25" />
+        <property role="2d0ehd" value="25" />
       </node>
       <node concept="YFELz" id="zwkGk2aTOH" role="1ACoQr">
         <property role="TrG5h" value="N104" />
-        <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
-        <property role="2d0eh9" value="80" />
-        <property role="2d0eh6" value="90" />
-        <property role="2d0ehd" value="85" />
+        <property role="2d0eh4" value="2g5SF2D1Zw1/Privacy_information_leak" />
+        <property role="2d0eh9" value="10" />
+        <property role="2d0eh6" value="15" />
+        <property role="2d0ehd" value="12" />
       </node>
       <node concept="YFELz" id="7NYXIWpv1hf" role="1ACoQr">
         <property role="TrG5h" value="N105" />
         <property role="2d0eh4" value="2g5SF2D1ZuW/Security_encryptionLevel" />
         <property role="2d0eh9" value="1" />
         <property role="2d0eh6" value="5" />
+        <property role="2d0ehd" value="4" />
+      </node>
+      <node concept="YFELz" id="24uUfSTL7eO" role="1ACoQr">
+        <property role="TrG5h" value="N106" />
+        <property role="2d0eh4" value="2g5SF2D1Zv5/Robustness_expectedTime" />
+        <property role="2d0eh9" value="2" />
+        <property role="2d0eh6" value="5" />
         <property role="2d0ehd" value="2" />
+      </node>
+      <node concept="YFELz" id="24uUfSTL7eV" role="1ACoQr">
+        <property role="TrG5h" value="N107" />
+        <property role="2d0eh4" value="2g5SF2D1ZvA/Safety_speed" />
+        <property role="2d0eh9" value="50" />
+        <property role="2d0eh6" value="70" />
+        <property role="2d0ehd" value="65" />
+      </node>
+      <node concept="YFELz" id="24uUfSTL7f3" role="1ACoQr">
+        <property role="TrG5h" value="N108" />
+        <property role="2d0eh4" value="2g5SF2D1ZvN/Reliability_precision_of_computation" />
+        <property role="2d0eh9" value="80" />
+        <property role="2d0eh6" value="90" />
+        <property role="2d0ehd" value="85" />
       </node>
       <node concept="iCF_K" id="2nyR43eOVWv" role="1ACoQl">
         <ref role="iCF_P" node="4gKLRdmuy_z" resolve="Deliver" />
@@ -418,6 +414,20 @@
         <property role="2d0eh9" value="1" />
         <property role="2d0eh6" value="5" />
         <property role="2d0ehd" value="2" />
+      </node>
+      <node concept="YFELz" id="1pUqE7gezrs" role="2W3GB2">
+        <property role="TrG5h" value="N202" />
+        <property role="2d0eh4" value="2g5SF2D1ZuO/Efficiency_maxtasks" />
+        <property role="2d0eh9" value="4" />
+        <property role="2d0eh6" value="10" />
+        <property role="2d0ehd" value="8" />
+      </node>
+      <node concept="YFELz" id="1pUqE7ge$0u" role="2W3GB2">
+        <property role="TrG5h" value="N203" />
+        <property role="2d0eh4" value="2g5SF2D1ZvA/Safety_speed" />
+        <property role="2d0eh9" value="20" />
+        <property role="2d0eh6" value="50" />
+        <property role="2d0ehd" value="45" />
       </node>
     </node>
   </node>
