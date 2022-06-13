@@ -31,66 +31,71 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
     String compname = SPropertyOperations.getString(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), PROPS.id$T3zd);
     {
       final MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893087", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654628367", null, errorTarget);
     }
+
     List<String> NFR_names = ListSequence.fromList(new ArrayList<String>());
-    List<Integer> NFR_maxValues = ListSequence.fromList(new ArrayList<Integer>());
-    List<Integer> NFR_minValues = ListSequence.fromList(new ArrayList<Integer>());
+    List<Double> NFR_maxValues = ListSequence.fromList(new ArrayList<Double>());
+    List<Double> NFR_minValues = ListSequence.fromList(new ArrayList<Double>());
     List<Integer> NFR_mostlikelyValues = ListSequence.fromList(new ArrayList<Integer>());
+    List<Double> expectedValues = ListSequence.fromList(new ArrayList<Double>());
     {
       Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.nfr$Ta7D)).iterator();
       SNode nfr_var;
       while (nfr_it.hasNext()) {
         nfr_var = nfr_it.next();
         // Obtain the min, max and mostlikely value for each
-        int max = SPropertyOperations.getInteger(nfr_var, PROPS.maxvalue$kjfB);
-        int min = SPropertyOperations.getInteger(nfr_var, PROPS.minvalue$kjWE);
+        double max = ((double) SPropertyOperations.getInteger(nfr_var, PROPS.maxvalue$kjfB));
+        double min = ((double) SPropertyOperations.getInteger(nfr_var, PROPS.minvalue$kjWE));
+        String idnfr = SPropertyOperations.getString(nfr_var, PROPS.name$MnvL);
         int mostlikelyval = SPropertyOperations.getInteger(nfr_var, PROPS.mostlikely$kpO3);
         // Retrieve NFR name
         SEnumerationLiteral NFRname = SPropertyOperations.getEnum(nfr_var, PROPS.nfrmetric$kiL_);
         String NFRnameactual = "";
         if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
-          NFRnameactual = "Calmness_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Calmness";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050704L, "Availability_Metric_Probability"))) {
-          NFRnameactual = "Availability_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Availability";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050703L, "Cost_Total_cost_of_installation_or_use"))) {
-          NFRnameactual = "Cost_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Cost";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a2L, "DataInput_Accuracy_Accuracy"))) {
-          NFRnameactual = "DataInput_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "DataInput";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f79eL, "DeviceCapability_ClockSpeed"))) {
-          NFRnameactual = "DeviceCapability_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "DeviceCapability";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7b4L, "Efficiency_maxtasks"))) {
-          NFRnameactual = "Efficiency_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Efficiency";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7cfL, "EneryEfficiency_energyConsumption"))) {
-          NFRnameactual = "EnergyEfficiency_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "EnergyEfficiency";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7daL, "Mobility_binding"))) {
-          NFRnameactual = "Mobility_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Mobility";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7adL, "Performance_response_time"))) {
-          NFRnameactual = "Performance_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Performance";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f801L, "Privacy_information_leak"))) {
-          NFRnameactual = "Privacy_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Privacy";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7f3L, "Reliability_precision_of_computation"))) {
-          NFRnameactual = "Reliability_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Reliability";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7c5L, "Robustness_expectedTime"))) {
-          NFRnameactual = "Robustness_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Robustness";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7e6L, "Safety_speed"))) {
-          NFRnameactual = "Safety_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Safety";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7bcL, "Security_encryptionLevel"))) {
-          NFRnameactual = "Security_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Security";
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a7L, "Usability_training_learning_time"))) {
-          NFRnameactual = "Usability_" + max + "_" + min + "_" + mostlikelyval;
+          NFRnameactual = "Usability";
         }
 
 
         // Doing check if exists
-        ListSequence.fromList(NFR_names).addElement(NFRnameactual);
+        String temp = NFRnameactual + "-" + idnfr;
+        ListSequence.fromList(NFR_names).addElement(temp);
         ListSequence.fromList(NFR_maxValues).addElement(max);
         ListSequence.fromList(NFR_minValues).addElement(min);
         ListSequence.fromList(NFR_mostlikelyValues).addElement(mostlikelyval);
         // Compute the expected values
       }
     }
-    // Checking for cost NFR
+    // Checking for cost NFRE
+    List<String> NFRnames_ExpectedList = ListSequence.fromList(new ArrayList<String>());
     int max = 0;
     int min = 0;
     int mostlikely = 0;
@@ -111,27 +116,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Cost: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893690", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Cost is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893739", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Cost is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893814", null, errorTarget);
-      }
+      double compNormalized = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalized);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -152,27 +148,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Availability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893937", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Availability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572893986", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = ((double) expected) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Availability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894064", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
+
     }
     max = 0;
     min = 0;
@@ -193,27 +180,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Device Capability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894187", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Device Capability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894236", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Device Capability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894311", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
+
     }
 
     max = 0;
@@ -235,27 +213,17 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Data Input: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894435", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Data Input is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894484", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Data Input is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894559", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -276,27 +244,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Usability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894682", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Usability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894731", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Usability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894806", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -317,27 +276,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Performance: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894924", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Performance is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572894973", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Performance is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895048", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -358,27 +308,17 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895171", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895220", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895295", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -399,27 +339,17 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Security: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895418", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Security is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895467", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Security is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895542", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -440,27 +370,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Robustness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895665", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Robustness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895714", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Robustness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895789", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -481,27 +402,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Energy Efficiency: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895912", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Energy Efficiency is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572895961", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Energy Efficiency is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896036", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -522,27 +434,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Mobility: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896159", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Mobility is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896208", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Mobility is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896283", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -563,27 +466,17 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Safety: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896406", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Safety is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896455", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Safety is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896530", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -604,27 +497,17 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Reliability: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896653", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Reliability is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896702", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Reliability is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896777", null, errorTarget);
-      }
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(normalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -645,27 +528,18 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Privacy: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896900", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Privacy is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572896949", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Privacy is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897024", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
     max = 0;
     min = 0;
@@ -686,28 +560,592 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     }
     if (flag == 1) {
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Calmness: Most Likely -> " + mostlikely + "and index= " + indexChosen, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897147", null, errorTarget);
-      }
       // Expected value of cost
       double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Computed Expected value for Calmness is : " + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897196", null, errorTarget);
-      }
       // Normalized Expected value
       double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double numerator = expected - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
       double normalizedval = ((double) numerator) / ((double) range);
       int k = ((int) (normalizedval * 100));
       normalizedval = ((double) (((double) k) / ((double) 100)));
-      {
-        final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Normalized value for Expected Calmness is " + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572897271", null, errorTarget);
-      }
+      double compNormalizedval = 1 - normalizedval;
       flag = 0;
+      ListSequence.fromList(expectedValues).addElement(compNormalizedval);
+      ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
     }
+    List<String> NFR_conflict_pair = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(NFR_conflict_pair).addElement("Cost-Availability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Cost-DeviceCapability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Cost-DataInput");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Usability-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Usability-Efficiency");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Usability-Security");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Efficiency-Robustness");
+    ListSequence.fromList(NFR_conflict_pair).addElement("EnergyEfficiency-Usability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("EnergyEfficiency-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("EnergyEfficiency-Availability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Mobility-EnergyEfficiency");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Performance-Availability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Performance-Robustness");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Performance-Safety");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Security-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Mobility-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Reliability-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Reliability-Efficiency");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Safety-Usability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Safety-Efficiency");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Privacy-Usability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Security-Availability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Privacy-Availability");
+    ListSequence.fromList(NFR_conflict_pair).addElement("DataInput-Performance");
+    ListSequence.fromList(NFR_conflict_pair).addElement("Calmness-Usability");
+    // Reading NFR names for each component
+    List<String> NFR_namesList = ListSequence.fromList(new ArrayList<String>());
+    List<String> NFR_idListall = ListSequence.fromList(new ArrayList<String>());
+    List<Integer> NFR_mostlikelyvalues = ListSequence.fromList(new ArrayList<Integer>());
+    List<String> NFR_nameListDummy = ListSequence.fromList(new ArrayList<String>());
+    int dummyListIndex = 0;
+    {
+      Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.nfr$Ta7D)).iterator();
+      SNode nfr_var;
+      while (nfr_it.hasNext()) {
+        nfr_var = nfr_it.next();
+        SEnumerationLiteral NFRname = SPropertyOperations.getEnum(nfr_var, PROPS.nfrmetric$kiL_);
+        String NFRnameactual = "";
+        if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
+          NFRnameactual = "Calmness";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050704L, "Availability_Metric_Probability"))) {
+          NFRnameactual = "Availability";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050703L, "Cost_Total_cost_of_installation_or_use"))) {
+          NFRnameactual = "Cost";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a2L, "DataInput_Accuracy_Accuracy"))) {
+          NFRnameactual = "DataInput";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f79eL, "DeviceCapability_ClockSpeed"))) {
+          NFRnameactual = "DeviceCapability";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7b4L, "Efficiency_maxtasks"))) {
+          NFRnameactual = "Efficiency";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7cfL, "EneryEfficiency_energyConsumption"))) {
+          NFRnameactual = "EnergyEfficiency";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7daL, "Mobility_binding"))) {
+          NFRnameactual = "Mobility";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7adL, "Performance_response_time"))) {
+          NFRnameactual = "Performance";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f801L, "Privacy_information_leak"))) {
+          NFRnameactual = "Privacy";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7f3L, "Reliability_precision_of_computation"))) {
+          NFRnameactual = "Reliability";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7c5L, "Robustness_expectedTime"))) {
+          NFRnameactual = "Robustness";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7e6L, "Safety_speed"))) {
+          NFRnameactual = "Safety";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7bcL, "Security_encryptionLevel"))) {
+          NFRnameactual = "Security";
+        } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a7L, "Usability_training_learning_time"))) {
+          NFRnameactual = "Usability";
+        }
+        if ((int) ListSequence.fromList(NFR_namesList).indexOf(NFRnameactual) == -1) {
+          ListSequence.fromList(NFR_namesList).addElement(NFRnameactual);
+        }
+        ListSequence.fromList(NFR_nameListDummy).addElement(NFRnameactual + SPropertyOperations.getString(nfr_var, PROPS.name$MnvL));
+        ListSequence.fromList(NFR_mostlikelyvalues).addElement(SPropertyOperations.getInteger(nfr_var, PROPS.mostlikely$kpO3));
+        ListSequence.fromList(NFR_idListall).addElement(SPropertyOperations.getString(nfr_var, PROPS.name$MnvL));
+
+      }
+    }
+    int lengthI = dummyListIndex;
+    // Steps for NFR ID selection when same NFR have different definitions
+    List<String> NFR_idListconcise = ListSequence.fromList(new ArrayList<String>());
+    mostlikely = 0;
+    String name = "";
+    String id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Cost")) {
+        name = "Cost";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Availability")) {
+        name = "Availability";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("DeviceCapability")) {
+        name = "DeviceCapability";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("DataInput")) {
+        name = "DataInput";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Usability")) {
+        name = "Usability";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Performance")) {
+        name = "Performance";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Efficiency")) {
+        name = "Efficiency";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Security")) {
+        name = "Security";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Robustness")) {
+        name = "Robustness";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("EnergyEfficiency")) {
+        name = "EnergyEfficiency";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Mobility")) {
+        name = "Mobility";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Safety")) {
+        name = "Safety";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Reliability")) {
+        name = "Reliability";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely <= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Privacy")) {
+        name = "Privacy";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+    mostlikely = 0;
+    name = "";
+    id = "";
+    for (String item : NFR_nameListDummy) {
+      int index = ListSequence.fromList(NFR_nameListDummy).indexOf(item);
+      if (item.contains("Calmness")) {
+        name = "Calmness";
+        int temp = ((int) ListSequence.fromList(NFR_mostlikelyvalues).getElement(index));
+        if (mostlikely == 0) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+        if (mostlikely >= temp) {
+          mostlikely = temp;
+          id = ListSequence.fromList(NFR_idListall).getElement(index);
+        }
+      }
+    }
+    if (name.compareTo("") != 0) {
+      String nfrid = name + "-" + id;
+      ListSequence.fromList(NFR_idListconcise).addElement(nfrid);
+    }
+
+    // Steps for conflict identification
+    int length = ListSequence.fromList(NFR_namesList).count();
+    for (int i = 0; i < length - 1; i++) {
+      String nfr1 = ListSequence.fromList(NFR_namesList).getElement(i);
+      for (int j = i + 1; j < length; j++) {
+        String nfr2 = ListSequence.fromList(NFR_namesList).getElement(j);
+        String pair1 = nfr1 + "-" + nfr2;
+        String pair2 = nfr2 + "-" + nfr1;
+        String nfrid1 = "";
+        String nfrid2 = "";
+        {
+          Iterator<String> item_it = ListSequence.fromList(NFR_idListconcise).iterator();
+          String item_var;
+          while (item_it.hasNext()) {
+            item_var = item_it.next();
+            if (item_var.contains(nfr1)) {
+              nfrid1 = item_var;
+            } else if (item_var.contains(nfr2)) {
+              nfrid2 = item_var;
+            }
+          }
+        }
+        int pair1flag = 0;
+        int pair2flag = 0;
+        String pair3 = "";
+        if (ListSequence.fromList(NFR_conflict_pair).indexOf(pair1) != -1) {
+          pair1flag = 1;
+          pair3 = nfrid1 + "-" + nfrid2;
+        } else if (ListSequence.fromList(NFR_conflict_pair).indexOf(pair2) != -1) {
+          pair2flag = 1;
+          pair3 = nfrid2 + "-" + nfrid1;
+        }
+        // Now check the expected values and derive the affection function
+        if (pair1flag == 1 || pair2flag == 1) {
+          int index1 = 0;
+          int index2 = 0;
+          {
+            Iterator<String> item_it = ListSequence.fromList(NFRnames_ExpectedList).iterator();
+            String item_var;
+            while (item_it.hasNext()) {
+              item_var = item_it.next();
+              if (item_var.compareTo(nfrid1) == 0) {
+                index1 = ListSequence.fromList(NFRnames_ExpectedList).indexOf(item_var);
+              }
+              if (item_var.compareTo(nfrid2) == 0) {
+                index2 = ListSequence.fromList(NFRnames_ExpectedList).indexOf(item_var);
+              }
+            }
+          }
+          if (pair1flag == 1) {
+            double value1 = ListSequence.fromList(expectedValues).getElement(index1);
+            double value2 = ListSequence.fromList(expectedValues).getElement(index2);
+            // Case 1 both in the optimistic range
+            if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692521", null, errorTarget);
+              }
+              // + value1 + "and" + value2 + " respectively."
+            }
+            // Case 2 both in the pessimistic range
+            if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692575", null, errorTarget);
+              }
+            }
+            // one pessimistic another optimistic
+            if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
+              // Let the threshold be 0.25
+              double t = value2 - 0.5;
+              if (t >= 0.25) {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692630", null, errorTarget);
+                }
+              } else {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692650", null, errorTarget);
+                }
+              }
+            }
+            // one optimistic another pessimistic
+            if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.0 && value2 < 0.5)) {
+              // Let the threshold be 0.25
+              double t = 0.5 - value2;
+              if (t < 0.25) {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692705", null, errorTarget);
+                }
+              } else {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692725", null, errorTarget);
+                }
+              }
+            }
+
+          }
+          if (pair2flag == 1) {
+            double value1 = ListSequence.fromList(expectedValues).getElement(index2);
+            double value2 = ListSequence.fromList(expectedValues).getElement(index1);
+            // Case 1 both in the optimistic range
+            if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692786", null, errorTarget);
+              }
+            }
+            // Case 2 both in the pessimistic range
+            if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              {
+                final MessageTarget errorTarget = new NodeMessageTarget();
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692829", null, errorTarget);
+              }
+            }
+            // one pessimistic another optimistic
+            if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
+              // Let the threshold be 0.25
+              double t = value2 - 0.5;
+              if (t >= 0.25) {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692884", null, errorTarget);
+                }
+              } else {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692904", null, errorTarget);
+                }
+              }
+            }
+            // one optimistic another pessimistic
+            if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.0 && value2 < 0.5)) {
+              // Let the threshold be 0.25
+              double t = 0.5 - value2;
+              if (t < 0.25) {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692959", null, errorTarget);
+                }
+              } else {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692979", null, errorTarget);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
   }
   public SAbstractConcept getApplicableConcept() {
     return CONCEPTS.SoftwareComponent$Pn;
@@ -728,6 +1166,7 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
     /*package*/ static final SProperty id$T3zd = MetaAdapterFactory.getProperty(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b3aL, "id");
     /*package*/ static final SProperty maxvalue$kjfB = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f6L, "maxvalue");
     /*package*/ static final SProperty minvalue$kjWE = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f9L, "minvalue");
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty mostlikely$kpO3 = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506fdL, "mostlikely");
     /*package*/ static final SProperty nfrmetric$kiL_ = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f4L, "nfrmetric");
   }

@@ -429,6 +429,13 @@
         <property role="2d0eh6" value="50" />
         <property role="2d0ehd" value="45" />
       </node>
+      <node concept="YFELz" id="1vrEP2AICnd" role="2W3GB2">
+        <property role="TrG5h" value="N204" />
+        <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
+        <property role="2d0eh9" value="85" />
+        <property role="2d0eh6" value="95" />
+        <property role="2d0ehd" value="90" />
+      </node>
     </node>
   </node>
 </model>
