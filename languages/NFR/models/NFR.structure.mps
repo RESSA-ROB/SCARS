@@ -64,13 +64,13 @@
   <node concept="1TIwiD" id="6DyuJlkNdql">
     <property role="EcuMT" value="7665824709846292117" />
     <property role="TrG5h" value="ArchitecturalNFRs" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="6DyuJlkNdqm">
     <property role="EcuMT" value="7665824709846292118" />
     <property role="TrG5h" value="LocalRunTimeNFRs" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6DyuJlkOo8q" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -110,7 +110,7 @@
   <node concept="1TIwiD" id="6DyuJlkNdqO">
     <property role="EcuMT" value="7665824709846292148" />
     <property role="TrG5h" value="CommunicationQoS" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6DyuJlkNdqP" role="1TKVEl">
       <property role="IQ2nx" value="7665824709846292149" />
       <property role="TrG5h" value="propName" />
@@ -125,7 +125,7 @@
   <node concept="1TIwiD" id="76yEC$UkwKy">
     <property role="EcuMT" value="8188294578878680098" />
     <property role="TrG5h" value="LocalNFRFunction" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="76yEC$UkwLf" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -139,12 +139,12 @@
   <node concept="1TIwiD" id="3VRCMhnWDzW">
     <property role="EcuMT" value="4537274526088730876" />
     <property role="TrG5h" value="Expression2" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="3VRCMhnX2qA">
     <property role="EcuMT" value="4537274526088832678" />
     <property role="TrG5h" value="LocalRunTimeNFRs2" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3Xowrb4gpVx" role="1TKVEl">
       <property role="IQ2nx" value="4564540827136794337" />
       <property role="TrG5h" value="nfrmetric" />
@@ -184,7 +184,7 @@
   <node concept="1TIwiD" id="3VRCMho0fJY">
     <property role="EcuMT" value="4537274526089673726" />
     <property role="TrG5h" value="RunTimeNFRReference" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3VRCMho0fJZ" role="1TKVEi">
       <property role="IQ2ns" value="4537274526089673727" />
       <property role="20kJfa" value="field" />
@@ -211,7 +211,7 @@
   <node concept="1TIwiD" id="57RyrqPiOyG">
     <property role="EcuMT" value="5906340854138357932" />
     <property role="TrG5h" value="GlobalNFRFunction" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="57RyrqPiOyH" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -229,7 +229,7 @@
   <node concept="1TIwiD" id="57RyrqPiO$t">
     <property role="EcuMT" value="5906340854138358045" />
     <property role="TrG5h" value="GlobalRunTimeNFRs" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6BqKu9sr9o3" role="1TKVEl">
       <property role="IQ2nx" value="7627622096862746115" />
       <property role="TrG5h" value="nfrmetric" />
@@ -287,7 +287,7 @@
     <property role="EcuMT" value="4913646491648348854" />
     <property role="TrG5h" value="LocalRunTimeNFRs2Inst" />
     <property role="3GE5qa" value="Instances" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4gKLRdmyPaR" role="PzmwI">
       <ref role="PrY4T" node="4gKLRdmyPai" resolve="ILocalRunTimeNFRs2Inst" />
     </node>
@@ -313,7 +313,7 @@
     <property role="EcuMT" value="4913646491648746696" />
     <property role="TrG5h" value="LocalRunTimeNFRsInst" />
     <property role="3GE5qa" value="Instances" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4gKLRdm$mj9" role="PzmwI">
       <ref role="PrY4T" node="4gKLRdm$mj0" resolve="ILocalRunTimeNFRsInst" />
     </node>
@@ -339,7 +339,7 @@
     <property role="EcuMT" value="4913646491649054448" />
     <property role="3GE5qa" value="Instances" />
     <property role="TrG5h" value="GlobalRunTimeNFRsInst" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4gKLRdm_xrL" role="PzmwI">
       <ref role="PrY4T" node="4gKLRdm_xrC" resolve="IGlobalRunTimeNFRsInst" />
     </node>
@@ -683,7 +683,7 @@
   <node concept="1TIwiD" id="AN3jyc8mp0">
     <property role="EcuMT" value="698916903692887616" />
     <property role="TrG5h" value="ReferNFR" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="25R3W" id="2g5SF2D1gs2">
     <property role="3F6X1D" value="2595730008626759426" />

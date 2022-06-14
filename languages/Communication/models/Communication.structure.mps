@@ -64,7 +64,7 @@
   <node concept="1TIwiD" id="2n8bWnWdl7c">
     <property role="EcuMT" value="2722478502131880396" />
     <property role="TrG5h" value="InputPort" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6DyuJlkOaVa" role="PzmwI">
       <ref role="PrY4T" node="6DyuJlkOaV4" resolve="IPort" />
     </node>
@@ -88,7 +88,7 @@
   <node concept="1TIwiD" id="2n8bWnWdl7d">
     <property role="EcuMT" value="2722478502131880397" />
     <property role="TrG5h" value="OutPutPort" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="6DyuJlkOaVd" role="PzmwI">
       <ref role="PrY4T" node="6DyuJlkOaV7" resolve="OPort" />
     </node>
@@ -114,7 +114,7 @@
     <property role="EcuMT" value="2722478502131880398" />
     <property role="TrG5h" value="CPort" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2n8bWnWdl7f" role="1TKVEi">
       <property role="IQ2ns" value="2722478502131880399" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -168,7 +168,7 @@
     <property role="EcuMT" value="5906340854139902358" />
     <property role="TrG5h" value="Connections" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="57RyrqPoHAn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -206,7 +206,7 @@
     <property role="EcuMT" value="5906340854139902388" />
     <property role="TrG5h" value="InputPortInst" />
     <property role="3GE5qa" value="Instances" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="57RyrqPoHAP" role="PzmwI">
       <ref role="PrY4T" node="57RyrqPoHA_" resolve="IInputPortInst" />
     </node>
@@ -232,7 +232,7 @@
     <property role="EcuMT" value="5906340854139902446" />
     <property role="3GE5qa" value="Instances" />
     <property role="TrG5h" value="OutputPortInst" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="57RyrqPoHBJ" role="PzmwI">
       <ref role="PrY4T" node="57RyrqPoHBA" resolve="IOutputPortInst" />
     </node>
@@ -240,7 +240,7 @@
   <node concept="1TIwiD" id="57RyrqPoPkf">
     <property role="EcuMT" value="5906340854139933967" />
     <property role="TrG5h" value="ConnPair" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="57RyrqPoPkg" role="1TKVEi">
       <property role="IQ2ns" value="5906340854139933968" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
