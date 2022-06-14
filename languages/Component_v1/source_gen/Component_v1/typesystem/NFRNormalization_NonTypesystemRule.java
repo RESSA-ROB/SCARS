@@ -1045,15 +1045,16 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2804826943520367455", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of" + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2804826943520367455", null, errorTarget);
               }
               // + value1 + "and" + value2 + " respectively."
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              double temp = 0.5 - value2;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651403295", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651403295", null, errorTarget);
               }
             }
             // one pessimistic another optimistic
@@ -1063,12 +1064,12 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651434865", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651434865", null, errorTarget);
                 }
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651446321", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651446321", null, errorTarget);
                 }
               }
             }
@@ -1079,12 +1080,12 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651473214", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406908839", null, errorTarget);
                 }
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651473226", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406913333", null, errorTarget);
                 }
               }
             }
@@ -1097,14 +1098,15 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518195", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of" + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406967878", null, errorTarget);
               }
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              double temp = 0.5 - value2;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518230", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406972671", null, errorTarget);
               }
             }
             // one pessimistic another optimistic
@@ -1114,12 +1116,12 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518277", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406977635", null, errorTarget);
                 }
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518289", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406982572", null, errorTarget);
                 }
               }
             }
@@ -1130,12 +1132,12 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518336", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406987331", null, errorTarget);
                 }
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045651518348", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1439771863406992797", null, errorTarget);
                 }
               }
             }
