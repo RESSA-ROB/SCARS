@@ -3852,7 +3852,7 @@
                   <node concept="2MkqsV" id="7hK3lOiw1lA" role="3cqZAp">
                     <node concept="3cpWs3" id="7hK3lOiw1lB" role="2MkJ7o">
                       <node concept="Xl_RD" id="7hK3lOiw1lC" role="3uHU7w">
-                        <property role="Xl_RC" value=" are incompatible due to Lease Duration policy." />
+                        <property role="Xl_RC" value=" are incompatible due to Lease Duration policy.." />
                       </node>
                       <node concept="3cpWs3" id="7hK3lOiw1lD" role="3uHU7B">
                         <node concept="3cpWs3" id="7hK3lOiw1lE" role="3uHU7B">

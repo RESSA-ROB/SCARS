@@ -86,7 +86,7 @@ public class CheckingConnectionQoSCompatability_NonTypesystemRule extends Abstra
           if (value2 < value1) {
             {
               final MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Lease Duration policy.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184737638", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(connections, "The Profiles " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.publisher$qPBU), LINKS.outputport$zmZO), PROPS.name$MnvL) + " and " + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(comp_var, LINKS.subscriber$qV1h), LINKS.inputport$w69v), PROPS.name$MnvL) + " are incompatible due to Lease Duration policy..", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "8390220799184737638", null, errorTarget);
             }
           }
 
