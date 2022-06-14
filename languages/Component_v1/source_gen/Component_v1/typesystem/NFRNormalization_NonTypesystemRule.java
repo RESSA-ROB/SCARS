@@ -33,10 +33,6 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
       final MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "639602153183284513", null, errorTarget);
     }
-    {
-      final MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(hardwareComponent, "Hello", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "5925640915051259799", null, errorTarget);
-    }
     List<String> NFR_names = ListSequence.fromList(new ArrayList<String>());
     List<Double> NFR_maxValues = ListSequence.fromList(new ArrayList<Double>());
     List<Double> NFR_minValues = ListSequence.fromList(new ArrayList<Double>());

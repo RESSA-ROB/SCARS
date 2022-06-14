@@ -11,13 +11,13 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -43,10 +43,6 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
         max = 0;
         min = 0;
         cons = SPropertyOperations.getInteger(nfp_var, PROPS.mostlikely$_N$s);
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Checking for " + SPropertyOperations.getEnum(nfp_var, PROPS.nfrmetric$_HW4), "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9014908457751020413", null, errorTarget);
-        }
         SEnumerationLiteral NFRname = SPropertyOperations.getEnum(nfp_var, PROPS.nfrmetric$_HW4);
 
         compval = 0;
@@ -144,19 +140,11 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
         // cons is the mostlikely value of the mobile robot
         // compval is the computed mostlikely value of the dependent components
         if (compval != 0) {
-          {
-            final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Compval is: " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4564540827140484330", null, errorTarget);
-          }
-          {
-            final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Cons is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "7673559222953991518", null, errorTarget);
-          }
           if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4564540827138313963", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "4564540827138313963", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -167,7 +155,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572351121", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572351121", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -178,7 +166,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572357907", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572357907", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -189,7 +177,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572362592", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572362592", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -200,7 +188,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572367688", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572367688", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -211,7 +199,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572374864", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572374864", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -222,7 +210,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572381863", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572381863", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -233,7 +221,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572388946", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572388946", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -244,7 +232,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572396143", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572396143", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -255,7 +243,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572403502", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572403502", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -266,7 +254,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572411276", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572411276", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -277,7 +265,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572420730", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572420730", null, errorTarget);
               }
             }
             if (cons >= compval) {
@@ -288,7 +276,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572428723", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572428723", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -299,7 +287,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons > compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572434422", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572434422", null, errorTarget);
               }
             }
             if (cons <= compval) {
@@ -310,7 +298,7 @@ public class TestingNFRPropertyValues_NonTypesystemRule extends AbstractNonTypes
             if (cons < compval) {
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572442752", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mobileRobot, "Parameter values are inconistent for " + SPropertyOperations.getString(nfp_var, PROPS.name$MnvL) + ". Total value for the component is " + compval + ". Required value is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9006907811572442752", null, errorTarget);
               }
             }
             if (cons >= compval) {

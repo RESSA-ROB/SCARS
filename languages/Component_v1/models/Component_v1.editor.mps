@@ -1078,6 +1078,12 @@
           <ref role="1NtTu8" to="a0pt:4gKLRdmz5hh" resolve="NFRs" />
           <node concept="l2Vlx" id="4gKLRdmzVsm" role="2czzBx" />
         </node>
+        <node concept="3F0ifn" id="58W6Khgmybh" role="3EZMnx">
+          <property role="3F0ifm" value="Dependency Value" />
+        </node>
+        <node concept="3F0A7n" id="58W6KhgmybH" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:58W6KhgmyaY" resolve="value" />
+        </node>
       </node>
       <node concept="35HoNQ" id="4gKLRdmzVsC" role="3EZMnx" />
       <node concept="2iRkQZ" id="4gKLRdmzVrq" role="2iSdaV" />
@@ -1104,6 +1110,12 @@
         <node concept="3F2HdR" id="4gKLRdm$BSR" role="3EZMnx">
           <ref role="1NtTu8" to="a0pt:4gKLRdm$BS4" resolve="NFRs" />
           <node concept="l2Vlx" id="4gKLRdm$BSS" role="2czzBx" />
+        </node>
+        <node concept="3F0ifn" id="58W6Khgly2o" role="3EZMnx">
+          <property role="3F0ifm" value="Dependency Value:" />
+        </node>
+        <node concept="3F0A7n" id="58W6Khgly2E" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:58W6Khgly2e" resolve="value" />
         </node>
       </node>
       <node concept="35HoNQ" id="4gKLRdm$BST" role="3EZMnx" />

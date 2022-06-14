@@ -10,13 +10,36 @@
   <imports />
   <registry>
     <language id="afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f" name="Communication">
+      <concept id="2722478502131880397" name="Communication.structure.OutPutPort" flags="ng" index="3pZnS8">
+        <property id="7665824709845439645" name="message" index="YRqTC" />
+        <property id="9014908457751929555" name="type" index="3fV86D" />
+        <child id="9014908457751472462" name="Qos" index="3fUSCO" />
+      </concept>
       <concept id="2722478502131880396" name="Communication.structure.InputPort" flags="ng" index="3pZnS9">
+        <property id="7665824709845439643" name="message" index="YRqTI" />
         <property id="9014908457751929552" name="type" index="3fV86E" />
         <child id="9014908457751472460" name="QoS" index="3fUSCQ" />
       </concept>
       <concept id="2722478502131880398" name="Communication.structure.CPort" flags="ng" index="3pZnSb">
         <child id="2722478502131880399" name="iport" index="3pZnSa" />
+        <child id="2722478502131880401" name="oport" index="3pZnSk" />
       </concept>
+      <concept id="5906340854139933967" name="Communication.structure.ConnPair" flags="ng" index="3$_dMT">
+        <child id="5906340854139933970" name="subscriber" index="3$_dM$" />
+        <child id="5906340854139933968" name="publisher" index="3$_dMA" />
+      </concept>
+      <concept id="5906340854139902388" name="Communication.structure.InputPortInst" flags="ng" index="3$_l02" />
+      <concept id="5906340854139902373" name="Communication.structure.IInputPortInst" flags="ng" index="3$_l0j">
+        <reference id="5906340854139902379" name="inputport" index="3$_l0t" />
+      </concept>
+      <concept id="5906340854139902358" name="Communication.structure.Connections" flags="ng" index="3$_l0w">
+        <property id="5906340854139933963" name="topicType" index="3$_dMX" />
+        <child id="8390220799184122170" name="pair" index="1A1FLB" />
+      </concept>
+      <concept id="5906340854139902438" name="Communication.structure.IOutputPortInst" flags="ng" index="3$_l1g">
+        <reference id="5906340854139902444" name="outputport" index="3$_l1q" />
+      </concept>
+      <concept id="5906340854139902446" name="Communication.structure.OutputPortInst" flags="ng" index="3$_l1o" />
     </language>
     <language id="331f7a18-c657-4dd7-8707-42124f20f67b" name="DDS">
       <concept id="7566676200133324205" name="DDS.structure.DDS_LeaseDuration" flags="ng" index="2mmPp4">
@@ -37,6 +60,7 @@
     </language>
     <language id="79fb875b-5c4f-4986-892e-2475e9d0c842" name="Component_v1">
       <concept id="4913646491648818691" name="Component_v1.structure.TaskNFRAssociation1" flags="ng" index="iCF_K">
+        <property id="5925640915054370958" name="value" index="2qzIa" />
         <reference id="4913646491648818694" name="tasks" index="iCF_P" />
         <child id="4913646491648818692" name="NFRs" index="iCF_R" />
       </concept>
@@ -44,7 +68,13 @@
         <reference id="4913646491649132526" name="tasks" index="iDS2t" />
         <child id="4913646491649132524" name="NFRs" index="iDS2v" />
       </concept>
+      <concept id="4913646491648009977" name="Component_v1.structure.TaskNFRAssociation2" flags="ng" index="iHI6a">
+        <property id="5925640915054633662" name="value" index="2pzAU" />
+        <reference id="4913646491648009978" name="tasks" index="iHI69" />
+        <child id="4913646491648414801" name="NFRs" index="iJ9cy" />
+      </concept>
       <concept id="5599264617262653020" name="Component_v1.structure.MobileRobot" flags="ng" index="2uVwJs">
+        <child id="4913646491648010062" name="association" index="iHI0X" />
         <child id="7665824709845439654" name="connect" index="YRqTj" />
         <child id="7665824709845439649" name="hardware" index="YRqTk" />
         <child id="7665824709845439651" name="software" index="YRqTm" />
@@ -74,6 +104,7 @@
       <concept id="5906340854137179073" name="Component_v1.structure.System" flags="ng" index="3$NG9R">
         <child id="4913646491646853344" name="requirements" index="ih4uj" />
         <child id="4913646491649132581" name="association" index="iDSXm" />
+        <child id="5906340854139969538" name="connections" index="3$_6AO" />
         <child id="5906340854138476710" name="NFR" index="3$ID4g" />
         <child id="5906340854137179078" name="externalHardware" index="3$NG9K" />
         <child id="5906340854137179080" name="robots" index="3$NG9Y" />
@@ -115,6 +146,10 @@
       <concept id="4913646491649054448" name="NFR.structure.GlobalRunTimeNFRsInst" flags="ng" index="iDH63" />
       <concept id="4913646491649054440" name="NFR.structure.IGlobalRunTimeNFRsInst" flags="ng" index="iDH6r">
         <reference id="4913646491649054446" name="instances" index="iDH6t" />
+      </concept>
+      <concept id="4913646491648348854" name="NFR.structure.LocalRunTimeNFRs2Inst" flags="ng" index="iITn5" />
+      <concept id="4913646491648348818" name="NFR.structure.ILocalRunTimeNFRs2Inst" flags="ng" index="iITnx">
+        <reference id="4913646491648348824" name="instances" index="iITnF" />
       </concept>
       <concept id="7665824709846292118" name="NFR.structure.LocalRunTimeNFRs" flags="ng" index="YFELz">
         <property id="2595730008626759412" name="nfrmetric" index="2d0eh4" />
@@ -165,9 +200,28 @@
     </node>
     <node concept="3pZnSb" id="7hK3lOiU1qf" role="YRqTj">
       <node concept="3pZnS9" id="7hK3lOiU1qh" role="3pZnSa">
-        <property role="TrG5h" value="ReceiveStatus" />
-        <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
+        <property role="TrG5h" value="Receive3" />
+        <property role="3fV86E" value="7OroREMXMQ5/ObjectDetection" />
+        <property role="YRqTI" value="Pick up object from point X." />
         <node concept="3fSPMb" id="7hK3lOiU1qj" role="3fUSCQ">
+          <ref role="3fSPMa" node="zVblGX8dMI" resolve="check3" />
+        </node>
+      </node>
+      <node concept="3pZnS8" id="58W6Khgkpv2" role="3pZnSk">
+        <property role="TrG5h" value="Send3" />
+        <property role="3fV86D" value="7OroREMXMQ4/Warnings" />
+        <property role="YRqTC" value="Battery level below threshold" />
+        <node concept="3fSPMb" id="58W6Khgkpv6" role="3fUSCO">
+          <ref role="3fSPMa" node="7hK3lOitF30" resolve="check6" />
+        </node>
+      </node>
+    </node>
+    <node concept="3pZnSb" id="58W6Khgkpvj" role="YRqTj">
+      <node concept="3pZnS9" id="58W6Khgkpvq" role="3pZnSa">
+        <property role="TrG5h" value="Receive4" />
+        <property role="3fV86E" value="7OroREMXMQ3/Location" />
+        <property role="YRqTI" value="Location status" />
+        <node concept="3fSPMb" id="58W6Khgkpvs" role="3fUSCQ">
           <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
         </node>
       </node>
@@ -182,8 +236,8 @@
       <node concept="1bWaqF" id="3Xowrb4mgzR" role="25B1nq">
         <ref role="1AXPzv" node="7$WnCimbDOt" resolve="N102" />
       </node>
-      <node concept="1bWaqF" id="3Xowrb4mgzT" role="25B1nq">
-        <ref role="1AXPzv" node="zwkGk2aTOH" resolve="N104" />
+      <node concept="1bWaqF" id="58W6KhgfwC9" role="25B1nq">
+        <ref role="1AXPzv" node="zwkGk23rBk" resolve="N301" />
       </node>
     </node>
     <node concept="1D0Sm2" id="7NYXIWpv1hn" role="YRqTv">
@@ -210,6 +264,14 @@
     <node concept="1AEnAu" id="7NYXIWpv1hl" role="YRqTm">
       <ref role="1AEnAo" node="2Q3wCeh$JvM" resolve="ProcessingUnit" />
     </node>
+    <node concept="iHI6a" id="58W6KhgmyaU" role="iHI0X">
+      <property role="2pzAU" value="10" />
+      <ref role="iHI69" node="4gKLRdmuy_z" resolve="Deliver" />
+      <node concept="iITn5" id="58W6KhgmyaW" role="iJ9cy">
+        <ref role="iITnF" node="3Xowrb4j35q" resolve="N110" />
+      </node>
+    </node>
+    <node concept="iHI6a" id="58W6KhgnyS9" role="iHI0X" />
   </node>
   <node concept="1wihRA" id="7OroREMXMQ0">
     <property role="TrG5h" value="QoS Profiles" />
@@ -305,6 +367,28 @@
       </node>
     </node>
     <node concept="3$Jc2F" id="6BqKu9svImr" role="3$ID4g" />
+    <node concept="3$_l0w" id="58W6Khgkpv9" role="3$_6AO">
+      <property role="3$_dMX" value="7OroREMXMQ3/Location" />
+      <node concept="3$_dMT" id="58W6Khgkpvu" role="1A1FLB">
+        <node concept="3$_l1o" id="58W6Khgkpv$" role="3$_dMA">
+          <ref role="3$_l1q" node="58W6KhgkpuV" resolve="Send2" />
+        </node>
+        <node concept="3$_l02" id="58W6KhgkpvB" role="3$_dM$">
+          <ref role="3$_l0t" node="58W6Khgkpvq" resolve="Receive4" />
+        </node>
+      </node>
+    </node>
+    <node concept="3$_l0w" id="58W6KhgkpvE" role="3$_6AO">
+      <property role="3$_dMX" value="7OroREMXMQ5/ObjectDetection" />
+      <node concept="3$_dMT" id="58W6KhgkpvK" role="1A1FLB">
+        <node concept="3$_l1o" id="58W6KhgkpvQ" role="3$_dMA">
+          <ref role="3$_l1q" node="58W6KhgkpuI" resolve="Send1" />
+        </node>
+        <node concept="3$_l02" id="58W6KhgkpvT" role="3$_dM$">
+          <ref role="3$_l0t" node="7hK3lOiU1qh" resolve="Receive3" />
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="YR0F6" id="7hK3lOiPfye">
     <property role="TrG5h" value="H1" />
@@ -314,7 +398,22 @@
       <property role="1ACoQv" value="H101" />
       <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq" />
       <node concept="3pZnSb" id="2g5SF2CK_eY" role="1ACoQo">
-        <node concept="3pZnS9" id="2g5SF2CK_f4" role="3pZnSa" />
+        <node concept="3pZnS9" id="2g5SF2CK_f4" role="3pZnSa">
+          <property role="TrG5h" value="Receive1" />
+          <property role="3fV86E" value="7OroREMXMQ2/Traffic" />
+          <property role="YRqTI" value="Current network traffic is busy." />
+          <node concept="3fSPMb" id="58W6KhgkpuG" role="3fUSCQ">
+            <ref role="3fSPMa" node="zVblGX4oLf" resolve="check1" />
+          </node>
+        </node>
+        <node concept="3pZnS8" id="58W6KhgkpuI" role="3pZnSk">
+          <property role="TrG5h" value="Send1" />
+          <property role="3fV86D" value="7OroREMXMQ5/ObjectDetection" />
+          <property role="YRqTC" value="Object Located at location A." />
+          <node concept="3fSPMb" id="58W6KhgkpuM" role="3fUSCO">
+            <ref role="3fSPMa" node="zVblGX8dMI" resolve="check3" />
+          </node>
+        </node>
       </node>
       <node concept="YFELz" id="7$WnCimbDOr" role="1ACoQr">
         <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
@@ -373,11 +472,13 @@
         <property role="2d0ehd" value="85" />
       </node>
       <node concept="iCF_K" id="2nyR43eOVWv" role="1ACoQl">
+        <property role="2qzIa" value="2" />
         <ref role="iCF_P" node="4gKLRdmuy_z" resolve="Deliver" />
         <node concept="iCqeV" id="2nyR43eOVWx" role="iCF_R">
           <ref role="iCqeP" node="7$WnCimbDOr" resolve="N101" />
         </node>
       </node>
+      <node concept="iCF_K" id="58W6KhgmyaQ" role="1ACoQl" />
     </node>
   </node>
   <node concept="YR0F6" id="zwkGk23rBi">
@@ -387,18 +488,36 @@
       <property role="1ACoQs" value="Odometer" />
       <property role="1ACoQv" value="H102" />
       <node concept="YFELz" id="zwkGk23rBk" role="1ACoQr">
-        <property role="TrG5h" value="N101" />
+        <property role="TrG5h" value="N301" />
         <property role="2d0eh4" value="2g5SF2D1gs4/Availability_Metric_Probability" />
         <property role="2d0eh9" value="89" />
         <property role="2d0eh6" value="98" />
         <property role="2d0ehd" value="95" />
       </node>
       <node concept="YFELz" id="zwkGk23rBm" role="1ACoQr">
-        <property role="TrG5h" value="N102" />
+        <property role="TrG5h" value="N302" />
         <property role="2d0eh4" value="2g5SF2D1ZuH/Performance_response_time" />
         <property role="2d0eh9" value="2" />
         <property role="2d0eh6" value="5" />
         <property role="2d0ehd" value="4" />
+      </node>
+      <node concept="3pZnSb" id="58W6KhgkpuP" role="1ACoQo">
+        <node concept="3pZnS9" id="58W6KhgkpuR" role="3pZnSa">
+          <property role="TrG5h" value="Receive2" />
+          <property role="3fV86E" value="7OroREMXMQ4/Warnings" />
+          <property role="YRqTI" value="Human located nearby." />
+          <node concept="3fSPMb" id="58W6KhgkpuT" role="3fUSCQ">
+            <ref role="3fSPMa" node="zVblGX4oLp" resolve="check2" />
+          </node>
+        </node>
+        <node concept="3pZnS8" id="58W6KhgkpuV" role="3pZnSk">
+          <property role="TrG5h" value="Send2" />
+          <property role="3fV86D" value="7OroREMXMQ3/Location" />
+          <property role="YRqTC" value="Currently moving towards point B." />
+          <node concept="3fSPMb" id="58W6KhgkpuZ" role="3fUSCO">
+            <ref role="3fSPMa" node="zVblGX8dMw" resolve="check4" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
