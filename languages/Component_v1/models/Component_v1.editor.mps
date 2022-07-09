@@ -1394,27 +1394,33 @@
         <node concept="VPXOz" id="6BqKu9sllXV" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="3F0ifn" id="2Q3wCehzlK0" role="3EZMnx">
-          <property role="3F0ifm" value="Module Description:" />
-          <node concept="VechU" id="6BqKu9sp9ti" role="3F10Kt">
+        <node concept="3F0ifn" id="kScILe_$Xf" role="3EZMnx">
+          <property role="3F0ifm" value="Functional Requirements" />
+          <node concept="VechU" id="kScILeB9LN" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
-          <node concept="VQ3r3" id="6BqKu9sp9tj" role="3F10Kt">
+          <node concept="VQ3r3" id="kScILeB9LO" role="3F10Kt">
             <property role="2USNnj" value="gtbM8PH/underlined" />
           </node>
         </node>
-        <node concept="35HoNQ" id="2Q3wCehzlLz" role="3EZMnx">
-          <node concept="pVoyu" id="2Q3wCehzlLE" role="3F10Kt">
+        <node concept="35HoNQ" id="kScILeB9Kb" role="3EZMnx" />
+        <node concept="3F2HdR" id="kScILe_$X$" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:kScILe_$GA" resolve="tasks" />
+          <node concept="l2Vlx" id="kScILe_$XA" role="2czzBx" />
+          <node concept="pVoyu" id="kScILe_$XH" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-        </node>
-        <node concept="3F0A7n" id="2Q3wCehzlK6" role="3EZMnx">
-          <ref role="1NtTu8" to="a0pt:2Q3wCehzkGX" resolve="description" />
-          <node concept="pVoyu" id="2Q3wCehzlLq" role="3F10Kt">
+          <node concept="pj6Ft" id="kScILeEu36" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pVoyu" id="kScILeEu39" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
         <node concept="l2Vlx" id="2Q3wCehzlJK" role="2iSdaV" />
+        <node concept="pj6Ft" id="kScILe_$XJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="35HoNQ" id="6BqKu9snfRB" role="3EZMnx" />
       <node concept="35HoNQ" id="6BqKu9snfSP" role="3EZMnx" />
@@ -1447,6 +1453,48 @@
         <node concept="VPXOz" id="6BqKu9sllY2" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+      </node>
+      <node concept="35HoNQ" id="kScILeDnJ5" role="3EZMnx" />
+      <node concept="35HoNQ" id="kScILeDnL5" role="3EZMnx" />
+      <node concept="3EZMnI" id="kScILe_$Yz" role="3EZMnx">
+        <node concept="VPM3Z" id="kScILe_$Y_" role="3F10Kt" />
+        <node concept="pj6Ft" id="kScILeCgYQ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="VPXOz" id="kScILeCgYR" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="kScILe_$YB" role="3EZMnx">
+          <property role="3F0ifm" value="Functional &amp; Non-functional Requirement Associations " />
+          <node concept="pVoyu" id="kScILe_$Z$" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="VechU" id="kScILeB9LU" role="3F10Kt">
+            <property role="Vb096" value="fLwANPu/blue" />
+          </node>
+          <node concept="VQ3r3" id="kScILeB9LV" role="3F10Kt">
+            <property role="2USNnj" value="gtbM8PH/underlined" />
+          </node>
+        </node>
+        <node concept="35HoNQ" id="kScILe_$ZG" role="3EZMnx">
+          <node concept="pVoyu" id="kScILe_$ZM" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="kScILe_$ZU" role="3EZMnx">
+          <ref role="1NtTu8" to="a0pt:kScILe_$GD" resolve="association" />
+          <node concept="l2Vlx" id="kScILe_$ZW" role="2czzBx" />
+          <node concept="pVoyu" id="kScILe__03" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="kScILeF$m2" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pVoyu" id="kScILeF$m5" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="kScILe_$YC" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="2Q3wCehzlIy" role="2iSdaV" />
     </node>

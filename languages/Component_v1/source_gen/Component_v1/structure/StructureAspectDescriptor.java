@@ -345,7 +345,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("value", 0x523c1b045056208eL).type(PrimitiveTypeId.INTEGER).origin("5925640915054370958").done();
     b.associate("tasks", 0x4430c77356927e06L).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fd8L).optional(false).origin("4913646491648818694").done();
-    b.aggregate("NFRs", 0x4430c77356927e04L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c0L).optional(true).ordered(true).multiple(true).origin("4913646491648818692").done();
+    b.aggregate("NFRs", 0x4430c77356927e04L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c0L).optional(false).ordered(true).multiple(false).origin("4913646491648818692").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTaskNFRAssociation2() {
@@ -355,7 +355,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("value", 0x523c1b04505a22beL).type(PrimitiveTypeId.INTEGER).origin("5925640915054633662").done();
     b.associate("tasks", 0x4430c773568626faL).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fd8L).optional(false).origin("4913646491648009978").done();
-    b.aggregate("NFRs", 0x4430c773568c5451L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b5292L).optional(true).ordered(true).multiple(true).origin("4913646491648414801").done();
+    b.aggregate("NFRs", 0x4430c773568c5451L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773568b5292L).optional(false).ordered(true).multiple(false).origin("4913646491648414801").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForsofsubcomponent() {
@@ -365,8 +365,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("type", 0x2d838283918d4b39L).type(PrimitiveTypeId.STRING).origin("3279608455250135865").done();
     b.property("id", 0x2d838283918d4b3aL).type(PrimitiveTypeId.STRING).origin("3279608455250135866").done();
-    b.property("description", 0x2d838283918d4b3dL).type(PrimitiveTypeId.STRING).origin("3279608455250135869").done();
     b.aggregate("nfr", 0x2d838283918d4b41L).target(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L).optional(true).ordered(true).multiple(true).origin("3279608455250135873").done();
+    b.aggregate("tasks", 0x53832ec4e964b26L).target(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fd8L).optional(true).ordered(true).multiple(true).origin("376106559397579558").done();
+    b.aggregate("association", 0x53832ec4e964b29L).target(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L).optional(true).ordered(true).multiple(true).origin("376106559397579561").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForsubcomponent() {

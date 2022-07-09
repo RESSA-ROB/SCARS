@@ -550,7 +550,7 @@
       <property role="IQ2ns" value="4913646491648414801" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="NFRs" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="7pce:4gKLRdmyPai" resolve="ILocalRunTimeNFRs2Inst" />
     </node>
     <node concept="1TJgyi" id="58W6KhgmyaY" role="1TKVEl">
@@ -567,7 +567,7 @@
       <property role="IQ2ns" value="4913646491648818692" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="NFRs" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="7pce:4gKLRdm$mj0" resolve="ILocalRunTimeNFRsInst" />
     </node>
     <node concept="1TJgyj" id="4gKLRdm$BS6" role="1TKVEi">
@@ -684,6 +684,20 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="7pce:6DyuJlkNdqm" resolve="LocalRunTimeNFRs" />
     </node>
+    <node concept="1TJgyj" id="kScILe_$GA" role="1TKVEi">
+      <property role="IQ2ns" value="376106559397579558" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="tasks" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="1vx7:57RyrqPrgZo" resolve="LocalGoal" />
+    </node>
+    <node concept="1TJgyj" id="kScILe_$GD" role="1TKVEi">
+      <property role="IQ2ns" value="376106559397579561" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="association" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="4gKLRdm$BS3" resolve="TaskNFRAssociation1" />
+    </node>
     <node concept="1TJgyi" id="2Q3wCehzkGT" role="1TKVEl">
       <property role="IQ2nx" value="3279608455250135865" />
       <property role="TrG5h" value="type" />
@@ -692,11 +706,6 @@
     <node concept="1TJgyi" id="2Q3wCehzkGU" role="1TKVEl">
       <property role="IQ2nx" value="3279608455250135866" />
       <property role="TrG5h" value="id" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="2Q3wCehzkGX" role="1TKVEl">
-      <property role="IQ2nx" value="3279608455250135869" />
-      <property role="TrG5h" value="description" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>

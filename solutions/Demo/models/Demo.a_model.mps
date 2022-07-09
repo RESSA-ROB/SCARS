@@ -86,6 +86,7 @@
         <property id="3279608455250135865" name="type" index="2W3GAU" />
         <property id="3279608455250135869" name="description" index="2W3GAY" />
         <child id="3279608455250135873" name="nfr" index="2W3GB2" />
+        <child id="376106559397579558" name="tasks" index="1bFBBa" />
       </concept>
       <concept id="7665824709845464983" name="Component_v1.structure.IHardwareComponentInst" flags="ng" index="YC$Py">
         <reference id="7665824709845492327" name="hardware" index="YCHyi" />
@@ -184,7 +185,9 @@
     </language>
     <language id="cf635ce5-1976-4c6b-b1c5-f43814e251b9" name="TaskOperations">
       <concept id="5906340854140571613" name="TaskOperations.structure.GlobalGoal" flags="ng" index="3$ACpF" />
-      <concept id="5906340854140571608" name="TaskOperations.structure.LocalGoal" flags="ng" index="3$ACpI" />
+      <concept id="5906340854140571608" name="TaskOperations.structure.LocalGoal" flags="ng" index="3$ACpI">
+        <property id="5906340854140571611" name="description" index="3$ACpH" />
+      </concept>
     </language>
   </registry>
   <node concept="2uVwJs" id="3VRCMhnYbIx">
@@ -396,7 +399,18 @@
     <node concept="1ACoQt" id="7hK3lOiPfyf" role="1ACvkq">
       <property role="1ACoQs" value="Camera" />
       <property role="1ACoQv" value="H101" />
-      <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq" />
+      <node concept="3$ACpI" id="7hK3lOiPMpG" role="1ACoQq">
+        <property role="TrG5h" value="G1" />
+        <property role="3$ACpH" value="Do some tasks." />
+      </node>
+      <node concept="3$ACpI" id="4HvxtILf4jP" role="1ACoQq">
+        <property role="TrG5h" value="G2" />
+        <property role="3$ACpH" value="Do some tasks." />
+      </node>
+      <node concept="3$ACpI" id="4HvxtILf4jS" role="1ACoQq">
+        <property role="TrG5h" value="G3" />
+        <property role="3$ACpH" value="Do some tasks." />
+      </node>
       <node concept="3pZnSb" id="2g5SF2CK_eY" role="1ACoQo">
         <node concept="3pZnS9" id="2g5SF2CK_f4" role="3pZnSa">
           <property role="TrG5h" value="Receive1" />
@@ -471,14 +485,90 @@
         <property role="2d0eh6" value="90" />
         <property role="2d0ehd" value="85" />
       </node>
-      <node concept="iCF_K" id="2nyR43eOVWv" role="1ACoQl">
-        <property role="2qzIa" value="2" />
-        <ref role="iCF_P" node="4gKLRdmuy_z" resolve="Deliver" />
-        <node concept="iCqeV" id="2nyR43eOVWx" role="iCF_R">
+      <node concept="iCF_K" id="4HvxtILf4jW" role="1ACoQl">
+        <property role="2qzIa" value="7" />
+        <ref role="iCF_P" node="7hK3lOiPMpG" resolve="G1" />
+        <node concept="iCqeV" id="4HvxtILf4jY" role="iCF_R">
           <ref role="iCqeP" node="7$WnCimbDOr" resolve="N101" />
         </node>
       </node>
-      <node concept="iCF_K" id="58W6KhgmyaQ" role="1ACoQl" />
+      <node concept="iCF_K" id="4HvxtILf4k0" role="1ACoQl">
+        <property role="2qzIa" value="6" />
+        <ref role="iCF_P" node="7hK3lOiPMpG" resolve="G1" />
+        <node concept="iCqeV" id="4HvxtILf4r$" role="iCF_R">
+          <ref role="iCqeP" node="7$WnCimbDOt" resolve="N102" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4rA" role="1ACoQl">
+        <property role="2qzIa" value="7" />
+        <ref role="iCF_P" node="7hK3lOiPMpG" resolve="G1" />
+        <node concept="iCqeV" id="4HvxtILf4rG" role="iCF_R">
+          <ref role="iCqeP" node="7NYXIWpv1hf" resolve="N105" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4tQ" role="1ACoQl">
+        <property role="2qzIa" value="9" />
+        <ref role="iCF_P" node="7hK3lOiPMpG" resolve="G1" />
+        <node concept="iCqeV" id="4HvxtILf4ue" role="iCF_R">
+          <ref role="iCqeP" node="zwkGk2aTOH" resolve="N104" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4rI" role="1ACoQl">
+        <property role="2qzIa" value="9" />
+        <ref role="iCF_P" node="4HvxtILf4jP" resolve="G2" />
+        <node concept="iCqeV" id="4HvxtILf4rQ" role="iCF_R">
+          <ref role="iCqeP" node="7$WnCimbDOt" resolve="N102" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4rS" role="1ACoQl">
+        <property role="2qzIa" value="5" />
+        <ref role="iCF_P" node="4HvxtILf4jP" resolve="G2" />
+        <node concept="iCqeV" id="4HvxtILf4s2" role="iCF_R">
+          <ref role="iCqeP" node="24uUfSTL7eV" resolve="N107" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4s4" role="1ACoQl">
+        <property role="2qzIa" value="9" />
+        <ref role="iCF_P" node="4HvxtILf4jP" resolve="G2" />
+        <node concept="iCqeV" id="4HvxtILf4sg" role="iCF_R">
+          <ref role="iCqeP" node="7NYXIWpv1hf" resolve="N105" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4si" role="1ACoQl">
+        <property role="2qzIa" value="8" />
+        <ref role="iCF_P" node="4HvxtILf4jP" resolve="G2" />
+        <node concept="iCqeV" id="4HvxtILf4sw" role="iCF_R">
+          <ref role="iCqeP" node="24uUfSTL7eO" resolve="N106" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4sy" role="1ACoQl">
+        <property role="2qzIa" value="6" />
+        <ref role="iCF_P" node="4HvxtILf4jS" resolve="G3" />
+        <node concept="iCqeV" id="4HvxtILf4sM" role="iCF_R">
+          <ref role="iCqeP" node="24uUfSTL7f3" resolve="N108" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4sO" role="1ACoQl">
+        <property role="2qzIa" value="7" />
+        <ref role="iCF_P" node="4HvxtILf4jS" resolve="G3" />
+        <node concept="iCqeV" id="4HvxtILf4t6" role="iCF_R">
+          <ref role="iCqeP" node="7tF0jMmOOFg" resolve="N103" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4t8" role="1ACoQl">
+        <property role="2qzIa" value="8" />
+        <ref role="iCF_P" node="4HvxtILf4jS" resolve="G3" />
+        <node concept="iCqeV" id="4HvxtILf4ts" role="iCF_R">
+          <ref role="iCqeP" node="7$WnCimbDOt" resolve="N102" />
+        </node>
+      </node>
+      <node concept="iCF_K" id="4HvxtILf4tu" role="1ACoQl">
+        <property role="2qzIa" value="8" />
+        <ref role="iCF_P" node="4HvxtILf4jS" resolve="G3" />
+        <node concept="iCqeV" id="4HvxtILf4tO" role="iCF_R">
+          <ref role="iCqeP" node="zwkGk2aTOH" resolve="N104" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="YR0F6" id="zwkGk23rBi">
@@ -554,6 +644,10 @@
         <property role="2d0eh9" value="85" />
         <property role="2d0eh6" value="95" />
         <property role="2d0ehd" value="90" />
+      </node>
+      <node concept="3$ACpI" id="kScILeEu1x" role="1bFBBa">
+        <property role="TrG5h" value="P101" />
+        <property role="3$ACpH" value="Do some tasks" />
       </node>
     </node>
   </node>

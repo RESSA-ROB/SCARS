@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -31,9 +32,8 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
     String compname = SPropertyOperations.getString(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), PROPS.id$T3zd);
     {
       final MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654628367", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "Component is : " + compname, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399632691", null, errorTarget);
     }
-
     List<String> NFR_names = ListSequence.fromList(new ArrayList<String>());
     List<Double> NFR_maxValues = ListSequence.fromList(new ArrayList<Double>());
     List<Double> NFR_minValues = ListSequence.fromList(new ArrayList<Double>());
@@ -614,34 +614,49 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
         String NFRnameactual = "";
         if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
           NFRnameactual = "Calmness";
+          // w1
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050704L, "Availability_Metric_Probability"))) {
           NFRnameactual = "Availability";
+          // w2
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050703L, "Cost_Total_cost_of_installation_or_use"))) {
           NFRnameactual = "Cost";
+          // w3
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a2L, "DataInput_Accuracy_Accuracy"))) {
           NFRnameactual = "DataInput";
+          // w4
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f79eL, "DeviceCapability_ClockSpeed"))) {
           NFRnameactual = "DeviceCapability";
+          // w5
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7b4L, "Efficiency_maxtasks"))) {
           NFRnameactual = "Efficiency";
+          // w6
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7cfL, "EneryEfficiency_energyConsumption"))) {
           NFRnameactual = "EnergyEfficiency";
+          // w7
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7daL, "Mobility_binding"))) {
           NFRnameactual = "Mobility";
+          // w8
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7adL, "Performance_response_time"))) {
           NFRnameactual = "Performance";
+          // w9
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f801L, "Privacy_information_leak"))) {
           NFRnameactual = "Privacy";
+          // w10
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7f3L, "Reliability_precision_of_computation"))) {
           NFRnameactual = "Reliability";
+          // w11
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7c5L, "Robustness_expectedTime"))) {
           NFRnameactual = "Robustness";
+          // w12
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7e6L, "Safety_speed"))) {
           NFRnameactual = "Safety";
+          // w13
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7bcL, "Security_encryptionLevel"))) {
           NFRnameactual = "Security";
+          // w14
         } else if (NFRname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a7L, "Usability_training_learning_time"))) {
           NFRnameactual = "Usability";
+          // w15
         }
         if ((int) ListSequence.fromList(NFR_namesList).indexOf(NFRnameactual) == -1) {
           ListSequence.fromList(NFR_namesList).addElement(NFRnameactual);
@@ -992,6 +1007,9 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
 
     // Steps for conflict identification
     int length = ListSequence.fromList(NFR_namesList).count();
+    List<String> nfrconflictsidenlist = ListSequence.fromList(new ArrayList<String>());
+    List<String> nfrconflictimpList = ListSequence.fromList(new ArrayList<String>());
+    List<Double> nfrconflictimpval = ListSequence.fromList(new ArrayList<Double>());
     for (int i = 0; i < length - 1; i++) {
       String nfr1 = ListSequence.fromList(NFR_namesList).getElement(i);
       for (int j = i + 1; j < length; j++) {
@@ -1015,12 +1033,15 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
         int pair1flag = 0;
         int pair2flag = 0;
         String pair3 = "";
+        String pair4 = "";
         if (ListSequence.fromList(NFR_conflict_pair).indexOf(pair1) != -1) {
           pair1flag = 1;
           pair3 = nfrid1 + "-" + nfrid2;
+          pair4 = pair1;
         } else if (ListSequence.fromList(NFR_conflict_pair).indexOf(pair2) != -1) {
           pair2flag = 1;
           pair3 = nfrid2 + "-" + nfrid1;
+          pair4 = pair2;
         }
         // Now check the expected values and derive the affection function
         if (pair1flag == 1 || pair2flag == 1) {
@@ -1044,18 +1065,26 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
             double value2 = ListSequence.fromList(expectedValues).getElement(index2);
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
+              double temp = value2 - 0.5;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692521", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685396", null, errorTarget);
               }
-              // + value1 + "and" + value2 + " respectively."
+              ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+              ListSequence.fromList(nfrconflictimpList).addElement("Low");
+              ListSequence.fromList(nfrconflictimpval).addElement(temp);
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              double temp = 0.5 - value2;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692575", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685494", null, errorTarget);
               }
+              ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+              ListSequence.fromList(nfrconflictimpList).addElement("High");
+              ListSequence.fromList(nfrconflictimpval).addElement(temp);
+
             }
             // one pessimistic another optimistic
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
@@ -1064,13 +1093,21 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692630", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685599", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Low");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
+
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692650", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685671", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
+
               }
             }
             // one optimistic another pessimistic
@@ -1080,13 +1117,20 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692705", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685782", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
+
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692725", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685858", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("High");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
               }
             }
 
@@ -1096,17 +1140,27 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
             double value2 = ListSequence.fromList(expectedValues).getElement(index1);
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
+              double temp = value2 - 0.5;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692786", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399685976", null, errorTarget);
               }
+              ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+              ListSequence.fromList(nfrconflictimpList).addElement("Low");
+              ListSequence.fromList(nfrconflictimpval).addElement(temp);
+
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
+              double temp = 0.5 - value2;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692829", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399686077", null, errorTarget);
               }
+              ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+              ListSequence.fromList(nfrconflictimpList).addElement("High");
+              ListSequence.fromList(nfrconflictimpval).addElement(temp);
+
             }
             // one pessimistic another optimistic
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
@@ -1115,13 +1169,20 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692884", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k where k is " + t, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399686182", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Low");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
+
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692904", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399686256", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
               }
             }
             // one optimistic another pessimistic
@@ -1131,20 +1192,217 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692959", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at moderate risk. The impact relationship between them is polynomial. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by x^(10*k) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399686366", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1719156045654692979", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + t + ".", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399686441", null, errorTarget);
                 }
+                ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
+                ListSequence.fromList(nfrconflictimpList).addElement("High");
+                ListSequence.fromList(nfrconflictimpval).addElement(t);
               }
             }
           }
         }
       }
     }
+    // These two are temporary data structure used for storing NFR associated with each tasks and their corresponding dependency values
+    List<String> nfrvarList = ListSequence.fromList(new ArrayList<String>());
+    List<Integer> nfrdepval = ListSequence.fromList(new ArrayList<Integer>());
+    List<String> nfrweightvar = ListSequence.fromList(new ArrayList<String>());
+    List<String> nfrnamesvar = ListSequence.fromList(new ArrayList<String>());
+    // Steps for forming the optimization problem:-
+    // Outer loop for reading each FR or goal defined:-
+    {
+      Iterator<SNode> goal_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.tasks$CSig)).iterator();
+      SNode goal_var;
+      while (goal_it.hasNext()) {
+        goal_var = goal_it.next();
+        String goalName = SPropertyOperations.getString(goal_var, PROPS.name$MnvL);
+        // Inner loop that matches the goal in the task-NFR association part of user specification
+        {
+          Iterator<SNode> goal2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.association$CXUC)).iterator();
+          SNode goal2_var;
+          while (goal2_it.hasNext()) {
+            goal2_var = goal2_it.next();
+            String goalName2 = SPropertyOperations.getString(SLinkOperations.getTarget(goal2_var, LINKS.tasks$SHnI), PROPS.name$MnvL);
+            if (goalName.compareTo(goalName2) == 0) {
+              // Now store the NFR id in the nfrvarlist and dependency value in the nfrdepval list
+              ListSequence.fromList(nfrvarList).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(goal2_var, LINKS.NFRs$SGTG), LINKS.instance$ezOM), PROPS.name$MnvL));
+              ListSequence.fromList(nfrdepval).addElement(SPropertyOperations.getInteger(goal2_var, PROPS.value$xoLa));
+            }
+          }
+        }
+        // Now create the objective function as respective NFRs and dependency values are obtained:-
+        // Match the NFR ids with the NFR component of the specification
+        {
+          Iterator<String> nfr_it = ListSequence.fromList(nfrvarList).iterator();
+          String nfr_var;
+          while (nfr_it.hasNext()) {
+            nfr_var = nfr_it.next();
+            {
+              Iterator<SNode> nfr2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(softwareComponent, LINKS.component$pKqJ), LINKS.nfr$Ta7D)).iterator();
+              SNode nfr2_var;
+              while (nfr2_it.hasNext()) {
+                nfr2_var = nfr2_it.next();
+                String nfrid = SPropertyOperations.getString(nfr2_var, PROPS.name$MnvL);
+                if (nfr_var.compareTo(nfrid) == 0) {
+                  SEnumerationLiteral nfrname = SPropertyOperations.getEnum(nfr2_var, PROPS.nfrmetric$kiL_);
+                  if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f810L, "Calmness_calmTiming"))) {
+                    ListSequence.fromList(nfrnamesvar).addElement("Calmness");
+                    ListSequence.fromList(nfrweightvar).addElement("w1");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050704L, "Availability_Metric_Probability"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w2");
+                    ListSequence.fromList(nfrnamesvar).addElement("Availability");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a9050703L, "Cost_Total_cost_of_installation_or_use"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w3");
+                    ListSequence.fromList(nfrnamesvar).addElement("Cost");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a2L, "DataInput_Accuracy_Accuracy"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w4");
+                    ListSequence.fromList(nfrnamesvar).addElement("DataInput");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f79eL, "DeviceCapability_ClockSpeed"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w5");
+                    ListSequence.fromList(nfrnamesvar).addElement("DeviceCapability");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7b4L, "Efficiency_maxtasks"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w6");
+                    ListSequence.fromList(nfrnamesvar).addElement("Efficiency");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7cfL, "EneryEfficiency_energyConsumption"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w7");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7daL, "Mobility_binding"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w8");
+                    ListSequence.fromList(nfrnamesvar).addElement("Mobility");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7adL, "Performance_response_time"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w9");
+                    ListSequence.fromList(nfrnamesvar).addElement("Performance");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f801L, "Privacy_information_leak"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w10");
+                    ListSequence.fromList(nfrnamesvar).addElement("Privacy");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7f3L, "Reliability_precision_of_computation"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w11");
+                    ListSequence.fromList(nfrnamesvar).addElement("Reliability");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7c5L, "Robustness_expectedTime"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w12");
+                    ListSequence.fromList(nfrnamesvar).addElement("Robustness");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7e6L, "Safety_speed"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w13");
+                    ListSequence.fromList(nfrnamesvar).addElement("Safety");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7bcL, "Security_encryptionLevel"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w14");
+                    ListSequence.fromList(nfrnamesvar).addElement("Security");
+                  } else if (nfrname.equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x2405e2b0a9050702L, "NFR.structure.NFR_metric_names"), 0x2405e2b0a907f7a7L, "Usability_training_learning_time"))) {
+                    ListSequence.fromList(nfrweightvar).addElement("w15");
+                    ListSequence.fromList(nfrnamesvar).addElement("Usability");
+                  }
 
+                }
+              }
+            }
+          }
+        }
+        String redundant = ListSequence.fromList(nfrweightvar).last();
+        int len = ListSequence.fromList(nfrweightvar).indexOf(redundant);
+        // Loop to print the objective function:
+        String temp = "";
+        {
+          Iterator<String> var1_it = ListSequence.fromList(nfrweightvar).iterator();
+          String var1_var;
+          while (var1_it.hasNext()) {
+            var1_var = var1_it.next();
+            int index = ListSequence.fromList(nfrweightvar).indexOf(var1_var);
+            int val = ListSequence.fromList(nfrdepval).getElement(index);
+            String var = val + var1_var;
+            if (index != len) {
+              temp = temp.concat(var + "+");
+            } else {
+              temp = temp.concat(var);
+            }
+          }
+        }
+        {
+          final MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "For goal " + goalName + " Objective function is - Maximize: " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399687105", null, errorTarget);
+        }
+        // Now we also have to find the constraints:
+        temp = "0 <= ";
+        // Loop to print the range constraint
+        {
+          Iterator<String> var_it = ListSequence.fromList(nfrweightvar).iterator();
+          String var_var;
+          while (var_it.hasNext()) {
+            var_var = var_it.next();
+            int index = ListSequence.fromList(nfrweightvar).indexOf(var_var);
+            if (index != len) {
+              temp = temp.concat(var_var + ", ");
+            } else {
+              temp = temp.concat(var_var);
+            }
+          }
+        }
+        temp = temp.concat(" <= 1");
+        {
+          final MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "For goal " + goalName + " Range constraint is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399687188", null, errorTarget);
+        }
+        // Loop to find the conflict constraint
+        // do one step at a time first find the conflict:- Now generate the conflict constraint
+        int arraysize = ListSequence.fromList(nfrnamesvar).count();
+        for (int i = 0; i < arraysize - 1; i++) {
+          for (int j = i + 1; j < arraysize; j++) {
+            String testpair1 = ListSequence.fromList(nfrnamesvar).getElement(i) + "-" + ListSequence.fromList(nfrnamesvar).getElement(j);
+            String testpair2 = ListSequence.fromList(nfrnamesvar).getElement(j) + "-" + ListSequence.fromList(nfrnamesvar).getElement(i);
+            // check it against existing list
+            {
+              Iterator<String> conflict_it = ListSequence.fromList(nfrconflictsidenlist).iterator();
+              String conflict_var;
+              while (conflict_it.hasNext()) {
+                conflict_var = conflict_it.next();
+                int index = ListSequence.fromList(nfrconflictsidenlist).indexOf(conflict_var);
+                if (conflict_var.compareTo(testpair1) == 0) {
+                  String impact = ListSequence.fromList(nfrconflictimpList).getElement(index);
+                  String cons = "";
+                  if (impact.compareTo("Low") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                  } else if (impact.compareTo("Moderate") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                  } else if (impact.compareTo("High") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2";
+                  }
+                  {
+                    final MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "Conflict constraint for : " + goalName + " is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399687393", null, errorTarget);
+                  }
+
+                } else if (conflict_var.compareTo(testpair2) == 0) {
+                  String impact = ListSequence.fromList(nfrconflictimpList).getElement(index);
+                  String cons = "";
+                  if (impact.compareTo("Low") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                  } else if (impact.compareTo("Moderate") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                  } else if (impact.compareTo("High") == 0) {
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2";
+                  }
+                  {
+                    final MessageTarget errorTarget = new NodeMessageTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(softwareComponent, "Conflict constraint for : " + goalName + " is " + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "376106559399687521", null, errorTarget);
+                  }
+
+                }
+              }
+            }
+          }
+        }
+        ListSequence.fromList(nfrdepval).clear();
+        ListSequence.fromList(nfrvarList).clear();
+        ListSequence.fromList(nfrweightvar).clear();
+        ListSequence.fromList(nfrnamesvar).clear();
+      }
+    }
 
   }
   public SAbstractConcept getApplicableConcept() {
@@ -1160,6 +1418,11 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
   private static final class LINKS {
     /*package*/ static final SContainmentLink component$pKqJ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x2d838283918d4b44L, "component");
     /*package*/ static final SContainmentLink nfr$Ta7D = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b41L, "nfr");
+    /*package*/ static final SContainmentLink tasks$CSig = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x53832ec4e964b26L, "tasks");
+    /*package*/ static final SContainmentLink association$CXUC = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x53832ec4e964b29L, "association");
+    /*package*/ static final SReferenceLink tasks$SHnI = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L, 0x4430c77356927e06L, "tasks");
+    /*package*/ static final SContainmentLink NFRs$SGTG = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L, 0x4430c77356927e04L, "NFRs");
+    /*package*/ static final SReferenceLink instance$ezOM = MetaAdapterFactory.getReferenceLink(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x4430c773569164c0L, 0x4430c773569164c6L, "instance");
   }
 
   private static final class PROPS {
@@ -1169,6 +1432,7 @@ public class NFRNormalization3_NonTypesystemRule extends AbstractNonTypesystemRu
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty mostlikely$kpO3 = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506fdL, "mostlikely");
     /*package*/ static final SProperty nfrmetric$kiL_ = MetaAdapterFactory.getProperty(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, 0x2405e2b0a90506f4L, "nfrmetric");
+    /*package*/ static final SProperty value$xoLa = MetaAdapterFactory.getProperty(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L, 0x523c1b045056208eL, "value");
   }
 
   private static final class CONCEPTS {
