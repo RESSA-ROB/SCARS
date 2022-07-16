@@ -19842,6 +19842,19 @@
           </node>
         </node>
       </node>
+      <node concept="3cpWs8" id="7xzeDAxacxE" role="3cqZAp">
+        <node concept="3cpWsn" id="7xzeDAxacxH" role="3cpWs9">
+          <property role="TrG5h" value="maxConst" />
+          <node concept="_YKpA" id="7xzeDAxacxA" role="1tU5fm">
+            <node concept="10P55v" id="7xzeDAxah1V" role="_ZDj9" />
+          </node>
+          <node concept="2ShNRf" id="7xzeDAxah2J" role="33vP2m">
+            <node concept="Tc6Ow" id="7xzeDAxah2F" role="2ShVmc">
+              <node concept="10P55v" id="7xzeDAxah2G" role="HW$YZ" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="1Dw8fO" id="2rGJNUoYuce" role="3cqZAp">
         <node concept="3clFbS" id="2rGJNUoYucf" role="2LFqv$">
           <node concept="3cpWs8" id="2rGJNUoYucg" role="3cqZAp">
@@ -20417,6 +20430,20 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3cpWs8" id="7xzeDAxammR" role="3cqZAp">
+                            <node concept="3cpWsn" id="7xzeDAxammU" role="3cpWs9">
+                              <property role="TrG5h" value="Maxmvalue" />
+                              <node concept="10P55v" id="7xzeDAxammP" role="1tU5fm" />
+                              <node concept="3cpWsd" id="7xzeDAxamNU" role="33vP2m">
+                                <node concept="37vLTw" id="7xzeDAxamOa" role="3uHU7w">
+                                  <ref role="3cqZAo" node="1vrEP2AwJb_" resolve="value1" />
+                                </node>
+                                <node concept="3b6qkQ" id="7xzeDAxamu6" role="3uHU7B">
+                                  <property role="$nhwW" value="1.0" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="1X3_iC" id="7Qjxfd$4Voj" role="lGtFl">
                             <property role="3V$3am" value="statement" />
                             <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
@@ -20483,56 +20510,61 @@
                             <node concept="1YBJjd" id="7Qjxfd$3nl6" role="1urrMF">
                               <ref role="1YBMHb" node="2g5SF2CwDGh" resolve="hardwareComponent" />
                             </node>
-                            <node concept="3cpWs3" id="7Qjxfd$3neu" role="a7wSD">
-                              <node concept="Xl_RD" id="7Qjxfd$3nev" role="3uHU7w">
-                                <property role="Xl_RC" value=" decreases by y where y=x." />
+                            <node concept="3cpWs3" id="7xzeDAx9WbW" role="a7wSD">
+                              <node concept="37vLTw" id="7xzeDAx9WcG" role="3uHU7w">
+                                <ref role="3cqZAo" node="3mTEWeIXQpZ" resolve="temp" />
                               </node>
-                              <node concept="3cpWs3" id="7Qjxfd$3new" role="3uHU7B">
-                                <node concept="3cpWs3" id="7Qjxfd$3nex" role="3uHU7B">
-                                  <node concept="3cpWs3" id="7Qjxfd$3ney" role="3uHU7B">
-                                    <node concept="3cpWs3" id="7Qjxfd$3nez" role="3uHU7B">
-                                      <node concept="3cpWs3" id="7Qjxfd$3ne$" role="3uHU7B">
-                                        <node concept="3cpWs3" id="7Qjxfd$3ne_" role="3uHU7B">
-                                          <node concept="3cpWs3" id="7Qjxfd$3neA" role="3uHU7B">
-                                            <node concept="3cpWs3" id="7Qjxfd$3neB" role="3uHU7B">
-                                              <node concept="3cpWs3" id="7Qjxfd$3neC" role="3uHU7B">
-                                                <node concept="Xl_RD" id="7Qjxfd$3neD" role="3uHU7B">
-                                                  <property role="Xl_RC" value="The NFR pair " />
+                              <node concept="3cpWs3" id="7Qjxfd$3neu" role="3uHU7B">
+                                <node concept="3cpWs3" id="7Qjxfd$3new" role="3uHU7B">
+                                  <node concept="3cpWs3" id="7Qjxfd$3nex" role="3uHU7B">
+                                    <node concept="3cpWs3" id="7Qjxfd$3ney" role="3uHU7B">
+                                      <node concept="3cpWs3" id="7Qjxfd$3nez" role="3uHU7B">
+                                        <node concept="3cpWs3" id="7Qjxfd$3ne$" role="3uHU7B">
+                                          <node concept="3cpWs3" id="7Qjxfd$3ne_" role="3uHU7B">
+                                            <node concept="3cpWs3" id="7Qjxfd$3neA" role="3uHU7B">
+                                              <node concept="3cpWs3" id="7Qjxfd$3neB" role="3uHU7B">
+                                                <node concept="3cpWs3" id="7Qjxfd$3neC" role="3uHU7B">
+                                                  <node concept="Xl_RD" id="7Qjxfd$3neD" role="3uHU7B">
+                                                    <property role="Xl_RC" value="The NFR pair " />
+                                                  </node>
+                                                  <node concept="37vLTw" id="7Qjxfd$3neE" role="3uHU7w">
+                                                    <ref role="3cqZAo" node="1vrEP2AxEkw" resolve="pair3" />
+                                                  </node>
                                                 </node>
-                                                <node concept="37vLTw" id="7Qjxfd$3neE" role="3uHU7w">
-                                                  <ref role="3cqZAo" node="1vrEP2AxEkw" resolve="pair3" />
+                                                <node concept="Xl_RD" id="7Qjxfd$3neF" role="3uHU7w">
+                                                  <property role="Xl_RC" value=" are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " />
                                                 </node>
                                               </node>
-                                              <node concept="Xl_RD" id="7Qjxfd$3neF" role="3uHU7w">
-                                                <property role="Xl_RC" value=" are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " />
+                                              <node concept="37vLTw" id="7Qjxfd$3neG" role="3uHU7w">
+                                                <ref role="3cqZAo" node="1vrEP2AwJb_" resolve="value1" />
                                               </node>
                                             </node>
-                                            <node concept="37vLTw" id="7Qjxfd$3neG" role="3uHU7w">
-                                              <ref role="3cqZAo" node="1vrEP2AwJb_" resolve="value1" />
+                                            <node concept="Xl_RD" id="7Qjxfd$3neH" role="3uHU7w">
+                                              <property role="Xl_RC" value=" and " />
                                             </node>
                                           </node>
-                                          <node concept="Xl_RD" id="7Qjxfd$3neH" role="3uHU7w">
-                                            <property role="Xl_RC" value=" and " />
+                                          <node concept="37vLTw" id="7Qjxfd$3neI" role="3uHU7w">
+                                            <ref role="3cqZAo" node="1vrEP2AwK1U" resolve="value2" />
                                           </node>
                                         </node>
-                                        <node concept="37vLTw" id="7Qjxfd$3neI" role="3uHU7w">
-                                          <ref role="3cqZAo" node="1vrEP2AwK1U" resolve="value2" />
+                                        <node concept="Xl_RD" id="7Qjxfd$3neJ" role="3uHU7w">
+                                          <property role="Xl_RC" value=" respectively. For every increase of x in the value of " />
                                         </node>
                                       </node>
-                                      <node concept="Xl_RD" id="7Qjxfd$3neJ" role="3uHU7w">
-                                        <property role="Xl_RC" value=" respectively. For every increase of x in the value of " />
+                                      <node concept="37vLTw" id="7Qjxfd$3neK" role="3uHU7w">
+                                        <ref role="3cqZAo" node="2rGJNUoYucP" resolve="nfrid1" />
                                       </node>
                                     </node>
-                                    <node concept="37vLTw" id="7Qjxfd$3neK" role="3uHU7w">
-                                      <ref role="3cqZAo" node="2rGJNUoYucP" resolve="nfrid1" />
+                                    <node concept="Xl_RD" id="7Qjxfd$3neL" role="3uHU7w">
+                                      <property role="Xl_RC" value=" the value of " />
                                     </node>
                                   </node>
-                                  <node concept="Xl_RD" id="7Qjxfd$3neL" role="3uHU7w">
-                                    <property role="Xl_RC" value=" the value of " />
+                                  <node concept="37vLTw" id="7Qjxfd$3neM" role="3uHU7w">
+                                    <ref role="3cqZAo" node="2rGJNUoYucT" resolve="nfrid2" />
                                   </node>
                                 </node>
-                                <node concept="37vLTw" id="7Qjxfd$3neM" role="3uHU7w">
-                                  <ref role="3cqZAo" node="2rGJNUoYucT" resolve="nfrid2" />
+                                <node concept="Xl_RD" id="7Qjxfd$3nev" role="3uHU7w">
+                                  <property role="Xl_RC" value=" decreases by y where y=x*k, where k is " />
                                 </node>
                               </node>
                             </node>
@@ -20569,6 +20601,18 @@
                               <node concept="TSZUe" id="3mTEWeIXQgw" role="2OqNvi">
                                 <node concept="37vLTw" id="3mTEWeIXQOS" role="25WWJ7">
                                   <ref role="3cqZAo" node="3mTEWeIXQpZ" resolve="temp" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="7xzeDAxajYe" role="3cqZAp">
+                            <node concept="2OqwBi" id="7xzeDAxakGw" role="3clFbG">
+                              <node concept="37vLTw" id="7xzeDAxajYc" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7xzeDAxacxH" resolve="maxConst" />
+                              </node>
+                              <node concept="TSZUe" id="7xzeDAxamcP" role="2OqNvi">
+                                <node concept="37vLTw" id="7xzeDAxamSN" role="25WWJ7">
+                                  <ref role="3cqZAo" node="7xzeDAxammU" resolve="Maxmvalue" />
                                 </node>
                               </node>
                             </node>
@@ -20988,56 +21032,61 @@
                                 <node concept="1YBJjd" id="7Qjxfd$4ZyB" role="1urrMF">
                                   <ref role="1YBMHb" node="2g5SF2CwDGh" resolve="hardwareComponent" />
                                 </node>
-                                <node concept="3cpWs3" id="7Qjxfd$4ZrZ" role="a7wSD">
-                                  <node concept="Xl_RD" id="7Qjxfd$4Zs0" role="3uHU7w">
-                                    <property role="Xl_RC" value=" decreases by y where y=x." />
+                                <node concept="3cpWs3" id="7xzeDAxa5K1" role="a7wSD">
+                                  <node concept="37vLTw" id="7xzeDAxa5K4" role="3uHU7w">
+                                    <ref role="3cqZAo" node="1vrEP2Axem6" resolve="t" />
                                   </node>
-                                  <node concept="3cpWs3" id="7Qjxfd$4Zs1" role="3uHU7B">
-                                    <node concept="3cpWs3" id="7Qjxfd$4Zs2" role="3uHU7B">
-                                      <node concept="3cpWs3" id="7Qjxfd$4Zs3" role="3uHU7B">
-                                        <node concept="3cpWs3" id="7Qjxfd$4Zs4" role="3uHU7B">
-                                          <node concept="3cpWs3" id="7Qjxfd$4Zs5" role="3uHU7B">
-                                            <node concept="3cpWs3" id="7Qjxfd$4Zs6" role="3uHU7B">
-                                              <node concept="3cpWs3" id="7Qjxfd$4Zs7" role="3uHU7B">
-                                                <node concept="3cpWs3" id="7Qjxfd$4Zs8" role="3uHU7B">
-                                                  <node concept="3cpWs3" id="7Qjxfd$4Zs9" role="3uHU7B">
-                                                    <node concept="Xl_RD" id="7Qjxfd$4Zsa" role="3uHU7B">
-                                                      <property role="Xl_RC" value="The NFR pair " />
+                                  <node concept="3cpWs3" id="7Qjxfd$4ZrZ" role="3uHU7B">
+                                    <node concept="3cpWs3" id="7Qjxfd$4Zs1" role="3uHU7B">
+                                      <node concept="3cpWs3" id="7Qjxfd$4Zs2" role="3uHU7B">
+                                        <node concept="3cpWs3" id="7Qjxfd$4Zs3" role="3uHU7B">
+                                          <node concept="3cpWs3" id="7Qjxfd$4Zs4" role="3uHU7B">
+                                            <node concept="3cpWs3" id="7Qjxfd$4Zs5" role="3uHU7B">
+                                              <node concept="3cpWs3" id="7Qjxfd$4Zs6" role="3uHU7B">
+                                                <node concept="3cpWs3" id="7Qjxfd$4Zs7" role="3uHU7B">
+                                                  <node concept="3cpWs3" id="7Qjxfd$4Zs8" role="3uHU7B">
+                                                    <node concept="3cpWs3" id="7Qjxfd$4Zs9" role="3uHU7B">
+                                                      <node concept="Xl_RD" id="7Qjxfd$4Zsa" role="3uHU7B">
+                                                        <property role="Xl_RC" value="The NFR pair " />
+                                                      </node>
+                                                      <node concept="37vLTw" id="7Qjxfd$4Zsb" role="3uHU7w">
+                                                        <ref role="3cqZAo" node="1vrEP2AxEkw" resolve="pair3" />
+                                                      </node>
                                                     </node>
-                                                    <node concept="37vLTw" id="7Qjxfd$4Zsb" role="3uHU7w">
-                                                      <ref role="3cqZAo" node="1vrEP2AxEkw" resolve="pair3" />
+                                                    <node concept="Xl_RD" id="7Qjxfd$4Zsc" role="3uHU7w">
+                                                      <property role="Xl_RC" value=" are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " />
                                                     </node>
                                                   </node>
-                                                  <node concept="Xl_RD" id="7Qjxfd$4Zsc" role="3uHU7w">
-                                                    <property role="Xl_RC" value=" are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " />
+                                                  <node concept="37vLTw" id="7Qjxfd$4Zsd" role="3uHU7w">
+                                                    <ref role="3cqZAo" node="1vrEP2AwJb_" resolve="value1" />
                                                   </node>
                                                 </node>
-                                                <node concept="37vLTw" id="7Qjxfd$4Zsd" role="3uHU7w">
-                                                  <ref role="3cqZAo" node="1vrEP2AwJb_" resolve="value1" />
+                                                <node concept="Xl_RD" id="7Qjxfd$4Zse" role="3uHU7w">
+                                                  <property role="Xl_RC" value=" and " />
                                                 </node>
                                               </node>
-                                              <node concept="Xl_RD" id="7Qjxfd$4Zse" role="3uHU7w">
-                                                <property role="Xl_RC" value=" and " />
+                                              <node concept="37vLTw" id="7Qjxfd$4Zsf" role="3uHU7w">
+                                                <ref role="3cqZAo" node="1vrEP2AwK1U" resolve="value2" />
                                               </node>
                                             </node>
-                                            <node concept="37vLTw" id="7Qjxfd$4Zsf" role="3uHU7w">
-                                              <ref role="3cqZAo" node="1vrEP2AwK1U" resolve="value2" />
+                                            <node concept="Xl_RD" id="7Qjxfd$4Zsg" role="3uHU7w">
+                                              <property role="Xl_RC" value=" respectively. For every increase of x in the value of " />
                                             </node>
                                           </node>
-                                          <node concept="Xl_RD" id="7Qjxfd$4Zsg" role="3uHU7w">
-                                            <property role="Xl_RC" value=" respectively. For every increase of x in the value of " />
+                                          <node concept="37vLTw" id="7Qjxfd$4Zsh" role="3uHU7w">
+                                            <ref role="3cqZAo" node="2rGJNUoYucP" resolve="nfrid1" />
                                           </node>
                                         </node>
-                                        <node concept="37vLTw" id="7Qjxfd$4Zsh" role="3uHU7w">
-                                          <ref role="3cqZAo" node="2rGJNUoYucP" resolve="nfrid1" />
+                                        <node concept="Xl_RD" id="7Qjxfd$4Zsi" role="3uHU7w">
+                                          <property role="Xl_RC" value=" the value of " />
                                         </node>
                                       </node>
-                                      <node concept="Xl_RD" id="7Qjxfd$4Zsi" role="3uHU7w">
-                                        <property role="Xl_RC" value=" the value of " />
+                                      <node concept="37vLTw" id="7Qjxfd$4Zsj" role="3uHU7w">
+                                        <ref role="3cqZAo" node="2rGJNUoYucT" resolve="nfrid2" />
                                       </node>
                                     </node>
-                                    <node concept="37vLTw" id="7Qjxfd$4Zsj" role="3uHU7w">
-                                      <ref role="3cqZAo" node="2rGJNUoYucT" resolve="nfrid2" />
+                                    <node concept="Xl_RD" id="7Qjxfd$4Zs0" role="3uHU7w">
+                                      <property role="Xl_RC" value=" decreases by y where y=x*k where k is " />
                                     </node>
                                   </node>
                                 </node>
@@ -21860,6 +21909,20 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3cpWs8" id="7xzeDAxan6t" role="3cqZAp">
+                            <node concept="3cpWsn" id="7xzeDAxan6w" role="3cpWs9">
+                              <property role="TrG5h" value="Maxmvalue" />
+                              <node concept="10P55v" id="7xzeDAxan6r" role="1tU5fm" />
+                              <node concept="3cpWsd" id="7xzeDAxanUd" role="33vP2m">
+                                <node concept="37vLTw" id="7xzeDAxanUt" role="3uHU7w">
+                                  <ref role="3cqZAo" node="1vrEP2Axybt" resolve="value1" />
+                                </node>
+                                <node concept="3cmrfG" id="7xzeDAxan8G" role="3uHU7B">
+                                  <property role="3cmrfH" value="1" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="1X3_iC" id="7Qjxfd$55NW" role="lGtFl">
                             <property role="3V$3am" value="statement" />
                             <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
@@ -22017,6 +22080,18 @@
                               <node concept="TSZUe" id="3mTEWeIXVx$" role="2OqNvi">
                                 <node concept="37vLTw" id="3mTEWeIXVS5" role="25WWJ7">
                                   <ref role="3cqZAo" node="3mTEWeIXVGE" resolve="temp" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="7xzeDAxao7o" role="3cqZAp">
+                            <node concept="2OqwBi" id="7xzeDAxaoOe" role="3clFbG">
+                              <node concept="37vLTw" id="7xzeDAxao7m" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7xzeDAxacxH" resolve="maxConst" />
+                              </node>
+                              <node concept="TSZUe" id="7xzeDAxaq5k" role="2OqNvi">
+                                <node concept="37vLTw" id="7xzeDAxaqbe" role="25WWJ7">
+                                  <ref role="3cqZAo" node="7xzeDAxan6w" resolve="Maxmvalue" />
                                 </node>
                               </node>
                             </node>

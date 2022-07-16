@@ -1010,6 +1010,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
     List<String> nfrconflictsidenlist = ListSequence.fromList(new ArrayList<String>());
     List<String> nfrconflictimpList = ListSequence.fromList(new ArrayList<String>());
     List<Double> nfrconflictimpval = ListSequence.fromList(new ArrayList<Double>());
+    List<Double> maxConst = ListSequence.fromList(new ArrayList<Double>());
     for (int i = 0; i < length - 1; i++) {
       String nfr1 = ListSequence.fromList(NFR_namesList).getElement(i);
       for (int j = i + 1; j < length; j++) {
@@ -1066,13 +1067,15 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               double temp = value2 - 0.5;
+              double Maxmvalue = 1.0 - value1;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257207980914", null, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k, where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257207980914", null, errorTarget);
               }
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("Low");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
@@ -1093,7 +1096,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208407763", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k where k is " + t, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208407763", null, errorTarget);
                 }
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Low");
@@ -1141,6 +1144,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               double temp = value2 - 0.5;
+              double Maxmvalue = 1 - value1;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208433031", null, errorTarget);
@@ -1148,6 +1152,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("Low");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
 
             }
             // Case 2 both in the pessimistic range
