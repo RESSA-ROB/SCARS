@@ -1067,7 +1067,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               double temp = value2 - 0.5;
-              double Maxmvalue = 1.0 - value1;
+              double Maxmvalue = 0.0;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k, where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257207980914", null, errorTarget);
@@ -1075,11 +1075,18 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("Low");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
+              if (temp >= 0.25) {
+                Maxmvalue = 1 - value1;
+              } else {
+                Maxmvalue = temp;
+              }
               ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
               double temp = 0.5 - value2;
+              double Maxmvalue = 0.0;
+
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208401478", null, errorTarget);
@@ -1087,12 +1094,19 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("High");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
+              if (temp >= 0.25) {
+                Maxmvalue = 1 - value1;
+              } else {
+                Maxmvalue = temp;
+              }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
 
             }
             // one pessimistic another optimistic
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
               // Let the threshold be 0.25
               double t = value2 - 0.5;
+              double Maxmvalue = 0.0;
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1101,7 +1115,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Low");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
-
+                Maxmvalue = 1 - value1;
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1110,13 +1124,16 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = t;
 
               }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
             // one optimistic another pessimistic
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.0 && value2 < 0.5)) {
               // Let the threshold be 0.25
               double t = 0.5 - value2;
+              double Maxmvalue = 0.0;
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1125,6 +1142,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = t;
 
               } else {
                 {
@@ -1134,7 +1152,9 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("High");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = 1 - value1;
               }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
 
           }
@@ -1144,7 +1164,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
             // Case 1 both in the optimistic range
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.5 && value2 <= 1.0)) {
               double temp = value2 - 0.5;
-              double Maxmvalue = 1 - value1;
+              double Maxmvalue = 0.0;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at low risk. The impact relationship between them is linear. The initial expected values are : " + value1 + "and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by y where y=x*k where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208433031", null, errorTarget);
@@ -1152,12 +1172,18 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("Low");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
+              if (temp >= 0.25) {
+                Maxmvalue = 1 - value1;
+              } else {
+                Maxmvalue = temp;
+              }
               ListSequence.fromList(maxConst).addElement(Maxmvalue);
 
             }
             // Case 2 both in the pessimistic range
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.0 && value2 < 0.5)) {
               double temp = 0.5 - value2;
+              double Maxmvalue = 0.0;
               {
                 final MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(hardwareComponent, "The NFR pair " + pair3 + " are in conflict. They are at high risk. The impact relationship between them is exponential. The initial expected values are : " + value1 + " and " + value2 + " respectively. For every increase of x in the value of " + nfrid1 + " the value of " + nfrid2 + " decreases by e^(10*k*x) where k is " + temp, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "9048722257208438998", null, errorTarget);
@@ -1165,12 +1191,18 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
               ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
               ListSequence.fromList(nfrconflictimpList).addElement("High");
               ListSequence.fromList(nfrconflictimpval).addElement(temp);
-
+              if (temp >= 0.25) {
+                Maxmvalue = 1 - value1;
+              } else {
+                Maxmvalue = temp;
+              }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
             // one pessimistic another optimistic
             if ((value1 >= 0.0 && value1 < 0.5) && (value2 >= 0.5 && value2 <= 1.0)) {
               // Let the threshold be 0.25
               double t = value2 - 0.5;
+              double Maxmvalue = 0.0;
               if (t >= 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1179,6 +1211,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Low");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = 1 - value1;
 
               } else {
                 {
@@ -1188,12 +1221,15 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = t;
               }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
             }
             // one optimistic another pessimistic
             if ((value1 >= 0.5 && value1 <= 1.0) && (value2 >= 0.0 && value2 < 0.5)) {
               // Let the threshold be 0.25
               double t = 0.5 - value2;
+              double Maxmvalue = 0.0;
               if (t < 0.25) {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1202,6 +1238,7 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("Moderate");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = t;
               } else {
                 {
                   final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1210,7 +1247,10 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                 ListSequence.fromList(nfrconflictsidenlist).addElement(pair4);
                 ListSequence.fromList(nfrconflictimpList).addElement("High");
                 ListSequence.fromList(nfrconflictimpval).addElement(t);
+                Maxmvalue = 1 - value1;
               }
+              ListSequence.fromList(maxConst).addElement(Maxmvalue);
+
             }
           }
         }
@@ -1371,11 +1411,11 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                   String impact = ListSequence.fromList(nfrconflictimpList).getElement(index);
                   String cons = "";
                   if (impact.compareTo("Low") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   } else if (impact.compareTo("Moderate") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   } else if (impact.compareTo("High") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(i) + " + " + ListSequence.fromList(nfrweightvar).getElement(j) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   }
                   {
                     final MessageTarget errorTarget = new NodeMessageTarget();
@@ -1386,11 +1426,11 @@ public class NFRNormalization_NonTypesystemRule extends AbstractNonTypesystemRul
                   String impact = ListSequence.fromList(nfrconflictimpList).getElement(index);
                   String cons = "";
                   if (impact.compareTo("Low") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   } else if (impact.compareTo("Moderate") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - M ^ " + ListSequence.fromList(nfrconflictimpval).getElement(index) + " <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   } else if (impact.compareTo("High") == 0) {
-                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2";
+                    cons = " 0 <= " + ListSequence.fromList(nfrweightvar).getElement(j) + " + " + ListSequence.fromList(nfrweightvar).getElement(i) + " + M - e ^ (M * " + ListSequence.fromList(nfrconflictimpval).getElement(index) + ") <= 2, where M value lies in the range 0.1 - " + ListSequence.fromList(maxConst).getElement(index);
                   }
                   {
                     final MessageTarget errorTarget = new NodeMessageTarget();
