@@ -122,6 +122,9 @@
         <node concept="3F0ifn" id="7OroREMYpqT" role="3EZMnx">
           <property role="3F0ifm" value="(Input Port)" />
         </node>
+        <node concept="3F0ifn" id="Fb5wS9wJV3" role="3EZMnx">
+          <property role="3F0ifm" value="ID" />
+        </node>
         <node concept="3F0ifn" id="7OroREMYpqZ" role="3EZMnx">
           <property role="3F0ifm" value="-&gt;" />
         </node>
@@ -129,7 +132,7 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="3F0ifn" id="7OroREMYprh" role="3EZMnx">
-          <property role="3F0ifm" value="Type:" />
+          <property role="3F0ifm" value="Receive Topic Type:" />
         </node>
         <node concept="3F0A7n" id="7OroREMYprt" role="3EZMnx">
           <ref role="1NtTu8" to="dmdj:7OroREMXYbg" resolve="type" />
@@ -167,6 +170,9 @@
         <node concept="3F0ifn" id="7OroREMYptj" role="3EZMnx">
           <property role="3F0ifm" value="(Output Port)" />
         </node>
+        <node concept="3F0ifn" id="Fb5wS9wJXi" role="3EZMnx">
+          <property role="3F0ifm" value="ID" />
+        </node>
         <node concept="3F0ifn" id="7OroREMYptp" role="3EZMnx">
           <property role="3F0ifm" value="-&gt;" />
         </node>
@@ -174,7 +180,7 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="3F0ifn" id="7OroREMYptK" role="3EZMnx">
-          <property role="3F0ifm" value="Type:" />
+          <property role="3F0ifm" value="Send Topic Type:" />
         </node>
         <node concept="3F0A7n" id="7OroREMYptW" role="3EZMnx">
           <ref role="1NtTu8" to="dmdj:7OroREMXYbj" resolve="type" />

@@ -69,7 +69,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Non-Functional Property");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Non-Functional Objective");
     editorCell.setCellId("Constant_nebq4z_a0a");
     editorCell.setDefaultText("");
     return editorCell;

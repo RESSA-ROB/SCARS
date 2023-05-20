@@ -20,10 +20,18 @@
   </dependencies>
   <languageVersions>
     <language slang="l:4cc07462-84b3-4d01-8adb-629ddd3cebd4:Capabilities" version="0" />
+    <language slang="l:afce36b8-c6cd-4f1b-b70d-0ef3d6aa2b6f:Communication" version="0" />
+    <language slang="l:218e40b4-75d4-4de8-83e6-b31e4da8bcee:Component" version="0" />
     <language slang="l:79fb875b-5c4f-4986-892e-2475e9d0c842:Component_v1" version="0" />
     <language slang="l:331f7a18-c657-4dd7-8707-42124f20f67b:DDS" version="0" />
+    <language slang="l:d943373f-819f-4ebe-b0e0-94c5169d72a2:HardwarePlatforms" version="0" />
+    <language slang="l:d6881f78-a85d-4c9e-931e-30879e67afdd:KinematicChains" version="3" />
     <language slang="l:ddad85b5-8f76-40d8-9a0d-bd322c713e77:NFR" version="0" />
+    <language slang="l:b37e01ff-a47f-4ea1-9902-4f840aa546c5:NFR2" version="0" />
     <language slang="l:6d222813-53ea-440e-ba30-23ced4b723f0:QoS" version="0" />
+    <language slang="l:73f2d64e-927d-48dc-89c7-793f38431f94:ROS2" version="0" />
+    <language slang="l:8fb3e629-b68f-443e-b616-d61142df624b:SoftwarePlatforms" version="0" />
+    <language slang="l:cf635ce5-1976-4c6b-b1c5-f43814e251b9:TaskOperations" version="0" />
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="2" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />

@@ -88,6 +88,15 @@
           </node>
         </node>
       </node>
+      <node concept="1iCGBv" id="5RWfhsZjZ$d" role="3EZMnx">
+        <ref role="1NtTu8" to="7pce:3VRCMho0fJV" resolve="fields" />
+        <node concept="1sVBvm" id="5RWfhsZjZ$f" role="1sWHZn">
+          <node concept="3F0A7n" id="5RWfhsZjZ$p" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="7pce:3Xowrb4gpVx" resolve="nfrmetric" />
+          </node>
+        </node>
+      </node>
       <node concept="l2Vlx" id="3VRCMho0mCQ" role="2iSdaV" />
     </node>
   </node>
@@ -149,6 +158,9 @@
           <ref role="1NtTu8" to="7pce:AN3jycbLzy" resolve="attributes" />
           <node concept="l2Vlx" id="AN3jycbta_" role="2czzBx" />
           <node concept="pVoyu" id="AN3jycbtaF" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="5RWfhsZkMip" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
         </node>
@@ -311,6 +323,15 @@
           </node>
         </node>
       </node>
+      <node concept="1iCGBv" id="6Casr5xB2tZ" role="3EZMnx">
+        <ref role="1NtTu8" to="7pce:4gKLRdmyPao" resolve="instances" />
+        <node concept="1sVBvm" id="6Casr5xB2u1" role="1sWHZn">
+          <node concept="3F0A7n" id="6Casr5xB2uc" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="7pce:3Xowrb4gpVx" resolve="nfrmetric" />
+          </node>
+        </node>
+      </node>
       <node concept="l2Vlx" id="4gKLRdmyPbM" role="2iSdaV" />
     </node>
   </node>
@@ -397,7 +418,7 @@
       <node concept="3EZMnI" id="AN3jyc8zCZ" role="3EZMnx">
         <node concept="VPM3Z" id="AN3jyc8zD1" role="3F10Kt" />
         <node concept="3F0ifn" id="AN3jyc8zDa" role="3EZMnx">
-          <property role="3F0ifm" value="Non-Functional Property" />
+          <property role="3F0ifm" value="Non-Functional Objective" />
         </node>
         <node concept="l2Vlx" id="AN3jyc8zD4" role="2iSdaV" />
       </node>

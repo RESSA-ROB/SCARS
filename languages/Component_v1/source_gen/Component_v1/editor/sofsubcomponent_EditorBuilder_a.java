@@ -80,6 +80,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createEmpty_8());
     editorCell.addEditorCell(createEmpty_9());
     editorCell.addEditorCell(createCollection_5());
+    editorCell.addEditorCell(createEmpty_11());
+    editorCell.addEditorCell(createEmpty_12());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -383,7 +385,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.nfr$Ta7D;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.LocalRunTimeNFRs$Gm;
+      return CONCEPTS.LocalRunTimeNFRs2$Do;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -560,6 +562,20 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
+  private EditorCell createEmpty_11() {
+    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+    editorCell.setCellId("Empty_kt6r42_n0");
+    return editorCell;
+  }
+  private EditorCell createEmpty_12() {
+    EditorCell_Empty editorCell = new EditorCell_Empty(getEditorContext(), myNode);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode(), CellAction_DeleteNode.DeleteDirection.BACKWARD));
+    editorCell.setCellId("Empty_kt6r42_o0");
+    return editorCell;
+  }
 
   private static final class PROPS {
     /*package*/ static final SProperty type$T3kc = MetaAdapterFactory.getProperty(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b39L, "type");
@@ -569,7 +585,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept LocalGoal$bu = MetaAdapterFactory.getConcept(0xcf635ce519764c6bL, 0xb1c5f43814e251b9L, 0x51f789b6b56d0fd8L, "TaskOperations.structure.LocalGoal");
-    /*package*/ static final SConcept LocalRunTimeNFRs$Gm = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x6a627af554ccd696L, "NFR.structure.LocalRunTimeNFRs");
+    /*package*/ static final SConcept LocalRunTimeNFRs2$Do = MetaAdapterFactory.getConcept(0xddad85b58f7640d8L, 0x9a0dbd322c713e77L, 0x3ef7a32457f426a6L, "NFR.structure.LocalRunTimeNFRs2");
     /*package*/ static final SConcept TaskNFRAssociation1$yv = MetaAdapterFactory.getConcept(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4430c77356927e03L, "Component_v1.structure.TaskNFRAssociation1");
   }
 

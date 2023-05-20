@@ -73,7 +73,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Goal Name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "FR Name");
     editorCell.setCellId("Constant_812b5j_a0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -114,7 +114,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Definition");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Description");
     editorCell.setCellId("Constant_812b5j_a1a");
     editorCell.setDefaultText("");
     return editorCell;

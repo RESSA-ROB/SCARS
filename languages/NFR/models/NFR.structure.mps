@@ -82,17 +82,17 @@
     <node concept="1TJgyi" id="2g5SF2D1grQ" role="1TKVEl">
       <property role="IQ2nx" value="2595730008626759414" />
       <property role="TrG5h" value="maxvalue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2g5SF2D1grT" role="1TKVEl">
       <property role="IQ2nx" value="2595730008626759417" />
       <property role="TrG5h" value="minvalue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="2g5SF2D1grX" role="1TKVEl">
       <property role="IQ2nx" value="2595730008626759421" />
       <property role="TrG5h" value="mostlikely" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="25R3W" id="6DyuJlkNdqJ">
@@ -133,7 +133,7 @@
       <property role="IQ2ns" value="4537274526089673723" />
       <property role="20kJfa" value="fields" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="6DyuJlkNdqm" resolve="LocalRunTimeNFRs" />
+      <ref role="20lvS9" node="3VRCMhnX2qA" resolve="LocalRunTimeNFRs2" />
     </node>
   </node>
   <node concept="1TIwiD" id="3VRCMhnWDzW">
@@ -153,17 +153,17 @@
     <node concept="1TJgyi" id="3Xowrb4gpVy" role="1TKVEl">
       <property role="IQ2nx" value="4564540827136794338" />
       <property role="TrG5h" value="maxvalue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="3Xowrb4gpVz" role="1TKVEl">
       <property role="IQ2nx" value="4564540827136794339" />
       <property role="TrG5h" value="minvalue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="3Xowrb4gpV$" role="1TKVEl">
       <property role="IQ2nx" value="4564540827136794340" />
       <property role="TrG5h" value="mostlikely" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="1TJgyi" id="3Xowrb4gpVD" role="1TKVEl">
       <property role="IQ2nx" value="4564540827136794345" />
@@ -736,7 +736,7 @@
     <node concept="25R33" id="2g5SF2D1Zvf" role="25R1y">
       <property role="3tVfz5" value="2595730008626952143" />
       <property role="TrG5h" value="EneryEfficiency_energyConsumption" />
-      <property role="1L1pqM" value="NFR Category: Energy Efficiency --&gt; Metric: Maximum Allowable Energy Consumption" />
+      <property role="1L1pqM" value="NFR Category: Energy Efficiency --&gt; Metric: Battery Discharge" />
     </node>
     <node concept="25R33" id="2g5SF2D1Zvq" role="25R1y">
       <property role="3tVfz5" value="2595730008626952154" />
@@ -745,7 +745,7 @@
     </node>
     <node concept="25R33" id="2g5SF2D1ZvA" role="25R1y">
       <property role="3tVfz5" value="2595730008626952166" />
-      <property role="TrG5h" value="Safety_speed" />
+      <property role="TrG5h" value="Safety" />
       <property role="1L1pqM" value="NFR Category: Safety --&gt; Metric: Speed" />
     </node>
     <node concept="25R33" id="2g5SF2D1ZvN" role="25R1y">

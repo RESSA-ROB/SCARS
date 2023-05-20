@@ -2950,7 +2950,7 @@
             <uo k="s:originTrace" v="n:2595730008626759426" />
           </node>
           <node concept="Xl_RD" id="g4" role="37wK5m">
-            <property role="Xl_RC" value="NFR Category: Energy Efficiency --&gt; Metric: Maximum Allowable Energy Consumption" />
+            <property role="Xl_RC" value="NFR Category: Energy Efficiency --&gt; Metric: Battery Discharge" />
             <uo k="s:originTrace" v="n:2595730008626759426" />
           </node>
           <node concept="1adDum" id="g5" role="37wK5m">
@@ -3001,7 +3001,7 @@
     </node>
     <node concept="312cEg" id="et" role="jymVt">
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myMember_Safety_speed_0" />
+      <property role="TrG5h" value="myMember_Safety_0" />
       <uo k="s:originTrace" v="n:2595730008626759426" />
       <node concept="3Tm6S6" id="gf" role="1B3o_S">
         <uo k="s:originTrace" v="n:2595730008626759426" />
@@ -3016,7 +3016,7 @@
           <ref role="37wK5l" to="ze1i:~EnumerationDescriptor$MemberDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String)" resolve="EnumerationDescriptor.MemberDescriptor" />
           <uo k="s:originTrace" v="n:2595730008626759426" />
           <node concept="Xl_RD" id="gj" role="37wK5m">
-            <property role="Xl_RC" value="Safety_speed" />
+            <property role="Xl_RC" value="Safety" />
             <uo k="s:originTrace" v="n:2595730008626759426" />
           </node>
           <node concept="Xl_RD" id="gk" role="37wK5m">
@@ -3307,7 +3307,7 @@
             <uo k="s:originTrace" v="n:2595730008626759426" />
           </node>
           <node concept="37vLTw" id="hl" role="37wK5m">
-            <ref role="3cqZAo" node="et" resolve="myMember_Safety_speed_0" />
+            <ref role="3cqZAo" node="et" resolve="myMember_Safety_0" />
             <uo k="s:originTrace" v="n:2595730008626759426" />
           </node>
           <node concept="37vLTw" id="hm" role="37wK5m">
@@ -3641,7 +3641,7 @@
           <node concept="3KbdKl" id="i5" role="3KbHQx">
             <uo k="s:originTrace" v="n:2595730008626759426" />
             <node concept="Xl_RD" id="iP" role="3Kbmr1">
-              <property role="Xl_RC" value="Safety_speed" />
+              <property role="Xl_RC" value="Safety" />
               <uo k="s:originTrace" v="n:2595730008626759426" />
             </node>
             <node concept="3clFbS" id="iQ" role="3Kbo56">
@@ -3649,7 +3649,7 @@
               <node concept="3cpWs6" id="iR" role="3cqZAp">
                 <uo k="s:originTrace" v="n:2595730008626759426" />
                 <node concept="37vLTw" id="iS" role="3cqZAk">
-                  <ref role="3cqZAo" node="et" resolve="myMember_Safety_speed_0" />
+                  <ref role="3cqZAo" node="et" resolve="myMember_Safety_0" />
                   <uo k="s:originTrace" v="n:2595730008626759426" />
                 </node>
               </node>
@@ -5665,15 +5665,15 @@
         </node>
       </node>
       <node concept="39e2AG" id="qW" role="39e3Y0">
-        <ref role="39e2AK" to="7pce:2g5SF2D1ZvA" resolve="Safety_speed" />
+        <ref role="39e2AK" to="7pce:2g5SF2D1ZvA" resolve="Safety" />
         <node concept="385nmt" id="rQ" role="385vvn">
-          <property role="385vuF" value="Safety_speed" />
+          <property role="385vuF" value="Safety" />
           <node concept="3u3nmq" id="rS" role="385v07">
             <property role="3u3nmv" value="2595730008626952166" />
           </node>
         </node>
         <node concept="39e2AT" id="rR" role="39e2AY">
-          <ref role="39e2AS" node="et" resolve="myMember_Safety_speed_0" />
+          <ref role="39e2AS" node="et" resolve="myMember_Safety_0" />
         </node>
       </node>
       <node concept="39e2AG" id="qX" role="39e3Y0">
@@ -11050,7 +11050,7 @@
                       <property role="1adDun" value="0x9a0dbd322c713e77L" />
                     </node>
                     <node concept="1adDum" id="UY" role="37wK5m">
-                      <property role="1adDun" value="0x6a627af554ccd696L" />
+                      <property role="1adDun" value="0x3ef7a32457f426a6L" />
                     </node>
                   </node>
                 </node>
@@ -11253,7 +11253,7 @@
                 <node concept="liA8E" id="W4" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="W9" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>
@@ -11291,7 +11291,7 @@
                 <node concept="liA8E" id="Wh" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="Wm" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>
@@ -11329,7 +11329,7 @@
                 <node concept="liA8E" id="Wu" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="Wz" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>
@@ -11526,7 +11526,7 @@
                 <node concept="liA8E" id="XE" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="XJ" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>
@@ -11564,7 +11564,7 @@
                 <node concept="liA8E" id="XR" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="XW" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>
@@ -11602,7 +11602,7 @@
                 <node concept="liA8E" id="Y4" role="2OqNvi">
                   <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$PropertyBuilder.type(jetbrains.mps.smodel.adapter.ids.STypeId)" resolve="type" />
                   <node concept="Rm8GO" id="Y9" role="37wK5m">
-                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.INTEGER" resolve="INTEGER" />
+                    <ref role="Rm8GQ" to="e8bb:~PrimitiveTypeId.STRING" resolve="STRING" />
                     <ref role="1Px2BO" to="e8bb:~PrimitiveTypeId" resolve="PrimitiveTypeId" />
                   </node>
                 </node>

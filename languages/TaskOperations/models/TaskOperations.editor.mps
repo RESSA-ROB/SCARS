@@ -45,7 +45,7 @@
       <node concept="3EZMnI" id="57RyrqPrh0w" role="3EZMnx">
         <node concept="VPM3Z" id="57RyrqPrh0y" role="3F10Kt" />
         <node concept="3F0ifn" id="57RyrqPrh0I" role="3EZMnx">
-          <property role="3F0ifm" value="Goal Name" />
+          <property role="3F0ifm" value="FR Name" />
         </node>
         <node concept="3F0A7n" id="57RyrqPrh0O" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -55,7 +55,7 @@
       <node concept="3EZMnI" id="57RyrqPrh0Z" role="3EZMnx">
         <node concept="VPM3Z" id="57RyrqPrh11" role="3F10Kt" />
         <node concept="3F0ifn" id="57RyrqPrh1f" role="3EZMnx">
-          <property role="3F0ifm" value="Definition" />
+          <property role="3F0ifm" value="Description" />
         </node>
         <node concept="3F0A7n" id="57RyrqPrh1l" role="3EZMnx">
           <ref role="1NtTu8" to="1vx7:57RyrqPrgZr" resolve="description" />
