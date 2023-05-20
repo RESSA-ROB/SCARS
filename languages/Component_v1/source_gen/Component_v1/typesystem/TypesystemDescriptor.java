@@ -36,6 +36,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new TestingNFRConflict3_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new TestingNFRConflictSystem_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

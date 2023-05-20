@@ -29,22 +29,37 @@ public class TestSystem extends JFrame {
   private JTextField SystemHardwareNFR_b0 = new JTextField();
   private JTextField SystemHardwareNFR_c0 = new JTextField();
   private JTextField SystemHardwareNFR_d0 = new JTextField();
+  private JTextField SystemHardwareNFR_e0 = new JTextField();
+  private JTextField SystemHardwareNFR_f0 = new JTextField();
+  private JTextField SystemHardwareNFR_g0 = new JTextField();
   private JTextField maxHard_a0 = new JTextField();
   private JTextField maxHard_b0 = new JTextField();
   private JTextField maxHard_c0 = new JTextField();
   private JTextField maxHard_d0 = new JTextField();
+  private JTextField maxHard_e0 = new JTextField();
+  private JTextField maxHard_f0 = new JTextField();
+  private JTextField maxHard_g0 = new JTextField();
   private JTextField minHard_a0 = new JTextField();
   private JTextField minHard_b0 = new JTextField();
   private JTextField minHard_c0 = new JTextField();
   private JTextField minHard_d0 = new JTextField();
+  private JTextField minHard_e0 = new JTextField();
+  private JTextField minHard_f0 = new JTextField();
+  private JTextField minHard_g0 = new JTextField();
   private JTextField mostHard_a0 = new JTextField();
   private JTextField mostHard_b0 = new JTextField();
   private JTextField mostHard_c0 = new JTextField();
   private JTextField mostHard_d0 = new JTextField();
+  private JTextField mostHard_e0 = new JTextField();
+  private JTextField mostHard_f0 = new JTextField();
+  private JTextField mostHard_g0 = new JTextField();
   private JTextField optimalHard_a0 = new JTextField();
   private JTextField optimalHard_b0 = new JTextField();
   private JTextField optimalHard_c0 = new JTextField();
   private JTextField optimalHard_d0 = new JTextField();
+  private JTextField optimalHard_e0 = new JTextField();
+  private JTextField optimalHard_f0 = new JTextField();
+  private JTextField optimalHard_g0 = new JTextField();
   private String[] scenarionfr = new String[10000];
   private String[] scenarionfrmax = new String[10000];
   private String[] scenarionfrmin = new String[10000];
@@ -205,6 +220,105 @@ public class TestSystem extends JFrame {
       add(mostHard_d0);
       add(optimalHard_d0);
     }
+    {
+      add(new JLabel("N5"));
+      String id = "N5";
+      int flag = 0;
+      int k = 0;
+      for (int j = 0; j < i; j++) {
+        if (scenarionfr[j].equals(id)) {
+          flag = 1;
+          k = j;
+          break;
+        }
+      }
+      String max = "";
+      String min = "";
+      String most = "";
+      if (flag == 0) {
+        max = "6";
+        min = "2";
+        most = "4";
+      } else {
+        max = scenarionfrmax[k];
+        min = scenarionfrmin[k];
+        most = scenarionfrmost[k];
+      }
+
+      maxHard_e0.setText(max);
+      minHard_e0.setText(min);
+      mostHard_e0.setText(most);
+      add(maxHard_e0);
+      add(minHard_e0);
+      add(mostHard_e0);
+      add(optimalHard_e0);
+    }
+    {
+      add(new JLabel("N6"));
+      String id = "N6";
+      int flag = 0;
+      int k = 0;
+      for (int j = 0; j < i; j++) {
+        if (scenarionfr[j].equals(id)) {
+          flag = 1;
+          k = j;
+          break;
+        }
+      }
+      String max = "";
+      String min = "";
+      String most = "";
+      if (flag == 0) {
+        max = "10";
+        min = "5";
+        most = "8";
+      } else {
+        max = scenarionfrmax[k];
+        min = scenarionfrmin[k];
+        most = scenarionfrmost[k];
+      }
+
+      maxHard_f0.setText(max);
+      minHard_f0.setText(min);
+      mostHard_f0.setText(most);
+      add(maxHard_f0);
+      add(minHard_f0);
+      add(mostHard_f0);
+      add(optimalHard_f0);
+    }
+    {
+      add(new JLabel("N7"));
+      String id = "N7";
+      int flag = 0;
+      int k = 0;
+      for (int j = 0; j < i; j++) {
+        if (scenarionfr[j].equals(id)) {
+          flag = 1;
+          k = j;
+          break;
+        }
+      }
+      String max = "";
+      String min = "";
+      String most = "";
+      if (flag == 0) {
+        max = "7";
+        min = "2";
+        most = "4";
+      } else {
+        max = scenarionfrmax[k];
+        min = scenarionfrmin[k];
+        most = scenarionfrmost[k];
+      }
+
+      maxHard_g0.setText(max);
+      minHard_g0.setText(min);
+      mostHard_g0.setText(most);
+      add(maxHard_g0);
+      add(minHard_g0);
+      add(mostHard_g0);
+      add(optimalHard_g0);
+    }
     add(new JLabel("Robot NFRs"));
     add(new JLabel(""));
     add(new JLabel(""));
@@ -240,52 +354,88 @@ public class TestSystem extends JFrame {
     double maxvalhard_b0 = 0;
     double maxvalhard_c0 = 0;
     double maxvalhard_d0 = 0;
+    double maxvalhard_e0 = 0;
+    double maxvalhard_f0 = 0;
+    double maxvalhard_g0 = 0;
     double minvalhard_a0 = 0;
     double minvalhard_b0 = 0;
     double minvalhard_c0 = 0;
     double minvalhard_d0 = 0;
+    double minvalhard_e0 = 0;
+    double minvalhard_f0 = 0;
+    double minvalhard_g0 = 0;
     double mostvalhard_a0 = 0;
     double mostvalhard_b0 = 0;
     double mostvalhard_c0 = 0;
     double mostvalhard_d0 = 0;
+    double mostvalhard_e0 = 0;
+    double mostvalhard_f0 = 0;
+    double mostvalhard_g0 = 0;
     double expectedvalhard_a0 = 0;
     double expectedvalhard_b0 = 0;
     double expectedvalhard_c0 = 0;
     double expectedvalhard_d0 = 0;
+    double expectedvalhard_e0 = 0;
+    double expectedvalhard_f0 = 0;
+    double expectedvalhard_g0 = 0;
     double optimalvalhard_a0 = 0;
     double optimalvalhard_b0 = 0;
     double optimalvalhard_c0 = 0;
     double optimalvalhard_d0 = 0;
+    double optimalvalhard_e0 = 0;
+    double optimalvalhard_f0 = 0;
+    double optimalvalhard_g0 = 0;
     int flag2 = 0;
     try {
       maxvalhard_a0 = Double.valueOf(maxHard_a0.getText());
       maxvalhard_b0 = Double.valueOf(maxHard_b0.getText());
       maxvalhard_c0 = Double.valueOf(maxHard_c0.getText());
       maxvalhard_d0 = Double.valueOf(maxHard_d0.getText());
+      maxvalhard_e0 = Double.valueOf(maxHard_e0.getText());
+      maxvalhard_f0 = Double.valueOf(maxHard_f0.getText());
+      maxvalhard_g0 = Double.valueOf(maxHard_g0.getText());
       minvalhard_a0 = Double.valueOf(minHard_a0.getText());
       minvalhard_b0 = Double.valueOf(minHard_b0.getText());
       minvalhard_c0 = Double.valueOf(minHard_c0.getText());
       minvalhard_d0 = Double.valueOf(minHard_d0.getText());
+      minvalhard_e0 = Double.valueOf(minHard_e0.getText());
+      minvalhard_f0 = Double.valueOf(minHard_f0.getText());
+      minvalhard_g0 = Double.valueOf(minHard_g0.getText());
       mostvalhard_a0 = Double.valueOf(mostHard_a0.getText());
       mostvalhard_b0 = Double.valueOf(mostHard_b0.getText());
       mostvalhard_c0 = Double.valueOf(mostHard_c0.getText());
       mostvalhard_d0 = Double.valueOf(mostHard_d0.getText());
+      mostvalhard_e0 = Double.valueOf(mostHard_e0.getText());
+      mostvalhard_f0 = Double.valueOf(mostHard_f0.getText());
+      mostvalhard_g0 = Double.valueOf(mostHard_g0.getText());
       expectedvalhard_a0 = Double.valueOf((maxvalhard_a0 + minvalhard_a0 + (Double.valueOf(4) * mostvalhard_a0)) / Double.valueOf(6));
       expectedvalhard_b0 = Double.valueOf((maxvalhard_b0 + minvalhard_b0 + (Double.valueOf(4) * mostvalhard_b0)) / Double.valueOf(6));
       expectedvalhard_c0 = Double.valueOf((maxvalhard_c0 + minvalhard_c0 + (Double.valueOf(4) * mostvalhard_c0)) / Double.valueOf(6));
       expectedvalhard_d0 = Double.valueOf((maxvalhard_d0 + minvalhard_d0 + (Double.valueOf(4) * mostvalhard_d0)) / Double.valueOf(6));
+      expectedvalhard_e0 = Double.valueOf((maxvalhard_e0 + minvalhard_e0 + (Double.valueOf(4) * mostvalhard_e0)) / Double.valueOf(6));
+      expectedvalhard_f0 = Double.valueOf((maxvalhard_f0 + minvalhard_f0 + (Double.valueOf(4) * mostvalhard_f0)) / Double.valueOf(6));
+      expectedvalhard_g0 = Double.valueOf((maxvalhard_g0 + minvalhard_g0 + (Double.valueOf(4) * mostvalhard_g0)) / Double.valueOf(6));
       expectedvalhard_a0 = Double.valueOf((expectedvalhard_a0 / maxvalhard_a0) * Double.valueOf(100));
       expectedvalhard_b0 = Double.valueOf((expectedvalhard_b0 / maxvalhard_b0) * Double.valueOf(100));
       expectedvalhard_c0 = Double.valueOf((expectedvalhard_c0 / maxvalhard_c0) * Double.valueOf(100));
       expectedvalhard_d0 = Double.valueOf((expectedvalhard_d0 / maxvalhard_d0) * Double.valueOf(100));
+      expectedvalhard_e0 = Double.valueOf((expectedvalhard_e0 / maxvalhard_e0) * Double.valueOf(100));
+      expectedvalhard_f0 = Double.valueOf((expectedvalhard_f0 / maxvalhard_f0) * Double.valueOf(100));
+      expectedvalhard_g0 = Double.valueOf((expectedvalhard_g0 / maxvalhard_g0) * Double.valueOf(100));
       expectedvalhard_a0 = Math.round(expectedvalhard_a0 * Double.valueOf(100)) / Double.valueOf(100);
       expectedvalhard_b0 = Math.round(expectedvalhard_b0 * Double.valueOf(100)) / Double.valueOf(100);
       expectedvalhard_c0 = Math.round(expectedvalhard_c0 * Double.valueOf(100)) / Double.valueOf(100);
       expectedvalhard_d0 = Math.round(expectedvalhard_d0 * Double.valueOf(100)) / Double.valueOf(100);
+      expectedvalhard_e0 = Math.round(expectedvalhard_e0 * Double.valueOf(100)) / Double.valueOf(100);
+      expectedvalhard_f0 = Math.round(expectedvalhard_f0 * Double.valueOf(100)) / Double.valueOf(100);
+      expectedvalhard_g0 = Math.round(expectedvalhard_g0 * Double.valueOf(100)) / Double.valueOf(100);
       optimalvalhard_a0 = Double.valueOf(optimalHard_a0.getText());
       optimalvalhard_b0 = Double.valueOf(optimalHard_b0.getText());
       optimalvalhard_c0 = Double.valueOf(optimalHard_c0.getText());
       optimalvalhard_d0 = Double.valueOf(optimalHard_d0.getText());
+      optimalvalhard_e0 = Double.valueOf(optimalHard_e0.getText());
+      optimalvalhard_f0 = Double.valueOf(optimalHard_f0.getText());
+      optimalvalhard_g0 = Double.valueOf(optimalHard_g0.getText());
       if (expectedvalhard_a0 > optimalvalhard_a0) {
         flag2 = 1;
       }
@@ -296,6 +446,15 @@ public class TestSystem extends JFrame {
         flag2 = 1;
       }
       if (expectedvalhard_d0 > optimalvalhard_d0) {
+        flag2 = 1;
+      }
+      if (expectedvalhard_e0 > optimalvalhard_e0) {
+        flag2 = 1;
+      }
+      if (expectedvalhard_f0 > optimalvalhard_f0) {
+        flag2 = 1;
+      }
+      if (expectedvalhard_g0 > optimalvalhard_g0) {
         flag2 = 1;
       }
     } catch (NumberFormatException e2) {

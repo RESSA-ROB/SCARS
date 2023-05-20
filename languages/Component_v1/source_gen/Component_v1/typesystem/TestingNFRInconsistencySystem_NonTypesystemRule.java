@@ -193,6 +193,64 @@ public class TestingNFRInconsistencySystem_NonTypesystemRule extends AbstractNon
             }
           }
         }
+        {
+          Iterator<SNode> subcomp_it = Sequence.fromIterable(SLinkOperations.collectMany(SLinkOperations.collect(SLinkOperations.getChildren(system, LINKS.robots$ZlC7), LINKS.mobilerobot$ZnYh), LINKS.subcomp$S3Vm)).iterator();
+          SNode subcomp_var;
+          while (subcomp_it.hasNext()) {
+            subcomp_var = subcomp_it.next();
+            {
+              Iterator<SNode> schild_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(subcomp_var, LINKS.mobilerobot$ZnYh), LINKS.nfr$86Bz)).iterator();
+              SNode schild_var;
+              while (schild_it.hasNext()) {
+                schild_var = schild_it.next();
+                String id = SPropertyOperations.getString(schild_var, PROPS.name$MnvL);
+                {
+                  Iterator<SNode> nfr_it = ListSequence.fromList(SLinkOperations.getChildren(nfp_var, LINKS.attributes$Lozl)).iterator();
+                  SNode nfr_var;
+                  while (nfr_it.hasNext()) {
+                    nfr_var = nfr_it.next();
+                    String s = SPropertyOperations.getString(SLinkOperations.getTarget(nfr_var, LINKS.fields$kG77), PROPS.name$MnvL);
+                    double mostvalue = 0;
+                    if (id.equals(s)) {
+                      int exist = 0;
+                      {
+                        Iterator<SNode> scenarioinst_it = ListSequence.fromList(SLinkOperations.getChildren(system, LINKS.scenarioNFR$QPmQ)).iterator();
+                        SNode scenarioinst_var;
+                        while (scenarioinst_it.hasNext()) {
+                          scenarioinst_var = scenarioinst_it.next();
+                          String nfrid = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(scenarioinst_var, LINKS.associatedNFR$9uGq), LINKS.instances$J4Ji), PROPS.name$MnvL);
+                          if (nfrid.equals(s)) {
+                            mostvalue = Double.valueOf(SPropertyOperations.getString(scenarioinst_var, PROPS.mostlikely$C2PP));
+                            exist = 1;
+                          }
+                        }
+                      }
+                      if (exist == 0) {
+                        mostvalue = Double.valueOf(SPropertyOperations.getString(schild_var, PROPS.mostlikely$_N$s));
+                      }
+
+                      if (sum == 1) {
+                        compval = compval + mostvalue;
+                      }
+                      if (max == 1) {
+                        if (compval <= mostvalue) {
+                          compval = mostvalue;
+                        }
+                      }
+                      if (min == 1) {
+                        if (compval >= mostvalue) {
+                          compval = mostvalue;
+                        }
+
+                      }
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+        }
         // Finding NFR from the list defined for robot itself
         {
           Iterator<SNode> comp_it = Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(system, LINKS.robots$ZlC7), LINKS.mobilerobot$ZnYh)).iterator();
@@ -618,6 +676,7 @@ public class TestingNFRInconsistencySystem_NonTypesystemRule extends AbstractNon
     /*package*/ static final SReferenceLink software$7j_c = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x74700d5d12d974c4L, 0x74700d5d12d974c5L, "software");
     /*package*/ static final SContainmentLink component$pKqJ = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x6a627af554be7034L, 0x2d838283918d4b44L, "component");
     /*package*/ static final SContainmentLink nfr$Ta7D = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x2d838283918d4b38L, 0x2d838283918d4b41L, "nfr");
+    /*package*/ static final SContainmentLink subcomp$S3Vm = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x8c718e51b9e4fd4L, "subcomp");
     /*package*/ static final SContainmentLink nfr$86Bz = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4aaL, "nfr");
     /*package*/ static final SContainmentLink externalHardware$ZgeK = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x51f789b6b5394bc1L, 0x51f789b6b5394bc6L, "externalHardware");
     /*package*/ static final SContainmentLink scenario$qccC = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x414363466c99ce1eL, 0x414363466c99ce9fL, "scenario");

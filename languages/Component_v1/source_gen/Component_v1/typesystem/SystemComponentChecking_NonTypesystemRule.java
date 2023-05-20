@@ -50,6 +50,29 @@ public class SystemComponentChecking_NonTypesystemRule extends AbstractNonTypesy
                 }
               }
             }
+            for (SNode subcomp : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(robot_var, LINKS.mobilerobot$ZnYh), LINKS.subcomp$S3Vm))) {
+              String subname = SPropertyOperations.getString(SLinkOperations.getTarget(subcomp, LINKS.mobilerobot$ZnYh), PROPS.name$MnvL);
+              if (hname == subname) {
+                {
+                  final MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, hname + " cannot be an external component as it is already used as a subcomponent.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1947599972199515014", null, errorTarget);
+                }
+              }
+              {
+                Iterator<SNode> hsubcomp_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(subcomp, LINKS.mobilerobot$ZnYh), LINKS.hardware$7Z_5)).iterator();
+                SNode hsubcomp_var;
+                while (hsubcomp_it.hasNext()) {
+                  hsubcomp_var = hsubcomp_it.next();
+                  String hsubname = SPropertyOperations.getString(SLinkOperations.getTarget(hsubcomp_var, LINKS.hardware$nR7k), PROPS.name$MnvL);
+                  if (hname == hsubname) {
+                    {
+                      final MessageTarget errorTarget = new NodeMessageTarget();
+                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, hname + " cannot be an external component as it is already used as internal component.", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1947599972199544642", null, errorTarget);
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -71,6 +94,7 @@ public class SystemComponentChecking_NonTypesystemRule extends AbstractNonTypesy
     /*package*/ static final SContainmentLink robots$ZlC7 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x51f789b6b5394bc1L, 0x51f789b6b5394bc8L, "robots");
     /*package*/ static final SReferenceLink mobilerobot$ZnYh = MetaAdapterFactory.getReferenceLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x51f789b6b5394bcbL, 0x51f789b6b5394bd1L, "mobilerobot");
     /*package*/ static final SContainmentLink hardware$7Z_5 = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x6a627af554bfd4a1L, "hardware");
+    /*package*/ static final SContainmentLink subcomp$S3Vm = MetaAdapterFactory.getContainmentLink(0x79fb875b5c4f4986L, 0x892e2475e9d0c842L, 0x4db49580d35a9e5cL, 0x8c718e51b9e4fd4L, "subcomp");
   }
 
   private static final class PROPS {

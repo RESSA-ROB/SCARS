@@ -987,6 +987,7 @@ public class TestingNFRConflictSystem_NonTypesystemRule extends AbstractNonTypes
                   }
                 }
                 String temp2 = "0<= " + var1 + " + " + var2 + " + M - e ^ (M * " + temps + ") <=2, where M lies between 0.1 - " + Maxmvalue;
+                objective = objective.concat(temp2 + " ");
               } else if ((exp1 >= 0.0 && exp1 < 0.5) || (exp2 >= 0.5 && exp2 <= 1.0)) {
                 temps = 0.5 - exp2;
                 String var1 = "";
@@ -1008,10 +1009,12 @@ public class TestingNFRConflictSystem_NonTypesystemRule extends AbstractNonTypes
                 if (temps >= 0.25) {
                   Maxmvalue = 1 - exp1;
                   String temp2 = "0<= " + var1 + " + " + var2 + " + M - M * " + temps + " <=2, where M lies between 0.1 - " + Maxmvalue;
+                  objective = objective.concat(temp2 + " ");
 
                 } else {
                   Maxmvalue = temps;
                   String temp2 = "0<= " + var1 + " + " + var2 + " + M - M ^ (10 * " + temps + ") <=2, where M lies between 0.1 - " + Maxmvalue;
+                  objective = objective.concat(temp2 + " ");
 
                 }
               } else if ((exp1 >= 0.5 && exp1 <= 1.0) || (exp2 >= 0.0 && exp2 < 0.5)) {
@@ -1035,10 +1038,12 @@ public class TestingNFRConflictSystem_NonTypesystemRule extends AbstractNonTypes
                 if (temps >= 0.25) {
                   Maxmvalue = 1 - exp1;
                   String temp2 = "0<= " + var1 + " + " + var2 + " + M - e ^ (M * " + temps + ") <=2, where M lies between 0.1 - " + Maxmvalue;
+                  objective = objective.concat(temp2 + " ");
 
                 } else {
                   Maxmvalue = temps;
                   String temp2 = "0<= " + var1 + " + " + var2 + " + M - M ^ (10 * " + temps + ") <=2, where M lies between 0.1 - " + Maxmvalue;
+                  objective = objective.concat(temp2 + " ");
 
                 }
               }
@@ -1046,7 +1051,7 @@ public class TestingNFRConflictSystem_NonTypesystemRule extends AbstractNonTypes
           }
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, objective, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "219290555227386120", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(system, objective, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1947599972198025909", null, errorTarget);
           }
           ListSequence.fromList(nfrl1).clear();
           ListSequence.fromList(nfrl2).clear();

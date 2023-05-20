@@ -28,22 +28,37 @@ public class Camera1 extends JFrame {
   private JTextField NFR_b0 = new JTextField();
   private JTextField NFR_c0 = new JTextField();
   private JTextField NFR_d0 = new JTextField();
+  private JTextField NFR_e0 = new JTextField();
+  private JTextField NFR_f0 = new JTextField();
+  private JTextField NFR_g0 = new JTextField();
   private JTextField NFRMax_a0 = new JTextField();
   private JTextField NFRMax_b0 = new JTextField();
   private JTextField NFRMax_c0 = new JTextField();
   private JTextField NFRMax_d0 = new JTextField();
+  private JTextField NFRMax_e0 = new JTextField();
+  private JTextField NFRMax_f0 = new JTextField();
+  private JTextField NFRMax_g0 = new JTextField();
   private JTextField NFRMin_a0 = new JTextField();
   private JTextField NFRMin_b0 = new JTextField();
   private JTextField NFRMin_c0 = new JTextField();
   private JTextField NFRMin_d0 = new JTextField();
+  private JTextField NFRMin_e0 = new JTextField();
+  private JTextField NFRMin_f0 = new JTextField();
+  private JTextField NFRMin_g0 = new JTextField();
   private JTextField NFRMost_a0 = new JTextField();
   private JTextField NFRMost_b0 = new JTextField();
   private JTextField NFRMost_c0 = new JTextField();
   private JTextField NFRMost_d0 = new JTextField();
+  private JTextField NFRMost_e0 = new JTextField();
+  private JTextField NFRMost_f0 = new JTextField();
+  private JTextField NFRMost_g0 = new JTextField();
   private JTextField NFROptimal_a0 = new JTextField();
   private JTextField NFROptimal_b0 = new JTextField();
   private JTextField NFROptimal_c0 = new JTextField();
   private JTextField NFROptimal_d0 = new JTextField();
+  private JTextField NFROptimal_e0 = new JTextField();
+  private JTextField NFROptimal_f0 = new JTextField();
+  private JTextField NFROptimal_g0 = new JTextField();
   /*package*/ JButton analyzer = new JButton("Click Here");
   private JTextField result = new JTextField();
   public Camera1() {
@@ -106,6 +121,45 @@ public class Camera1 extends JFrame {
       add(NFRMost_d0);
       add(NFROptimal_d0);
     }
+    {
+      add(new JLabel("N5"));
+      String max = "6";
+      String min = "2";
+      String most = "4";
+      NFRMax_e0.setText(max);
+      NFRMin_e0.setText(min);
+      NFRMost_e0.setText(most);
+      add(NFRMax_e0);
+      add(NFRMin_e0);
+      add(NFRMost_e0);
+      add(NFROptimal_e0);
+    }
+    {
+      add(new JLabel("N6"));
+      String max = "10";
+      String min = "5";
+      String most = "8";
+      NFRMax_f0.setText(max);
+      NFRMin_f0.setText(min);
+      NFRMost_f0.setText(most);
+      add(NFRMax_f0);
+      add(NFRMin_f0);
+      add(NFRMost_f0);
+      add(NFROptimal_f0);
+    }
+    {
+      add(new JLabel("N7"));
+      String max = "7";
+      String min = "2";
+      String most = "4";
+      NFRMax_g0.setText(max);
+      NFRMin_g0.setText(min);
+      NFRMost_g0.setText(most);
+      add(NFRMax_g0);
+      add(NFRMin_g0);
+      add(NFRMost_g0);
+      add(NFROptimal_g0);
+    }
     add(new JLabel("Value Analysis"));
     add(result);
     analyzer.addActionListener(new ActionListener() {
@@ -123,52 +177,88 @@ public class Camera1 extends JFrame {
     int i_b0 = 0;
     int i_c0 = 0;
     int i_d0 = 0;
+    int i_e0 = 0;
+    int i_f0 = 0;
+    int i_g0 = 0;
     int j_a0 = 0;
     int j_b0 = 0;
     int j_c0 = 0;
     int j_d0 = 0;
+    int j_e0 = 0;
+    int j_f0 = 0;
+    int j_g0 = 0;
     int k_a0 = 0;
     int k_b0 = 0;
     int k_c0 = 0;
     int k_d0 = 0;
+    int k_e0 = 0;
+    int k_f0 = 0;
+    int k_g0 = 0;
     double m_a0 = 0;
     double m_b0 = 0;
     double m_c0 = 0;
     double m_d0 = 0;
+    double m_e0 = 0;
+    double m_f0 = 0;
+    double m_g0 = 0;
     double optimal_a0 = 0;
     double optimal_b0 = 0;
     double optimal_c0 = 0;
     double optimal_d0 = 0;
+    double optimal_e0 = 0;
+    double optimal_f0 = 0;
+    double optimal_g0 = 0;
     int flag = 0;
     try {
       i_a0 = Integer.parseInt(NFRMax_a0.getText());
       i_b0 = Integer.parseInt(NFRMax_b0.getText());
       i_c0 = Integer.parseInt(NFRMax_c0.getText());
       i_d0 = Integer.parseInt(NFRMax_d0.getText());
+      i_e0 = Integer.parseInt(NFRMax_e0.getText());
+      i_f0 = Integer.parseInt(NFRMax_f0.getText());
+      i_g0 = Integer.parseInt(NFRMax_g0.getText());
       j_a0 = Integer.parseInt(NFRMin_a0.getText());
       j_b0 = Integer.parseInt(NFRMin_b0.getText());
       j_c0 = Integer.parseInt(NFRMin_c0.getText());
       j_d0 = Integer.parseInt(NFRMin_d0.getText());
+      j_e0 = Integer.parseInt(NFRMin_e0.getText());
+      j_f0 = Integer.parseInt(NFRMin_f0.getText());
+      j_g0 = Integer.parseInt(NFRMin_g0.getText());
       k_a0 = Integer.parseInt(NFRMost_a0.getText());
       k_b0 = Integer.parseInt(NFRMost_b0.getText());
       k_c0 = Integer.parseInt(NFRMost_c0.getText());
       k_d0 = Integer.parseInt(NFRMost_d0.getText());
+      k_e0 = Integer.parseInt(NFRMost_e0.getText());
+      k_f0 = Integer.parseInt(NFRMost_f0.getText());
+      k_g0 = Integer.parseInt(NFRMost_g0.getText());
       m_a0 = (Double.valueOf(i_a0) + Double.valueOf(j_a0) + (Double.valueOf(4) * Double.valueOf(k_a0))) / Double.valueOf(6);
       m_b0 = (Double.valueOf(i_b0) + Double.valueOf(j_b0) + (Double.valueOf(4) * Double.valueOf(k_b0))) / Double.valueOf(6);
       m_c0 = (Double.valueOf(i_c0) + Double.valueOf(j_c0) + (Double.valueOf(4) * Double.valueOf(k_c0))) / Double.valueOf(6);
       m_d0 = (Double.valueOf(i_d0) + Double.valueOf(j_d0) + (Double.valueOf(4) * Double.valueOf(k_d0))) / Double.valueOf(6);
+      m_e0 = (Double.valueOf(i_e0) + Double.valueOf(j_e0) + (Double.valueOf(4) * Double.valueOf(k_e0))) / Double.valueOf(6);
+      m_f0 = (Double.valueOf(i_f0) + Double.valueOf(j_f0) + (Double.valueOf(4) * Double.valueOf(k_f0))) / Double.valueOf(6);
+      m_g0 = (Double.valueOf(i_g0) + Double.valueOf(j_g0) + (Double.valueOf(4) * Double.valueOf(k_g0))) / Double.valueOf(6);
       m_a0 = (m_a0 / Double.valueOf(i_a0)) * Double.valueOf(100);
       m_b0 = (m_b0 / Double.valueOf(i_b0)) * Double.valueOf(100);
       m_c0 = (m_c0 / Double.valueOf(i_c0)) * Double.valueOf(100);
       m_d0 = (m_d0 / Double.valueOf(i_d0)) * Double.valueOf(100);
+      m_e0 = (m_e0 / Double.valueOf(i_e0)) * Double.valueOf(100);
+      m_f0 = (m_f0 / Double.valueOf(i_f0)) * Double.valueOf(100);
+      m_g0 = (m_g0 / Double.valueOf(i_g0)) * Double.valueOf(100);
       m_a0 = Math.round(m_a0 * Double.valueOf(100)) / Double.valueOf(100);
       m_b0 = Math.round(m_b0 * Double.valueOf(100)) / Double.valueOf(100);
       m_c0 = Math.round(m_c0 * Double.valueOf(100)) / Double.valueOf(100);
       m_d0 = Math.round(m_d0 * Double.valueOf(100)) / Double.valueOf(100);
+      m_e0 = Math.round(m_e0 * Double.valueOf(100)) / Double.valueOf(100);
+      m_f0 = Math.round(m_f0 * Double.valueOf(100)) / Double.valueOf(100);
+      m_g0 = Math.round(m_g0 * Double.valueOf(100)) / Double.valueOf(100);
       optimal_a0 = Double.valueOf(NFROptimal_a0.getText());
       optimal_b0 = Double.valueOf(NFROptimal_b0.getText());
       optimal_c0 = Double.valueOf(NFROptimal_c0.getText());
       optimal_d0 = Double.valueOf(NFROptimal_d0.getText());
+      optimal_e0 = Double.valueOf(NFROptimal_e0.getText());
+      optimal_f0 = Double.valueOf(NFROptimal_f0.getText());
+      optimal_g0 = Double.valueOf(NFROptimal_g0.getText());
       if (m_a0 > optimal_a0) {
         flag = 1;
       }
@@ -179,6 +269,15 @@ public class Camera1 extends JFrame {
         flag = 1;
       }
       if (m_d0 > optimal_d0) {
+        flag = 1;
+      }
+      if (m_e0 > optimal_e0) {
+        flag = 1;
+      }
+      if (m_f0 > optimal_f0) {
+        flag = 1;
+      }
+      if (m_g0 > optimal_g0) {
         flag = 1;
       }
     } catch (NumberFormatException e) {
