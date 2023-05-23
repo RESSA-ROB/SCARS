@@ -130,10 +130,6 @@ public class TestingNFRInconsistencySystem_NonTypesystemRule extends AbstractNon
 
           }
         }
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Fetching Data4", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2632449209082216965", null, errorTarget);
-        }
 
         // Finding NFR withing software list of robot
         {
@@ -367,19 +363,7 @@ public class TestingNFRInconsistencySystem_NonTypesystemRule extends AbstractNon
             }
           }
         }
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Fetching Data3", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2632449209081659991", null, errorTarget);
-        }
 
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "cons=" + cons, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2737999051712825776", null, errorTarget);
-        }
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "compval=" + compval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2737999051712838517", null, errorTarget);
-        }
 
         // Different checking for different category to be added
         // cons is the mostlikely value of the mobile robot
@@ -552,10 +536,6 @@ public class TestingNFRInconsistencySystem_NonTypesystemRule extends AbstractNon
             }
           }
         } else {
-          {
-            final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "NFR is not traced in the list of associated components", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "6772355109712883866", null, errorTarget);
-          }
         }
 
       }

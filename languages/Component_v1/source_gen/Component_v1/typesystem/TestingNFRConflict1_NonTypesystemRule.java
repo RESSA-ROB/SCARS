@@ -927,7 +927,7 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                     ListSequence.fromList(nfrl4).addElement(vars);
                   }
                 }
-                objective = objective.concat(" --> Objective Function: " + temp + " Consraints: ");
+                objective = objective.concat(" --> Objective Function: " + temp + " Constraints: ");
                 // Fetching of NFR
                 {
                   Iterator<SNode> goal2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(exHC_var, LINKS.component$ISi3), LINKS.association$8nBC)).iterator();
@@ -1491,10 +1491,6 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
               if (flag == 1) {
                 // Expected value of cost
                 double expected = (((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen)) + ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) + ((double) 4) * ((double) ListSequence.fromList(NFR_mostlikelyValues).getElement(indexChosen))) / ((double) 6);
-                {
-                  final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Expected Value" + expected, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1305090275311274195", null, errorTarget);
-                }
 
                 // Normalized Expected value
                 double range = ((double) ListSequence.fromList(NFR_maxValues).getElement(indexChosen)) - ((double) ListSequence.fromList(NFR_minValues).getElement(indexChosen));
@@ -1504,14 +1500,6 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                 normalizedval = ((double) (((double) k) / ((double) 100)));
                 double compNormalizedval = 1 - Math.abs(normalizedval);
                 flag = 0;
-                {
-                  final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Normalized Value" + normalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1305090275310192843", null, errorTarget);
-                }
-                {
-                  final MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Comp Normalized Value" + compNormalizedval, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "1305090275310413089", null, errorTarget);
-                }
 
                 ListSequence.fromList(expectedValues).addElement(compNormalizedval);
                 ListSequence.fromList(NFRnames_ExpectedList).addElement(ListSequence.fromList(NFR_names).getElement(indexChosen));
@@ -1992,7 +1980,7 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                     ListSequence.fromList(nfrl4).addElement(vars);
                   }
                 }
-                objective = objective.concat(" --> Objective Function: " + temp + " Consraints: ");
+                objective = objective.concat(" --> Objective Function: " + temp + " Constraints: ");
                 // Fetching of NFR
                 {
                   Iterator<SNode> goal2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(robot_var, LINKS.mobilerobot$ZnYh), LINKS.association$KtsF)).iterator();
@@ -2063,10 +2051,6 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                     String nfr2 = ListSequence.fromList(nfrl2).getElement(j1);
                     String pair1 = nfr1 + "-" + nfr2;
                     String pair2 = nfr2 + "-" + nfr1;
-                    {
-                      final MessageTarget errorTarget = new NodeMessageTarget();
-                      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Pair 1 " + pair1 + " Pair 2 " + pair2, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2599269916492207361", null, errorTarget);
-                    }
                     String item1 = "";
                     String item2 = "";
                     int index1 = 0;
@@ -3023,7 +3007,7 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                         ListSequence.fromList(nfrl4).addElement(vars);
                       }
                     }
-                    objective = objective.concat(" --> Objective Function: " + temp + " Consraints: ");
+                    objective = objective.concat(" --> Objective Function: " + temp + " Constraints: ");
                     // Fetching of NFR
                     {
                       Iterator<SNode> goal2_it = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(hcomp_var, LINKS.hardware$nR7k), LINKS.component$ISi3), LINKS.association$8nBC)).iterator();
@@ -3094,10 +3078,6 @@ public class TestingNFRConflict1_NonTypesystemRule extends AbstractNonTypesystem
                         String nfr2 = ListSequence.fromList(nfrl2).getElement(j1);
                         String pair1 = nfr1 + "-" + nfr2;
                         String pair2 = nfr2 + "-" + nfr1;
-                        {
-                          final MessageTarget errorTarget = new NodeMessageTarget();
-                          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Pair 1 " + pair1 + " Pair 2 " + pair2, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "2599269916497141704", null, errorTarget);
-                        }
                         String item1 = "";
                         String item2 = "";
                         int index1 = 0;

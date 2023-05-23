@@ -314,8 +314,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="$" role="3Kbmr1">
-              <ref role="3cqZAo" node="1t" resolve="GlobalGoal" />
               <ref role="1PxDUh" node="1r" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="1t" resolve="GlobalGoal" />
             </node>
           </node>
           <node concept="3KbdKl" id="v" role="3KbHQx">
@@ -376,8 +376,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="W" role="3Kbmr1">
-              <ref role="3cqZAo" node="1u" resolve="LocalGoal" />
               <ref role="1PxDUh" node="1r" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="1u" resolve="LocalGoal" />
             </node>
           </node>
         </node>
@@ -727,8 +727,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="3z" role="3Kbmr1">
-              <ref role="3cqZAo" node="1t" resolve="GlobalGoal" />
               <ref role="1PxDUh" node="1r" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="1t" resolve="GlobalGoal" />
             </node>
           </node>
           <node concept="3KbdKl" id="3v" role="3KbHQx">
@@ -740,8 +740,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="3B" role="3Kbmr1">
-              <ref role="3cqZAo" node="1u" resolve="LocalGoal" />
               <ref role="1PxDUh" node="1r" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="1u" resolve="LocalGoal" />
             </node>
           </node>
           <node concept="2OqwBi" id="3w" role="3KbGdf">
@@ -889,7 +889,7 @@
             <node concept="liA8E" id="4t" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.version(int)" resolve="version" />
               <node concept="3cmrfG" id="4u" role="37wK5m">
-                <property role="3cmrfH" value="2" />
+                <property role="3cmrfH" value="3" />
               </node>
             </node>
           </node>
@@ -1037,7 +1037,7 @@
             <node concept="liA8E" id="5k" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.version(int)" resolve="version" />
               <node concept="3cmrfG" id="5l" role="37wK5m">
-                <property role="3cmrfH" value="2" />
+                <property role="3cmrfH" value="3" />
               </node>
             </node>
           </node>

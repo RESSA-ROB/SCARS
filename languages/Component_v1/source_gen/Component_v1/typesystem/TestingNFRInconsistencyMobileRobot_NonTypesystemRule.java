@@ -433,10 +433,6 @@ public class TestingNFRInconsistencyMobileRobot_NonTypesystemRule extends Abstra
               }
 
             } else {
-              {
-                final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "NFR is not traced in the list of associated components", "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "5153666156840015125", null, errorTarget);
-              }
             }
           }
         }

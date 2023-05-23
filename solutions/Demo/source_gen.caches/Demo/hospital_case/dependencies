@@ -8,23 +8,5 @@
   <uses language="l:c7fb639f-be78-4307-89b0-b5959c3fa8c8:jetbrains.mps.lang.text" />
   <uses module="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" kind="rt+dp" />
   <uses module="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" kind="rt" />
-  <dependency className="Demo.hospital_case.Hospital_Env">
-    <classNode dependClassName="java.awt.GridLayout" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.lang.Double" />
-    <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="java.lang.NumberFormatException" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JOptionPane" />
-    <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="javax.swing.event.DocumentEvent" />
-    <classNode dependClassName="javax.swing.event.DocumentListener" />
-    <classNode extendsClassName="javax.swing.JFrame" />
-  </dependency>
 </dependenciesRoot>
 

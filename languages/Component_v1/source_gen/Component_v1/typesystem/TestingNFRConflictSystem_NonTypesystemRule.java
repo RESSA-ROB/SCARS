@@ -905,10 +905,6 @@ public class TestingNFRConflictSystem_NonTypesystemRule extends AbstractNonTypes
               String nfr2 = ListSequence.fromList(nfrl2).getElement(j1);
               String pair1 = nfr1 + "-" + nfr2;
               String pair2 = nfr2 + "-" + nfr1;
-              {
-                final MessageTarget errorTarget = new NodeMessageTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(system, "Pair 1 " + pair1 + " Pair 2 " + pair2, "r:1524284d-b0a0-4e87-9b87-3259ef92f715(Component_v1.typesystem)", "219290555227385456", null, errorTarget);
-              }
               String item1 = "";
               String item2 = "";
               int index1 = 0;

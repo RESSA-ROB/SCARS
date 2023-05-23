@@ -308,8 +308,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="w" role="3Kbmr1">
-              <ref role="3cqZAo" node="12" resolve="Performance2" />
               <ref role="1PxDUh" node="10" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="12" resolve="Performance2" />
             </node>
           </node>
         </node>
@@ -597,8 +597,8 @@
               </node>
             </node>
             <node concept="10M0yZ" id="2L" role="3Kbmr1">
-              <ref role="3cqZAo" node="12" resolve="Performance2" />
               <ref role="1PxDUh" node="10" resolve="LanguageConceptSwitch" />
+              <ref role="3cqZAo" node="12" resolve="Performance2" />
             </node>
           </node>
           <node concept="2OqwBi" id="2I" role="3KbGdf">
@@ -727,7 +727,7 @@
             <node concept="liA8E" id="3x" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.version(int)" resolve="version" />
               <node concept="3cmrfG" id="3y" role="37wK5m">
-                <property role="3cmrfH" value="2" />
+                <property role="3cmrfH" value="3" />
               </node>
             </node>
           </node>

@@ -50,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("NFR2", "Performance2", 0xb37e01ffa47f4ea1L, 0x99024f840aa546c5L, 0x66d5a6d2efc2c573L);
     b.class_(false, false, true);
     b.origin("r:11b7677e-a722-4833-bf9d-92f381ba55d5(NFR2.structure)/7410012186803881331");
-    b.version(2);
+    b.version(3);
     b.property("responsetime", 0x25c82fc5fc2de8f6L).type(PrimitiveTypeId.INTEGER).origin("2722478502131394806").done();
     b.property("latency", 0x25c82fc5fc2e754aL).type(PrimitiveTypeId.INTEGER).origin("2722478502131430730").done();
     return b.create();
