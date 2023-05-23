@@ -11,7 +11,7 @@
 ### 5. The scripts may have a secondary section that is responsible for taking a detour, if an obstacle is encountered.  The robot’s reflex actions and other settings such as safety parameter may also be set within the script itself as and when required. Scripts provided in this repository are particular to the set of coordinates used in this experiment. A different set of coordinates will require customization of the scripts.
 
 ### 6. The following ROS topics needs to be monitored in different terminals and the data has to be logged for analysis:
--/ROSOUT
--/BATTERY_STATE
+- /ROSOUT
+- /BATTERY_STATE
 
 ### 7.  Along with the aforementioned ROS topics, the command outputs of the scripts and the simulator itself should be recorded for analysis. These outputs contain information such as the total response time of the tasks.
