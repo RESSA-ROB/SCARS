@@ -1,7 +1,10 @@
 # SCARS
 The Experiments folder contains all the experimental scripts and results obtained.
+
 The DSL_v1 zip file contains the domain-specific language developed.
+
 The Dependent Languages zip file contain some other dependent languages.
+
 NFR_catalog pdf contain the NFR catalogs created developing the DSL and analysis.
 
 **Using the Language in MPS-**
