@@ -1,0 +1,3 @@
+# Scripts for AWS_Hospital Simulation Environment
+
+### The shell scripts in this directory are for the 100 different scenarios run in the AWS_Small_House gazebo world (can be installed by following instructions here: https://github.com/iRobotEducation/create3_sim) for the experiment. The scenarios having obstacles has detour scripts to clear each of the encountered obstacles along the path determined in the main script.
